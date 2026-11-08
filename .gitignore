@@ -1,0 +1,6 @@
+node_modules/
+engine/out/
+engine/tmp/
+*.part.mp4
+*.tmp.mp4
+frames/

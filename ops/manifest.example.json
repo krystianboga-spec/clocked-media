@@ -1,0 +1,240 @@
+{
+  "month": "2026-12",
+  "brand_id": 7724856,
+  "timezone": "America/Chicago",
+  "_comment": "Dummy example. caption must already include its hashtags (max 5), TikTok caption single line, Instagram caption keeps line breaks and '(link in bio)'. media are repo paths (turned into raw.githubusercontent URLs) or full https URLs. payday:true pins an asset to a Thu/Fri slot. voiced:true means TikTok autoPublish true and AI voice labels on (set ai_voice:false for a real human voice). type photo: tiktok media = slide images (photo mode, autoAddMusic), instagram media = carousel images.",
+  "assets": [
+    {
+      "id": "holiday-ot",
+      "type": "video",
+      "payday": false,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/holiday-ot-tiktok.mp4"
+        ],
+        "title": "Holiday week overtime math",
+        "caption": "46 hours the week before the holiday? Example: 40 x $15 = $600.00, plus 6 overtime hours x $22.50 = $135.00, so $735.00 before taxes. Clocked is a free shift and pay tracker, out now in free beta. Try it free at clocked.space and follow for updates. #overtime #paycheck #hourlyworker"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/holiday-ot-instagram.mp4"
+        ],
+        "caption": "46 hours this week?\n\nExample: 40 hrs x $15 = $600.00, plus 6 overtime hrs x $22.50 = $135.00. Projected: $735.00 before taxes.\n\nClocked is a free shift and pay tracker for hourly workers, out now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#overtime #paycheck #hourlyworker #retailworker"
+      }
+    },
+    {
+      "id": "two-jobs-gap",
+      "type": "video",
+      "payday": false,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/two-jobs-gap-tiktok.mp4"
+        ],
+        "title": "Two jobs in one place",
+        "caption": "Two jobs, one number. Example: Job A 22 hrs x $15 = $330.00, Job B 18 hrs x $14 = $252.00, together $582.00 before taxes. Clocked tracks more than one job and is out now in free beta. Try it free at clocked.space and follow for updates. #twojobs #hourlyworker #paycheck"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/two-jobs-gap-instagram.mp4"
+        ],
+        "caption": "Two jobs, one number.\n\nExample: Job A 22 hrs x $15 = $330.00. Job B 18 hrs x $14 = $252.00. Together: $582.00 before taxes.\n\nClocked tracks more than one job, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#twojobs #hourlyworker #paycheck #serverlife"
+      }
+    },
+    {
+      "id": "payday-eve",
+      "type": "video",
+      "payday": true,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/payday-eve-tiktok.mp4"
+        ],
+        "title": "Payday eve reminder",
+        "caption": "Payday tomorrow? Example: 32 hrs x $16.50 = $528.00 before taxes. Clocked reminds you before payday with a phone notification and is out now in free beta. Try it free at clocked.space and follow for updates. #payday #paycheck #hourlyworker"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/payday-eve-instagram.mp4"
+        ],
+        "caption": "Payday tomorrow?\n\nExample: 32 hrs x $16.50 = $528.00 before taxes.\n\nClocked sends a payday reminder to your phone and is now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #serverlife"
+      }
+    },
+    {
+      "id": "sunday-schedule",
+      "type": "video",
+      "payday": false,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/sunday-schedule-tiktok.mp4"
+        ],
+        "title": "Sunday schedule check",
+        "caption": "Sunday night and next week's schedule is a mess? Log your shifts and see projected pay before payday. Example: 5 shifts x 6 hrs x $15 = $450.00 before taxes. Clocked is out now in free beta. Try it free at clocked.space and follow for updates. #workschedule #hourlyworker #retailworker"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/sunday-schedule-instagram.mp4"
+        ],
+        "caption": "Sunday night schedule check.\n\nExample: 5 shifts x 6 hrs x $15 = $450.00 before taxes.\n\nLog the shifts in Clocked and see the projected pay. Free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#workschedule #hourlyworker #retailworker #serverlife"
+      }
+    },
+    {
+      "id": "split-shift",
+      "type": "video",
+      "payday": false,
+      "voiced": true,
+      "ai_voice": true,
+      "tiktok": {
+        "media": [
+          "media/2026-12/split-shift-tiktok.mp4"
+        ],
+        "title": "Split shift math",
+        "caption": "A split shift is two short shifts in one day. Example: 4 hrs + 4 hrs at $13 = $104.00 before taxes. Log both in Clocked, out now in free beta. Try it free at clocked.space and follow for updates. #serverlife #hourlyworker #paycheck"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/split-shift-instagram.mp4"
+        ],
+        "caption": "Split shift math.\n\nExample: 4 hrs + 4 hrs at $13 = $104.00 before taxes.\n\nLog both shifts in Clocked, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#serverlife #hourlyworker #paycheck #restaurantlife"
+      }
+    },
+    {
+      "id": "new-year-reset",
+      "type": "video",
+      "payday": false,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/new-year-reset-tiktok.mp4"
+        ],
+        "title": "New year shift log",
+        "caption": "New year, new habit: write down every shift. Example: 38 hrs x $16 = $608.00 before taxes. Clocked is a free shift and pay tracker, out now in free beta. Try it free at clocked.space and follow for updates. #newyear #hourlyworker #paycheck"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/new-year-reset-instagram.mp4"
+        ],
+        "caption": "New year habit: log every shift.\n\nExample: 38 hrs x $16 = $608.00 before taxes.\n\nClocked is a free shift and pay tracker, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#newyear #hourlyworker #paycheck #retailworker"
+      }
+    },
+    {
+      "id": "first-job-tips",
+      "type": "photo",
+      "payday": false,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/first-job-tips/tt-1.png",
+          "media/2026-12/first-job-tips/tt-2.png",
+          "media/2026-12/first-job-tips/tt-3.png",
+          "media/2026-12/first-job-tips/tt-4.png",
+          "media/2026-12/first-job-tips/tt-5.png"
+        ],
+        "title": "First job tips",
+        "caption": "5 things nobody tells you at your first hourly job: ask for your schedule in writing, keep your own hours list, learn your pay period. Clocked helps you log shifts, free beta. Try it free at clocked.space and follow for updates. #firstjob #hourlyworker #serverlife"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/first-job-tips/ig-1.png",
+          "media/2026-12/first-job-tips/ig-2.png",
+          "media/2026-12/first-job-tips/ig-3.png",
+          "media/2026-12/first-job-tips/ig-4.png",
+          "media/2026-12/first-job-tips/ig-5.png"
+        ],
+        "caption": "5 things nobody tells you at your first hourly job.\n\nAsk for your schedule in writing, keep your own hours list, and learn your pay period.\n\nClocked helps you log shifts. Free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#firstjob #hourlyworker #retailworker #paycheck"
+      }
+    },
+    {
+      "id": "payday-checklist",
+      "type": "photo",
+      "payday": true,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/payday-checklist/tt-1.png",
+          "media/2026-12/payday-checklist/tt-2.png",
+          "media/2026-12/payday-checklist/tt-3.png",
+          "media/2026-12/payday-checklist/tt-4.png",
+          "media/2026-12/payday-checklist/tt-5.png"
+        ],
+        "title": "Payday checklist",
+        "caption": "Payday checklist: check your hours, check your rate, check overtime. Example: 41 hrs x $15, 40 x $15 = $600.00 plus 1 x $22.50 = $622.50 before taxes. Clocked is in free beta. Try it free at clocked.space and follow for updates. #payday #paycheck #hourlyworker"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/payday-checklist/ig-1.png",
+          "media/2026-12/payday-checklist/ig-2.png",
+          "media/2026-12/payday-checklist/ig-3.png",
+          "media/2026-12/payday-checklist/ig-4.png",
+          "media/2026-12/payday-checklist/ig-5.png"
+        ],
+        "caption": "Payday checklist.\n\n1. Check your hours\n2. Check your rate\n3. Check overtime\n\nExample: 40 x $15 = $600.00 plus 1 x $22.50 = $622.50 before taxes.\n\nClocked is in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #overtime"
+      }
+    },
+    {
+      "id": "pay-period-101",
+      "type": "photo",
+      "payday": false,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/pay-period-101/tt-1.png",
+          "media/2026-12/pay-period-101/tt-2.png",
+          "media/2026-12/pay-period-101/tt-3.png",
+          "media/2026-12/pay-period-101/tt-4.png",
+          "media/2026-12/pay-period-101/tt-5.png"
+        ],
+        "title": "Pay period 101",
+        "caption": "Weekly, biweekly, semi-monthly: what is your pay period? Example: 2 weeks x 30 hrs x $15 = $900.00 before taxes. Clocked is a free shift and pay tracker in free beta. Try it free at clocked.space and follow for updates. #paycheck #hourlyworker #firstjob"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/pay-period-101/ig-1.png",
+          "media/2026-12/pay-period-101/ig-2.png",
+          "media/2026-12/pay-period-101/ig-3.png",
+          "media/2026-12/pay-period-101/ig-4.png",
+          "media/2026-12/pay-period-101/ig-5.png"
+        ],
+        "caption": "Weekly, biweekly, semi-monthly: know your pay period.\n\nExample: 2 weeks x 30 hrs x $15 = $900.00 before taxes.\n\nClocked is a free shift and pay tracker, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#paycheck #hourlyworker #firstjob #retailworker"
+      }
+    },
+    {
+      "id": "closing-shift-math",
+      "type": "photo",
+      "payday": false,
+      "voiced": false,
+      "ai_voice": false,
+      "tiktok": {
+        "media": [
+          "media/2026-12/closing-shift-math/tt-1.png",
+          "media/2026-12/closing-shift-math/tt-2.png",
+          "media/2026-12/closing-shift-math/tt-3.png",
+          "media/2026-12/closing-shift-math/tt-4.png",
+          "media/2026-12/closing-shift-math/tt-5.png"
+        ],
+        "title": "Closing shift math",
+        "caption": "Closing shift: 5 pm to 11 pm is 6 hrs. Example: 6 x $14 = $84.00 before taxes. Log it in Clocked, out now in free beta. Try it free at clocked.space and follow for updates. #serverlife #retailworker #paycheck"
+      },
+      "instagram": {
+        "media": [
+          "media/2026-12/closing-shift-math/ig-1.png",
+          "media/2026-12/closing-shift-math/ig-2.png",
+          "media/2026-12/closing-shift-math/ig-3.png",
+          "media/2026-12/closing-shift-math/ig-4.png",
+          "media/2026-12/closing-shift-math/ig-5.png"
+        ],
+        "caption": "Closing shift math.\n\n5 pm to 11 pm is 6 hrs. Example: 6 x $14 = $84.00 before taxes.\n\nLog it in Clocked, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#serverlife #retailworker #paycheck #hourlyworker"
+      }
+    }
+  ]
+}

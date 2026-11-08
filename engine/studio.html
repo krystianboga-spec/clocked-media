@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Clocked paint studio</title>
+<style>
+  @font-face { font-family: "Shantell"; src: url("fonts/shantell-sans-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: block; }
+  @font-face { font-family: "Anton"; src: url("fonts/anton-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: block; }
+  html, body { margin: 0; background: #17161c; }
+  #out { width: 540px; height: 960px; display: block; }
+  .p5Canvas { display: none !important; }
+</style>
+<script src="vendor/p5.min.js"></script>
+<script src="vendor/p5.brush.js"></script>
+</head>
+<body>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="src/core.js"></script>
+<script src="src/palettes.js"></script>
+<script src="src/chars.js"></script>
+<script src="src/props.js"></script>
+<script src="src/settings.js"></script>
+<script src="src/scenes.js"></script>
+<script src="src/transitions.js"></script>
+<script src="src/overlay.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>

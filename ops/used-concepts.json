@@ -1,0 +1,22 @@
+{
+  "_comment": "Append only. One entry per finished asset. Never reuse an id or a hook. Update this file in the same commit as the new month's media. 'themes' help vary settings, palettes and formats.",
+  "version": 1,
+  "used": [
+    {"id": "paycheck", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-paycheck.mp4"], "hook": "POV: you know your paycheck before payday", "feature": "projected pay", "style": "flat motion graphics, dark #0E0F12 with lime accent", "math": "16.5 hrs x $15 = $247.50 before taxes"},
+    {"id": "two-jobs", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-two-jobs.mp4"], "hook": "Working two jobs?", "feature": "more than one job", "style": "flat motion graphics, dark with lime accent"},
+    {"id": "payday", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-payday.mp4"], "hook": "When do I get paid again?", "feature": "payday reminders", "style": "flat motion graphics, dark with lime accent"},
+    {"id": "a0-beta", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-a0-beta.mp4"], "hook": "Clocked is out. Free beta.", "feature": "beta announcement", "style": "flat motion graphics, dark with lime accent", "math": "$247.50 example week before taxes"},
+    {"id": "skit-paycheck", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-skit.mp4"], "hook": "paycheck skit", "feature": "projected pay", "style": "3D skit"},
+    {"id": "stills-paycheck-feed", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-PaycheckFeed.png"], "hook": "paycheck feed still (4:5)", "feature": "projected pay", "style": "dark card still"},
+    {"id": "stills-payday-feed", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-PaydayFeed.png"], "hook": "payday feed still (4:5)", "feature": "payday reminders", "style": "dark card still"},
+    {"id": "stills-two-jobs-9x16", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-TwoJobs.png"], "hook": "two jobs still (9:16)", "feature": "more than one job", "style": "dark card still"},
+    {"id": "stills-paycheck-9x16", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-Main.png"], "hook": "paycheck still (9:16)", "feature": "projected pay", "style": "dark card still", "note": "confirm the file name when first reading this log"},
+    {"id": "stills-payday-9x16", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-Payday.png"], "hook": "payday still (9:16)", "feature": "payday reminders", "style": "dark card still"},
+    {"id": "ot-puzzle", "type": "video", "month": "2026-11", "files": [], "hook": "overtime puzzle", "feature": "overtime 1.5x after 40", "style": "painted video engine", "note": "painted video made in the first engine batch; add files when committed"},
+    {"id": "stay-two-more", "type": "video", "month": "2026-11", "files": [], "hook": "Manager: can you stay 2 more hours?", "feature": "overtime 1.5x after 40", "style": "painted video engine"},
+    {"id": "notes-chaos", "type": "video", "month": "2026-11", "files": [], "hook": "Tracking hours in your notes app?", "feature": "projected pay", "style": "painted video engine"},
+    {"id": "payday-countdown", "type": "video", "month": "2026-11", "files": [], "hook": "payday countdown", "feature": "payday reminders", "style": "painted video engine"},
+    {"id": "two-jobs-juggle", "type": "video", "month": "2026-11", "files": [], "hook": "juggling two jobs", "feature": "more than one job", "style": "painted video engine"},
+    {"id": "first-job-tips", "type": "video", "month": "2026-11", "files": [], "hook": "first job tips", "feature": "none (education)", "style": "painted video engine"}
+  ]
+}

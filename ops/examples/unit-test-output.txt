@@ -1,0 +1,11 @@
+test_dec (__main__.T.test_dec) ... ok
+test_feb (__main__.T.test_feb) ... ok
+test_holidays (__main__.T.test_holidays) ... ok
+test_late_start_and_used (__main__.T.test_late_start_and_used) ... ok
+test_nov_2026_election (__main__.T.test_nov_2026_election) ... ok
+test_offset (__main__.T.test_offset) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.155s
+
+OK

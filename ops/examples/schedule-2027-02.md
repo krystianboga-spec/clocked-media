@@ -1,0 +1,28 @@
+# Clocked posts for 2027-02: summary for approval
+
+All times Central. Every post is loaded as a DRAFT until Krystian says yes.
+
+| # | Platform | Date | Day | Time CT | Asset | Type | Sound | autoPublish | Why this slot |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | tiktok | 2027-02-02 | Tue | 14:00 | holiday-ot | video | add sound on phone | false | pre-shift early afternoon |
+| 2 | instagram | 2027-02-02 | Tue | 19:15 | sunday-schedule | video | none | true | early evening Reels window |
+| 3 | instagram | 2027-02-04 | Thu | 20:30 | payday-eve | video | none | true | payday theme: Thu night / Fri slot |
+| 4 | tiktok | 2027-02-04 | Thu | 21:45 | two-jobs-gap | video | add sound on phone | false | after-closing window |
+| 5 | instagram | 2027-02-07 | Sun | 21:00 | pay-period-101 | photo | none | true | after-closing window |
+| 6 | tiktok | 2027-02-08 | Mon | 14:00 | first-job-tips | photo | auto music | true | pre-shift early afternoon |
+| 7 | instagram | 2027-02-10 | Wed | 19:45 | new-year-reset | video | none | true | early evening Reels window |
+| 8 | tiktok | 2027-02-10 | Wed | 21:45 | sunday-schedule | video | add sound on phone | false | after-closing window |
+| 9 | instagram | 2027-02-12 | Fri | 21:15 | split-shift | video | AI voice (labeled) | true | after-closing window |
+| 10 | tiktok | 2027-02-12 | Fri | 21:30 | payday-eve | video | add sound on phone | false | payday theme: Thu night / Fri slot |
+| 11 | tiktok | 2027-02-16 | Tue | 21:45 | split-shift | video | AI voice (labeled) | true | after-closing window |
+| 12 | instagram | 2027-02-17 | Wed | 19:45 | closing-shift-math | photo | none | true | early evening Reels window |
+| 13 | tiktok | 2027-02-18 | Thu | 14:30 | pay-period-101 | photo | auto music | true | pre-shift early afternoon |
+| 14 | instagram | 2027-02-19 | Fri | 21:15 | holiday-ot | video | none | true | after-closing window |
+| 15 | tiktok | 2027-02-22 | Mon | 14:00 | new-year-reset | video | add sound on phone | false | pre-shift early afternoon |
+| 16 | instagram | 2027-02-22 | Mon | 19:30 | two-jobs-gap | video | none | true | early evening Reels window |
+| 17 | tiktok | 2027-02-24 | Wed | 13:30 | closing-shift-math | photo | auto music | true | pre-shift early afternoon |
+| 18 | instagram | 2027-02-25 | Thu | 20:30 | payday-checklist | photo | none | true | payday theme: Thu night / Fri slot |
+| 19 | tiktok | 2027-02-26 | Fri | 21:30 | payday-checklist | photo | auto music | true | payday theme: Thu night / Fri slot |
+| 20 | instagram | 2027-02-27 | Sat | 21:15 | first-job-tips | photo | none | true | after-closing window |
+
+Evenings kept empty: 2027-02-14 (Super Bowl LXI); 2027-02-15 (Presidents Day)

@@ -69,19 +69,13 @@ Email schedule import is NOT live. It may appear only as "we're building this ne
 
 search clocked, coming soon, guarantee, AI-powered, App Store, Google Play, download, take-home, take home, after tax, after-tax, net pay, tax calculator, track tips, tip tracking, tracks your tips, users love, thousands of, rated, "#1 ", best app, sync your, syncs, direct deposit, never miss, scan the QR, link in comments. "import" is allowed only with "building", "not ready" or "next" in the same caption.
 
-## Posting windows (Central, from the October 2026 research)
+## Posting times (Central)
 
-Research confidence is medium to low. Re-check against Metricool analytics when the account has about 100 followers.
+Times come from Metricool's best-time report, not from fixed bands. Each month the run calls `getBestTimeToPostByNetwork` for TikTok and Instagram (brand 7724856, America/Chicago), ranks each weekday's hours, and saves `ops/best-times.json`. `schedule.py` posts each item at the platform's top hour for that weekday, minute 00. TikTok and Instagram may share an hour on the same day; any weekday including Saturday is fine. These are Metricool's general figures for a new account, so refresh them every month.
 
-| Platform | Slots used by schedule.py |
-|---|---|
-| TikTok | Mon to Thu 1:30 to 2:30 PM (pre-dinner-shift); Tue to Thu 9:45 PM and Fri 9:30 PM (after closing, 9:30 to 10:30 band); Sun 10 AM (low-medium). No Saturday. |
-| Instagram | Wed 11:30 AM; Mon to Wed 7:15 to 7:45 PM; Thu 8:30 PM; Fri to Sun 9:00 to 9:15 PM (after closing) |
-| Payday-themed posts | Thursday night or Friday: TikTok Thu 9:45 PM, Fri 9:30 PM; Instagram Thu 8:30 PM, Fri 9:15 PM |
+Still fixed: payday-themed assets go on Thursday or Friday; evenings (5 PM on) stay empty on US federal holidays (including observed days), Election Day (even years), Super Bowl Sunday, Christmas Eve and New Year's Eve, and if a weekday's top hour is in such an evening the next best hour is used. Update `SUPER_BOWLS` in schedule.py each year and add other big national nights with `--block-evening YYYY-MM-DD`.
 
-Evenings (5 PM on) stay empty on US federal holidays (including observed days), Election Day (even years), Super Bowl Sunday, Christmas Eve and New Year's Eve. The Super Bowl table in schedule.py must be updated each year (SUPER_BOWLS). Add any other big national night with `--block-evening YYYY-MM-DD`.
-
-Why: shift workers have free phone time pre-shift late morning or early afternoon, and 10 PM to midnight after closing; Sunday is when people check next week's schedule; many hourly employers pay biweekly or weekly, so payday content lands Thursday night and Friday.
+Background (October 2026 research, for context only): shift workers tend to be on their phones pre-shift and after closing, and many hourly employers pay biweekly or weekly, which is why payday content stays on Thursday and Friday.
 
 ## Look (for engine and photo sets)
 

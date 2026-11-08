@@ -4,8 +4,9 @@ test_holidays (__main__.T.test_holidays) ... ok
 test_late_start_and_used (__main__.T.test_late_start_and_used) ... ok
 test_nov_2026_election (__main__.T.test_nov_2026_election) ... ok
 test_offset (__main__.T.test_offset) ... ok
+test_top_best_hour (__main__.T.test_top_best_hour) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 0.155s
+Ran 7 tests in 0.203s
 
 OK

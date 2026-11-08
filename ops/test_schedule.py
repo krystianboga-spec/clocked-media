@@ -65,6 +65,16 @@ class T(unittest.TestCase):
         self.assertEqual(S.nth_weekday(2026, 11, 3, 4), dt.date(2026, 11, 26))
         self.assertIn(dt.date(2027, 2, 14), S.evening_blocks(2027, 2))
 
+    def test_top_best_hour(self):
+        best = S.load_best(os.path.join(HERE, "best-times.json"))
+        out = run("2026-12")
+        for p in out["posts"]:
+            d = dt.date.fromisoformat(p["date"])
+            hours = best[p["platform"]][d.isoweekday()]
+            blocked = p["date"] in out["evening_blocks"]
+            usable = [h for h in hours if not (blocked and h >= 17)]
+            self.assertEqual(p["time"], f"{usable[0]:02d}:00")
+
     def test_offset(self):
         self.assertEqual(S.dst_offset(dt.date(2026, 12, 5), 21), -6)
         self.assertEqual(S.dst_offset(dt.date(2026, 7, 5), 21), -5)

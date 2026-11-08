@@ -4,25 +4,23 @@ All times Central. Every post is loaded as a DRAFT until Krystian says yes.
 
 | # | Platform | Date | Day | Time CT | Asset | Type | Sound | autoPublish | Why this slot |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | tiktok | 2026-12-20 | Sun | 10:00 | holiday-ot | video | add sound on phone | false | Sunday morning, week-ahead check |
-| 2 | instagram | 2026-12-20 | Sun | 21:00 | sunday-schedule | video | none | true | after-closing window |
-| 3 | instagram | 2026-12-22 | Tue | 19:15 | pay-period-101 | photo | none | true | early evening Reels window |
-| 4 | tiktok | 2026-12-22 | Tue | 21:45 | two-jobs-gap | video | add sound on phone | false | after-closing window |
-| 5 | tiktok | 2026-12-23 | Wed | 13:30 | first-job-tips | photo | auto music | true | pre-shift early afternoon |
-| 6 | instagram | 2026-12-26 | Sat | 21:15 | holiday-ot | video | none | true | after-closing window |
-| 7 | tiktok | 2026-12-27 | Sun | 10:00 | sunday-schedule | video | add sound on phone | false | Sunday morning, week-ahead check |
-| 8 | tiktok | 2026-12-28 | Mon | 14:00 | pay-period-101 | photo | auto music | true | pre-shift early afternoon |
-| 9 | instagram | 2026-12-28 | Mon | 19:30 | two-jobs-gap | video | none | true | early evening Reels window |
-| 10 | tiktok | 2026-12-29 | Tue | 21:45 | split-shift | video | AI voice (labeled) | true | after-closing window |
-| 11 | instagram | 2026-12-30 | Wed | 11:30 | first-job-tips | photo | none | true | late-morning top Instagram slot |
-| 12 | tiktok | 2026-12-31 | Thu | 14:30 | closing-shift-math | photo | auto music | true | pre-shift early afternoon |
+| 1 | tiktok | 2026-12-20 | Sun | 10:00 | holiday-ot | video | add sound on phone | false | Metricool best time #1 for Sunday |
+| 2 | instagram | 2026-12-21 | Mon | 10:00 | holiday-ot | video | none | true | Metricool best time #1 for Monday |
+| 3 | tiktok | 2026-12-22 | Tue | 10:00 | two-jobs-gap | video | add sound on phone | false | Metricool best time #1 for Tuesday |
+| 4 | instagram | 2026-12-24 | Thu | 10:00 | payday-checklist | photo | none | true | Metricool best time #1 for Thursday; payday asset on Thu/Fri |
+| 5 | tiktok | 2026-12-24 | Thu | 10:00 | payday-eve | video | add sound on phone | false | Metricool best time #1 for Thursday; payday asset on Thu/Fri |
+| 6 | instagram | 2026-12-25 | Fri | 10:00 | payday-eve | video | none | true | Metricool best time #1 for Friday; payday asset on Thu/Fri |
+| 7 | tiktok | 2026-12-26 | Sat | 10:00 | first-job-tips | photo | auto music | true | Metricool best time #1 for Saturday |
+| 8 | tiktok | 2026-12-27 | Sun | 10:00 | sunday-schedule | video | add sound on phone | false | Metricool best time #1 for Sunday |
+| 9 | instagram | 2026-12-28 | Mon | 10:00 | two-jobs-gap | video | none | true | Metricool best time #1 for Monday |
+| 10 | tiktok | 2026-12-29 | Tue | 10:00 | pay-period-101 | photo | auto music | true | Metricool best time #1 for Tuesday |
+| 11 | instagram | 2026-12-30 | Wed | 10:00 | first-job-tips | photo | none | true | Metricool best time #1 for Wednesday |
+| 12 | tiktok | 2026-12-31 | Thu | 10:00 | payday-checklist | photo | auto music | true | Metricool best time #1 for Thursday; payday asset on Thu/Fri |
 
 Evenings kept empty: 2026-12-24 (Christmas Eve); 2026-12-25 (Christmas Day); 2026-12-31 (New Year's Eve)
 
-Assets not scheduled this run: payday-eve, new-year-reset, payday-checklist
-- WARNING: tiktok: payday assets left for another run (no free Thu/Fri slot): payday-eve, payday-checklist
-- WARNING: tiktok: only 7 posts planned (quota left 7, usable days 10, assets 8)
-- WARNING: instagram: payday assets left for another run (no free Thu/Fri slot): payday-eve, payday-checklist
-- WARNING: instagram: only 5 posts planned (quota left 5, usable days 9, assets 8)
+Assets not scheduled this run: split-shift, new-year-reset, closing-shift-math
+- WARNING: tiktok: only 7 posts planned (quota left 7, usable days 12, assets 10)
+- WARNING: instagram: only 5 posts planned (quota left 5, usable days 12, assets 10)
 
-wrote examples/schedule-2026-12.json and examples/schedule-2026-12.md
+wrote /tmp/late/schedule-2026-12.json and /tmp/late/schedule-2026-12.md

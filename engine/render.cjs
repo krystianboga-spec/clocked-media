@@ -41,16 +41,18 @@ function engineHash() {
   return sha(...files.map(f => fs.readFileSync(path.join(ENGINE, f), 'utf8')));
 }
 
+const PLATE_VER = (() => { const h = crypto.createHash('sha1'); for (const f of ['core.js', 'palettes.js', 'settings.js', 'main.js']) h.update(fs.readFileSync(path.join(ENGINE, 'src', f))); return h.digest('hex').slice(0, 12); })();
 (async () => {
   const srv = await serve(), port = srv.address().port;
   const browser = await chromium.launch();
   async function openPage(tag = '') {
     const page = await browser.newPage();
-    page.on('console', m => { if (['error', 'warning'].includes(m.type())) console.log(`[page${tag}]`, m.text()); });
+    page.on('console', m => { if (['error', 'warning'].includes(m.type()) && !/Failed to load resource|GPU stall|GL Driver/.test(m.text())) console.log(`[page${tag}]`, m.text()); });
     page.on('pageerror', e => console.log(`[page error${tag}]`, e.message));
+    await page.exposeFunction('savePlate', (name, url) => { const d = path.join(CACHE, 'plates'); fs.mkdirSync(d, { recursive: true }); const f = path.join(d, name + '.png'); fs.writeFileSync(f + '.tmp', Buffer.from(url.slice(url.indexOf(',') + 1), 'base64')); fs.renameSync(f + '.tmp', f); });
     await page.goto(`http://127.0.0.1:${port}/studio.html?render`);
     await page.waitForFunction('window.ready === true', null, { timeout: 120000 });
-    const shots = await page.evaluate(([s, m]) => window.loadSpec(s, m), [spec, mouth]);
+    const shots = await page.evaluate(([s, m, v]) => window.loadSpec(s, m, v), [spec, mouth, PLATE_VER]);
     return { page, shots };
   }
   const frame = async (page, t, q = .93) => { const url = await page.evaluate(([t, q]) => window.renderAt(t, 'image/jpeg', q), [t, q]); return Buffer.from(url.slice(url.indexOf(',') + 1), 'base64'); };
@@ -61,7 +63,7 @@ function engineHash() {
       let times;
       if (args.sheet === 'auto') {
         times = [];
-        shots.forEach(([, a, b], i) => { if (i > 0) times.push(a - .12, a + .12); times.push(a + (b - a) * .55); });
+        shots.forEach(([, a, b], i) => { if (i > 0) times.push(a - .1, a + .02); times.push(a + Math.min(.45, (b - a) * .25), a + (b - a) * .7); });
         times = times.filter(t => t >= 0 && t < spec.duration).map(t => +t.toFixed(2));
       } else times = String(args.sheet).split(',').map(Number);
       const out = args.out || `sheet-${spec.id}.jpg`; fs.mkdirSync(path.dirname(path.resolve(out)), { recursive: true });

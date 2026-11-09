@@ -1,0 +1,551 @@
+{
+ "id": "ot-puzzle",
+ "title": "Is this paycheck right?",
+ "concept": "A break-room detective story: Clocky works out the overtime and finds the check $33.00 short.",
+ "palette": "breakRoom",
+ "setting": "breakroom",
+ "duration": 22.4,
+ "fps": 30,
+ "seed": 11,
+ "showsPay": true,
+ "transition": "brush",
+ "math": [
+  "40 x 16.50 = 660.00",
+  "16.50 x 1.5 = 24.75",
+  "4 x 24.75 = 99.00",
+  "660.00 + 99.00 = 759.00",
+  "759.00 - 726.00 = 33.00"
+ ],
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "Is this paycheck right?",
+   "speaker": "SAM",
+   "say": "Is this paycheck right?",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1010,
+      1.0,
+      0
+     ],
+     [
+      2.8,
+      520,
+      960,
+      1.16,
+      -0.015
+     ]
+    ],
+    "table": {
+     "y": 1395
+    },
+    "cast": [
+     {
+      "who": "sam",
+      "x": 380,
+      "y": 1650,
+      "size": 90,
+      "act": "idle",
+      "beats": [
+       [
+        0,
+        {
+         "eyes": "tired",
+         "lookX": 0.8,
+         "lookY": 0.5
+        }
+       ],
+       [
+        1.25,
+        {
+         "eyes": "squint",
+         "brows": "worried",
+         "emote": "?",
+         "lookX": 0.9,
+         "lookY": 0.6,
+         "headTilt": 0.08
+        }
+       ]
+      ]
+     },
+     {
+      "who": "stub",
+      "x": 780,
+      "y": 1420,
+      "size": 250,
+      "layer": "front",
+      "pose": {
+       "amount": "$726.00",
+       "flap": 0.9,
+       "slip": 1,
+       "eyes": "happy",
+       "mouth": "smile"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "brush",
+    "colors": [
+     "#E58B5A",
+     "#C8F25A",
+     "#5E8C93",
+     "#F3C95B"
+    ]
+   }
+  },
+  {
+   "start": 2.8,
+   "scene": "card",
+   "caption": "44 hours at $16.50... and it says *$726.00?*",
+   "speaker": "SAM",
+   "say": "Forty-four hours at sixteen fifty, and it says seven twenty-six?",
+   "params": {
+    "setting": "breakroom",
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      1.4,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      1.75,
+      560,
+      1150,
+      1.22,
+      -0.02
+     ],
+     [
+      2.8,
+      560,
+      1150,
+      1.25,
+      -0.02
+     ]
+    ],
+    "camEase": "out",
+    "card": {
+     "x": 540,
+     "y": 1010,
+     "w": 820,
+     "title": "PAY STUB",
+     "band": "#5E8C93",
+     "rot": -0.03,
+     "rows": [
+      {
+       "l": "Hours worked",
+       "r": "44",
+       "at": 0.35
+      },
+      {
+       "l": "Hourly rate",
+       "r": "$16.50",
+       "at": 0.7
+      },
+      {
+       "l": "Gross pay",
+       "r": "$726.00",
+       "at": 1.1,
+       "count": true,
+       "hl": "#F8D9CF"
+      }
+     ]
+    },
+    "fx": [
+     {
+      "type": "sfx",
+      "text": "hmm?",
+      "x": 820,
+      "y": 1420,
+      "size": 96,
+      "at": 1.8,
+      "col": "#F3C95B",
+      "rot": 0.1
+     }
+    ],
+    "dim": 0.55
+   }
+  },
+  {
+   "start": 5.6,
+   "scene": "dialogue",
+   "caption": "Hold on. Hours past 40 are *overtime.*",
+   "speaker": "CLOCKY",
+   "say": "Hold on. Hours past forty are overtime.",
+   "params": {
+    "base": [
+     540,
+     1060,
+     1.0
+    ],
+    "table": {
+     "y": 1395
+    },
+    "left": {
+     "who": "sam",
+     "x": 330,
+     "y": 1650,
+     "size": 90,
+     "beats": [
+      [
+       0,
+       {
+        "eyes": "open",
+        "brows": "up",
+        "lookX": 0.8
+       }
+      ]
+     ]
+    },
+    "right": {
+     "who": "clocky",
+     "x": 780,
+     "y": 1405,
+     "size": 150,
+     "layer": "front",
+     "act": "think",
+     "enter": {
+      "type": "rise",
+      "at": 0.0,
+      "dur": 0.5,
+      "dist": 500
+     },
+     "beats": [
+      [
+       0,
+       {
+        "act": "think"
+       }
+      ],
+      [
+       1.1,
+       {
+        "act": "point",
+        "eyes": "open",
+        "mouth": "smile",
+        "flip": true,
+        "emote": "!"
+       }
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "start": 8.0,
+   "scene": "card",
+   "captions": [
+    {
+     "at": 0,
+     "text": "First 40 hours: *$660.00*",
+     "speaker": "CLOCKY",
+     "say": "First forty hours: six sixty."
+    },
+    {
+     "at": 1.9,
+     "text": "Past 40 it's 1.5\u00d7: 4 hrs \u00d7 $24.75 = *$99.00*",
+     "speaker": "CLOCKY",
+     "say": "Past forty, it's time and a half. Ninety-nine more."
+    }
+   ],
+   "params": {
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "seed": 8,
+      "c": "#C8F25A"
+     }
+    },
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.04,
+      0.01
+     ],
+     [
+      1.8,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      2.1,
+      540,
+      1060,
+      1.12,
+      0
+     ],
+     [
+      4.2,
+      540,
+      1060,
+      1.14,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "card": {
+     "x": 540,
+     "y": 960,
+     "w": 880,
+     "title": "THE MATH",
+     "band": "#25302D",
+     "titleCol": "#C8F25A",
+     "rot": 0.02,
+     "rowH": 124,
+     "rows": [
+      {
+       "l": "40 hrs \u00d7 $16.50",
+       "r": "$660.00",
+       "at": 0.25,
+       "count": true
+      },
+      {
+       "l": "OT rate: $16.50 \u00d7 1.5",
+       "r": "$24.75/hr",
+       "at": 1.9,
+       "hl": true,
+       "size": 52
+      },
+      {
+       "l": "4 hrs \u00d7 $24.75",
+       "r": "$99.00",
+       "at": 2.5,
+       "count": true
+      }
+     ]
+    },
+    "host": {
+     "who": "clocky",
+     "x": 870,
+     "y": 1700,
+     "size": 115,
+     "act": "pointL",
+     "enter": {
+      "type": "pop",
+      "at": 0.1
+     }
+    }
+   }
+  },
+  {
+   "start": 12.2,
+   "scene": "card",
+   "captions": [
+    {
+     "at": 0,
+     "text": "Should be *$759.00.* The check says $726.00.",
+     "speaker": "CLOCKY",
+     "say": "It should be seven fifty-nine. The check says seven twenty-six."
+    },
+    {
+     "at": 1.6,
+     "text": "That's *$33.00 short.*",
+     "speaker": "CLOCKY",
+     "say": "That's thirty-three dollars short."
+    }
+   ],
+   "params": {
+    "setting": "breakroom",
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      1.5,
+      540,
+      980,
+      1.02,
+      0
+     ],
+     [
+      1.75,
+      540,
+      1080,
+      1.1,
+      -0.03
+     ],
+     [
+      2.8,
+      540,
+      1080,
+      1.12,
+      -0.03
+     ]
+    ],
+    "camEase": "out",
+    "shake": [
+     [
+      1.65,
+      14
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 950,
+     "w": 860,
+     "title": "SHOULD BE",
+     "band": "#5E8C93",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Regular",
+       "r": "$660.00",
+       "at": 0.1
+      },
+      {
+       "l": "Overtime",
+       "r": "+ $99.00",
+       "at": 0.25
+      },
+      {
+       "l": "Check says",
+       "r": "$726.00",
+       "at": 0.9,
+       "col": "#C0392B"
+      }
+     ],
+     "total": {
+      "l": "Total",
+      "r": "$759.00",
+      "at": 0.45,
+      "count": true
+     }
+    },
+    "stamp": {
+     "text": "$33.00 SHORT",
+     "at": 1.6,
+     "x": 540,
+     "y": 1450,
+     "size": 92,
+     "col": "#C0392B",
+     "rot": -0.1
+    },
+    "dim": 0.55
+   }
+  },
+  {
+   "start": 15.0,
+   "scene": "stage",
+   "caption": "Okay. Time to talk to payroll.",
+   "speaker": "SAM",
+   "say": "Okay. Time to talk to payroll.",
+   "params": {
+    "cam": [
+     [
+      0,
+      470,
+      900,
+      1.38,
+      0.02
+     ],
+     [
+      0.25,
+      470,
+      900,
+      1.3,
+      0
+     ],
+     [
+      2.4,
+      480,
+      920,
+      1.33,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "table": {
+     "y": 1395
+    },
+    "cast": [
+     {
+      "who": "sam",
+      "x": 400,
+      "y": 1650,
+      "size": 90,
+      "beats": [
+       [
+        0,
+        {
+         "eyes": "wide",
+         "mouth": "o",
+         "emote": "!"
+        }
+       ],
+       [
+        0.7,
+        {
+         "eyes": "open",
+         "brows": "angry",
+         "mouth": "smile",
+         "aR": 0.5
+        }
+       ]
+      ]
+     },
+     {
+      "who": "stub",
+      "x": 790,
+      "y": 1420,
+      "size": 250,
+      "layer": "front",
+      "pose": {
+       "amount": "$726.00",
+       "flap": 0.9,
+       "eyes": "wide",
+       "mouth": "o",
+       "emote": "sweat"
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "lines",
+      "x": 400,
+      "y": 880,
+      "at": 0.0,
+      "r0": 330,
+      "r1": 760,
+      "n": 20,
+      "life": 0.5
+     }
+    ]
+   },
+   "out": {
+    "type": "brush",
+    "colors": [
+     "#C8F25A",
+     "#25302D",
+     "#5E8C93"
+    ]
+   }
+  }
+ ],
+ "endCard": {
+  "start": 17.4,
+  "caption": "Clocked counts overtime in your projected pay.",
+  "speaker": "CLOCKY",
+  "say": "Clocked counts overtime in your projected pay. Free at clocked dot space."
+ }
+}

@@ -1,4 +1,4 @@
-// main.js — turns a spec into frames. Each frame:
+// main.js: turns a spec into frames. Each frame:
 //   1. paints the active shot (two shots during a two-layer transition) on a 2D layer: paper, cached plates, live drawing
 //   2. composes the transition between the layers
 //   3. draws the caption overlay, then multiplies paper grain and vignette over everything.

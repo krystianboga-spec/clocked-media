@@ -1,4 +1,4 @@
-// settings.js — painted locations. setting(name, t, o) draws a cached p5.brush plate (the room) plus live ambience
+// settings.js: painted locations. setting(name, t, o) draws a cached p5.brush plate (the room) plus live ambience
 // (rain, steam, flicker, glows). Call it inside the camera. The plate covers SETRECT, so the camera can drift, push
 // up to ~1.35x and pan ±150 px without showing an edge. o.variant changes the furniture where a setting supports it.
 const SETRECT = [-162, -288, 1404, 2496];

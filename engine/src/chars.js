@@ -1,4 +1,4 @@
-// chars.js — the painted cast. Every character is drawn at a ground point (x, y = where its feet touch) with a size unit.
+// chars.js: the painted cast. Every character is drawn at a ground point (x, y = where its feet touch) with a size unit.
 // Shared pose options: t (time, for blinks and idle motion), dy (hop, px), sq (squash: + squashes, - stretches), rot,
 // flip, aL/aR (arm angles, radians: 0 = straight out, + raised, - lowered), handL/handR (hooks called at the hand to
 // draw held props), talk (0..1 mouth open; use talk('WHO', t)), eyes/mouth/brows names, emote/emoteK, lookX/lookY.
@@ -27,7 +27,7 @@ function armPts(sx, sy, s, a, L, target, bend = .22) {
   return bendP(sx, sy, hx, hy, -s * bend, 6);
 }
 
-// ================= CLOCKY: round stopwatch mascot — lime rim, dark face, clock hands, big eyes, little arms =================
+// ================= CLOCKY: round stopwatch mascot: lime rim, dark face, clock hands, big eyes, little arms =================
 // clocky(x, y, R, o): R = body radius. o.hh/o.mh hour/minute hand angles (default: ticking with t), o.spin (hands
 // whirl, 0..1), o.legs:false, o.walk (phase), o.blush:false, o.glow (lime aura 0..1).
 function clocky(x, y, R, o = {}) {
@@ -227,7 +227,7 @@ function samHead(u, t, o) {
   else stroke_([[-u * .2, my], [u * .2, my + u * .02]], .9, INK(), 'pen', .3);
 }
 
-// ================= NOTES: a yellow notes pad — cheerful, eager, useless =================
+// ================= NOTES: a yellow notes pad: cheerful, eager, useless =================
 // notes(x, y, s, o): s = pad height. o.lines (array of scribbled strings shown on the pad), o.scribbleK (0..1 how many
 // lines are visible), o.eyes: open|happy|wide|closed|star, o.mouth: smile|grin|o|flat|wobble, o.pencil (holds a pencil)
 function notes(x, y, s, o = {}) {

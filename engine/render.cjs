@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// render.cjs — paint a spec in headless Chromium (Playwright) and encode with ffmpeg.
+// render.cjs: paint a spec in headless Chromium (Playwright) and encode with ffmpeg.
 //
 //   node engine/render.cjs engine/specs/ot-puzzle.json --sheet=auto --out=check.jpg      contact sheet (auto = every shot + every cut)
 //   node engine/render.cjs engine/specs/ot-puzzle.json --sheet=1,2.5,4 --w=360 --cols=3  contact sheet at chosen times

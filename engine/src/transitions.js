@@ -1,4 +1,4 @@
-// transitions.js — painted transitions between shots. A shot's "out" names the transition into the next shot:
+// transitions.js: painted transitions between shots. A shot's "out" names the transition into the next shot:
 //   "brush" | "bloom" | "drip" | "splat" (painted covers: paint covers shot A, then lifts off shot B)
 //   "whip" | "tear" | "flip" | "iris" | "zoom" (two-layer: both shots are painted and composited) | "cut"
 // Options (object form): { type, half (seconds each side of the cut), colors:[...], x, y (iris/splat centre), dir }

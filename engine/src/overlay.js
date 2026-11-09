@@ -1,4 +1,4 @@
-// overlay.js — captions. They sit above the transitions in the upper safe zone (top 180 px clear, 90 left, 150 right),
+// overlay.js: captions. They sit above the transitions in the upper safe zone (top 180 px clear, 90 left, 150 right),
 // hand-lettered (Shantell Sans ExtraBold), at least 54 px, on a painted paper strip with a speaker tag.
 // A shot gives "caption" (+ "speaker"), or "captions": [{ at, text, speaker }] for lines that change mid-shot.
 // Wrap a word in *asterisks* to mark it with a lime highlighter swash.

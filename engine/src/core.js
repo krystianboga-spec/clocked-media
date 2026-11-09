@@ -1,9 +1,9 @@
-// core.js — Clocked painted engine: constants, timing, randomness, geometry, transforms and the two painting backends.
+// core.js: Clocked painted engine: constants, timing, randomness, geometry, transforms and the two painting backends.
 //
 // Two backends share one drawing API (shape, stroke_, disc, glow, label, pushT/popT/tr/rot/scl):
-//   PLATE  — p5.brush in WebGL: real watercolour fills, washes, hatching and brush strokes. Slow on a software GPU,
+//   PLATE : p5.brush in WebGL: real watercolour fills, washes, hatching and brush strokes. Slow on a software GPU,
 //            so it paints *plates* (backgrounds, textures) once; they are cached and reused by every frame of a shot.
-//   LIVE   — Canvas 2D: characters, props and anything that moves, redrawn every frame with a hand-made ink ribbon,
+//   LIVE  : Canvas 2D: characters, props and anything that moves, redrawn every frame with a hand-made ink ribbon,
 //            flat pigment, a p5.brush-painted pigment texture multiplied in, and wet-edge darkening.
 // Every frame is a pure function of time. Never use Math.random(); hash() gives stable randomness and jit() gives
 // hand-drawn "boil" (reseeded BOIL times a second, so linework shimmers like hand-drawn animation).
@@ -28,7 +28,7 @@ const springy = x => { x = clamp(x); return x >= 1 ? 1 : 1 - Math.exp(-6 * x) * 
 const osc = (t, f = 1, ph = 0) => Math.sin((t * f + ph) * TAU);
 const hash = n => { const s = Math.sin(n * 91.345 + 47.853) * 24634.6345; return s - Math.floor(s); };
 const hash2 = (a, b) => hash(a * 13.17 + b * 7.31);
-// keyframes: keys(t, [[t0, v0], [t1, v1], ...], easeFn) — values may be numbers or arrays
+// keyframes: keys(t, [[t0, v0], [t1, v1], ...], easeFn): values may be numbers or arrays
 function keys(t, ks, e = smooth) {
   if (t <= ks[0][0]) return ks[0][1];
   for (let i = 1; i < ks.length; i++) if (t < ks[i][0]) {

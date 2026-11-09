@@ -1,4 +1,4 @@
-// props.js — painted props. All are drawn centred on (x, y) unless noted, in the current transform.
+// props.js: painted props. All are drawn centred on (x, y) unless noted, in the current transform.
 
 // a paper card with a soft drop shadow (the base for shift cards, pay cards, stubs)
 function paperCard(x, y, w, h, o = {}) {
@@ -118,7 +118,7 @@ function iconProp(kind, x, y, s, o = {}) {
   const t = o.t ?? TNOW;
   pushT(); tr(x, y); rot(o.rot || 0);
   if (kind === 'screenshot') {
-    phone(0, 0, s * 1.6, { screen: (w, h) => { label('SCHEDULE', w / 2, h * .1, h * .045, '#555', { font: 'ui', track: 3 }); ['Mon  5–10', 'Wed  4–9', 'Sat  11–5'].forEach((L, i) => { shape(boxP(w * .08, h * (.18 + i * .12), w * .84, h * .09, 6), { flat: '#E8F2CF', line: false, tex: 0 }); label(L, w * .14, h * (.225 + i * .12), h * .04, '#222', { align: 'left', font: 'ui' }); }); } });
+    phone(0, 0, s * 1.6, { screen: (w, h) => { label('SCHEDULE', w / 2, h * .1, h * .045, '#555', { font: 'ui', track: 3 }); ['Mon  5-10', 'Wed  4-9', 'Sat  11-5'].forEach((L, i) => { shape(boxP(w * .08, h * (.18 + i * .12), w * .84, h * .09, 6), { flat: '#E8F2CF', line: false, tex: 0 }); label(L, w * .14, h * (.225 + i * .12), h * .04, '#222', { align: 'left', font: 'ui' }); }); } });
     const fl = clamp(1 - fract(t * .8) * 3); if (fl > 0) shape(boxP(-s * .45, -s * .82, s * .9, s * 1.64, s * .08), { flat: '#FFFFFF', flatA: 200 * fl, line: false, tex: 0 });
     for (const [sx, sy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) stroke_([[sx * s * .6, sy * s * .7], [sx * s * .6, sy * s * .95], [sx * s * .35, sy * s * .95]], 1.2, PAL.accent, 'pen', 0);
   } else if (kind === 'clockcard') {
@@ -140,6 +140,11 @@ function iconProp(kind, x, y, s, o = {}) {
     shape(boxP(-s * .5, -s * .62, s * 1.0, s * .16, s * .04), { flat: '#B88A5A', lw: 1, tex: .3 });
     label('TIPS', 0, -s * .1, s * .2, PAL.cardInk, { font: 'ui', track: 3 });
     const k = fract(t * .9); coin(s * .1, lerp(-s * 1.2, -s * .4, eIn(k)), s * .14, { spin: t * 9 });
+  } else if (kind === 'ask') {
+    shape(blobP(0, -s * .1, s * .75, s * .6, 12, .06, 18), { flat: '#FFFDF4', lw: 1.4, tex: .3, curve: .6 });
+    shape([[-s * .3, s * .4], [-s * .5, s * .8], [-s * .05, s * .45]], { flat: '#FFFDF4', lw: 1.2, tex: 0 });
+    label('?', 0, -s * .1 + osc(t, 1.2) * s * .04, s * .8, PAL.accent, { font: 'anton' });
+    label('payroll', s * .05, s * .95, s * .26, PAL.card, { stroke: PAL.ink, strokeW: .2 });
   } else if (kind === 'coins') { for (let i = 0; i < 5; i++) coin(-s * .4 + i * s * .2, -i * s * .08, s * .22, { spin: t * 3 + i }); }
   popT();
 }

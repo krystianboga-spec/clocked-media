@@ -1,4 +1,4 @@
-// palettes.js — named palettes. Each is harmonious on its own; Clocked lime is always the accent.
+// palettes.js: named palettes. Each is harmonious on its own; Clocked lime is always the accent.
 // Keys every palette must have: ink, paper, sky (far background), wall, wall2, floor, floor2, warm (light colour),
 // cool, accent (a second accent), card (card paper), cardInk, capBg, capInk, glow.
 const PALETTES = {
@@ -10,7 +10,7 @@ const PALETTES = {
   midnight: { ink: '#16122A', paper: '#EDE7DD', sky: '#121633', wall: '#2B2E63', wall2: '#22244F', floor: '#3A2F5E', floor2: '#2C2449', warm: '#FFD45C', cool: '#9FE6F2', accent: '#B49CF0', card: '#F7F3FF', cardInk: '#16122A', capBg: '#F7F3FF', capInk: '#16122A', glow: '#BDF0F7' },
   // 4 · bus stop in the rain: slate blues, wet teal, sodium-lamp amber, coral
   rainyBus: { ink: '#1E2933', paper: '#EEF0EC', sky: '#40566B', wall: '#5D7890', wall2: '#4A637A', floor: '#34495A', floor2: '#2A3A48', warm: '#F6BC62', cool: '#86AECB', accent: '#EC7458', card: '#F9F6EE', cardInk: '#1E2933', capBg: '#F9F6EE', capInk: '#1E2933', glow: '#FFE2A6' },
-  // 5 · two jobs: sunny peach, butter, coral and sky — bouncy and warm
+  // 5 · two jobs: sunny peach, butter, coral and sky: bouncy and warm
   sunnyJuggle: { ink: '#2B2131', paper: '#FBF0E1', sky: '#8CCBE6', wall: '#F7B98E', wall2: '#F29A72', floor: '#C97B5C', floor2: '#B0674C', warm: '#FAD976', cool: '#7FC6B0', accent: '#EE6C5D', card: '#FFF8EC', cardInk: '#2B2131', capBg: '#FFF8EC', capInk: '#2B2131', glow: '#FFF0BE' },
   // 6 · first job: chalkboard green, terracotta, cream and mustard
   chalkCafe: { ink: '#231A17', paper: '#F6EAD3', sky: '#2E4A40', wall: '#C9603F', wall2: '#A84B31', floor: '#7B4A35', floor2: '#5F3828', warm: '#EBAE3C', cool: '#88B9A6', accent: '#E05A42', card: '#FDF3DF', cardInk: '#231A17', capBg: '#FDF3DF', capInk: '#231A17', glow: '#FFE3A8' },

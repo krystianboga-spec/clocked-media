@@ -28,15 +28,15 @@
      [
       0,
       540,
-      1010,
-      1.0,
+      1080,
+      1.04,
       0
      ],
      [
       2.8,
       520,
-      960,
-      1.16,
+      1030,
+      1.18,
       -0.015
      ]
     ],
@@ -85,6 +85,23 @@
        "eyes": "happy",
        "mouth": "smile"
       }
+     }
+    ],
+    "props": [
+     {
+      "kind": "mug",
+      "x": 180,
+      "y": 1470,
+      "size": 110,
+      "layer": "front"
+     },
+     {
+      "kind": "paper",
+      "x": 560,
+      "y": 1520,
+      "size": 150,
+      "layer": "front",
+      "tilt": 0.12
      }
     ]
    },
@@ -182,14 +199,14 @@
   {
    "start": 5.6,
    "scene": "dialogue",
-   "caption": "Hold on. Hours past 40 are *overtime.*",
+   "caption": "Hold on. Most hourly jobs pay *1.5×* past 40 hours a week.",
    "speaker": "CLOCKY",
-   "say": "Hold on. Hours past forty are overtime.",
+   "say": "Hold on. Most hourly jobs pay time and a half past forty hours a week.",
    "params": {
     "base": [
      540,
-     1060,
-     1.0
+     1120,
+     1.1
     ],
     "table": {
      "y": 1395
@@ -241,7 +258,24 @@
        }
       ]
      ]
-    }
+    },
+    "props": [
+     {
+      "kind": "mug",
+      "x": 180,
+      "y": 1470,
+      "size": 110,
+      "layer": "front"
+     },
+     {
+      "kind": "paper",
+      "x": 560,
+      "y": 1520,
+      "size": 150,
+      "layer": "front",
+      "tilt": 0.12
+     }
+    ]
    }
   },
   {
@@ -256,9 +290,9 @@
     },
     {
      "at": 1.9,
-     "text": "Past 40 it's 1.5\u00d7: 4 hrs \u00d7 $24.75 = *$99.00*",
+     "text": "Past 40: $16.50 × 1.5 = $24.75. So 4 hrs = *$99.00*",
      "speaker": "CLOCKY",
-     "say": "Past forty, it's time and a half. Ninety-nine more."
+     "say": "Past forty, that's twenty-four seventy-five an hour. Four hours is ninety-nine."
     }
    ],
    "params": {
@@ -311,20 +345,20 @@
      "rowH": 124,
      "rows": [
       {
-       "l": "40 hrs \u00d7 $16.50",
+       "l": "40 hrs × $16.50",
        "r": "$660.00",
        "at": 0.25,
        "count": true
       },
       {
-       "l": "OT rate: $16.50 \u00d7 1.5",
+       "l": "OT rate: $16.50 × 1.5",
        "r": "$24.75/hr",
        "at": 1.9,
        "hl": true,
        "size": 52
       },
       {
-       "l": "4 hrs \u00d7 $24.75",
+       "l": "4 hrs × $24.75",
        "r": "$99.00",
        "at": 2.5,
        "count": true
@@ -356,9 +390,9 @@
     },
     {
      "at": 1.6,
-     "text": "That's *$33.00 short.*",
+     "text": "Looks *$33.00 short.* Worth asking payroll.",
      "speaker": "CLOCKY",
-     "say": "That's thirty-three dollars short."
+     "say": "Looks thirty-three dollars short. Worth asking payroll."
     }
    ],
    "params": {
@@ -404,7 +438,7 @@
      "x": 540,
      "y": 950,
      "w": 860,
-     "title": "SHOULD BE",
+     "title": "THE CHECK",
      "band": "#5E8C93",
      "rot": -0.02,
      "rows": [
@@ -417,26 +451,28 @@
        "l": "Overtime",
        "r": "+ $99.00",
        "at": 0.25
-      },
+      }
+     ],
+     "total": {
+      "l": "Should be",
+      "r": "$759.00",
+      "at": 0.45,
+      "count": true
+     },
+     "after": [
       {
        "l": "Check says",
        "r": "$726.00",
        "at": 0.9,
        "col": "#C0392B"
       }
-     ],
-     "total": {
-      "l": "Total",
-      "r": "$759.00",
-      "at": 0.45,
-      "count": true
-     }
+     ]
     },
     "stamp": {
      "text": "$33.00 SHORT",
      "at": 1.6,
      "x": 540,
-     "y": 1450,
+     "y": 1480,
      "size": 92,
      "col": "#C0392B",
      "rot": -0.1
@@ -530,6 +566,23 @@
       "n": 20,
       "life": 0.5
      }
+    ],
+    "props": [
+     {
+      "kind": "mug",
+      "x": 180,
+      "y": 1470,
+      "size": 110,
+      "layer": "front"
+     },
+     {
+      "kind": "paper",
+      "x": 560,
+      "y": 1520,
+      "size": 150,
+      "layer": "front",
+      "tilt": 0.12
+     }
     ]
    },
    "out": {
@@ -544,8 +597,8 @@
  ],
  "endCard": {
   "start": 17.4,
-  "caption": "Clocked counts overtime in your projected pay.",
+  "caption": "Clocked shows projected pay, overtime included.",
   "speaker": "CLOCKY",
-  "say": "Clocked counts overtime in your projected pay. Free at clocked dot space."
+  "say": "Clocked shows your projected pay, overtime included. Try it free at clocked dot space."
  }
 }

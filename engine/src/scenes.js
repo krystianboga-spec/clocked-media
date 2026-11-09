@@ -1,4 +1,4 @@
-// scenes.js — reusable scene templates. A spec shot names a template in "scene" and passes "params".
+// scenes.js: reusable scene templates. A spec shot names a template in "scene" and passes "params".
 // Every template receives { t, lt, dur, p, shot, setting } and paints the whole frame. lt = time since the shot
 // started (negative or past dur while a transition is still showing it), so all motion is clamped.
 //
@@ -107,6 +107,8 @@ function drawProps(list, lt, t, layer = 'mid') {
     else if (pr.kind === 'icon') iconProp(pr.icon, 0, 0, s, { t });
     else if (pr.kind === 'card') { paperCard(0, 0, s, pr.h || s * .6, { band: pr.band }); (pr.lines || []).forEach((L, i) => label(L, 0, -(pr.h || s * .6) * .2 + i * s * .14, s * .1, PAL.cardInk, { font: pr.font || 'hand' })); }
     else if (pr.kind === 'stub') stub(0, 0, s, { amount: pr.amount, t });
+    else if (pr.kind === 'mug') { shape(boxP(-s * .4, -s, s * .8, s, s * .12), { flat: pr.col || '#E9E4D8', lw: 1.1, tex: .3, shade: .25 }); stroke_(arcP(s * .4, -s * .55, s * .22, s * .25, -1.4, 1.4, 8), 1.6, INK(), 'pen', .5); for (let i = 0; i < 2; i++) { const k = fract(lt * .5 + i * .5); stroke_([[-s * .1 + i * s * .2, -s * 1.1 - k * s * .8], [s * .05 + i * s * .2 + Math.sin(k * 6) * s * .1, -s * 1.4 - k * s * .8]], .6 * (1 - k), '#FFFFFF', 'fine', .6); } }
+    else if (pr.kind === 'paper') { pushT(); rot(pr.tilt || -.08); shape(boxP(-s * .5, -s * .65, s, s * 1.3, 4), { flat: '#FFFDF4', lw: .9, tex: .25 }); for (let i = 0; i < 6; i++) stroke_([[-s * .36, -s * .4 + i * s * .17], [s * .36 - hash(i) * s * .3, -s * .4 + i * s * .17]], .4, '#888', 'fine', 0); popT(); }
     popT();
   }
 }
@@ -164,7 +166,8 @@ const SCENES = {
   card(ctx) {
     const { t, lt, dur, p } = ctx;
     const cd = p.card, w = cd.w || 860, rows = cd.rows || [], rh = cd.rowH || 118, th = cd.title ? 150 : 40;
-    const h = th + rows.length * rh + (cd.total ? rh * 1.35 : 0) + 50;
+    const after = cd.after || [], ex = cd.example ?? !!SPEC.showsPay;
+    const h = th + rows.length * rh + (cd.total ? rh * 1.35 : 0) + after.length * rh + (ex ? 62 : 24);
     const x = cd.x ?? 540, y0 = cd.y ?? 1000, ea = cd.enterAt ?? 0;
     const ke = eOut(seg(lt, ea, ea + .45)), y = y0 + (1 - ke) * 1400, rot0 = (cd.rot ?? -.025) + (1 - ke) * .25;
     const [cx, cy, z, r] = camAt(lt, p, dur);
@@ -198,6 +201,12 @@ const SCENES = {
         popT();
       }
     }
+    after.forEach((rw, i) => {
+      const ry = -h / 2 + th + rh * rows.length + (cd.total ? rh * 1.35 : 0) + rh * (i + .5), a = seg(lt, rw.at ?? 0, (rw.at ?? 0) + .2); if (a <= 0) return;
+      label(rw.l, -w * .43, ry, rw.size || 54, rw.lcol || '#5A5566', { align: 'left', alpha: a, maxW: w * .5 });
+      label(rw.r, w * .43, ry, rw.size || 58, rw.col || PAL.cardInk, { align: 'right', alpha: a, pop: seg(lt, rw.at ?? 0, (rw.at ?? 0) + .3), maxW: w * .5 });
+    });
+    if (ex) label('Example figures, before taxes', w * .43, h / 2 - 34, 30, '#8A8494', { align: 'right', font: 'ui', weight: 500 });
     popT();
     drawCast(p.cast, lt, dur, t, 'mid');
     if (p.stamp) stampMark(p.stamp.text, p.stamp.x ?? 540, p.stamp.y ?? 1400, p.stamp.size || 84, p.stamp.col || '#D9483B', lt - p.stamp.at, { rot: p.stamp.rot, bg: p.stamp.bg });
@@ -250,10 +259,10 @@ const SCENES = {
       const c = CTX; c.save(); c.setTransform(1, 0, 0, 1, 0, 0);
       const path = new Path2D(); const x1 = rc[0] + rc[2] * k; path.moveTo(rc[0], rc[1]); for (let i = 0; i <= 12; i++) path.lineTo(x1 + (k < 1 ? Math.sin(i * 1.7) * 18 : 0), rc[1] + rc[3] * i / 12); path.lineTo(rc[0], rc[1] + rc[3]); path.closePath();
       c.clip(path);
-      camOn(cxy[0], cxy[1], cxy[2] || 1, 0);
+      pushT(); tr(W / 2, rc[1] + rc[3] / 2); scl(cxy[2] || 1); tr(-cxy[0], -cxy[1]);
       setting(sub.setting || 'wash', t, sub.set || {});
       drawProps(sub.props, lt, t, 'mid'); drawCast(sub.cast, lt, dur, t, 'mid'); drawFx(sub.fx, lt, t);
-      camOff(); c.restore();
+      popT(); c.restore();
       const tag = sub.label; if (tag) { const tx = rc[0] + 70, ty = rc[1] + (pa ? 70 : 60); pushT(); tr(tx, ty); rot(-.04); const tw = textW(tag, 54, 'anton') + 50; shape(boxP(-12, -40, tw, 80, 14, 1), { flat: pa ? C.lime : '#F4B2A2', lw: 1.2, tex: .3 }); label(tag, tw / 2 - 12, 2, 54, PAL.ink, { font: 'anton', track: 3 }); popT(); }
     };
     const bc = p.before.cam || [540, 1130, 1.25], acam = p.after.cam || [540, 820, 1.25];
@@ -377,8 +386,9 @@ const SCENES = {
     label('CLOCKED', 540, 1130, 200, '#F7F4EA', { font: 'anton', pop: wk, track: 3, shadow: '#000000' });
     const pk = seg(lt, .6, .9);
     if (pk > 0) { pushT(); tr(540, 1290); scl(over(pk, 2)); const tw = textW('Free beta · Out now', 50, 'hand') + 80; shape(boxP(-tw / 2, -46, tw, 92, 46, .8), { flat: C.lime, lw: 1.3, tex: .3 }); label('Free beta · Out now', 0, 2, 50, '#1F1D26', {}); popT(); }
-    label('clocked.space', 540, 1400, 74, C.lime, { pop: seg(lt, .8, 1.1), shadow: '#000000' });
-    if (SPEC.showsPay) label('Example figures, before taxes.', 540, 1478, 36, '#CFCBD8', { font: 'ui', weight: 500, alpha: seg(lt, 1.0, 1.3) });
+    label('clocked.space', 540, 1392, 74, C.lime, { pop: seg(lt, .8, 1.1), shadow: '#000000' });
+    label('Try it free in your browser.', 540, 1456, 40, '#F1EEE6', { font: 'ui', weight: 600, alpha: seg(lt, .95, 1.25) });
+    if (SPEC.showsPay) label('Example figures, before taxes.', 540, 1506, 32, '#BDB8C8', { font: 'ui', weight: 500, alpha: seg(lt, 1.0, 1.3) });
   },
 };
 function lerpArr(a, b, k) { return a.map((v, i) => lerp(v, b[i], k)); }

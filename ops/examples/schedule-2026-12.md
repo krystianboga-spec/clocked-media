@@ -1,28 +1,28 @@
-# Clocked posts for 2026-12: summary for approval
+# Clocked posts for 2026-12
 
-All times Central. Every post is loaded as a DRAFT until Krystian says yes.
+All times Central. Posts are SCHEDULED in Metricool (not drafts). To stop one, delete or edit it in the Metricool planner before its time.
 
 | # | Platform | Date | Day | Time CT | Asset | Type | Sound | autoPublish | Why this slot |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | instagram | 2026-12-02 | Wed | 10:00 | sunday-schedule | video | none | true | Metricool best time #1 for Wednesday |
-| 2 | tiktok | 2026-12-02 | Wed | 10:00 | holiday-ot | video | add sound on phone | false | Metricool best time #1 for Wednesday |
-| 3 | instagram | 2026-12-05 | Sat | 10:00 | split-shift | video | AI voice (labeled) | true | Metricool best time #1 for Saturday |
-| 4 | tiktok | 2026-12-05 | Sat | 10:00 | two-jobs-gap | video | add sound on phone | false | Metricool best time #1 for Saturday |
-| 5 | instagram | 2026-12-08 | Tue | 10:00 | pay-period-101 | photo | none | true | Metricool best time #1 for Tuesday |
-| 6 | tiktok | 2026-12-08 | Tue | 10:00 | first-job-tips | photo | auto music | true | Metricool best time #1 for Tuesday |
-| 7 | instagram | 2026-12-11 | Fri | 10:00 | payday-checklist | photo | none | true | Metricool best time #1 for Friday; payday asset on Thu/Fri |
-| 8 | tiktok | 2026-12-11 | Fri | 10:00 | payday-eve | video | add sound on phone | false | Metricool best time #1 for Friday; payday asset on Thu/Fri |
-| 9 | instagram | 2026-12-14 | Mon | 10:00 | new-year-reset | video | none | true | Metricool best time #1 for Monday |
-| 10 | tiktok | 2026-12-14 | Mon | 18:00 | sunday-schedule | video | add sound on phone | false | Metricool best time #1 for Monday |
-| 11 | instagram | 2026-12-18 | Fri | 10:00 | payday-eve | video | none | true | Metricool best time #1 for Friday; payday asset on Thu/Fri |
-| 12 | tiktok | 2026-12-18 | Fri | 10:00 | split-shift | video | AI voice (labeled) | true | Metricool best time #1 for Friday |
-| 13 | instagram | 2026-12-21 | Mon | 10:00 | holiday-ot | video | none | true | Metricool best time #1 for Monday |
-| 14 | tiktok | 2026-12-21 | Mon | 18:00 | pay-period-101 | photo | auto music | true | Metricool best time #1 for Monday |
-| 15 | instagram | 2026-12-24 | Thu | 10:00 | closing-shift-math | photo | none | true | Metricool best time #1 for Thursday |
-| 16 | tiktok | 2026-12-24 | Thu | 10:00 | payday-checklist | photo | auto music | true | Metricool best time #1 for Thursday; payday asset on Thu/Fri |
-| 17 | instagram | 2026-12-27 | Sun | 10:00 | two-jobs-gap | video | none | true | Metricool best time #1 for Sunday |
-| 18 | tiktok | 2026-12-27 | Sun | 10:00 | new-year-reset | video | add sound on phone | false | Metricool best time #1 for Sunday |
-| 19 | instagram | 2026-12-30 | Wed | 10:00 | first-job-tips | photo | none | true | Metricool best time #1 for Wednesday |
-| 20 | tiktok | 2026-12-30 | Wed | 10:00 | closing-shift-math | photo | auto music | true | Metricool best time #1 for Wednesday |
+| 1 | instagram | 2026-12-02 | Wed | 10:00 | sunday-schedule | video | none | true | Metricool best time #1 for Wednesday; day score 6506 |
+| 2 | tiktok | 2026-12-03 | Thu | 10:00 | holiday-ot | video | add sound on phone | false | Metricool best time #1 for Thursday; day score 1471 |
+| 3 | instagram | 2026-12-04 | Fri | 10:00 | payday-eve | video | none | true | Metricool best time #1 for Friday; day score 6734; payday asset on Thu/Fri |
+| 4 | tiktok | 2026-12-05 | Sat | 10:00 | two-jobs-gap | video | add sound on phone | false | Metricool best time #1 for Saturday; day score 852 |
+| 5 | instagram | 2026-12-09 | Wed | 10:00 | pay-period-101 | photo | none | true | Metricool best time #1 for Wednesday; day score 6506 |
+| 6 | tiktok | 2026-12-09 | Wed | 10:00 | first-job-tips | photo | auto music | true | Metricool best time #1 for Wednesday; day score 1432 |
+| 7 | instagram | 2026-12-11 | Fri | 10:00 | split-shift | video | AI voice (labeled) | true | Metricool best time #1 for Friday; day score 6734 |
+| 8 | tiktok | 2026-12-11 | Fri | 10:00 | payday-eve | video | add sound on phone | false | Metricool best time #1 for Friday; day score 1379; payday asset on Thu/Fri |
+| 9 | instagram | 2026-12-14 | Mon | 10:00 | new-year-reset | video | none | true | Metricool best time #1 for Monday; day score 5528 |
+| 10 | tiktok | 2026-12-15 | Tue | 10:00 | sunday-schedule | video | add sound on phone | false | Metricool best time #1 for Tuesday; day score 1136 |
+| 11 | tiktok | 2026-12-17 | Thu | 10:00 | split-shift | video | AI voice (labeled) | true | Metricool best time #1 for Thursday; day score 1471 |
+| 12 | instagram | 2026-12-18 | Fri | 10:00 | closing-shift-math | photo | none | true | Metricool best time #1 for Friday; day score 6734 |
+| 13 | instagram | 2026-12-21 | Mon | 10:00 | holiday-ot | video | none | true | Metricool best time #1 for Monday; day score 5528 |
+| 14 | tiktok | 2026-12-21 | Mon | 18:00 | pay-period-101 | photo | auto music | true | Metricool best time #1 for Monday; day score 1096 |
+| 15 | instagram | 2026-12-23 | Wed | 10:00 | two-jobs-gap | video | none | true | Metricool best time #1 for Wednesday; day score 6506 |
+| 16 | tiktok | 2026-12-24 | Thu | 10:00 | payday-checklist | photo | auto music | true | Metricool best time #1 for Thursday; day score 1471; payday asset on Thu/Fri |
+| 17 | instagram | 2026-12-25 | Fri | 10:00 | payday-checklist | photo | none | true | Metricool best time #1 for Friday; day score 6734; payday asset on Thu/Fri |
+| 18 | tiktok | 2026-12-26 | Sat | 10:00 | new-year-reset | video | add sound on phone | false | Metricool best time #1 for Saturday; day score 852 |
+| 19 | instagram | 2026-12-30 | Wed | 10:00 | first-job-tips | photo | none | true | Metricool best time #1 for Wednesday; day score 6506 |
+| 20 | tiktok | 2026-12-31 | Thu | 10:00 | closing-shift-math | photo | auto music | true | Metricool best time #1 for Thursday; day score 1471 |
 
 Evenings kept empty: 2026-12-24 (Christmas Eve); 2026-12-25 (Christmas Day); 2026-12-31 (New Year's Eve)

@@ -118,12 +118,14 @@ const PLATE_VER = (() => { const h = crypto.createHash('sha1'); for (const f of 
       if (todo.length) console.log(`painted ${done} frames in ${((Date.now() - start) / 1000).toFixed(0)} s → ${((Date.now() - start) / Math.max(1, done)).toFixed(0)} ms/frame effective`);
       const list = path.join(CACHE, `${spec.id}-concat.txt`);
       fs.writeFileSync(list, segs.map(s => `file '${s.file}'`).join('\n'));
-      const tmpOut = out.replace(/\.mp4$/, '.tmp.mp4');
+      const tmpOut = out.replace(/\.mp4$/, '') + '.tmp.mp4';
       if (mouth) {
         await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-i', voiceBase + '.wav', '-map', '0:v', '-map', '1:a',
           '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-af', `apad=whole_dur=${spec.duration}`, '-t', String(spec.duration), '-movflags', '+faststart', tmpOut]);
       } else {
-        await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', '-movflags', '+faststart', tmpOut]);
+        // silent master: a silent stereo AAC track keeps uploaders that expect audio happy
+        await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-map', '0:v', '-map', '1:a',
+          '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-t', String(spec.duration), '-movflags', '+faststart', tmpOut]);
       }
       fs.renameSync(tmpOut, out); console.log('wrote ' + out);
     }

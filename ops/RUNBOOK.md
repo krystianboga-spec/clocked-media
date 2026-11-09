@@ -1,6 +1,6 @@
 # Monthly runbook: Clocked organic social (TikTok + Instagram)
 
-You are a fresh Claude session. You have this repo and the Metricool connector, nothing else. Follow every step in order. Do not skip the review step or the approval wait.
+You are a fresh Claude session. You have this repo and the Metricool connector, nothing else. Follow every step in order. Do not skip the independent review: in auto mode it is the only check before posts go public.
 
 Goal each month: 20 posts on Metricool's free plan, 10 on TikTok and 10 on Instagram (the plan caps at 20 per calendar month, counted once per network). That is 6 NEW videos and 4 NEW photo sets. Each video is posted once on TikTok and once on Instagram; each photo set likewise, with platform-specific captions. At most one post per platform per day.
 
@@ -8,15 +8,15 @@ Facts you need: Metricool brand id 7724856, timezone America/Chicago, accounts T
 
 ## Hard rules (read first, never break)
 
-1. Nothing goes live without Krystian's explicit yes in THIS session, after you showed him the summary table. A yes from an earlier session or month does not count.
-2. All 20 posts are created as drafts (`"draft": true`). Only after the yes do you flip them with `updateScheduledPost` (`draft: false`).
+1. AUTO MODE (Krystian's standing instruction, 2026-11-09): the run adds all posts to Metricool as SCHEDULED posts by itself, at Metricool's best times, spread over the month. He does not approve each month; he gets the table and can delete or edit any post in Metricool before it goes out. Because nobody checks before posting, the independent review (Step 6) is the gate: an asset that does not get PASS is never scheduled.
+2. Schedule with `schedule.py --live` (`"draft": false`). Use drafts (no `--live`) only if Krystian says to go back to approving each month, or if the run is late and the first post would go out less than 3 days after loading; in that case load drafts and ask him.
 3. Never post anything directly, create accounts, or sign in anywhere. You only write files and use the Metricool tools.
 4. Follow ops/rules.md. Real features only. No user counts, reviews, ratings, testimonials, invented stats. Every pay figure is an example, adds up, and says "before taxes".
 5. No em dashes or en dashes in any file, caption, title or on-screen text.
 6. Never reuse a concept id or hook listed in ops/used-concepts.json.
 7. Never post partial claims: if an asset fails to render, its captions or math fail review, or media does not load, drop that asset and report it. Do not swap in an unreviewed replacement at the last minute.
 8. Never `git push --force`. Commit media and ops files to `main` (or follow what Krystian says about pushing). Do not edit engine/ code except to run it.
-9. Media must be reachable at its public raw.githubusercontent.com URL before you create a draft. Check each URL returns HTTP 200 (`curl -sI`).
+9. Media must be reachable at its public raw.githubusercontent.com URL before you add a post. Check each URL returns HTTP 200 (`curl -sI`).
 10. The Metricool free plan cap is a hard stop. Never schedule more than 10 per platform in a calendar month, counting posts already in Metricool for that month.
 
 ## Step 0. Set up
@@ -85,7 +85,7 @@ git add media/YYYY-MM ops/used-concepts.json ops/runs/YYYY-MM ops/research ops/c
 git commit -m "Add YYYY-MM media and manifest"
 git push origin main      # normal push only; if it fails, stop and tell Krystian
 ```
-Then verify every media URL with `curl -sI <url>` (200 and the right content type). If you are not allowed to push, say so and stop before loading drafts, because Metricool needs public URLs.
+Then verify every media URL with `curl -sI <url>` (200 and the right content type). If you are not allowed to push, say so and stop before adding posts, because Metricool needs public URLs.
 
 ## Step 8. Get Metricool's best times
 
@@ -93,19 +93,19 @@ Call `getBestTimeToPostByNetwork` for `tiktok` and for `instagram` (blogId 77248
 ```
 {"tiktok": {"1": [18, 10, 12], "2": [...], ... "7": [...]}, "instagram": {"1": [10, 11, 12], ... "7": [...]}}
 ```
-Every post goes at its platform's top hour for that weekday (minute 00). TikTok and Instagram may post at the same hour on the same day. If the top hour falls in a blocked evening (5 PM on, on a holiday or event night), schedule.py uses the next hour in the list. For a new account these figures are Metricool's general data, not this account's own, so refresh the file every month (and once the account has about 100 followers the numbers become account-specific). If the tool errors, reuse last month's file and tell Krystian.
+Also write `day_scores`: for each platform and weekday, the value of that weekday's top hour. schedule.py cuts the month into one window per post and puts each post on the window's highest scoring day (at least 2 days after the previous post on that platform), and Instagram leans away from TikTok's days, so the 20 posts are spread over the whole month on the strongest days. Every post goes at its platform's top hour for that weekday (minute 00). TikTok and Instagram may post at the same hour on the same day. If the top hour falls in a blocked evening (5 PM on, on a holiday or event night), schedule.py uses the next hour in the list. For a new account these figures are Metricool's general data, not this account's own, so refresh the file every month (and once the account has about 100 followers the numbers become account-specific). If the tool errors, reuse last month's file and tell Krystian.
 
 ## Step 9. Generate the schedule
 
 ```
-python3 ops/schedule.py YYYY-MM --manifest ops/runs/YYYY-MM/manifest.json --best-times ops/best-times.json --out-dir ops/runs/YYYY-MM \
+python3 ops/schedule.py YYYY-MM --live --manifest ops/runs/YYYY-MM/manifest.json --best-times ops/best-times.json --out-dir ops/runs/YYYY-MM \
    [--start-day N] [--used-tiktok N] [--used-instagram N] [--exclude tiktok:ID] [--block-evening YYYY-MM-DD]
 ```
-It validates captions against the banned list and hashtag caps (exit code 2 means fix the manifest), then writes `schedule-YYYY-MM.json` (including the exact `createScheduledPost` call for every post, draft true) and `schedule-YYYY-MM.md`. Read any WARNING lines. Check that the Super Bowl table in schedule.py covers the month and add other national event nights with `--block-evening`. Commit the schedule files.
+It validates captions against the banned list and hashtag caps (exit code 2 means fix the manifest), then writes `schedule-YYYY-MM.json` (including the exact `createScheduledPost` call for every post, draft false with --live) and `schedule-YYYY-MM.md`. Read any WARNING lines. Check that the Super Bowl table in schedule.py covers the month and add other national event nights with `--block-evening`. Commit the schedule files.
 
-## Step 10. Load drafts into Metricool
+## Step 10. Add the posts to Metricool
 
-For each post in `schedule-YYYY-MM.json`, call `createScheduledPost` with its `blogId`, `date` and `info` exactly as written (draft true). Rules that are already in the JSON, do not change them:
+Before creating anything, call `getScheduledPosts` for the month again and make sure none of these assets is already there (no duplicates if a run is repeated). For each post in `schedule-YYYY-MM.json`, call `createScheduledPost` with its `blogId`, `date` and `info` exactly as written (draft false). Rules that are already in the JSON, do not change them:
 
 - TikTok silent video: `autoPublish: false` (Metricool pings Krystian's phone to add a commercial-library sound).
 - TikTok voiced video: `autoPublish: true`, `tiktokData.isAigc: true` for AI voices.
@@ -113,19 +113,17 @@ For each post in `schedule-YYYY-MM.json`, call `createScheduledPost` with its `b
 - Instagram: `autoPublish: true`; video is `type: REEL`, photo set is `type: POST` (carousel); `instagramData.isAiGenerated` true for AI voices.
 - `tiktokData.title` set on every TikTok post.
 
-Save the returned ids and uuids to `ops/runs/YYYY-MM/drafts.json` (post number, platform, asset, id, uuid, plannerUrl). Then call `getScheduledPosts` for the month and confirm 10 + 10 drafts at the right dates and times, with media attached. If a call errors, see Failures. Do not retry a rejected post with altered claims.
+Save the returned ids and uuids to `ops/runs/YYYY-MM/posts.json` (post number, platform, asset, id, uuid, plannerUrl). Then call `getScheduledPosts` for the month and confirm 10 + 10 scheduled posts at the right dates and times, with media attached. If a call errors, see Failures. Do not retry a rejected post with altered claims.
 
-## Step 11. Message Krystian and wait
+## Step 11. Tell Krystian what is scheduled
 
-Send him the table from `schedule-YYYY-MM.md` (date, day, time, platform, asset, type, sound action), plus: which videos are silent and will ping his phone for a sound, which are AI-voiced and labeled, what was dropped or replaced, and any warnings. Ask a single question: "Reply yes to schedule all 20, or tell me what to change." Then STOP and wait for his reply in this session. Do not infer approval from silence, from an emoji you cannot read, or from "looks fine, maybe".
+Commit `ops/runs/YYYY-MM/` (schedule files, posts.json). Send one push (if a PushNotification tool exists) like "Clocked: 20 <Month> posts scheduled in Metricool, first one <date>. Delete any you don't want in the Metricool planner." End the run with the table from `schedule-YYYY-MM.md` (date, day, time, platform, asset, type, sound action), which ideas came from this month's trend research, which silent TikToks will ping his phone for a sound, which are AI-voiced and labeled, what was dropped, and warnings. Remind him to add a sound when a silent TikTok pings him and to pin the TikTok comment from rules.md after each TikTok goes live.
 
-If he asks for changes: edit the manifest, re-run schedule.py, update the affected drafts (`updateScheduledPost` keeping `draft: true`), show the changed rows, and ask again.
+If he replies in this session asking for changes: edit the manifest, re-run schedule.py, and update the affected posts with `updateScheduledPost` (resend the full `info`; the id changes after each update, so use the id returned). To pull a post he does not want, set it back to `draft: true` (it then stays in Metricool unpublished); do not delete posts unless he says delete.
 
-## Step 12. After the yes: switch to scheduled
+## Step 12. (Draft mode only) After his yes, switch drafts to scheduled
 
-For every draft, call `updateScheduledPost` with its current `id`, `uuid`, `blogId` and the full original `info` unchanged except `draft: false` (the update replaces the whole post, so resend all fields; the id changes after each update, so use the id returned). Then call `getScheduledPosts` and confirm 20 scheduled posts (none still drafts). Report to Krystian the final list and remind him to add a sound on his phone when a silent TikTok pings him, and to pin the TikTok comment from rules.md after each TikTok goes live.
-
-Finish by committing `ops/runs/YYYY-MM/` (drafts.json, final ids) and tell Krystian the month is done.
+Only when Step 10 loaded drafts (hard rule 2 exceptions): after his explicit yes, call `updateScheduledPost` for each draft with the full original `info` unchanged except `draft: false`, then confirm with `getScheduledPosts`.
 
 ## Failures (report, never post partial claims)
 
@@ -133,9 +131,9 @@ Finish by committing `ops/runs/YYYY-MM/` (drafts.json, final ids) and tell Kryst
 - **TTS unavailable or errors:** make the video silent (autoPublish false on TikTok) and set voiced false. Do not use a voice that was not generated for that exact script.
 - **Review fails and cannot be fixed:** drop the asset. Never post an asset with an unreviewed or disputed claim or number.
 - **git push fails / media 404:** stop before Step 10. Tell Krystian. Metricool cannot read local files.
-- **Metricool error on a draft:** report the exact error text, keep the posts already created, do not create duplicates (check `getScheduledPosts` first), and let Krystian decide. If the monthly cap blocks creation, stop; do not delete other posts to make room.
-- **Metricool error on switching to scheduled:** list which posts are still drafts and which are scheduled, so nothing is half-published silently. Retry each failed one once, then report.
-- **Krystian does not reply:** leave everything as drafts. Never schedule on your own. A later session must re-ask.
+- **Metricool error on a post:** report the exact error text, keep the posts already created, do not create duplicates (check `getScheduledPosts` first), and let Krystian decide. If the monthly cap blocks creation, stop; do not delete other posts to make room.
+- **Metricool error while adding posts:** list which posts were created and which failed, retry each failed one once, then report. Never leave him guessing what is live.
+- **Review never reaches PASS for an asset:** it is not scheduled, even in auto mode.
 - **Date already in the past (late run):** re-run schedule.py with a later `--start-day`; fewer than 10 per platform is fine.
 
 ## Quick checklist
@@ -147,6 +145,5 @@ Finish by committing `ops/runs/YYYY-MM/` (drafts.json, final ids) and tell Kryst
 - [ ] rendered, viewed, reviewed by a separate subagent: PASS
 - [ ] committed and pushed, URLs return 200
 - [ ] best-times.json refreshed from Metricool
-- [ ] schedule.py run, drafts loaded (10 + 10), verified in Metricool
-- [ ] summary sent, yes received in this session
-- [ ] drafts switched to scheduled, verified, run folder committed
+- [ ] schedule.py --live run, 10 + 10 posts scheduled, spread over the month, verified in Metricool
+- [ ] run folder committed, push sent, table in the final message

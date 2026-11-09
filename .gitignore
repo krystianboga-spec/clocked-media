@@ -4,3 +4,4 @@ engine/tmp/
 *.part.mp4
 *.tmp.mp4
 frames/
+__pycache__/

@@ -1,0 +1,472 @@
+{
+ "id": "notes-chaos",
+ "title": "My hours are in a notes app",
+ "concept": "1 AM in bed: Sam's notes-app hour log is cheerful chaos; a before/after split shows the clean logged week.",
+ "palette": "midnight",
+ "setting": "bedroom",
+ "duration": 21.0,
+ "fps": 30,
+ "seed": 31,
+ "showsPay": true,
+ "transition": "bloom",
+ "math": [
+  "5.5 + 5 + 6 = 16.5",
+  "16.5 x 15.00 = 247.50"
+ ],
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "How many hours did I even work this week?",
+   "speaker": "SAM",
+   "say": "How many hours did I even work this week?",
+   "params": {
+    "cam": [
+     [
+      0,
+      500,
+      1120,
+      1.12,
+      0.02
+     ],
+     [
+      2.4,
+      480,
+      1100,
+      1.2,
+      -0.01
+     ]
+    ],
+    "drift": 1.3,
+    "table": {
+     "y": 1360,
+     "col": "#7B5FC4"
+    },
+    "cast": [
+     {
+      "who": "sam",
+      "x": 420,
+      "y": 1640,
+      "size": 88,
+      "act": "phone",
+      "screen": "notes",
+      "screenData": {
+       "lines": [
+        "tues 4-9?? maybe 9:30",
+        "wed... i forget",
+        "sat double??",
+        "fri off? or not"
+       ]
+      },
+      "pose": {
+       "phoneGlow": 0.8
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 2.4,
+   "scene": "stage",
+   "caption": "You wrote: *tues 4-9?? maybe 9:30!*",
+   "speaker": "NOTES",
+   "say": "You wrote: tues, four to nine? Maybe nine thirty!",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1080,
+      1.0,
+      0.03
+     ],
+     [
+      2.6,
+      540,
+      1080,
+      1.06,
+      -0.03
+     ]
+    ],
+    "drift": 2.0,
+    "table": {
+     "y": 1500,
+     "col": "#7B5FC4"
+    },
+    "cast": [
+     {
+      "who": "notes",
+      "x": 560,
+      "y": 1560,
+      "size": 560,
+      "enter": {
+       "type": "rise",
+       "at": 0.0,
+       "dur": 0.45,
+       "dist": 700
+      },
+      "pose": {
+       "lines": [
+        "tues 4-9?? maybe 9:30",
+        "wed... i forget",
+        "sat double??",
+        "fri off? or not"
+       ],
+       "eyes": "star",
+       "mouth": "grin",
+       "pencil": true
+      },
+      "act": "bounce"
+     }
+    ],
+    "fx": [
+     {
+      "type": "sfx",
+      "text": "TA-DA!",
+      "x": 260,
+      "y": 760,
+      "size": 100,
+      "at": 0.35,
+      "col": "#FFD45C",
+      "rot": -0.15
+     },
+     {
+      "type": "spark",
+      "x": 560,
+      "y": 1200,
+      "at": 0.3,
+      "r": 330,
+      "s": 30
+     }
+    ]
+   },
+   "out": {
+    "type": "flip"
+   }
+  },
+  {
+   "start": 5.0,
+   "scene": "dialogue",
+   "caption": "Hours are kind of a vibe!",
+   "speaker": "NOTES",
+   "say": "Hours are kind of a vibe!",
+   "params": {
+    "base": [
+     540,
+     1110,
+     1.05
+    ],
+    "table": {
+     "y": 1400,
+     "col": "#7B5FC4"
+    },
+    "left": {
+     "who": "sam",
+     "x": 320,
+     "y": 1640,
+     "size": 86,
+     "pose": {
+      "eyes": "dead",
+      "mouth": "flat",
+      "phoneGlow": 0.4
+     }
+    },
+    "right": {
+     "who": "notes",
+     "x": 770,
+     "y": 1420,
+     "size": 380,
+     "layer": "front",
+     "act": "shrug",
+     "pose": {
+      "lines": [
+       "tues 4-9?? maybe 9:30",
+       "wed... i forget",
+       "sat double??",
+       "fri off? or not"
+      ],
+      "mouth": "grin"
+     }
+    }
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 7.0,
+   "scene": "split",
+   "captions": [
+    {
+     "at": 0,
+     "text": "Before: guesses in a notes app.",
+     "speaker": "CLOCKY",
+     "say": "Before: guesses in a notes app."
+    },
+    {
+     "at": 1.3,
+     "text": "After: every shift *logged.*",
+     "speaker": "CLOCKY",
+     "say": "After: every shift, logged."
+    }
+   ],
+   "params": {
+    "setting": "wash",
+    "afterAt": 1.25,
+    "before": {
+     "label": "BEFORE",
+     "setting": "bedroom",
+     "cam": [
+      540,
+      1240,
+      0.85
+     ],
+     "cast": [
+      {
+       "who": "notes",
+       "x": 690,
+       "y": 1540,
+       "size": 380,
+       "act": "bounce",
+       "pose": {
+        "lines": [
+         "tues 4-9?? maybe 9:30",
+         "wed... i forget",
+         "sat double??",
+         "fri off? or not"
+        ],
+        "eyes": "star",
+        "mouth": "grin"
+       }
+      },
+      {
+       "who": "sam",
+       "x": 230,
+       "y": 1540,
+       "size": 60,
+       "pose": {
+        "eyes": "dead",
+        "emote": "?"
+       }
+      }
+     ]
+    },
+    "after": {
+     "label": "AFTER",
+     "setting": "studio",
+     "set": {
+      "plate": {
+       "a": "#2B2E63",
+       "b": "#3A3D7A",
+       "c": "#C8F25A"
+      }
+     },
+     "cam": [
+      540,
+      1000,
+      1.0
+     ],
+     "props": [
+      {
+       "kind": "phone",
+       "x": 560,
+       "y": 1000,
+       "size": 560,
+       "at": 1.25,
+       "screen": "clocked",
+       "data": {
+        "title": "This week",
+        "big": "16.5 hrs",
+        "sub": "3 shifts logged",
+        "rows": [
+         [
+          "Mon",
+          "5.5 h"
+         ],
+         [
+          "Wed",
+          "5 h"
+         ],
+         [
+          "Sat",
+          "6 h"
+         ]
+        ],
+        "rowsAt": 1.5,
+        "rowsDur": 0.9
+       }
+      }
+     ],
+     "cast": [
+      {
+       "who": "clocky",
+       "x": 850,
+       "y": 1230,
+       "size": 95,
+       "act": "cheer",
+       "enter": {
+        "type": "pop",
+        "at": 1.6
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "start": 11.2,
+   "scene": "card",
+   "caption": "16.5 hours × $15 = *$247.50* before payday.",
+   "speaker": "CLOCKY",
+   "say": "Sixteen and a half hours at fifteen dollars. About two forty-seven fifty, before payday.",
+   "params": {
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "seed": 4,
+      "c": "#C8F25A"
+     }
+    },
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      1.6,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      1.9,
+      540,
+      1110,
+      1.07,
+      0.02
+     ],
+     [
+      2.8,
+      540,
+      1110,
+      1.09,
+      0.02
+     ]
+    ],
+    "camEase": "out",
+    "card": {
+     "x": 540,
+     "y": 1010,
+     "w": 840,
+     "title": "THIS WEEK",
+     "band": "#4B3F8C",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Mon",
+       "r": "5.5 h",
+       "at": 0.15
+      },
+      {
+       "l": "Wed",
+       "r": "5 h",
+       "at": 0.3
+      },
+      {
+       "l": "Sat",
+       "r": "6 h",
+       "at": 0.45
+      },
+      {
+       "l": "16.5 h × $15.00",
+       "r": "",
+       "at": 0.7,
+       "lcol": "#16122A"
+      }
+     ],
+     "total": {
+      "l": "Projected",
+      "r": "$247.50",
+      "at": 1.0,
+      "count": true
+     }
+    },
+    "host": {
+     "who": "clocky",
+     "x": 860,
+     "y": 1700,
+     "size": 110,
+     "act": "pointL",
+     "enter": {
+      "type": "pop",
+      "at": 0.2
+     }
+    }
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 14.0,
+   "scene": "dialogue",
+   "caption": "...I'll just hold the grocery list.",
+   "speaker": "NOTES",
+   "say": "I'll just hold the grocery list.",
+   "params": {
+    "base": [
+     540,
+     1110,
+     1.05
+    ],
+    "table": {
+     "y": 1400,
+     "col": "#7B5FC4"
+    },
+    "left": {
+     "who": "sam",
+     "x": 320,
+     "y": 1640,
+     "size": 86,
+     "pose": {
+      "eyes": "happy",
+      "mouth": "smile"
+     }
+    },
+    "right": {
+     "who": "notes",
+     "x": 770,
+     "y": 1420,
+     "size": 380,
+     "layer": "front",
+     "pose": {
+      "lines": [
+       "eggs",
+       "milk",
+       "bread"
+      ],
+      "eyes": "closed",
+      "mouth": "wobble",
+      "emote": "sweat"
+     }
+    }
+   },
+   "out": {
+    "type": "bloom"
+   }
+  }
+ ],
+ "endCard": {
+  "start": 16.4,
+  "caption": "Log every shift. See your pay before payday.",
+  "speaker": "CLOCKY",
+  "say": "Log every shift, and see your pay before payday. Try Clocked free at clocked dot space."
+ }
+}

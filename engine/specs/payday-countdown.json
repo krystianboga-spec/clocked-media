@@ -1,0 +1,387 @@
+{
+ "id": "payday-countdown",
+ "title": "3 days to payday",
+ "concept": "A rainy bus-stop countdown, Tuesday to Thursday, that ends on a payday reminder notification.",
+ "palette": "rainyBus",
+ "setting": "busstop",
+ "duration": 19.6,
+ "fps": 30,
+ "seed": 41,
+ "showsPay": true,
+ "transition": "flip",
+ "math": [
+  "6 + 4.5 + 6 = 16.5",
+  "16.5 x 15.00 = 247.50"
+ ],
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "When's payday again?",
+   "speaker": "SAM",
+   "say": "When's payday again?",
+   "params": {
+    "cam": [
+     [
+      0,
+      520,
+      1080,
+      1.0,
+      0
+     ],
+     [
+      2.2,
+      520,
+      1080,
+      1.0,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 400,
+      "y": 1500,
+      "size": 84,
+      "act": "phone",
+      "screen": "blank",
+      "pose": {
+       "eyes": "tired"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "drip"
+   }
+  },
+  {
+   "start": 2.2,
+   "scene": "countdown",
+   "caption": "Tuesday. *3 days* to payday.",
+   "speaker": "CLOCKY",
+   "say": "Tuesday. Three days to payday.",
+   "params": {
+    "n": 3,
+    "from": 3,
+    "unit": "days to payday",
+    "cal": {
+     "days": [
+      "M",
+      "T",
+      "W",
+      "T",
+      "F",
+      "S",
+      "S"
+     ],
+     "dates": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+     ],
+     "pay": 4,
+     "hi": 1,
+     "prev": 1
+    },
+    "drift": 0
+   },
+   "out": {
+    "type": "flip"
+   }
+  },
+  {
+   "start": 4.0,
+   "scene": "countdown",
+   "caption": "Wednesday. *2 days.*",
+   "speaker": "CLOCKY",
+   "say": "Wednesday. Two days.",
+   "params": {
+    "n": 2,
+    "from": 3,
+    "unit": "days to payday",
+    "cal": {
+     "days": [
+      "M",
+      "T",
+      "W",
+      "T",
+      "F",
+      "S",
+      "S"
+     ],
+     "dates": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+     ],
+     "pay": 4,
+     "hi": 2,
+     "prev": 1
+    },
+    "drift": 0,
+    "set": {
+     "rainA": 0.8
+    }
+   },
+   "out": {
+    "type": "flip"
+   }
+  },
+  {
+   "start": 5.6,
+   "scene": "countdown",
+   "caption": "Thursday. *1 day.*",
+   "speaker": "CLOCKY",
+   "say": "Thursday. One day.",
+   "params": {
+    "n": 1,
+    "from": 2,
+    "unit": "day to payday",
+    "cal": {
+     "days": [
+      "M",
+      "T",
+      "W",
+      "T",
+      "F",
+      "S",
+      "S"
+     ],
+     "dates": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+     ],
+     "pay": 4,
+     "hi": 3,
+     "prev": 2
+    },
+    "drift": 0,
+    "set": {
+     "rainA": 0.5
+    }
+   },
+   "out": {
+    "type": "drip"
+   }
+  },
+  {
+   "start": 7.2,
+   "scene": "notify",
+   "caption": "Then a payday reminder, right on your phone.",
+   "speaker": "CLOCKY",
+   "say": "Then a payday reminder, right on your phone.",
+   "params": {
+    "set": {
+     "rainA": 0.3
+    },
+    "time": "7:42",
+    "date": "Thursday",
+    "phone": {
+     "x": 540,
+     "y": 1060,
+     "h": 900,
+     "rot": -0.04
+    },
+    "notif": {
+     "at": 0.6,
+     "app": "CLOCKED",
+     "when": "now",
+     "h": 0.27,
+     "lines": [
+      "Payday is Friday.",
+      "You've earned about $247.50",
+      "this pay period."
+     ]
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1000,
+      1.0,
+      0
+     ],
+     [
+      0.95,
+      540,
+      1000,
+      1.0,
+      0
+     ],
+     [
+      1.45,
+      540,
+      990,
+      1.55,
+      -0.02
+     ],
+     [
+      3.4,
+      540,
+      990,
+      1.6,
+      -0.02
+     ]
+    ],
+    "camEase": "smooth"
+   },
+   "out": {
+    "type": "drip"
+   }
+  },
+  {
+   "start": 10.6,
+   "scene": "card",
+   "caption": "Example: 16.5 hrs × $15 = *$247.50*",
+   "speaker": "CLOCKY",
+   "say": "Sixteen and a half hours at fifteen dollars is two forty-seven fifty.",
+   "params": {
+    "setting": "busstop",
+    "set": {
+     "rainA": 0.2
+    },
+    "dim": 0.5,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      2.4,
+      540,
+      960,
+      1.0,
+      0
+     ]
+    ],
+    "drift": 0,
+    "card": {
+     "x": 540,
+     "y": 960,
+     "w": 840,
+     "title": "THIS PAY PERIOD",
+     "band": "#EC7458",
+     "rot": 0.0,
+     "rows": [
+      {
+       "l": "Tue",
+       "r": "6 h",
+       "at": 0.15
+      },
+      {
+       "l": "Thu",
+       "r": "4.5 h",
+       "at": 0.3
+      },
+      {
+       "l": "Sun",
+       "r": "6 h",
+       "at": 0.45
+      },
+      {
+       "l": "16.5 h × $15.00",
+       "r": "",
+       "at": 0.7,
+       "lcol": "#1E2933"
+      }
+     ],
+     "total": {
+      "l": "About",
+      "r": "$247.50",
+      "at": 1.0,
+      "count": true
+     }
+    }
+   },
+   "out": {
+    "type": "drip"
+   }
+  },
+  {
+   "start": 13.0,
+   "scene": "stage",
+   "caption": "Now I know what's coming Friday.",
+   "speaker": "SAM",
+   "say": "Now I know what's coming Friday.",
+   "params": {
+    "cam": [
+     [
+      0,
+      520,
+      1080,
+      1.0,
+      0
+     ],
+     [
+      2.0,
+      520,
+      1080,
+      1.0,
+      0
+     ]
+    ],
+    "drift": 0,
+    "set": {
+     "rainA": 0,
+     "sun": 1
+    },
+    "cast": [
+     {
+      "who": "sam",
+      "x": 400,
+      "y": 1500,
+      "size": 84,
+      "beats": [
+       [
+        0,
+        {
+         "eyes": "happy",
+         "mouth": "smile",
+         "emote": "music"
+        }
+       ]
+      ]
+     },
+     {
+      "who": "clocky",
+      "x": 760,
+      "y": 1500,
+      "size": 90,
+      "act": "hop",
+      "enter": {
+       "type": "pop",
+       "at": 0.2
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "drip"
+   }
+  }
+ ],
+ "endCard": {
+  "start": 15.0,
+  "caption": "Payday reminders on your phone.",
+  "speaker": "CLOCKY",
+  "say": "Payday reminders, right on your phone. Try Clocked free at clocked dot space."
+ }
+}

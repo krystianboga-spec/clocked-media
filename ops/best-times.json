@@ -1,5 +1,97 @@
 {
-  "_comment": "Metricool getBestTimeToPostByNetwork, brand 7724856, America/Chicago, week of 2026-11-09. Keys are ISO weekdays (1 = Monday). Each list is hours (0 to 23) in descending order of Metricool's score. General data for a new account: refresh every month (RUNBOOK step 8).",
-  "tiktok": {"1": [18, 10, 12], "2": [10, 18, 12], "3": [10, 18, 12], "4": [10, 18, 12], "5": [10, 12, 18], "6": [10, 12, 18], "7": [10, 12, 18]},
-  "instagram": {"1": [10, 11, 12], "2": [10, 18, 11], "3": [10, 11, 12], "4": [10, 12, 11], "5": [10, 11, 12], "6": [10, 12, 11], "7": [10, 12, 11]}
+ "_comment": "Metricool getBestTimeToPostByNetwork, brand 7724856, America/Chicago, week of 2026-11-16 (pulled 2026-11-09). Hour lists are ISO weekday (1 = Monday) hours in descending Metricool score. day_scores is the score of that weekday's top hour; schedule.py uses it to pick the strongest day in each window of the month. General data for a new account: refresh every month (RUNBOOK step 8).",
+ "tiktok": {
+  "1": [
+   18,
+   10,
+   12
+  ],
+  "2": [
+   10,
+   18,
+   12
+  ],
+  "3": [
+   10,
+   18,
+   12
+  ],
+  "4": [
+   10,
+   18,
+   12
+  ],
+  "5": [
+   10,
+   12,
+   18
+  ],
+  "6": [
+   10,
+   12,
+   18
+  ],
+  "7": [
+   10,
+   12,
+   18
+  ]
+ },
+ "instagram": {
+  "1": [
+   10,
+   11,
+   12
+  ],
+  "2": [
+   10,
+   18,
+   12
+  ],
+  "3": [
+   10,
+   11,
+   12
+  ],
+  "4": [
+   10,
+   12,
+   11
+  ],
+  "5": [
+   10,
+   11,
+   12
+  ],
+  "6": [
+   10,
+   12,
+   11
+  ],
+  "7": [
+   10,
+   12,
+   18
+  ]
+ },
+ "day_scores": {
+  "tiktok": {
+   "1": 1096,
+   "2": 1136,
+   "3": 1432,
+   "4": 1471,
+   "5": 1379,
+   "6": 852,
+   "7": 816
+  },
+  "instagram": {
+   "1": 5528,
+   "2": 4942,
+   "3": 6506,
+   "4": 6275,
+   "5": 6734,
+   "6": 3409,
+   "7": 2582
+  }
+ }
 }

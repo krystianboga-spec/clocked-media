@@ -1,6 +1,7 @@
 {
   "month": "2026-12",
   "timezone": "America/Chicago",
+  "mode": "live",
   "brand_id": 7724856,
   "counts": {
     "tiktok": 10,
@@ -23,13 +24,13 @@
       "weekday": "Wed",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Wednesday",
+      "reason": "Metricool best time #1 for Wednesday; day score 6506",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-02T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
@@ -64,24 +65,24 @@
       "platform": "tiktok",
       "asset": "holiday-ot",
       "type": "video",
-      "date": "2026-12-02",
-      "weekday": "Wed",
+      "date": "2026-12-03",
+      "weekday": "Thu",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Wednesday",
+      "reason": "Metricool best time #1 for Thursday; day score 1471",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-02T10:00:00-06:00",
+        "date": "2026-12-03T10:00:00-06:00",
         "info": {
           "autoPublish": false,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-02T10:00:00",
+            "dateTime": "2026-12-03T10:00:00",
             "timezone": "America/Chicago"
           },
           "text": "46 hours the week before the holiday? Example: 40 x $15 = $600.00, plus 6 overtime hours x $22.50 = $135.00, so $735.00 before taxes. Clocked is a free shift and pay tracker, out now in free beta. Try it free at clocked.space and follow for updates. #overtime #paycheck #hourlyworker",
@@ -112,31 +113,31 @@
     {
       "n": 3,
       "platform": "instagram",
-      "asset": "split-shift",
+      "asset": "payday-eve",
       "type": "video",
-      "date": "2026-12-05",
-      "weekday": "Sat",
+      "date": "2026-12-04",
+      "weekday": "Fri",
       "time": "10:00",
-      "payday": false,
-      "reason": "Metricool best time #1 for Saturday",
+      "payday": true,
+      "reason": "Metricool best time #1 for Friday; day score 6734; payday asset on Thu/Fri",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-05T10:00:00-06:00",
+        "date": "2026-12-04T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-05T10:00:00",
+            "dateTime": "2026-12-04T10:00:00",
             "timezone": "America/Chicago"
           },
-          "text": "Split shift math.\n\nExample: 4 hrs + 4 hrs at $13 = $104.00 before taxes.\n\nLog both shifts in Clocked, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#serverlife #hourlyworker #paycheck #restaurantlife",
+          "text": "Payday tomorrow?\n\nExample: 32 hrs x $16.50 = $528.00 before taxes.\n\nClocked sends a payday reminder to your phone and is now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #serverlife",
           "media": [
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/split-shift-instagram.mp4"
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-eve-instagram.mp4"
           ],
           "mediaAltText": [],
           "descendants": [],
@@ -149,7 +150,7 @@
           "instagramData": {
             "type": "REEL",
             "showReelOnFeed": true,
-            "isAiGenerated": true
+            "isAiGenerated": false
           }
         }
       }
@@ -163,13 +164,13 @@
       "weekday": "Sat",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Saturday",
+      "reason": "Metricool best time #1 for Saturday; day score 852",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-05T10:00:00-06:00",
         "info": {
           "autoPublish": false,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
@@ -209,24 +210,24 @@
       "platform": "instagram",
       "asset": "pay-period-101",
       "type": "photo",
-      "date": "2026-12-08",
-      "weekday": "Tue",
+      "date": "2026-12-09",
+      "weekday": "Wed",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Tuesday",
+      "reason": "Metricool best time #1 for Wednesday; day score 6506",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-08T10:00:00-06:00",
+        "date": "2026-12-09T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-08T10:00:00",
+            "dateTime": "2026-12-09T10:00:00",
             "timezone": "America/Chicago"
           },
           "text": "Weekly, biweekly, semi-monthly: know your pay period.\n\nExample: 2 weeks x 30 hrs x $15 = $900.00 before taxes.\n\nClocked is a free shift and pay tracker, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#paycheck #hourlyworker #firstjob #retailworker",
@@ -258,24 +259,24 @@
       "platform": "tiktok",
       "asset": "first-job-tips",
       "type": "photo",
-      "date": "2026-12-08",
-      "weekday": "Tue",
+      "date": "2026-12-09",
+      "weekday": "Wed",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Tuesday",
+      "reason": "Metricool best time #1 for Wednesday; day score 1432",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-08T10:00:00-06:00",
+        "date": "2026-12-09T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-08T10:00:00",
+            "dateTime": "2026-12-09T10:00:00",
             "timezone": "America/Chicago"
           },
           "text": "5 things nobody tells you at your first hourly job: ask for your schedule in writing, keep your own hours list, learn your pay period. Clocked helps you log shifts, free beta. Try it free at clocked.space and follow for updates. #firstjob #hourlyworker #serverlife",
@@ -311,19 +312,19 @@
     {
       "n": 7,
       "platform": "instagram",
-      "asset": "payday-checklist",
-      "type": "photo",
+      "asset": "split-shift",
+      "type": "video",
       "date": "2026-12-11",
       "weekday": "Fri",
       "time": "10:00",
-      "payday": true,
-      "reason": "Metricool best time #1 for Friday; payday asset on Thu/Fri",
+      "payday": false,
+      "reason": "Metricool best time #1 for Friday; day score 6734",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-11T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
@@ -333,13 +334,9 @@
             "dateTime": "2026-12-11T10:00:00",
             "timezone": "America/Chicago"
           },
-          "text": "Payday checklist.\n\n1. Check your hours\n2. Check your rate\n3. Check overtime\n\nExample: 40 x $15 = $600.00 plus 1 x $22.50 = $622.50 before taxes.\n\nClocked is in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #overtime",
+          "text": "Split shift math.\n\nExample: 4 hrs + 4 hrs at $13 = $104.00 before taxes.\n\nLog both shifts in Clocked, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#serverlife #hourlyworker #paycheck #restaurantlife",
           "media": [
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-1.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-2.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-3.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-4.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-5.png"
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/split-shift-instagram.mp4"
           ],
           "mediaAltText": [],
           "descendants": [],
@@ -350,9 +347,9 @@
             "ids": []
           },
           "instagramData": {
-            "type": "POST",
+            "type": "REEL",
             "showReelOnFeed": true,
-            "isAiGenerated": false
+            "isAiGenerated": true
           }
         }
       }
@@ -366,13 +363,13 @@
       "weekday": "Fri",
       "time": "10:00",
       "payday": true,
-      "reason": "Metricool best time #1 for Friday; payday asset on Thu/Fri",
+      "reason": "Metricool best time #1 for Friday; day score 1379; payday asset on Thu/Fri",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-11T10:00:00-06:00",
         "info": {
           "autoPublish": false,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
@@ -416,13 +413,13 @@
       "weekday": "Mon",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Monday",
+      "reason": "Metricool best time #1 for Monday; day score 5528",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-14T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
@@ -457,24 +454,24 @@
       "platform": "tiktok",
       "asset": "sunday-schedule",
       "type": "video",
-      "date": "2026-12-14",
-      "weekday": "Mon",
-      "time": "18:00",
+      "date": "2026-12-15",
+      "weekday": "Tue",
+      "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Monday",
+      "reason": "Metricool best time #1 for Tuesday; day score 1136",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-14T18:00:00-06:00",
+        "date": "2026-12-15T10:00:00-06:00",
         "info": {
           "autoPublish": false,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-14T18:00:00",
+            "dateTime": "2026-12-15T10:00:00",
             "timezone": "America/Chicago"
           },
           "text": "Sunday night and next week's schedule is a mess? Log your shifts and see projected pay before payday. Example: 5 shifts x 6 hrs x $15 = $450.00 before taxes. Clocked is out now in free beta. Try it free at clocked.space and follow for updates. #workschedule #hourlyworker #retailworker",
@@ -504,72 +501,27 @@
     },
     {
       "n": 11,
-      "platform": "instagram",
-      "asset": "payday-eve",
-      "type": "video",
-      "date": "2026-12-18",
-      "weekday": "Fri",
-      "time": "10:00",
-      "payday": true,
-      "reason": "Metricool best time #1 for Friday; payday asset on Thu/Fri",
-      "createScheduledPost": {
-        "blogId": "7724856",
-        "date": "2026-12-18T10:00:00-06:00",
-        "info": {
-          "autoPublish": true,
-          "draft": true,
-          "providers": [
-            {
-              "network": "instagram"
-            }
-          ],
-          "publicationDate": {
-            "dateTime": "2026-12-18T10:00:00",
-            "timezone": "America/Chicago"
-          },
-          "text": "Payday tomorrow?\n\nExample: 32 hrs x $16.50 = $528.00 before taxes.\n\nClocked sends a payday reminder to your phone and is now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #serverlife",
-          "media": [
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-eve-instagram.mp4"
-          ],
-          "mediaAltText": [],
-          "descendants": [],
-          "firstCommentText": "",
-          "hasNotReadNotes": false,
-          "shortener": false,
-          "smartLinkData": {
-            "ids": []
-          },
-          "instagramData": {
-            "type": "REEL",
-            "showReelOnFeed": true,
-            "isAiGenerated": false
-          }
-        }
-      }
-    },
-    {
-      "n": 12,
       "platform": "tiktok",
       "asset": "split-shift",
       "type": "video",
-      "date": "2026-12-18",
-      "weekday": "Fri",
+      "date": "2026-12-17",
+      "weekday": "Thu",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Friday",
+      "reason": "Metricool best time #1 for Thursday; day score 1471",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-18T10:00:00-06:00",
+        "date": "2026-12-17T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-18T10:00:00",
+            "dateTime": "2026-12-17T10:00:00",
             "timezone": "America/Chicago"
           },
           "text": "A split shift is two short shifts in one day. Example: 4 hrs + 4 hrs at $13 = $104.00 before taxes. Log both in Clocked, out now in free beta. Try it free at clocked.space and follow for updates. #serverlife #hourlyworker #paycheck",
@@ -598,6 +550,55 @@
       }
     },
     {
+      "n": 12,
+      "platform": "instagram",
+      "asset": "closing-shift-math",
+      "type": "photo",
+      "date": "2026-12-18",
+      "weekday": "Fri",
+      "time": "10:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Friday; day score 6734",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-12-18T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-12-18T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "Closing shift math.\n\n5 pm to 11 pm is 6 hrs. Example: 6 x $14 = $84.00 before taxes.\n\nLog it in Clocked, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#serverlife #retailworker #paycheck #hourlyworker",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-1.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-2.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-3.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-4.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-5.png"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "instagramData": {
+            "type": "POST",
+            "showReelOnFeed": true,
+            "isAiGenerated": false
+          }
+        }
+      }
+    },
+    {
       "n": 13,
       "platform": "instagram",
       "asset": "holiday-ot",
@@ -606,13 +607,13 @@
       "weekday": "Mon",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Monday",
+      "reason": "Metricool best time #1 for Monday; day score 5528",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-21T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
@@ -651,13 +652,13 @@
       "weekday": "Mon",
       "time": "18:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Monday",
+      "reason": "Metricool best time #1 for Monday; day score 1096",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-21T18:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
@@ -700,35 +701,31 @@
     {
       "n": 15,
       "platform": "instagram",
-      "asset": "closing-shift-math",
-      "type": "photo",
-      "date": "2026-12-24",
-      "weekday": "Thu",
+      "asset": "two-jobs-gap",
+      "type": "video",
+      "date": "2026-12-23",
+      "weekday": "Wed",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Thursday",
+      "reason": "Metricool best time #1 for Wednesday; day score 6506",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-24T10:00:00-06:00",
+        "date": "2026-12-23T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-24T10:00:00",
+            "dateTime": "2026-12-23T10:00:00",
             "timezone": "America/Chicago"
           },
-          "text": "Closing shift math.\n\n5 pm to 11 pm is 6 hrs. Example: 6 x $14 = $84.00 before taxes.\n\nLog it in Clocked, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#serverlife #retailworker #paycheck #hourlyworker",
+          "text": "Two jobs, one number.\n\nExample: Job A 22 hrs x $15 = $330.00. Job B 18 hrs x $14 = $252.00. Together: $582.00 before taxes.\n\nClocked tracks more than one job, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#twojobs #hourlyworker #paycheck #serverlife",
           "media": [
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-1.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-2.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-3.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-4.png",
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/closing-shift-math/ig-5.png"
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/two-jobs-gap-instagram.mp4"
           ],
           "mediaAltText": [],
           "descendants": [],
@@ -739,7 +736,7 @@
             "ids": []
           },
           "instagramData": {
-            "type": "POST",
+            "type": "REEL",
             "showReelOnFeed": true,
             "isAiGenerated": false
           }
@@ -755,13 +752,13 @@
       "weekday": "Thu",
       "time": "10:00",
       "payday": true,
-      "reason": "Metricool best time #1 for Thursday; payday asset on Thu/Fri",
+      "reason": "Metricool best time #1 for Thursday; day score 1471; payday asset on Thu/Fri",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-24T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
@@ -804,31 +801,35 @@
     {
       "n": 17,
       "platform": "instagram",
-      "asset": "two-jobs-gap",
-      "type": "video",
-      "date": "2026-12-27",
-      "weekday": "Sun",
+      "asset": "payday-checklist",
+      "type": "photo",
+      "date": "2026-12-25",
+      "weekday": "Fri",
       "time": "10:00",
-      "payday": false,
-      "reason": "Metricool best time #1 for Sunday",
+      "payday": true,
+      "reason": "Metricool best time #1 for Friday; day score 6734; payday asset on Thu/Fri",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-27T10:00:00-06:00",
+        "date": "2026-12-25T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-27T10:00:00",
+            "dateTime": "2026-12-25T10:00:00",
             "timezone": "America/Chicago"
           },
-          "text": "Two jobs, one number.\n\nExample: Job A 22 hrs x $15 = $330.00. Job B 18 hrs x $14 = $252.00. Together: $582.00 before taxes.\n\nClocked tracks more than one job, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#twojobs #hourlyworker #paycheck #serverlife",
+          "text": "Payday checklist.\n\n1. Check your hours\n2. Check your rate\n3. Check overtime\n\nExample: 40 x $15 = $600.00 plus 1 x $22.50 = $622.50 before taxes.\n\nClocked is in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #overtime",
           "media": [
-            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/two-jobs-gap-instagram.mp4"
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-1.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-2.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-3.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-4.png",
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-12/payday-checklist/ig-5.png"
           ],
           "mediaAltText": [],
           "descendants": [],
@@ -839,7 +840,7 @@
             "ids": []
           },
           "instagramData": {
-            "type": "REEL",
+            "type": "POST",
             "showReelOnFeed": true,
             "isAiGenerated": false
           }
@@ -851,24 +852,24 @@
       "platform": "tiktok",
       "asset": "new-year-reset",
       "type": "video",
-      "date": "2026-12-27",
-      "weekday": "Sun",
+      "date": "2026-12-26",
+      "weekday": "Sat",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Sunday",
+      "reason": "Metricool best time #1 for Saturday; day score 852",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-27T10:00:00-06:00",
+        "date": "2026-12-26T10:00:00-06:00",
         "info": {
           "autoPublish": false,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-27T10:00:00",
+            "dateTime": "2026-12-26T10:00:00",
             "timezone": "America/Chicago"
           },
           "text": "New year, new habit: write down every shift. Example: 38 hrs x $16 = $608.00 before taxes. Clocked is a free shift and pay tracker, out now in free beta. Try it free at clocked.space and follow for updates. #newyear #hourlyworker #paycheck",
@@ -905,13 +906,13 @@
       "weekday": "Wed",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Wednesday",
+      "reason": "Metricool best time #1 for Wednesday; day score 6506",
       "createScheduledPost": {
         "blogId": "7724856",
         "date": "2026-12-30T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "instagram"
@@ -950,24 +951,24 @@
       "platform": "tiktok",
       "asset": "closing-shift-math",
       "type": "photo",
-      "date": "2026-12-30",
-      "weekday": "Wed",
+      "date": "2026-12-31",
+      "weekday": "Thu",
       "time": "10:00",
       "payday": false,
-      "reason": "Metricool best time #1 for Wednesday",
+      "reason": "Metricool best time #1 for Thursday; day score 1471",
       "createScheduledPost": {
         "blogId": "7724856",
-        "date": "2026-12-30T10:00:00-06:00",
+        "date": "2026-12-31T10:00:00-06:00",
         "info": {
           "autoPublish": true,
-          "draft": true,
+          "draft": false,
           "providers": [
             {
               "network": "tiktok"
             }
           ],
           "publicationDate": {
-            "dateTime": "2026-12-30T10:00:00",
+            "dateTime": "2026-12-31T10:00:00",
             "timezone": "America/Chicago"
           },
           "text": "Closing shift: 5 pm to 11 pm is 6 hrs. Example: 6 x $14 = $84.00 before taxes. Log it in Clocked, out now in free beta. Try it free at clocked.space and follow for updates. #serverlife #retailworker #paycheck",

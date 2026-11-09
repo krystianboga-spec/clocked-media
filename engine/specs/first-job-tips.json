@@ -1,0 +1,366 @@
+{
+ "id": "first-job-tips",
+ "title": "Things nobody tells you at your first serving job",
+ "concept": "A fast five-tip list on a cafe chalkboard wall, stamped in one by one, ending on Clocky.",
+ "palette": "chalkCafe",
+ "setting": "chalkcafe",
+ "duration": 19.4,
+ "fps": 30,
+ "seed": 61,
+ "showsPay": false,
+ "transition": "splat",
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "title",
+   "params": {
+    "setting": "chalkcafe",
+    "set": {
+     "board": ""
+    },
+    "y0": 420,
+    "gap": 130,
+    "lines": [
+     {
+      "text": "Things nobody",
+      "at": 0.05,
+      "size": 110
+     },
+     {
+      "text": "tells you at your",
+      "at": 0.3,
+      "size": 96
+     },
+     {
+      "text": "first serving job",
+      "at": 0.55,
+      "size": 112,
+      "swash": "#C8F25A",
+      "col": "#231A17"
+     }
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1780,
+      "size": 78,
+      "pose": {
+       "eyes": "wide",
+       "mouth": "wavy",
+       "emote": "sweat"
+      },
+      "act": "idle"
+     }
+    ],
+    "fx": [
+     {
+      "type": "lines",
+      "x": 540,
+      "y": 800,
+      "at": 0.05,
+      "r0": 420,
+      "r1": 900,
+      "n": 22,
+      "life": 0.6
+     }
+    ]
+   },
+   "say": "Things nobody tells you at your first serving job.",
+   "voiceSpeaker": "CLOCKY",
+   "out": {
+    "type": "splat",
+    "x": 540,
+    "y": 900
+   }
+  },
+  {
+   "start": 2.4,
+   "scene": "list",
+   "caption": "Screenshot your schedule every week.",
+   "speaker": "CLOCKY",
+   "say": "Screenshot your schedule every week.",
+   "params": {
+    "n": 1,
+    "total": 5,
+    "icon": "screenshot",
+    "done": [],
+    "setting": "chalkcafe",
+    "set": {
+     "board": "TIP 1"
+    },
+    "accent": "#C8F25A",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1720,
+      "size": 56,
+      "act": "phone",
+      "pose": {
+       "eyes": "open",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#E05A42"
+    ]
+   }
+  },
+  {
+   "start": 4.4,
+   "scene": "list",
+   "caption": "Write down every shift: clock-in *and* clock-out.",
+   "speaker": "CLOCKY",
+   "say": "Write down every shift. Clock in, and clock out.",
+   "params": {
+    "n": 2,
+    "total": 5,
+    "icon": "clockcard",
+    "done": [
+     "Screenshot it"
+    ],
+    "setting": "chalkcafe",
+    "set": {
+     "board": "TIP 2"
+    },
+    "accent": "#EBAE3C",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1720,
+      "size": 56,
+      "act": "idle",
+      "pose": {
+       "eyes": "open",
+       "mouth": "smile"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#EBAE3C"
+    ]
+   }
+  },
+  {
+   "start": 6.4,
+   "scene": "list",
+   "caption": "Check the hours on your pay stub.",
+   "speaker": "CLOCKY",
+   "say": "Check the hours on your pay stub.",
+   "params": {
+    "n": 3,
+    "total": 5,
+    "icon": "stub",
+    "done": [
+     "Screenshot it",
+     "Log shifts"
+    ],
+    "setting": "chalkcafe",
+    "set": {
+     "board": "TIP 3"
+    },
+    "accent": "#88B9A6",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1720,
+      "size": 56,
+      "act": "think",
+      "pose": {
+       "eyes": "open",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#2E4A40"
+    ]
+   }
+  },
+  {
+   "start": 8.4,
+   "scene": "list",
+   "caption": "Know your payday and your pay period.",
+   "speaker": "CLOCKY",
+   "say": "Know your payday, and your pay period.",
+   "params": {
+    "n": 4,
+    "total": 5,
+    "icon": "calendar",
+    "done": [
+     "Screenshot it",
+     "Log shifts",
+     "Check hours"
+    ],
+    "setting": "chalkcafe",
+    "set": {
+     "board": "TIP 4"
+    },
+    "accent": "#F4B2A2",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1720,
+      "size": 56,
+      "act": "idle",
+      "pose": {
+       "eyes": "open",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#C9603F"
+    ]
+   }
+  },
+  {
+   "start": 10.4,
+   "scene": "list",
+   "caption": "Something looks off? *Ask payroll.*",
+   "speaker": "CLOCKY",
+   "say": "Something looks off? Ask payroll.",
+   "params": {
+    "n": 5,
+    "total": 5,
+    "icon": "ask",
+    "done": [
+     "Screenshot it",
+     "Log shifts",
+     "Check hours",
+     "Know payday"
+    ],
+    "setting": "chalkcafe",
+    "set": {
+     "board": "TIP 5"
+    },
+    "accent": "#C8F25A",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1720,
+      "size": 56,
+      "act": "shrug",
+      "pose": {
+       "eyes": "open",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#88B9A6"
+    ]
+   }
+  },
+  {
+   "start": 12.4,
+   "scene": "stage",
+   "caption": "Clocked logs your shifts and projects your pay.",
+   "speaker": "CLOCKY",
+   "say": "Clocked logs your shifts and projects your pay.",
+   "params": {
+    "setting": "chalkcafe",
+    "set": {
+     "board": "YOU GOT THIS"
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1100,
+      1.3,
+      0.04
+     ],
+     [
+      0.3,
+      540,
+      1100,
+      1.1,
+      0
+     ],
+     [
+      2.4,
+      540,
+      1080,
+      1.14,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "cast": [
+     {
+      "who": "sam",
+      "x": 320,
+      "y": 1640,
+      "size": 76,
+      "act": "cheer"
+     },
+     {
+      "who": "clocky",
+      "x": 760,
+      "y": 1640,
+      "size": 150,
+      "act": "hop",
+      "pose": {
+       "eyes": "star",
+       "mouth": "grin"
+      },
+      "enter": {
+       "type": "pop",
+       "at": 0
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "spark",
+      "x": 760,
+      "y": 1150,
+      "at": 0.2,
+      "r": 220
+     }
+    ]
+   },
+   "out": {
+    "type": "splat"
+   }
+  }
+ ],
+ "endCard": {
+  "start": 14.8,
+  "caption": "Track every shift. Free beta.",
+  "speaker": "CLOCKY",
+  "say": "Track every shift with Clocked. Try it free at clocked dot space."
+ }
+}

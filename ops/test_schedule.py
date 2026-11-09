@@ -17,7 +17,7 @@ def run(month, *extra):
 
 
 class T(unittest.TestCase):
-    def check(self, out, tt, ig):
+    def check(self, out, tt, ig, live=False):
         posts = out["posts"]
         self.assertEqual(sum(p["platform"] == "tiktok" for p in posts), tt)
         self.assertEqual(sum(p["platform"] == "instagram" for p in posts), ig)
@@ -35,7 +35,7 @@ class T(unittest.TestCase):
             if p["payday"]:
                 self.assertIn(d.weekday(), (3, 4))
             call = p["createScheduledPost"]
-            self.assertTrue(call["info"]["draft"])
+            self.assertEqual(call["info"]["draft"], not live)
             self.assertEqual(call["blogId"], "7724856")
             self.assertEqual(call["info"]["publicationDate"]["timezone"], "America/Chicago")
         for k, v in byasset.items():
@@ -44,6 +44,34 @@ class T(unittest.TestCase):
         if tt == 10:
             types = [p["type"] for p in posts if p["platform"] == "tiktok"]
             self.assertEqual((types.count("video"), types.count("photo")), (6, 4))
+
+    def test_live_mode(self):
+        out = run("2026-12", "--live")
+        self.assertEqual(out["mode"], "live")
+        self.check(out, 10, 10, live=True)
+
+    def test_spread_over_month(self):
+        """Each platform covers the whole month: a post in every third, posts 2+ days apart, gaps under 6 days."""
+        for month in ("2026-12", "2027-02"):
+            out = run(month)
+            y, m = map(int, month.split("-"))
+            last = S.calendar.monthrange(y, m)[1]
+            for plat in ("tiktok", "instagram"):
+                days = sorted(dt.date.fromisoformat(p["date"]).day for p in out["posts"] if p["platform"] == plat)
+                for a, b in zip(days, days[1:]):
+                    self.assertGreaterEqual(b - a, 2, f"{month} {plat} {days}")
+                    self.assertLessEqual(b - a, 6, f"{month} {plat} {days}")
+                for k in range(3):
+                    lo, hi = k * last // 3 + 1, (k + 1) * last // 3
+                    self.assertTrue(any(lo <= d <= hi for d in days), f"{month} {plat} empty third {lo}-{hi}")
+            alld = {p["date"] for p in out["posts"]}
+            self.assertGreaterEqual(len(alld), 13, f"{month}: platforms should mostly use different days")
+
+    def test_prefers_strong_days(self):
+        """With Metricool day scores, weekend share is lower than an even spread would give."""
+        out = run("2026-12")
+        wk = sum(dt.date.fromisoformat(p["date"]).weekday() >= 5 for p in out["posts"])
+        self.assertLessEqual(wk, 4)
 
     def test_dec(self):
         self.check(run("2026-12"), 10, 10)

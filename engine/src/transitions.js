@@ -43,26 +43,37 @@ const TRANS = {
   },
   // wet watercolour blooms open up and swallow the frame
   bloom: {
-    half: .38, single: true,
+    half: .3, single: true,
     compose(c, A, B, p, o, t) {
       c.drawImage(A || B, 0, 0);
       const cols = o.colors || [PAL.accent, PAL.cool, LIME, PAL.warm], pts = [[200, 300], [880, 520], [420, 980], [900, 1380], [180, 1640], [600, 1820], [540, 120]];
       const q = p < .5 ? p / .5 : 1 - (p - .5) / .5;
-      pts.forEach(([x, y], i) => { const k = eOut(seg(q, i * .05, i * .05 + .7)); if (k > 0) shape(blobP(x, y, 820 * k + 1, 760 * k + 1, i + 9, .22, 18, 6), { flat: cols[i % cols.length], line: false, tex: .7, wet: 2, curve: .7 }); });
+      pts.forEach(([x, y], i) => {
+        const k = eOut(seg(q, i * .05, i * .05 + .7)); if (k <= 0) return;
+        const col = cols[i % cols.length], r = 820 * k + 1;
+        // soft bleeding halo, then the wet body of the bloom with a darker tide line
+        shape(blobP(x, y, r * 1.18, r * 1.1, i + 29, .3, 18, 8), { flat: mixC(col, '#ffffff', .25), flatA: 90, line: false, tex: 0, curve: .8 });
+        shape(blobP(x, y, r * 1.07, r * 1.0, i + 19, .26, 18, 6), { flat: col, flatA: 150, line: false, tex: .4, curve: .8 });
+        shape(blobP(x, y, r, r * .93, i + 9, .22, 18, 6), { flat: col, line: false, tex: .8, wet: 2.4, curve: .7, shade: .12, light: [.05, .05] });
+      });
     },
   },
   // paint pours down from the top with drips, then slides off the bottom
   drip: {
-    half: .36, single: true,
+    half: .32, single: true,
     compose(c, A, B, p, o, t) {
       c.drawImage(A || B, 0, 0);
-      const col = o.colors?.[0] || PAL.wall2, col2 = o.colors?.[1] || PAL.cool;
-      const front = p < .5 ? eIn(p / .5) * (H + 500) : H + 500, back = p < .5 ? -10 : eInOut((p - .5) / .5) * (H + 500);
+      const col = o.colors?.[0] || PAL.wall2, col2 = o.colors?.[1] || mixC(col, '#ffffff', .25);
+      const front = p < .5 ? eIn(p / .5) * (H + 700) - 200 : H + 600, back = p < .5 ? -400 : eInOut((p - .5) / .5) * (H + 900) - 300;
       if (front - back < 4) return;
-      const n = 14, pts = [[-40, back - (p >= .5 ? 300 : 0)], [W + 40, back - (p >= .5 ? 300 : 0)]];
-      for (let i = n; i >= 0; i--) { const x = W * i / n, dl = (hash(i * 3) * .8 + .2) * 360; pts.push([x + 20, front - 300 + (i % 2 ? dl : 0)]); pts.push([x, front - 300 + (i % 2 ? dl + 30 : 40)]); }
-      shape(pts, { flat: col, line: false, tex: .6, wet: 1.5, curve: .3 });
-      for (let i = 0; i < 6; i++) { const x = hash(i * 7) * W; stroke_([[x, back], [x + jit(4), lerp(back, front - 200, .7)]], 2 + hash(i) * 3, col2, 'bristle', .3); }
+      // the paint curtain: a flat top and a front edge of rounded drips of different lengths
+      const n = 9, pts = [[-60, back], [W + 60, back]];
+      for (let i = n; i >= 0; i--) {
+        const x = W * i / n, len = (hash(i * 3 + 1) * .7 + .3) * 340, wd = W / n * .32;
+        pts.push([x + wd, front - 200]); pts.push([x + wd * .5, front - 200 + len * .9]); pts.push([x, front - 200 + len]); pts.push([x - wd * .5, front - 200 + len * .9]); pts.push([x - wd, front - 200]);
+      }
+      shape(pts, { flat: col, line: false, tex: .7, wet: 1.6, curve: .45 });
+      for (let i = 0; i < 7; i++) { const x = (i + .5) / 7 * W + (hash(i) - .5) * 80; stroke_([[x, back + 40], [x + jit(3), lerp(back, front - 220, .6)]], .7 + hash(i * 5) * .8, col2, 'fine', .3); }
     },
   },
   // a fat paint splat lands, then a hole tears open through it to the next shot

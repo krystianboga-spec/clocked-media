@@ -22,6 +22,7 @@ def voiced_lines(spec):
     shots = list(spec['shots'])
     ec = spec.get('endCard') or {}
     shots.append({'start': ec.get('start', spec['duration'] - 4.5), 'say': ec.get('say'), 'speaker': ec.get('speaker'), 'caption': ec.get('caption')})
+    for s in shots: s['speaker'] = s.get('speaker') or s.get('voiceSpeaker')
     out = []
     for i, s in enumerate(shots):
         end = shots[i + 1]['start'] if i + 1 < len(shots) else spec['duration']

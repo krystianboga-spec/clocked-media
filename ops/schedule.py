@@ -4,13 +4,16 @@
 Usage:
   python3 ops/schedule.py YYYY-MM --manifest manifest.json [--start-day 1]
       --best-times best-times.json [--used-tiktok N] [--used-instagram N] [--exclude tiktok:ID --exclude instagram:ID]
-      [--block-evening YYYY-MM-DD ...] [--out-dir DIR] [--no-validate]
+      [--block-evening YYYY-MM-DD ...] [--out-dir DIR] [--no-validate] [--live]
 
 Reads a manifest of the month's assets (see ops/manifest.example.json) and writes
-  schedule-YYYY-MM.json   (posts + the exact Metricool createScheduledPost call for each, draft true)
+  schedule-YYYY-MM.json   (posts + the exact Metricool createScheduledPost call for each; draft true, or scheduled with --live)
   schedule-YYYY-MM.md     (summary table for Krystian)
-Each post goes at the platform's top Metricool best hour for its weekday (minute 00); if that hour is in a blocked
-evening the next hour in the list is used. Rules (see ops/RUNBOOK.md and ops/rules.md): at most 10 posts per platform per month,
+Days: the usable days of the month are cut into one window per post and each window takes the day Metricool
+scores highest for that platform (day_scores in best-times.json), at least 2 days after the previous post on that
+platform, so posts are spread over the whole month but land on the strongest weekdays. Instagram leans away from
+days TikTok already uses, so more days of the month get a post. Each post goes at the platform's top Metricool best
+hour for its weekday (minute 00); if that hour is in a blocked evening the next hour in the list is used. Rules (see ops/RUNBOOK.md and ops/rules.md): at most 10 posts per platform per month,
 one per platform per day, the same asset never on both platforms the same day,
 payday assets on Thu/Fri, no evening posts on US federal holidays or big national nights.
 """
@@ -35,6 +38,14 @@ def load_best(path):
                 raise SystemExit(f"best-times.json: bad hours for {plat} weekday {wd}")
             out[plat][wd] = hrs
     return out
+
+
+def load_scores(path):
+    """best-times.json day_scores -> {platform: {iso weekday: score}}; all 1 when the file has none."""
+    with open(path, encoding="utf-8") as f:
+        raw = json.load(f)
+    ds = raw.get("day_scores", {})
+    return {plat: {wd: float(ds.get(plat, {}).get(str(wd), 1)) for wd in range(1, 8)} for plat in ("tiktok", "instagram")}
 
 
 def slot_reason(rank, wd_name):
@@ -181,12 +192,36 @@ def interleave(videos, photos, n):
     return out
 
 
-def pick_days(avail, n):
+MIN_GAP = 2  # days between two posts on the same platform, when the month allows it
+
+
+def pick_days(avail, n, score=None, avoid=()):
+    """Spread n days over avail: one window per post, best-scoring day in each window.
+    score(d) -> number (Metricool day score); days in `avoid` (the other platform's days) count 10% less."""
     L = len(avail)
-    return sorted({avail[min(L - 1, int((i + 0.5) * L / n))] for i in range(n)})
+    if n <= 0 or L == 0:
+        return []
+    if score is None:
+        return sorted({avail[min(L - 1, int((i + 0.5) * L / n))] for i in range(n)})
+    avoid = set(avoid)
+
+    def val(d):
+        return score(d) * (0.9 if d in avoid else 1.0)
+
+    chosen = []
+    for i in range(n):
+        lo, hi = int(i * L / n), max(int((i + 1) * L / n), int(i * L / n) + 1)
+        window = [d for d in avail[lo:hi] if d not in chosen]
+        good = [d for d in window if not chosen or (d - chosen[-1]).days >= MIN_GAP]
+        pool = good or window or [d for d in avail if d not in chosen]
+        if not pool:
+            break
+        chosen.append(max(pool, key=lambda d: (val(d), -d.toordinal())))
+    return sorted(chosen)
 
 
-def plan_platform(platform, assets, month_days, start_day, used, blocks, other_dates, excluded, warnings, best):
+def plan_platform(platform, assets, month_days, start_day, used, blocks, other_dates, excluded, warnings, best,
+                  scores=None, other_days=()):
     y, m = month_days
     last = calendar.monthrange(y, m)[1]
 
@@ -221,7 +256,8 @@ def plan_platform(platform, assets, month_days, start_day, used, blocks, other_d
         return []
     chosen = interleave([a for a in pool if a["type"] == "video"], [a for a in pool if a["type"] == "photo"], n)
     chosen = chosen[:n]
-    S = pick_days(avail, n)
+    sc = (lambda d: scores[platform][d.isoweekday()]) if scores else None
+    S = pick_days(avail, n, sc, other_days)
 
     def is_pd(d):
         return d.weekday() in (3, 4) and bool(allowed(d))
@@ -234,7 +270,7 @@ def plan_platform(platform, assets, month_days, start_day, used, blocks, other_d
         if not cands or not removable:
             warnings.append(f"{platform}: not enough Thu/Fri days for all payday assets")
             break
-        d = max(cands, key=lambda c: min(abs((c - s).days) for s in S))
+        d = max(cands, key=lambda c: (min(abs((c - s).days) for s in S), sc(c) if sc else 0))
         r = min(removable, key=lambda s: abs((s - d).days))
         S.remove(r); S.append(d); S.sort()
     pd_days = [d for d in S if is_pd(d)]
@@ -284,7 +320,7 @@ def plan_platform(platform, assets, month_days, start_day, used, blocks, other_d
     return posts
 
 
-def build_call(post, manifest):
+def build_call(post, manifest, live=False):
     a, plat = post["asset"], post["platform"]
     p = a[plat]
     d, t = post["date"], post["time"]
@@ -295,7 +331,7 @@ def build_call(post, manifest):
     ai = bool(a.get("ai_voice", voiced))
     info = {
         "autoPublish": True,
-        "draft": True,
+        "draft": not live,
         "providers": [{"network": plat}],
         "publicationDate": {"dateTime": iso_local, "timezone": TZ},
         "text": p["caption"],
@@ -328,9 +364,11 @@ def build_call(post, manifest):
             "date": f"{iso_local}{off:+03d}:00", "info": info}
 
 
-def md_table(posts, month, warnings, blocks, leftover):
-    L = [f"# Clocked posts for {month}: summary for approval", "",
-         "All times Central. Every post is loaded as a DRAFT until Krystian says yes.", "",
+def md_table(posts, month, warnings, blocks, leftover, live=False):
+    head = ("All times Central. Posts are SCHEDULED in Metricool (not drafts). To stop one, delete or edit it in the "
+            "Metricool planner before its time.") if live else \
+        "All times Central. Every post is loaded as a DRAFT until Krystian says yes."
+    L = [f"# Clocked posts for {month}" + ("" if live else ": summary for approval"), "", head, "",
          "| # | Platform | Date | Day | Time CT | Asset | Type | Sound | autoPublish | Why this slot |",
          "|---|---|---|---|---|---|---|---|---|---|"]
     for i, p in enumerate(posts, 1):
@@ -362,6 +400,7 @@ def main():
     ap.add_argument("--block-evening", action="append", default=[], help="extra YYYY-MM-DD with no evening posts")
     ap.add_argument("--out-dir", default=".")
     ap.add_argument("--no-validate", action="store_true")
+    ap.add_argument("--live", action="store_true", help="schedule for real (draft false) instead of drafts")
     args = ap.parse_args()
     y, m = map(int, args.month.split("-"))
     manifest = load_manifest(args.manifest)
@@ -374,21 +413,25 @@ def main():
     if len(ids) != len(set(ids)):
         print("duplicate asset ids", file=sys.stderr); sys.exit(2)
     best = load_best(args.best_times)
+    scores = load_scores(args.best_times)
     blocks = evening_blocks(y, m, args.block_evening)
     excl = {"tiktok": set(), "instagram": set()}
     for e in args.exclude:
         pl, i = e.split(":", 1); excl[pl].add(i)
     warnings = []
-    tt = plan_platform("tiktok", manifest["assets"], (y, m), args.start_day, args.used_tiktok, blocks, {}, excl["tiktok"], warnings, best)
+    tt = plan_platform("tiktok", manifest["assets"], (y, m), args.start_day, args.used_tiktok, blocks, {}, excl["tiktok"], warnings, best, scores)
     tt_dates = {p["asset"]["id"]: p["date"] for p in tt}
-    ig = plan_platform("instagram", manifest["assets"], (y, m), args.start_day, args.used_instagram, blocks, tt_dates, excl["instagram"], warnings, best)
+    ig = plan_platform("instagram", manifest["assets"], (y, m), args.start_day, args.used_instagram, blocks, tt_dates, excl["instagram"], warnings, best, scores,
+                       {p["date"] for p in tt})
     posts = sorted(tt + ig, key=lambda p: (p["date"], p["time"], p["platform"]))
     for p in posts:
-        p["call"] = build_call(p, manifest)
-        p["reason"] = slot_reason(p["rank"], p["date"].strftime("%A")) + ("; payday asset on Thu/Fri" if p["payday"] else "")
+        p["call"] = build_call(p, manifest, args.live)
+        p["reason"] = slot_reason(p["rank"], p["date"].strftime("%A")) + \
+            (f"; day score {scores[p['platform']][p['date'].isoweekday()]:g}" if scores[p["platform"]][1] != 1 else "") + \
+            ("; payday asset on Thu/Fri" if p["payday"] else "")
     used_ids = {p["asset"]["id"] for p in posts}
     leftover = [i for i in ids if i not in used_ids]
-    out = {"month": args.month, "timezone": TZ, "brand_id": manifest.get("brand_id", BRAND_ID),
+    out = {"month": args.month, "timezone": TZ, "mode": "live" if args.live else "draft", "brand_id": manifest.get("brand_id", BRAND_ID),
            "counts": {"tiktok": len(tt), "instagram": len(ig)}, "warnings": warnings,
            "evening_blocks": {str(d): n for d, n in sorted(blocks.items())}, "unscheduled_assets": leftover,
            "posts": [{"n": i, "platform": p["platform"], "asset": p["asset"]["id"], "type": p["asset"]["type"],
@@ -400,7 +443,7 @@ def main():
     mp = os.path.join(args.out_dir, f"schedule-{args.month}.md")
     with open(jp, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
-    table = md_table(posts, args.month, warnings, blocks, leftover)
+    table = md_table(posts, args.month, warnings, blocks, leftover, args.live)
     with open(mp, "w", encoding="utf-8") as f:
         f.write(table)
     print(table)

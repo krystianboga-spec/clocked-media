@@ -82,10 +82,10 @@ function juggleItems(items, x, y, s, lt, t) {
   const n = items.length;
   items.forEach((it, i) => {
     const ph = fract(lt * .8 + i / n), side = Math.floor(lt * .8 + i / n) % 2 ? 1 : -1;
-    const jx = x + lerp(-s * 1.4, s * 1.4, side > 0 ? ph : 1 - ph), jy = y - s * 7.2 - Math.sin(ph * Math.PI) * s * 4.2;
+    const jx = x + lerp(-s * 2.6, s * 2.6, side > 0 ? ph : 1 - ph), jy = y - s * 8.2 - Math.sin(ph * Math.PI) * s * 4.6;
     const rotv = lt * 5 + i * 2;
-    if (it.kind === 'apron') apronProp(jx, jy, s * 1.3, it.col, { rot: rotv * .3, tag: it.tag, t });
-    else if (it.kind === 'phone') phone(jx, jy, s * 1.9, { rot: rotv * .5, screen: 'clocked', data: it.data || { big: '$331.50', title: 'This week' } });
+    if (it.kind === 'apron') apronProp(jx, jy, s * 2.3, it.col, { rot: rotv * .3, tag: it.tag, t });
+    else if (it.kind === 'phone') phone(jx, jy, s * 2.8, { rot: rotv * .5, screen: 'clocked', data: it.data || { big: '$331.50', title: 'This week' } });
     else if (it.kind === 'coin') coin(jx, jy, s * .5, { spin: rotv });
     else if (it.kind === 'card') { paperCard(jx, jy, s * 2.2, s * 1.4, { rot: rotv * .2, band: it.col }); if (it.tag) label(it.tag, jx, jy + s * .15, s * .45, PAL.cardInk, { rot: rotv * .2 }); }
   });
@@ -289,13 +289,15 @@ const SCENES = {
     shape(boxP(-fw / 2 + 16, -fh / 2 + 22, fw, fh, 40), { flat: '#000000', flatA: 60, line: false, tex: 0 });
     shape(boxP(-fw / 2, -fh / 2, fw, fh, 40), { flat: PAL.card, lw: 1.8, tex: .45, shade: .15 });
     for (const sd of [-1, 1]) shape(ellP(sd * fw * .3, -fh / 2, 18, 30, 12), { flat: '#3A3D48', lw: .8, tex: 0 });
-    // lower half shows the new number; upper half flips from the old number to the new
-    pushT(); const c = CTX; applyMat(c); c.save(); c.beginPath(); c.rect(-fw / 2, 0, fw, fh / 2); c.clip();
-    label(String(p.n), 0, 10, 400, PAL.cardInk, { font: 'anton' }); c.restore(); popT();
-    const flipS = Math.cos(fk * Math.PI);
-    pushT(); scl(1, Math.abs(flipS) + .001); const c2 = CTX; applyMat(c2); c2.save(); c2.beginPath(); c2.rect(-fw / 2, flipS > 0 ? -fh / 2 : 0, fw, fh / 2); c2.clip();
-    shape(boxP(-fw / 2 + 2, flipS > 0 ? -fh / 2 + 2 : 0, fw - 4, fh / 2 - 2, 38), { flat: mixC(PAL.card, '#000', fk > .5 ? .0 : .08 * fk * 2), line: false, tex: .3 });
-    label(String(fk < .5 ? (p.from ?? p.n + 1) : p.n), 0, 10, 400, PAL.cardInk, { font: 'anton' }); c2.restore(); popT();
+    // split-flap: top half shows the new number, bottom half the old one until the leaf passes the middle
+    const oldN = String(p.from ?? p.n + 1), newN = String(p.n);
+    const half = (top, txt, sy = 1, dark = 0) => {
+      pushT(); scl(1, Math.max(.001, sy)); const c = CTX; applyMat(c); c.save(); c.beginPath(); c.rect(-fw / 2, top ? -fh / 2 : 0, fw, fh / 2); c.clip();
+      if (sy < 1 || dark) shape(boxP(-fw / 2 + 2, top ? -fh / 2 + 2 : 0, fw - 4, fh / 2 - 2, 38), { flat: mixC(PAL.card, '#000000', dark), line: false, tex: .3 });
+      label(txt, 0, 14, 380, PAL.cardInk, { font: 'anton' }); c.restore(); popT();
+    };
+    half(true, newN); half(false, fk < .5 ? oldN : newN);
+    if (fk > 0 && fk < 1) { if (fk < .5) half(true, oldN, 1 - fk * 2, .12 * fk * 2); else half(false, newN, fk * 2 - 1, .12 * (2 - fk * 2)); }
     stroke_([[-fw / 2, 0], [fw / 2, 0]], 1.2, '#3A3D48', 'pen', 0);
     popT();
     label(p.unit || 'days to payday', fx, fy + fh / 2 + 70, 66, PAL.card, { stroke: PAL.ink, strokeW: .2, shadow: true, pop: seg(lt, .3, .6) });

@@ -69,7 +69,7 @@ function screenLock(w, h, d) {
   miniClocky(w * .13, bh * .2, bh * .09);
   label(n.app || 'CLOCKED', w * .23, bh * .2, bh * .085, '#555A66', { align: 'left', font: 'ui', track: 4 });
   label(n.when || 'now', w * .9, bh * .2, bh * .08, '#888C96', { align: 'right', font: 'ui' });
-  (n.lines || [n.body]).forEach((L, i) => label(L, w * .09, bh * (.43 + i * .17), bh * (i === 0 ? .11 : .1), '#1F1D26', { align: 'left', font: 'ui', weight: i === 0 ? 700 : 500, maxW: w * .82 }));
+  (n.lines || [n.body]).forEach((L, i) => label(L, w * .08, bh * (.42 + i * .19), bh * (i === 0 ? .15 : .135), '#1F1D26', { align: 'left', font: 'ui', weight: i === 0 ? 700 : 500, maxW: w * .85 }));
   popT();
 }
 function screenNotes(w, h, d) {

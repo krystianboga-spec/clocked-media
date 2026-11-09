@@ -4,10 +4,10 @@
  "concept": "A fast five-tip list on a cafe chalkboard wall, stamped in one by one, ending on Clocky.",
  "palette": "chalkCafe",
  "setting": "chalkcafe",
- "duration": 19.4,
+ "duration": 20.2,
  "fps": 30,
  "seed": 61,
- "showsPay": false,
+ "showsPay": true,
  "transition": "splat",
  "shots": [
   {
@@ -74,7 +74,7 @@
    }
   },
   {
-   "start": 2.4,
+   "start": 2.8,
    "scene": "list",
    "caption": "Screenshot your schedule every week.",
    "speaker": "CLOCKY",
@@ -113,7 +113,7 @@
    }
   },
   {
-   "start": 4.4,
+   "start": 4.8,
    "scene": "list",
    "caption": "Write down every shift: clock-in *and* clock-out.",
    "speaker": "CLOCKY",
@@ -154,7 +154,7 @@
    }
   },
   {
-   "start": 6.4,
+   "start": 7.2,
    "scene": "list",
    "caption": "Check the hours on your pay stub.",
    "speaker": "CLOCKY",
@@ -196,7 +196,7 @@
    }
   },
   {
-   "start": 8.4,
+   "start": 9.2,
    "scene": "list",
    "caption": "Know your payday and your pay period.",
    "speaker": "CLOCKY",
@@ -239,7 +239,7 @@
    }
   },
   {
-   "start": 10.4,
+   "start": 11.2,
    "scene": "list",
    "caption": "Something looks off? *Ask payroll.*",
    "speaker": "CLOCKY",
@@ -283,7 +283,7 @@
    }
   },
   {
-   "start": 12.4,
+   "start": 13.2,
    "scene": "stage",
    "caption": "Clocked logs your shifts and projects your pay.",
    "speaker": "CLOCKY",
@@ -357,9 +357,12 @@
   }
  ],
  "endCard": {
-  "start": 14.8,
+  "start": 15.6,
   "caption": "Track every shift. Free beta.",
   "speaker": "CLOCKY",
   "say": "Track every shift with Clocked. Try it free at clocked dot space."
- }
+ },
+ "math": [
+  "pay stub icon: 32.0 x 15.00 = 480.00"
+ ]
 }

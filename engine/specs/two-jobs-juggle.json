@@ -4,7 +4,7 @@
  "concept": "Sam juggles a restaurant apron and a retail apron; Clocky catches both jobs and adds up the week.",
  "palette": "sunnyJuggle",
  "setting": "kitchen",
- "duration": 20.0,
+ "duration": 21.2,
  "fps": 30,
  "seed": 53,
  "showsPay": true,
@@ -216,19 +216,7 @@
        "at": 0.0,
        "dur": 0.4
       },
-      "act": "cheer",
-      "juggle": [
-       {
-        "kind": "apron",
-        "col": "#EE6C5D",
-        "tag": "R"
-       },
-       {
-        "kind": "apron",
-        "col": "#5FB3A0",
-        "tag": "S"
-       }
-      ]
+      "act": "cheer"
      }
     ]
    },
@@ -243,7 +231,7 @@
    "scene": "card",
    "caption": "Restaurant: 12.5 h × $15 = *$187.50*",
    "speaker": "CLOCKY",
-   "say": "Restaurant: twelve and a half hours at fifteen. One eighty-seven fifty.",
+   "say": "Restaurant: twelve and a half at fifteen. One eighty-seven fifty.",
    "params": {
     "setting": "kitchen",
     "dim": 0.45,
@@ -263,7 +251,7 @@
       0.0
      ],
      [
-      2.6,
+      3.8,
       540,
       960,
       1.03,
@@ -310,11 +298,11 @@
    }
   },
   {
-   "start": 10.2,
+   "start": 11.4,
    "scene": "card",
    "caption": "Retail: 9 h × $16 = *$144.00*",
    "speaker": "CLOCKY",
-   "say": "Retail: nine hours at sixteen. One forty-four.",
+   "say": "Retail: nine at sixteen. One forty-four.",
    "params": {
     "setting": "shop",
     "dim": 0.45,
@@ -386,7 +374,7 @@
    }
   },
   {
-   "start": 12.8,
+   "start": 14.0,
    "scene": "card",
    "caption": "Together: *$331.50* this week.",
    "speaker": "CLOCKY",
@@ -483,7 +471,7 @@
   }
  ],
  "endCard": {
-  "start": 15.4,
+  "start": 16.6,
   "caption": "Clocked tracks more than one job.",
   "speaker": "CLOCKY",
   "say": "Clocked tracks more than one job. Try it free at clocked dot space."

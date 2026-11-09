@@ -41,7 +41,7 @@ In this workspace the TTS env is `/tmp/claude-0/-home-claude/a8361db4-a31f-50a8-
 
 Options: `--workers=N` pages painting in parallel (default 2; on a 2-core machine 2 is right), `--fresh` ignores the segment cache.
 
-Speed (2 CPU cores, SwiftShader WebGL): about 40 to 120 ms per frame for the live painting, plus about 10 to 40 s once per painted background (plate). A 20 s video renders in about 2 to 4 minutes. Plates are cached in `engine/cache/plates/` and finished shots in `engine/cache/seg/` (both git-ignored): re-rendering after a change repaints only the shots whose spec (or neighbours) changed, and the voiced render reuses every silent shot in which nobody speaks.
+Speed (2 CPU cores, SwiftShader WebGL, 2 workers): about 120 to 130 ms per frame effective once the backgrounds are cached, about 270 to 370 ms per frame on a first render that also paints the backgrounds (each painted plate takes 10 to 40 s once). A 20 s video renders in about 1.5 to 4 minutes. Plates are cached in `engine/cache/plates/` and finished shots in `engine/cache/seg/` (both git-ignored): re-rendering after a change repaints only the shots whose spec (or neighbours) changed, and the voiced render reuses every silent shot in which nobody speaks.
 
 ## How it works
 

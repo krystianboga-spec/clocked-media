@@ -4,7 +4,7 @@
  "concept": "A break-room detective story: Clocky works out the overtime and finds the check $33.00 short.",
  "palette": "breakRoom",
  "setting": "breakroom",
- "duration": 22.4,
+ "duration": 24.0,
  "fps": 30,
  "seed": 11,
  "showsPay": true,
@@ -18,7 +18,7 @@
  ],
  "shots": [
   {
-   "start": 0.0,
+   "start": 0,
    "scene": "stage",
    "caption": "Is this paycheck right?",
    "speaker": "SAM",
@@ -33,7 +33,7 @@
       0
      ],
      [
-      2.8,
+      2.6,
       520,
       1030,
       1.18,
@@ -116,11 +116,11 @@
    }
   },
   {
-   "start": 2.8,
+   "start": 2.6,
    "scene": "card",
    "caption": "44 hours at $16.50... and it says *$726.00?*",
    "speaker": "SAM",
-   "say": "Forty-four hours at sixteen fifty, and it says seven twenty-six?",
+   "say": "Forty-four hours. Seven twenty-six?",
    "params": {
     "setting": "breakroom",
     "cam": [
@@ -197,11 +197,11 @@
    }
   },
   {
-   "start": 5.6,
+   "start": 5.4,
    "scene": "dialogue",
    "caption": "Hold on. Most hourly jobs pay *1.5×* past 40 hours a week.",
    "speaker": "CLOCKY",
-   "say": "Hold on. Most hourly jobs pay time and a half past forty hours a week.",
+   "say": "Hold on. Past forty, most jobs pay time and a half.",
    "params": {
     "base": [
      540,
@@ -279,20 +279,20 @@
    }
   },
   {
-   "start": 8.0,
+   "start": 8.4,
    "scene": "card",
    "captions": [
     {
      "at": 0,
      "text": "First 40 hours: *$660.00*",
      "speaker": "CLOCKY",
-     "say": "First forty hours: six sixty."
+     "say": "Forty hours: six sixty."
     },
     {
-     "at": 1.9,
+     "at": 1.8,
      "text": "Past 40: $16.50 × 1.5 = $24.75. So 4 hrs = *$99.00*",
      "speaker": "CLOCKY",
-     "say": "Past forty, that's twenty-four seventy-five an hour. Four hours is ninety-nine."
+     "say": "Four overtime hours: ninety-nine."
     }
    ],
    "params": {
@@ -312,24 +312,24 @@
       0.01
      ],
      [
-      1.8,
+      1.7,
       540,
       960,
       1.0,
       0
      ],
      [
-      2.1,
+      2.0,
       540,
       1060,
       1.12,
       0
      ],
      [
-      4.2,
+      5.2,
       540,
       1060,
-      1.14,
+      1.15,
       0
      ]
     ],
@@ -353,14 +353,14 @@
       {
        "l": "OT rate: $16.50 × 1.5",
        "r": "$24.75/hr",
-       "at": 1.9,
+       "at": 1.8,
        "hl": true,
        "size": 52
       },
       {
        "l": "4 hrs × $24.75",
        "r": "$99.00",
-       "at": 2.5,
+       "at": 2.6,
        "count": true
       }
      ]
@@ -379,20 +379,20 @@
    }
   },
   {
-   "start": 12.2,
+   "start": 13.6,
    "scene": "card",
    "captions": [
     {
      "at": 0,
      "text": "Should be *$759.00.* The check says $726.00.",
      "speaker": "CLOCKY",
-     "say": "It should be seven fifty-nine. The check says seven twenty-six."
+     "say": "Should be seven fifty-nine. The check says seven twenty-six."
     },
     {
-     "at": 1.6,
+     "at": 3.1,
      "text": "Looks *$33.00 short.* Worth asking payroll.",
      "speaker": "CLOCKY",
-     "say": "Looks thirty-three dollars short. Worth asking payroll."
+     "say": "Thirty-three short. Ask payroll."
     }
    ],
    "params": {
@@ -406,21 +406,21 @@
       0
      ],
      [
-      1.5,
+      3.0,
       540,
       980,
       1.02,
       0
      ],
      [
-      1.75,
+      3.25,
       540,
       1080,
       1.1,
       -0.03
      ],
      [
-      2.8,
+      5.0,
       540,
       1080,
       1.12,
@@ -430,7 +430,7 @@
     "camEase": "out",
     "shake": [
      [
-      1.65,
+      3.15,
       14
      ]
     ],
@@ -463,14 +463,14 @@
       {
        "l": "Check says",
        "r": "$726.00",
-       "at": 0.9,
+       "at": 1.6,
        "col": "#C0392B"
       }
      ]
     },
     "stamp": {
      "text": "$33.00 SHORT",
-     "at": 1.6,
+     "at": 3.1,
      "x": 540,
      "y": 1480,
      "size": 92,
@@ -481,7 +481,7 @@
    }
   },
   {
-   "start": 15.0,
+   "start": 18.6,
    "scene": "stage",
    "caption": "Okay. Time to talk to payroll.",
    "speaker": "SAM",
@@ -503,7 +503,7 @@
       0
      ],
      [
-      2.4,
+      2.0,
       480,
       920,
       1.33,
@@ -596,9 +596,9 @@
   }
  ],
  "endCard": {
-  "start": 17.4,
+  "start": 20.6,
   "caption": "Clocked shows projected pay, overtime included.",
   "speaker": "CLOCKY",
-  "say": "Clocked shows your projected pay, overtime included. Try it free at clocked dot space."
+  "say": "Overtime included. Try it free at clocked dot space."
  }
 }

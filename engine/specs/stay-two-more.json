@@ -4,7 +4,7 @@
  "concept": "Closing time at a night diner: a looming manager asks for 2 more hours; Clocky prices them at time and a half.",
  "palette": "nightDiner",
  "setting": "diner",
- "duration": 17.4,
+ "duration": 21.9,
  "fps": 30,
  "seed": 23,
  "showsPay": true,
@@ -153,7 +153,7 @@
    "scene": "stage",
    "caption": "Most hourly jobs pay *1.5×* after 40 hours a week.",
    "speaker": "CLOCKY",
-   "say": "Most hourly jobs pay time and a half after forty hours a week.",
+   "say": "Most hourly jobs pay time and a half after forty a week.",
    "params": {
     "cam": [
      [
@@ -164,7 +164,7 @@
       -0.03
      ],
      [
-      2.4,
+      3.8,
       600,
       1060,
       1.1,
@@ -244,20 +244,20 @@
    }
   },
   {
-   "start": 7.0,
+   "start": 8.4,
    "scene": "card",
    "captions": [
     {
      "at": 0,
      "text": "At $16.50/hr, overtime pays *$24.75/hr*",
      "speaker": "CLOCKY",
-     "say": "At sixteen fifty an hour, overtime pays twenty-four seventy-five."
+     "say": "At sixteen fifty, overtime's twenty-four seventy-five."
     },
     {
-     "at": 1.6,
+     "at": 3.6,
      "text": "2 more hours = *+$49.50*",
      "speaker": "CLOCKY",
-     "say": "Two more hours is forty-nine fifty extra."
+     "say": "Two more hours: forty-nine fifty extra."
     }
    ],
    "params": {
@@ -273,21 +273,21 @@
       0.03
      ],
      [
-      1.5,
+      3.5,
       540,
       960,
       1.0,
       0.03
      ],
      [
-      1.8,
+      3.8,
       540,
       1040,
       1.1,
       -0.02
      ],
      [
-      3.0,
+      6.1,
       540,
       1040,
       1.12,
@@ -317,20 +317,20 @@
       {
        "l": "2 hrs × $24.75",
        "r": "$49.50",
-       "at": 1.6,
+       "at": 3.6,
        "count": true
       }
      ],
      "total": {
       "l": "Extra pay",
       "r": "+$49.50",
-      "at": 2.1
+      "at": 4.1
      }
     },
     "fx": [
      {
       "type": "coins",
-      "at": 2.2,
+      "at": 4.2,
       "n": 12,
       "floor": 1700,
       "y0": -80
@@ -343,7 +343,7 @@
    }
   },
   {
-   "start": 10.0,
+   "start": 14.5,
    "scene": "dialogue",
    "caption": "Good to know what 2 hours are worth.",
    "speaker": "SAM",
@@ -409,7 +409,7 @@
   }
  ],
  "endCard": {
-  "start": 12.6,
+  "start": 17.1,
   "caption": "Clocked adds overtime to your projected pay.",
   "speaker": "CLOCKY",
   "say": "Clocked adds overtime to your projected pay. Try it free at clocked dot space."

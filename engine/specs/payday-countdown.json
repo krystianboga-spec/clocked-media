@@ -4,7 +4,7 @@
  "concept": "A rainy bus-stop countdown, Tuesday to Thursday, that ends on a payday reminder notification.",
  "palette": "rainyBus",
  "setting": "busstop",
- "duration": 19.6,
+ "duration": 21.1,
  "fps": 30,
  "seed": 41,
  "showsPay": true,
@@ -53,7 +53,11 @@
     ]
    },
    "out": {
-    "type": "drip"
+    "type": "drip",
+    "colors": [
+     "#86AECB",
+     "#D6E6F2"
+    ]
    }
   },
   {
@@ -176,7 +180,11 @@
     }
    },
    "out": {
-    "type": "drip"
+    "type": "drip",
+    "colors": [
+     "#86AECB",
+     "#D6E6F2"
+    ]
    }
   },
   {
@@ -241,7 +249,11 @@
     "camEase": "smooth"
    },
    "out": {
-    "type": "drip"
+    "type": "drip",
+    "colors": [
+     "#86AECB",
+     "#D6E6F2"
+    ]
    }
   },
   {
@@ -249,7 +261,7 @@
    "scene": "card",
    "caption": "Example: 16.5 hrs × $15 = *$247.50*",
    "speaker": "CLOCKY",
-   "say": "Sixteen and a half hours at fifteen dollars is two forty-seven fifty.",
+   "say": "Sixteen and a half hours at fifteen: two forty-seven fifty.",
    "params": {
     "setting": "busstop",
     "set": {
@@ -265,7 +277,7 @@
       0
      ],
      [
-      2.4,
+      3.9,
       540,
       960,
       1.0,
@@ -312,11 +324,15 @@
     }
    },
    "out": {
-    "type": "drip"
+    "type": "drip",
+    "colors": [
+     "#86AECB",
+     "#D6E6F2"
+    ]
    }
   },
   {
-   "start": 13.0,
+   "start": 14.5,
    "scene": "stage",
    "caption": "Now I know what's coming Friday.",
    "speaker": "SAM",
@@ -374,12 +390,16 @@
     ]
    },
    "out": {
-    "type": "drip"
+    "type": "drip",
+    "colors": [
+     "#86AECB",
+     "#D6E6F2"
+    ]
    }
   }
  ],
  "endCard": {
-  "start": 15.0,
+  "start": 16.5,
   "caption": "Payday reminders on your phone.",
   "speaker": "CLOCKY",
   "say": "Payday reminders, right on your phone. Try Clocked free at clocked dot space."

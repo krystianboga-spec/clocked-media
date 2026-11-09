@@ -49,7 +49,7 @@ const TRANS = {
       const cols = o.colors || [PAL.accent, PAL.cool, LIME, PAL.warm], pts = [[200, 300], [880, 520], [420, 980], [900, 1380], [180, 1640], [600, 1820], [540, 120]];
       const q = p < .5 ? p / .5 : 1 - (p - .5) / .5;
       pts.forEach(([x, y], i) => {
-        const k = eOut(seg(q, i * .05, i * .05 + .7)); if (k <= 0) return;
+        const k = eInOut(seg(q, i * .04, i * .04 + .76)); if (k <= 0) return;
         const col = cols[i % cols.length], r = 820 * k + 1;
         // soft bleeding halo, then the wet body of the bloom with a darker tide line
         shape(blobP(x, y, r * 1.18, r * 1.1, i + 29, .3, 18, 8), { flat: mixC(col, '#ffffff', .25), flatA: 90, line: false, tex: 0, curve: .8 });

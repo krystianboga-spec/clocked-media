@@ -208,8 +208,8 @@ const SETTINGS = {
       floorPlane(PAL.floor, PAL.floor2, FLOOR_Y, 37, 0);
     },
     live(t, o) {
-      label(o.board || 'SPECIALS', 420, 420, 88, '#F4F2EA', { rot: -.03, alpha: .92 });
-      stroke_([[180, 485], [660, 478]], .9, '#F4F2EA', 'pen', .3);
+      const b = o.board ?? 'SPECIALS';
+      if (b) { label(b, 420, 420, 88, '#F4F2EA', { rot: -.03, alpha: .92 }); stroke_([[180, 485], [660, 478]], .9, '#F4F2EA', 'pen', .3); }
       glow(540, 200, 700, 300, PAL.glow, 45);
     },
   },

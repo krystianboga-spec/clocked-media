@@ -8,7 +8,7 @@ card's "say"), speaks it with the speaker's voice at natural speed, places it at
     engine/cache/voice/<id>.wav    the mixed voice track (24 kHz mono)
     engine/cache/voice/<id>.json   timing report + per-frame mouth envelope per speaker (drives lip sync)
 Then render with:  node engine/render.cjs <spec> --video --voice --out=<id>-voiced.mp4
-If a line is longer than its slot it is sped up (max 1.15x); if it still doesn't fit you get a WARNING: shorten the
+A line may run up to 0.45 s past its caption if the next voiced line starts later. If it still is too long it is sped up (max 1.1x); if it still doesn't fit you get a WARNING: shorten the
 "say" text or lengthen the shot. Videos never depend on this step: without it, captions carry the story.
 """
 import sys, os, json, argparse
@@ -16,7 +16,7 @@ import numpy as np, soundfile as sf
 
 VOICES = {'SAM': 'am_michael', 'NOTES': 'af_bella', 'CLOCKY': 'am_puck', 'MANAGER': 'am_onyx', 'STUB': 'am_echo'}
 SPEED = {'SAM': 1.0, 'NOTES': 1.05, 'CLOCKY': 1.0, 'MANAGER': 0.95, 'STUB': 1.05}
-SR, LEAD = 24000, 0.12
+SR, LEAD, MAXSPEED = 24000, 0.12, 1.1
 
 def voiced_lines(spec):
     shots = list(spec['shots'])
@@ -48,16 +48,19 @@ def main():
     n = int(round(dur * SR)); mix = np.zeros(n, dtype=np.float32)
     per = {}
     report, warn = [], 0
-    for st, en, who, text in voiced_lines(spec):
+    lines = voiced_lines(spec)
+    for li, (st, en, who, text) in enumerate(lines):
         voice = VOICES.get(who, 'am_michael'); sp = SPEED.get(who, 1.0)
         audio, sr = k.create(text, voice=voice, speed=sp, lang='en-us')
-        room = en - st - LEAD - 0.1
-        while len(audio) / sr > room and sp < 1.15:
+        # a line may run up to 0.45 s past its caption (a J-cut) as long as it ends before the next voiced line
+        nxt = lines[li + 1][0] if li + 1 < len(lines) else dur
+        room = min(nxt, en + 0.45, dur) - st - LEAD - 0.08
+        while len(audio) / sr > room and sp < MAXSPEED:
             sp = round(sp + 0.03, 2); audio, sr = k.create(text, voice=voice, speed=sp, lang='en-us')
         # trim leading/trailing near-silence so the mouth moves with the words
         nz = np.where(np.abs(audio) > 0.01)[0]
         if len(nz): audio = audio[max(0, nz[0] - 240): nz[-1] + 480]
-        fits = len(audio) / sr <= room + 0.1
+        fits = len(audio) / sr <= room + 0.02
         if not fits: warn += 1; print(f'WARNING: "{text}" ({who}) is {len(audio)/sr:.2f}s for a {room:.2f}s slot at {st:.2f}s')
         i0 = int((st + LEAD) * SR); m = min(len(audio), n - i0)
         mix[i0:i0 + m] += audio[:m]

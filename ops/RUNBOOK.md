@@ -26,11 +26,22 @@ git clone https://github.com/krystianboga-spec/clocked-media.git && cd clocked-m
 python3 --version        # 3.9+ needed for schedule.py and tests
 python3 ops/test_schedule.py   # must say OK
 ```
-Read in full: ops/rules.md, ops/concepts.md, ops/used-concepts.json, engine/README.md. Decide the target month `YYYY-MM` (the next calendar month unless Krystian said otherwise) and today's date.
+Read in full: ops/rules.md, ops/concepts.md, ops/used-concepts.json, engine/README.md (if engine/README.md is missing, read engine/render.cjs and engine/specs/*.json to learn the spec format and command). Decide the target month `YYYY-MM` (the next calendar month unless Krystian said otherwise) and today's date.
 
 ## Step 1. Check what Metricool already holds
 
 Call `getScheduledPosts` for the target month (blogId 7724856). Count posts per network already there (published, scheduled, and drafts). If this is a mid-month run, set `--start-day` to at least tomorrow and `--used-tiktok` / `--used-instagram` to those counts. If drafts from an earlier failed run exist for this month, tell Krystian and ask whether to reuse or ignore them; do not delete anything.
+
+## Step 1b. Trend research: the best AI-made short videos this month
+
+Before picking concepts, study what is working right now so this month's set is not a rerun of last month's.
+
+1. Search the web (WebSearch, or Firecrawl search/scrape) for the best AI-generated short-form videos and AI video ads of the last 30 to 45 days. Useful angles: "best AI video ads <month year>", "viral AI generated TikTok <month year>", "AI animation trend", "AI commercial breakdown", brand case studies, AI film festival or award winners, roundups from marketing and creator newsletters, and the format trends TikTok and Instagram themselves publish. Search several angles in the same turn. Skip anything older than 3 months.
+2. Pick the 5 to 8 strongest examples. For each one, write down only: link, who made it, what makes it work (hook in the first 2 seconds, visual style, pacing, structure, sound approach, length, loop), and why it fits or does not fit a pay tracker for hourly workers aged 16 to 30.
+3. Turn the best 3 to 5 into NEW Clocked concepts ("our own version"): same technique or format, entirely Clocked content. Append them to ops/concepts.md with new ids (prefix `t-YYYY-MM-`), and make at least 2 of this month's 6 videos from them. Each must still be renderable by engine/ (painted p5.brush scenes, 3D, kinetic type, slides); if a technique needs a tool we do not have, translate it into one we do.
+4. Save the notes to `ops/research/YYYY-MM.md` (examples table, what we borrowed, which concepts came from it) and commit it with the month's media.
+
+What "our own version" may borrow: format, structure, pacing, camera moves, transition style, color treatment, a general visual style, a trending sound category (never the sound itself). What it may never borrow: another creator's footage, frames, characters, mascots, logos, voice, script lines, music or audio, or a look so close a viewer would think it is theirs or that they endorse Clocked. Never download, re-upload, stitch, duet or remix another video. Never name or tag the original creator or brand in captions. If a trend depends on a real person, a celebrity voice, or another brand's IP, skip it.
 
 ## Step 2. Pick concepts
 
@@ -70,7 +81,7 @@ Fix every failure and re-run the review until it returns PASS. Drop any asset th
 
 Write `ops/runs/YYYY-MM/manifest.json` (format: ops/manifest.example.json) with the final captions and repo paths. Add the 10 new entries to ops/used-concepts.json (id, type, month, files, hook, feature, style, math). Commit:
 ```
-git add media/YYYY-MM ops/used-concepts.json ops/runs/YYYY-MM
+git add media/YYYY-MM ops/used-concepts.json ops/runs/YYYY-MM ops/research ops/concepts.md
 git commit -m "Add YYYY-MM media and manifest"
 git push origin main      # normal push only; if it fails, stop and tell Krystian
 ```
@@ -131,6 +142,7 @@ Finish by committing `ops/runs/YYYY-MM/` (drafts.json, final ids) and tell Kryst
 
 - [ ] tests pass, rules and used log read
 - [ ] Metricool month checked, used counts known
+- [ ] trend research saved to ops/research/YYYY-MM.md, 3 to 5 new t- concepts added, 2+ used
 - [ ] 6 video + 4 photo concepts, none used before, math verified
 - [ ] rendered, viewed, reviewed by a separate subagent: PASS
 - [ ] committed and pushed, URLs return 200

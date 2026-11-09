@@ -78,15 +78,15 @@ const TRANS = {
   },
   // a fat paint splat lands, then a hole tears open through it to the next shot
   splat: {
-    half: .3, single: true,
+    half: .22, single: true,
     compose(c, A, B, p, o, t) {
       const x = o.x ?? 540, y = o.y ?? 960, col = o.colors?.[0] || PAL.accent;
       if (p < .5) {
-        c.drawImage(A, 0, 0); const k = eOut(p / .5);
-        shape(starP(x, y, 1500 * k + 1, .72, 11, hash(3)), { flat: col, line: false, tex: .5, wet: 1.6, curve: .5 });
+        c.drawImage(A, 0, 0); const k = eIn(p / .5);
+        shape(starP(x, y, 1700 * k + 1, .72, 11, hash(3)), { flat: col, line: false, tex: .5, wet: 1.6, curve: .5 });
         for (let i = 0; i < 9; i++) { const a = i * 2.4, r = 380 + 600 * k; disc(x + Math.cos(a) * r, y + Math.sin(a) * r, 40 + hash(i) * 50, col, { j: 3 }); }
       } else {
-        c.drawImage(B, 0, 0); const k = eIn((p - .5) / .5), hole = blobP(x, y, 40 + 1500 * k, 40 + 1500 * k, 21, .2, 18);
+        c.drawImage(B, 0, 0); const k = eOut((p - .5) / .5), hole = blobP(x, y, 40 + 1500 * k, 40 + 1500 * k, 21, .2, 18);
         const ring = new Path2D(); ring.rect(-50, -50, W + 100, H + 100); hole.forEach((q, i) => i ? ring.lineTo(q[0], q[1]) : ring.moveTo(q[0], q[1])); ring.closePath();
         c.save(); c.fillStyle = col; c.fill(ring, 'evenodd'); c.restore();
         CTX = c; shape(hole, { line: INK(), lw: 2.4, curve: .5 });

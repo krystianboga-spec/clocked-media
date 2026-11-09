@@ -235,7 +235,7 @@ const SCENES = {
     if (ik > 0) { pushT(); tr(ix, iy + (1 - ik) * 200); scl(ik); rot(osc(lt, .6) * .04); iconProp(p.icon, 0, 0, p.iconSize || 210, { t }); popT(); }
     // done tips strip
     (p.done || []).forEach((d, i) => {
-      const nx = 150 + i * 205, ny = 1395;
+      const nx = 150 + i * 190, ny = 1440;
       pushT(); tr(nx, ny); rot((hash(i + 3) - .5) * .12);
       shape(boxP(-92, -62, 184, 124, 6), { flat: ['#F6D86B', '#F4B2A2', '#A8D8C8', '#C9B8F0'][i % 4], lw: 1, tex: .4 });
       label(String(i + 1), -62, -32, 40, PAL.ink, { font: 'anton' });

@@ -35,8 +35,7 @@
       "text": "first serving job",
       "at": 0.55,
       "size": 112,
-      "swash": "#C8F25A",
-      "col": "#231A17"
+      "swash": "#C8F25A"
      }
     ],
     "cast": [
@@ -87,14 +86,14 @@
     "done": [],
     "setting": "chalkcafe",
     "set": {
-     "board": "TIP 1"
+     "board": ""
     },
     "accent": "#C8F25A",
     "cast": [
      {
       "who": "sam",
-      "x": 300,
-      "y": 1720,
+      "x": 910,
+      "y": 1730,
       "size": 56,
       "act": "phone",
       "pose": {
@@ -128,14 +127,14 @@
     ],
     "setting": "chalkcafe",
     "set": {
-     "board": "TIP 2"
+     "board": ""
     },
     "accent": "#EBAE3C",
     "cast": [
      {
       "who": "sam",
-      "x": 300,
-      "y": 1720,
+      "x": 910,
+      "y": 1730,
       "size": 56,
       "act": "idle",
       "pose": {
@@ -170,14 +169,14 @@
     ],
     "setting": "chalkcafe",
     "set": {
-     "board": "TIP 3"
+     "board": ""
     },
     "accent": "#88B9A6",
     "cast": [
      {
       "who": "sam",
-      "x": 300,
-      "y": 1720,
+      "x": 910,
+      "y": 1730,
       "size": 56,
       "act": "think",
       "pose": {
@@ -213,14 +212,14 @@
     ],
     "setting": "chalkcafe",
     "set": {
-     "board": "TIP 4"
+     "board": ""
     },
     "accent": "#F4B2A2",
     "cast": [
      {
       "who": "sam",
-      "x": 300,
-      "y": 1720,
+      "x": 910,
+      "y": 1730,
       "size": 56,
       "act": "idle",
       "pose": {
@@ -257,14 +256,14 @@
     ],
     "setting": "chalkcafe",
     "set": {
-     "board": "TIP 5"
+     "board": ""
     },
     "accent": "#C8F25A",
     "cast": [
      {
       "who": "sam",
-      "x": 300,
-      "y": 1720,
+      "x": 910,
+      "y": 1730,
       "size": 56,
       "act": "shrug",
       "pose": {
@@ -292,7 +291,7 @@
    "params": {
     "setting": "chalkcafe",
     "set": {
-     "board": "YOU GOT THIS"
+     "board": ""
     },
     "cam": [
      [

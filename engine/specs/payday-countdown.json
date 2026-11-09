@@ -1,7 +1,7 @@
 {
  "id": "payday-countdown",
  "title": "3 days to payday",
- "concept": "A rainy bus-stop countdown, Tuesday to Thursday, that ends on a payday reminder notification.",
+ "concept": "A rainy bus-stop countdown, Tuesday to Thursday, that ends on a payday reminder notification. Pay period card lists shifts already worked before the countdown starts (Sat, Sun, Mon), so 'earned' is true on Thursday.",
  "palette": "rainyBus",
  "setting": "busstop",
  "duration": 21.1,
@@ -294,17 +294,17 @@
      "rot": 0.0,
      "rows": [
       {
-       "l": "Tue",
+       "l": "Sat",
        "r": "6 h",
        "at": 0.15
       },
       {
-       "l": "Thu",
+       "l": "Sun",
        "r": "4.5 h",
        "at": 0.3
       },
       {
-       "l": "Sun",
+       "l": "Mon",
        "r": "6 h",
        "at": 0.45
       },

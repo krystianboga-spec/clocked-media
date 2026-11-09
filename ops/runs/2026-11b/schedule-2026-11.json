@@ -1,0 +1,449 @@
+{
+  "month": "2026-11",
+  "timezone": "America/Chicago",
+  "mode": "live",
+  "brand_id": 7724856,
+  "counts": {
+    "tiktok": 4,
+    "instagram": 5
+  },
+  "warnings": [
+    "tiktok: only 4 posts planned (quota left 4, usable days 14, assets 4)",
+    "instagram: only 5 posts planned (quota left 5, usable days 14, assets 5)"
+  ],
+  "evening_blocks": {
+    "2026-11-03": "Election Day",
+    "2026-11-11": "Veterans Day",
+    "2026-11-26": "Thanksgiving"
+  },
+  "unscheduled_assets": [
+    "notes-chaos"
+  ],
+  "posts": [
+    {
+      "n": 1,
+      "platform": "instagram",
+      "asset": "first-job-tips",
+      "type": "video",
+      "date": "2026-11-18",
+      "weekday": "Wed",
+      "time": "10:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Wednesday; day score 6506",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-18T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-18T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "First job? 5 things nobody tells you:\n\n1. Screenshot your schedule every week\n2. Write down every clock-in and clock-out\n3. Check the hours on your pay stub\n4. Know your payday and your pay period\n5. Something looks off? Ask payroll\n\nExample stub: 32 hrs x $15 = $480.00 before taxes.\n\nClocked keeps your shifts and projected pay in one place. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#firstjob #hourlyworker #serverlife #retailworker #paycheck",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/first-job-tips-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "instagramData": {
+            "type": "REEL",
+            "showReelOnFeed": true,
+            "isAiGenerated": true
+          }
+        }
+      }
+    },
+    {
+      "n": 2,
+      "platform": "tiktok",
+      "asset": "ot-puzzle",
+      "type": "video",
+      "date": "2026-11-19",
+      "weekday": "Thu",
+      "time": "10:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Thursday; day score 1471",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-19T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "tiktok"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-19T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "Is this paycheck right? Example: 44 hours at $16.50. First 40 = $660.00, 4 overtime hours at 1.5x ($24.75) = $99.00, so it should be $759.00 before taxes, but the check says $726.00. That's $33.00 short, worth asking payroll. Clocked shows projected pay with overtime included and is out now in free beta. Try it free at clocked.space and follow for updates. #overtime #paycheck #hourlyworker #payday #retailworker",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/ot-puzzle-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "tiktokData": {
+            "title": "Is this paycheck right? Overtime math",
+            "privacyOption": "PUBLIC_TO_EVERYONE",
+            "disableComment": false,
+            "disableDuet": false,
+            "disableStitch": false,
+            "commercialContentThirdParty": false,
+            "commercialContentOwnBrand": false,
+            "isAigc": true
+          }
+        }
+      }
+    },
+    {
+      "n": 3,
+      "platform": "instagram",
+      "asset": "ot-puzzle",
+      "type": "video",
+      "date": "2026-11-20",
+      "weekday": "Fri",
+      "time": "10:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Friday; day score 6734",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-20T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-20T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "Is this paycheck right?\n\nExample week: 44 hours at $16.50\nFirst 40 hrs: $660.00\n4 overtime hrs x $24.75 (1.5x): $99.00\nShould be: $759.00 before taxes\nCheck says: $726.00 ($33.00 short)\n\nMost hourly jobs pay 1.5x after 40 hours a week. If yours looks off, ask payroll.\n\nClocked shows your projected pay, overtime included. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#overtime #paycheck #hourlyworker #payday #retailworker",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/ot-puzzle-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "instagramData": {
+            "type": "REEL",
+            "showReelOnFeed": true,
+            "isAiGenerated": true
+          }
+        }
+      }
+    },
+    {
+      "n": 4,
+      "platform": "instagram",
+      "asset": "two-jobs-juggle",
+      "type": "video",
+      "date": "2026-11-23",
+      "weekday": "Mon",
+      "time": "10:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Monday; day score 5528",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-23T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-23T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "Juggling two jobs?\n\nExample week:\nJob 1: 12.5 hrs x $15 = $187.50\nJob 2: 9 hrs x $16 = $144.00\nTotal: $331.50 before taxes\n\nClocked puts every shift from every job in one place. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#twojobs #hourlyworker #paycheck #sidehustle #serverlife",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/two-jobs-juggle-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "instagramData": {
+            "type": "REEL",
+            "showReelOnFeed": true,
+            "isAiGenerated": true
+          }
+        }
+      }
+    },
+    {
+      "n": 5,
+      "platform": "tiktok",
+      "asset": "stay-two-more",
+      "type": "video",
+      "date": "2026-11-23",
+      "weekday": "Mon",
+      "time": "18:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Monday; day score 1096",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-23T18:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "tiktok"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-23T18:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "Can you stay 2 more hours? If you're already past 40 for the week, those are overtime hours. Example: $16.50 x 1.5 = $24.75 an hour, so 2 more hours = +$49.50 before taxes. Clocked shows what an extra shift adds to your projected pay and is out now in free beta. Try it free at clocked.space and follow for updates. #overtime #paycheck #hourlyworker #serverlife #retailworker",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/stay-two-more-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "tiktokData": {
+            "title": "Can you stay 2 more hours?",
+            "privacyOption": "PUBLIC_TO_EVERYONE",
+            "disableComment": false,
+            "disableDuet": false,
+            "disableStitch": false,
+            "commercialContentThirdParty": false,
+            "commercialContentOwnBrand": false,
+            "isAigc": true
+          }
+        }
+      }
+    },
+    {
+      "n": 6,
+      "platform": "tiktok",
+      "asset": "payday-countdown",
+      "type": "video",
+      "date": "2026-11-26",
+      "weekday": "Thu",
+      "time": "10:00",
+      "payday": true,
+      "reason": "Metricool best time #1 for Thursday; day score 1471; payday asset on Thu/Fri",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-26T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "tiktok"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-26T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "3 days to payday and you still don't know how much is coming? Clocked sends a payday reminder to your phone with about what you've earned. Example: 6 + 4.5 + 6 hours = 16.5 hrs x $15 = $247.50 before taxes. Free beta, out now. Try it free at clocked.space and follow for updates. #payday #paycheck #hourlyworker #retailworker #serverlife",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/payday-countdown-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "tiktokData": {
+            "title": "Counting down to payday",
+            "privacyOption": "PUBLIC_TO_EVERYONE",
+            "disableComment": false,
+            "disableDuet": false,
+            "disableStitch": false,
+            "commercialContentThirdParty": false,
+            "commercialContentOwnBrand": false,
+            "isAigc": true
+          }
+        }
+      }
+    },
+    {
+      "n": 7,
+      "platform": "instagram",
+      "asset": "payday-countdown",
+      "type": "video",
+      "date": "2026-11-27",
+      "weekday": "Fri",
+      "time": "10:00",
+      "payday": true,
+      "reason": "Metricool best time #1 for Friday; day score 6734; payday asset on Thu/Fri",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-27T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-27T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "3... 2... 1... payday.\n\nClocked reminds you on your phone before payday, with about how much is coming.\n\nExample pay period: 6 + 4.5 + 6 hrs = 16.5 hrs x $15 = $247.50 before taxes.\n\nFree shift and pay tracker for hourly workers, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #retailworker #serverlife",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/payday-countdown-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "instagramData": {
+            "type": "REEL",
+            "showReelOnFeed": true,
+            "isAiGenerated": true
+          }
+        }
+      }
+    },
+    {
+      "n": 8,
+      "platform": "instagram",
+      "asset": "stay-two-more",
+      "type": "video",
+      "date": "2026-11-30",
+      "weekday": "Mon",
+      "time": "10:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Monday; day score 5528",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-30T10:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "instagram"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-30T10:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "\"Can you stay 2 more hours?\"\n\nPast 40 hours this week? Example: $16.50 x 1.5 = $24.75/hr overtime.\n2 more hours = +$49.50 before taxes.\n\nClocked shows what extra hours add to your projected pay. It's in free beta now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#overtime #paycheck #hourlyworker #serverlife #retailworker",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/stay-two-more-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "instagramData": {
+            "type": "REEL",
+            "showReelOnFeed": true,
+            "isAiGenerated": true
+          }
+        }
+      }
+    },
+    {
+      "n": 9,
+      "platform": "tiktok",
+      "asset": "first-job-tips",
+      "type": "video",
+      "date": "2026-11-30",
+      "weekday": "Mon",
+      "time": "18:00",
+      "payday": false,
+      "reason": "Metricool best time #1 for Monday; day score 1096",
+      "createScheduledPost": {
+        "blogId": "7724856",
+        "date": "2026-11-30T18:00:00-06:00",
+        "info": {
+          "autoPublish": true,
+          "draft": false,
+          "providers": [
+            {
+              "network": "tiktok"
+            }
+          ],
+          "publicationDate": {
+            "dateTime": "2026-11-30T18:00:00",
+            "timezone": "America/Chicago"
+          },
+          "text": "Things nobody tells you at your first job: screenshot your schedule every week, write down every clock-in and clock-out, check the hours on your pay stub, know your payday and pay period, and if something looks off, ask payroll. Example pay stub: 32 hrs x $15 = $480.00 before taxes. Clocked logs your shifts and shows projected pay, free beta out now. Try it free at clocked.space and follow for updates. #firstjob #hourlyworker #serverlife #retailworker #paycheck",
+          "media": [
+            "https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/media/2026-11/painted/first-job-tips-voiced.mp4"
+          ],
+          "mediaAltText": [],
+          "descendants": [],
+          "firstCommentText": "",
+          "hasNotReadNotes": false,
+          "shortener": false,
+          "smartLinkData": {
+            "ids": []
+          },
+          "tiktokData": {
+            "title": "5 things nobody tells you at your first job",
+            "privacyOption": "PUBLIC_TO_EVERYONE",
+            "disableComment": false,
+            "disableDuet": false,
+            "disableStitch": false,
+            "commercialContentThirdParty": false,
+            "commercialContentOwnBrand": false,
+            "isAigc": true
+          }
+        }
+      }
+    }
+  ]
+}

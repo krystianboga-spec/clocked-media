@@ -1,0 +1,80 @@
+{
+ "month": "2026-11",
+ "brand_id": 7724856,
+ "timezone": "America/Chicago",
+ "_comment": "Second half of November 2026: the six painted videos (voiced masters). 9 slots left on the free plan: TikTok 4, Instagram 5.",
+ "assets": [
+  {
+   "id": "ot-puzzle", "type": "video", "payday": false, "voiced": true, "ai_voice": true,
+   "tiktok": {
+    "media": ["media/2026-11/painted/ot-puzzle-voiced.mp4"],
+    "title": "Is this paycheck right? Overtime math",
+    "caption": "Is this paycheck right? Example: 44 hours at $16.50. First 40 = $660.00, 4 overtime hours at 1.5x ($24.75) = $99.00, so it should be $759.00 before taxes, but the check says $726.00. That's $33.00 short, worth asking payroll. Clocked shows projected pay with overtime included and is out now in free beta. Try it free at clocked.space and follow for updates. #overtime #paycheck #hourlyworker #payday #retailworker"
+   },
+   "instagram": {
+    "media": ["media/2026-11/painted/ot-puzzle-voiced.mp4"],
+    "caption": "Is this paycheck right?\n\nExample week: 44 hours at $16.50\nFirst 40 hrs: $660.00\n4 overtime hrs x $24.75 (1.5x): $99.00\nShould be: $759.00 before taxes\nCheck says: $726.00 ($33.00 short)\n\nMost hourly jobs pay 1.5x after 40 hours a week. If yours looks off, ask payroll.\n\nClocked shows your projected pay, overtime included. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#overtime #paycheck #hourlyworker #payday #retailworker"
+   }
+  },
+  {
+   "id": "stay-two-more", "type": "video", "payday": false, "voiced": true, "ai_voice": true,
+   "tiktok": {
+    "media": ["media/2026-11/painted/stay-two-more-voiced.mp4"],
+    "title": "Can you stay 2 more hours?",
+    "caption": "Can you stay 2 more hours? If you're already past 40 for the week, those are overtime hours. Example: $16.50 x 1.5 = $24.75 an hour, so 2 more hours = +$49.50 before taxes. Clocked shows what an extra shift adds to your projected pay and is out now in free beta. Try it free at clocked.space and follow for updates. #overtime #paycheck #hourlyworker #serverlife #retailworker"
+   },
+   "instagram": {
+    "media": ["media/2026-11/painted/stay-two-more-voiced.mp4"],
+    "caption": "\"Can you stay 2 more hours?\"\n\nPast 40 hours this week? Example: $16.50 x 1.5 = $24.75/hr overtime.\n2 more hours = +$49.50 before taxes.\n\nClocked shows what extra hours add to your projected pay. It's in free beta now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#overtime #paycheck #hourlyworker #serverlife #retailworker"
+   }
+  },
+  {
+   "id": "first-job-tips", "type": "video", "payday": false, "voiced": true, "ai_voice": true,
+   "tiktok": {
+    "media": ["media/2026-11/painted/first-job-tips-voiced.mp4"],
+    "title": "5 things nobody tells you at your first job",
+    "caption": "Things nobody tells you at your first job: screenshot your schedule every week, write down every clock-in and clock-out, check the hours on your pay stub, know your payday and pay period, and if something looks off, ask payroll. Example pay stub: 32 hrs x $15 = $480.00 before taxes. Clocked logs your shifts and shows projected pay, free beta out now. Try it free at clocked.space and follow for updates. #firstjob #hourlyworker #serverlife #retailworker #paycheck"
+   },
+   "instagram": {
+    "media": ["media/2026-11/painted/first-job-tips-voiced.mp4"],
+    "caption": "First job? 5 things nobody tells you:\n\n1. Screenshot your schedule every week\n2. Write down every clock-in and clock-out\n3. Check the hours on your pay stub\n4. Know your payday and your pay period\n5. Something looks off? Ask payroll\n\nExample stub: 32 hrs x $15 = $480.00 before taxes.\n\nClocked keeps your shifts and projected pay in one place. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#firstjob #hourlyworker #serverlife #retailworker #paycheck"
+   }
+  },
+  {
+   "id": "payday-countdown", "type": "video", "payday": true, "voiced": true, "ai_voice": true,
+   "tiktok": {
+    "media": ["media/2026-11/painted/payday-countdown-voiced.mp4"],
+    "title": "Counting down to payday",
+    "caption": "3 days to payday and you still don't know how much is coming? Clocked sends a payday reminder to your phone with about what you've earned. Example: 6 + 4.5 + 6 hours = 16.5 hrs x $15 = $247.50 before taxes. Free beta, out now. Try it free at clocked.space and follow for updates. #payday #paycheck #hourlyworker #retailworker #serverlife"
+   },
+   "instagram": {
+    "media": ["media/2026-11/painted/payday-countdown-voiced.mp4"],
+    "caption": "3... 2... 1... payday.\n\nClocked reminds you on your phone before payday, with about how much is coming.\n\nExample pay period: 6 + 4.5 + 6 hrs = 16.5 hrs x $15 = $247.50 before taxes.\n\nFree shift and pay tracker for hourly workers, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #paycheck #hourlyworker #retailworker #serverlife"
+   }
+  },
+  {
+   "id": "two-jobs-juggle", "type": "video", "payday": false, "voiced": true, "ai_voice": true,
+   "tiktok": {
+    "media": ["media/2026-11/painted/two-jobs-juggle-voiced.mp4"],
+    "title": "Two jobs, one paycheck number",
+    "caption": "Two jobs, one me. Example week: 12.5 hrs x $15 = $187.50 plus 9 hrs x $16 = $144.00, so $331.50 before taxes. Clocked tracks more than one job in one place and is out now in free beta. Try it free at clocked.space and follow for updates. #twojobs #hourlyworker #paycheck #sidehustle #serverlife"
+   },
+   "instagram": {
+    "media": ["media/2026-11/painted/two-jobs-juggle-voiced.mp4"],
+    "caption": "Juggling two jobs?\n\nExample week:\nJob 1: 12.5 hrs x $15 = $187.50\nJob 2: 9 hrs x $16 = $144.00\nTotal: $331.50 before taxes\n\nClocked puts every shift from every job in one place. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#twojobs #hourlyworker #paycheck #sidehustle #serverlife"
+   }
+  },
+  {
+   "id": "notes-chaos", "type": "video", "payday": false, "voiced": true, "ai_voice": true,
+   "tiktok": {
+    "media": ["media/2026-11/painted/notes-chaos-voiced.mp4"],
+    "title": "My hours are in a notes app",
+    "caption": "My hours are in a notes app, three screenshots and a napkin. Example week: Mon 5.5 + Wed 5 + Sat 6 = 16.5 hrs x $15 = $247.50 before taxes. Clocked keeps every shift in one place and shows projected pay. Free beta, out now. Try it free at clocked.space and follow for updates. #paycheck #hourlyworker #workschedule #serverlife #retailworker"
+   },
+   "instagram": {
+    "media": ["media/2026-11/painted/notes-chaos-voiced.mp4"],
+    "caption": "Before: hours in a notes app, screenshots, a napkin.\nAfter: one list.\n\nExample week: 5.5 + 5 + 6 = 16.5 hrs x $15 = $247.50 before taxes.\n\nClocked keeps your shifts and projected pay in one place. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#paycheck #hourlyworker #workschedule #serverlife #retailworker"
+   }
+  }
+ ]
+}

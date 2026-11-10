@@ -146,15 +146,14 @@ What `voice.py` does:
 6. `--retime` rewrites the spec so nothing is cut or overlapped: each caption stays on screen until its line ends plus 0.25 s. A caption that has to start later shifts that shot's later timed keys (rows, totals, stamps, fx, camera, beats); a shot that has to grow shifts every later shot and the end card. Run it once per spec after editing captions; it only ever lengthens.
 7. Writes `engine/cache/voice/<id>.wav` and `<id>.json` (the timing report, per-phrase F0 before/after, and per-frame mouth envelopes).
 
-Install in a fresh session:
+Install in a fresh session (the model files are in this repo, nothing to download):
 ```bash
-python3 -m venv ttsenv
-ttsenv/bin/pip install kokoro-onnx soundfile numpy scipy praat-parselmouth pyloudnorm
-# model files (not on PyPI): kokoro-v1.0.onnx (~310 MB) and voices-v1.0.bin (~27 MB), published as the
-# "model-files-v1.0" release of the kokoro-onnx project on GitHub (github.com/thewh1teagle/kokoro-onnx/releases).
-# Put both in one folder and pass it with --models (or set CLOCKED_TTS_MODELS).
+bash engine/setup-voice.sh            # joins engine/models/kokoro-v1.0.onnx.part*, checks SHA256SUMS, makes engine/.ttsenv
+export CLOCKED_TTS_MODELS=engine/models
+engine/.ttsenv/bin/python engine/voice.py engine/specs/<id>.json --retime
+node engine/render.cjs engine/specs/<id>.json --video --voice --out=media/YYYY-MM/painted/<id>-voiced.mp4
 ```
-GitHub release downloads and huggingface.co were blocked in the session that built this, so the model files came from an earlier session's copy. If you cannot get them, make silent videos.
+Kokoro-82M v1.0 (Apache 2.0) is stored in engine/models/ as 90 MB parts plus voices-v1.0.bin; packages come from PyPI (engine/requirements-voice.txt). If setup fails, make silent videos.
 
 ## Rules the engine does not check for you
 

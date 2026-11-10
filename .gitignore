@@ -5,3 +5,5 @@ engine/tmp/
 *.tmp.mp4
 frames/
 __pycache__/
+engine/models/kokoro-v1.0.onnx
+engine/.ttsenv/

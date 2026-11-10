@@ -55,7 +55,7 @@ From ops/concepts.md pick **6 video** and **4 photo** concepts whose ids are NOT
 
 ## Step 3. Write the specs
 
-Write `media/YYYY-MM/specs/<id>.json` (video) or `<id>.md` (photo set) for each of the 10 assets. Follow the spec format in engine/README.md for videos. Each spec states: id, hook, on-screen text frame by frame, example math with the sum shown, feature shown, voiced yes/no, the end card, and the TikTok title and the two captions (TikTok single line, Instagram with line breaks). Voice is optional: if engine/README.md says TTS is available and it works, you may voice up to a few videos; if it is unavailable or errors, make them silent. Silent is fine.
+Write `media/YYYY-MM/specs/<id>.json` (video) or `<id>.md` (photo set) for each of the 10 assets. Follow the spec format in engine/README.md for videos. Each spec states: id, hook, on-screen text frame by frame, example math with the sum shown, feature shown, voiced yes/no, the end card, and the TikTok title and the two captions (TikTok single line, Instagram with line breaks). Voice: run `bash engine/setup-voice.sh` once (the Kokoro model is in the repo; about 15 s), then voice every video with engine/voice.py --retime: the characters say their captions word for word. Voiced videos post on their own (no phone ping). If setup or voice.py errors, make that video silent. Silent is fine.
 
 ## Step 4. Render videos
 

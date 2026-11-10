@@ -1,21 +1,19 @@
 {
- "id": "payday-countdown",
  "title": "3 days to payday",
  "concept": "A rainy bus-stop countdown, Tuesday to Thursday, that ends on a payday reminder notification. Pay period card lists shifts already worked before the countdown starts (Sat, Sun, Mon), so 'earned' is true on Thursday.",
  "palette": "rainyBus",
  "setting": "busstop",
- "duration": 25.76,
  "fps": 30,
  "seed": 41,
  "showsPay": true,
  "transition": "flip",
- "math": [
-  "6 + 4.5 + 6 = 16.5",
-  "16.5 x 15.00 = 247.50"
- ],
+ "music": {
+  "mood": "lofi",
+  "bpm": 80
+ },
+ "id": "payday-countdown",
  "shots": [
   {
-   "start": 0.0,
    "scene": "stage",
    "caption": "When's payday again?",
    "speaker": "SAM",
@@ -25,14 +23,14 @@
       0,
       520,
       1080,
-      1.0,
+      1.06,
       0
      ],
      [
-      2.2,
+      1.5,
       520,
-      1080,
-      1.0,
+      1060,
+      1.12,
       0
      ]
     ],
@@ -57,12 +55,12 @@
      "#86AECB",
      "#D6E6F2"
     ]
-   }
+   },
+   "start": 0.0
   },
   {
-   "start": 2.2,
    "scene": "countdown",
-   "caption": "Tuesday. *3 days* to payday.",
+   "caption": "Tuesday. *3 days.*",
    "speaker": "CLOCKY",
    "params": {
     "n": 3,
@@ -95,10 +93,10 @@
    },
    "out": {
     "type": "flip"
-   }
+   },
+   "start": 1.5
   },
   {
-   "start": 4.79,
    "scene": "countdown",
    "caption": "Wednesday. *2 days.*",
    "speaker": "CLOCKY",
@@ -136,10 +134,10 @@
    },
    "out": {
     "type": "flip"
-   }
+   },
+   "start": 3.38
   },
   {
-   "start": 6.87,
    "scene": "countdown",
    "caption": "Thursday. *1 day.*",
    "speaker": "CLOCKY",
@@ -181,12 +179,12 @@
      "#86AECB",
      "#D6E6F2"
     ]
-   }
+   },
+   "start": 5.25
   },
   {
-   "start": 8.88,
    "scene": "notify",
-   "caption": "Then a payday reminder, right on your phone.",
+   "caption": "Then this pops up.",
    "speaker": "CLOCKY",
    "params": {
     "set": {
@@ -201,7 +199,7 @@
      "rot": -0.04
     },
     "notif": {
-     "at": 0.6,
+     "at": 0.3,
      "app": "CLOCKED",
      "when": "now",
      "h": 0.27,
@@ -220,28 +218,58 @@
       0
      ],
      [
-      0.95,
+      1.505,
       540,
       1000,
-      1.0,
+      1.03,
       0
-     ],
+     ]
+    ]
+   },
+   "out": "cut",
+   "start": 7.12
+  },
+  {
+   "scene": "notify",
+   "params": {
+    "set": {
+     "rainA": 0.3
+    },
+    "time": "7:42",
+    "date": "Thursday",
+    "phone": {
+     "x": 540,
+     "y": 1060,
+     "h": 900,
+     "rot": -0.04
+    },
+    "notif": {
+     "at": -1,
+     "app": "CLOCKED",
+     "when": "now",
+     "h": 0.27,
+     "lines": [
+      "Payday is Friday.",
+      "You've earned about $247.50",
+      "this pay period."
+     ]
+    },
+    "cam": [
      [
-      1.45,
+      0,
       540,
       990,
       1.55,
       -0.02
      ],
      [
-      3.4,
+      1.6,
       540,
       990,
-      1.6,
+      1.62,
       -0.02
      ]
-    ],
-    "camEase": "smooth"
+    ]
    },
    "out": {
     "type": "drip",
@@ -249,12 +277,12 @@
      "#86AECB",
      "#D6E6F2"
     ]
-   }
+   },
+   "start": 8.62
   },
   {
-   "start": 12.28,
    "scene": "card",
-   "caption": "Example: 16.5 hours at $15 an hour is *$247.50.*",
+   "caption": "16.5 hours at $15.",
    "speaker": "CLOCKY",
    "params": {
     "setting": "busstop",
@@ -271,10 +299,10 @@
       0
      ],
      [
-      6.69,
+      2.905,
       540,
       960,
-      1.0,
+      1.03,
       0
      ]
     ],
@@ -285,36 +313,103 @@
      "w": 840,
      "title": "THIS PAY PERIOD",
      "band": "#EC7458",
-     "rot": 0.0,
      "rows": [
       {
        "l": "Sat",
        "r": "6 h",
-       "at": 0.15
+       "at": 0.1
       },
       {
        "l": "Sun",
        "r": "4.5 h",
-       "at": 0.3
+       "at": 0.22
       },
       {
        "l": "Mon",
        "r": "6 h",
-       "at": 0.45
+       "at": 0.34
       },
       {
        "l": "16.5 h × $15.00",
        "r": "",
-       "at": 0.7,
+       "at": 0.5,
        "lcol": "#1E2933"
       }
      ],
      "total": {
       "l": "About",
       "r": "$247.50",
-      "at": 1.0,
+      "at": 9,
       "count": true
      }
+    }
+   },
+   "out": "cut",
+   "start": 10.22
+  },
+  {
+   "scene": "card",
+   "caption": "That's *$247.50.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "busstop",
+    "set": {
+     "rainA": 0.2
+    },
+    "dim": 0.5,
+    "cam": [
+     [
+      0,
+      540,
+      1120,
+      1.12,
+      0
+     ],
+     [
+      2.255,
+      540,
+      1120,
+      1.15,
+      0
+     ]
+    ],
+    "drift": 0,
+    "card": {
+     "x": 540,
+     "y": 960,
+     "w": 840,
+     "title": "THIS PAY PERIOD",
+     "band": "#EC7458",
+     "rows": [
+      {
+       "l": "Sat",
+       "r": "6 h",
+       "at": -1
+      },
+      {
+       "l": "Sun",
+       "r": "4.5 h",
+       "at": -1
+      },
+      {
+       "l": "Mon",
+       "r": "6 h",
+       "at": -1
+      },
+      {
+       "l": "16.5 h × $15.00",
+       "r": "",
+       "at": -1,
+       "lcol": "#1E2933"
+      }
+     ],
+     "total": {
+      "l": "About",
+      "r": "$247.50",
+      "at": 0.1,
+      "count": true
+     },
+     "enterAt": -5
     }
    },
    "out": {
@@ -323,12 +418,12 @@
      "#86AECB",
      "#D6E6F2"
     ]
-   }
+   },
+   "start": 13.12
   },
   {
-   "start": 18.97,
    "scene": "stage",
-   "caption": "Now I know what's coming Friday.",
+   "caption": "Now I know what's coming.",
    "speaker": "SAM",
    "params": {
     "cam": [
@@ -340,10 +435,10 @@
       0
      ],
      [
-      2.19,
+      1.495,
       520,
       1080,
-      1.0,
+      1.04,
       0
      ]
     ],
@@ -358,16 +453,11 @@
       "x": 400,
       "y": 1500,
       "size": 84,
-      "beats": [
-       [
-        0,
-        {
-         "eyes": "happy",
-         "mouth": "smile",
-         "emote": "music"
-        }
-       ]
-      ]
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile",
+       "emote": "music"
+      }
      },
      {
       "who": "clocky",
@@ -377,7 +467,7 @@
       "act": "hop",
       "enter": {
        "type": "pop",
-       "at": 0.2
+       "at": 0.1
       }
      }
     ]
@@ -388,12 +478,14 @@
      "#86AECB",
      "#D6E6F2"
     ]
-   }
+   },
+   "start": 15.38
   }
  ],
  "endCard": {
-  "start": 21.16,
+  "start": 16.88,
   "caption": "Payday reminders on your phone.",
   "speaker": "CLOCKY"
- }
+ },
+ "duration": 19.48
 }

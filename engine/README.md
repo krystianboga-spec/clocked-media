@@ -32,9 +32,12 @@ node engine/render.cjs <spec> --video --out=media/YYYY-MM/painted/<id>.mp4
 # 4. optional voice: check the captions, make the voice track (retiming the spec so no word is cut), render voiced
 <tts-python> engine/voice.py <spec> --check
 <tts-python> engine/voice.py <spec> --models <dir with kokoro-v1.0.onnx and voices-v1.0.bin> --retime
-node engine/render.cjs <spec> --video --voice --crf=25 --preset=veryfast --out=media/YYYY-MM/painted/<id>-voiced.mp4
+# 5. sound: music bed + synthesized SFX + voice, mixed to -14 LUFS (drop --voice for a music-and-SFX-only mix)
+<tts-python> engine/sound.py <spec> --voice
+node engine/render.cjs <spec> --video --voice --sound --crf=25 --preset=veryfast --out=media/YYYY-MM/painted/<id>-voiced.mp4
+# without TTS: sound.py <spec> (no --voice), then render with --sound only
 
-# 5. verify
+# 6. verify
 ffprobe -v error -show_entries stream=codec_type,width,height,r_frame_rate -show_entries format=duration -of compact <file>.mp4
 ```
 
@@ -67,6 +70,8 @@ Files: `studio.html` (the page), `src/core.js` (math, transforms, both painting 
   "fps": 30, "seed": 11,                // seed changes the boil and texture variation
   "showsPay": true,                     // true when any pay figure is on screen: adds "Example figures, before taxes" to cards and the end card
   "transition": "brush",                // default transition between shots
+  "music": { "mood": "detective", "bpm": 96 },   // see Sound; cuts snap to its half-beat grid
+  "sfx": [ { "t": 3.2, "kind": "ding", "gain": 0 } ],   // optional extra sound effects (most are automatic)
   "math": ["40 x 16.50 = 660.00"],      // for review only: write every calculation here and check it in Python
   "shots": [ { shot }, ... ],
   "endCard": { "start": 17.4, "caption": "...", "speaker": "CLOCKY" }
@@ -138,12 +143,12 @@ Shared pose keys: `dy`, `sq` (squash), `rot`, `flip`, `aL`, `aR` (arm angles: 0 
 Rule: **the caption is the speech.** Every caption (or `captions` entry) that has a `speaker` is spoken word for word, and nothing is spoken that is not a caption. There is no separate script field: `voice.py --check` fails if a shot has `say` or `voiceSpeaker`, or if a caption does not read cleanly aloud. Write captions the way a person would say them: `$759` (no `.00`; keep cents only when they are not zero, `$16.50`), `16.5 hours`, `1.5×`, `4 to 9`, `9:30`. The voice reads them as "seven hundred fifty-nine dollars", "sixteen fifty", "sixteen and a half hours", "one and a half times", "four to nine", "nine thirty". Cards can still show full math with cents.
 
 What `voice.py` does:
-1. Splits each line into phrases at `. ? ! :` and `...` and synthesizes each with Kokoro (CPU, ONNX). Speed varies per phrase between 0.95 and 1.03 and is never above 1.05.
+1. Splits each line into phrases at `. ? ! :` and `...` and synthesizes each with Kokoro (CPU, ONNX). Speed is about 1.0 to 1.05 per phrase (a small per-phrase wobble) and is never above 1.05.
 2. Voices: Sam = am_michael 60% + am_fenrir 40% (style-vector blend), Clocky = af_heart, Notes = af_bella (+1.5 semitones), Manager = am_fenrir + am_onyx (-2.5 semitones). The blend weight wobbles a little per phrase.
 3. Shapes pitch with Praat PSOLA (praat-parselmouth): widens the contour around the speaker's mean toward a target spread (about 3.4 to 3.8 semitones std, capped at 1.5x), adds a fall at the end of statements, a rise on questions, a stress bump on the `*emphasised*` word or the dollar amount, and slow drift.
-4. Joins phrases with real pauses (0.2 to 0.42 s) and 8 ms fades, so joins do not click.
+4. Joins phrases with real pauses (0.14 to 0.3 s) and 8 ms fades, so joins do not click.
 5. Per speaker: high-pass 80 Hz, a small low-mid cut, a presence lift, de-ess, light compression and a short subtle room. The mix is normalised to -16 LUFS with true peak under -1.5 dB.
-6. `--retime` rewrites the spec so nothing is cut or overlapped: each caption stays on screen until its line ends plus 0.25 s. A caption that has to start later shifts that shot's later timed keys (rows, totals, stamps, fx, camera, beats); a shot that has to grow shifts every later shot and the end card. Run it once per spec after editing captions; it only ever lengthens.
+6. `--retime` rewrites the spec so nothing is cut or overlapped: each caption stays on screen until its line ends plus 0.22 s, and each cut is rounded up to the music's half-beat. A caption that has to start later shifts that shot's later timed keys (rows, totals, stamps, fx, camera, beats); a shot that has to grow shifts every later shot and the end card. Run it once per spec after editing captions; it only ever lengthens.
 7. Writes `engine/cache/voice/<id>.wav` and `<id>.json` (the timing report, per-phrase F0 before/after, and per-frame mouth envelopes).
 
 Install in a fresh session (the model files are in this repo, nothing to download):
@@ -154,6 +159,54 @@ engine/.ttsenv/bin/python engine/voice.py engine/specs/<id>.json --retime
 node engine/render.cjs engine/specs/<id>.json --video --voice --out=media/YYYY-MM/painted/<id>-voiced.mp4
 ```
 Kokoro-82M v1.0 (Apache 2.0) is stored in engine/models/ as 90 MB parts plus voices-v1.0.bin; packages come from PyPI (engine/requirements-voice.txt). If setup fails, make silent videos.
+
+## Sound (`sound.py`)
+
+Everything is synthesized in numpy, so there is no licensing question: no samples, no downloads.
+
+- **Music bed** from `"music": { "mood", "bpm" }`. Moods:
+  - `detective`: Dm9 Bb Gm7 A7, walking bass, brushes, vibes.
+  - `nightdiner`: Fmaj7 Em7 Dm7 Cmaj7, Rhodes-style electric piano, upright bass, ride.
+  - `lofi`: Cmaj7 Am7 Fmaj7 G7, boom-bap drums, vinyl crackle and rain.
+  - `upbeat`: C G Am F, four-on-the-floor, claps, pluck arpeggio, pad.
+  - `bouncy`: F C Dm Bb, marimba, snaps, shaker.
+  - `chaoscalm`: random whole-tone marimba with woodblock ticks until shot `calmShot`, then a soft pad with plucks.
+  - Optional `"gain"` (dB) trims the bed.
+- **SFX**, placed automatically from the spec:
+  - Transitions get a sound by type: dry-brush swish, bloom swell, drip plops, splat, whip, paper tear, page flip, whoosh for iris and zoom.
+  - Character entrances: pop, a boing or thump on a drop, a whip on a slide or rise.
+  - `fx`: coins clink, stamps thud, sparks sparkle, "BOING" boings, speed lines whip.
+  - Cards: count-up ticks, and a register "ka-ching" when a counted total lands.
+  - Countdowns get a page flip; notifications a phone buzz and ding.
+  - List badges, montage panels and title lines pop.
+  - A riser leads into the end card, followed by a sparkle and a pop.
+  - Add or override with `"sfx": [{ "t", "kind", "gain" }]`. Kinds: whoosh whip tear flip splat bloom drip coin coins thud stamp ding buzz tick kaching riser pop boing sparkle thump.
+- **Mix**:
+  - Dialog at -16 LUFS from voice.py.
+  - Music normalised to about -21 LUFS, then ducked 12 dB under the voice with a smooth sidechain (20 ms attack, 300 ms release).
+  - SFX on top.
+  - The whole mix is normalised to -14 LUFS with true peak at or below -2.6 dB before encoding, so the AAC file stays under -1 dB.
+  - Mouths still follow the voice only.
+
+## Pacing
+
+Write one short spoken caption per shot (about 3 to 7 words) and keep shots minimal: `voice.py --retime` grows each voiced shot to exactly its line plus 0.22 s, then rounds the cut up to the music's half-beat, so cuts land on the beat.
+- For a longer thought, split it over two shots: a camera punch-in, the same card with `"enterAt": -5` and rows at `-1` so it doesn't re-enter, or a close-up. Join them with `"out": "cut"`.
+- Aim for 15 to 25 s total and shots of 2.5 s or less.
+- Start speaking in the first shot (the voice begins 0.08 s in) so every video has a spoken hook inside the first second.
+- Retime only ever lengthens. To tighten an existing spec, shorten its captions, rebuild the base timings, then run `--retime` again.
+
+## Free voice models checked (November 2026)
+
+Kokoro (kokoro-onnx) stays. Nothing better was installable here:
+- **PyPI packages** for kittentts, pocket-tts, chatterbox-tts, outetts, f5-tts and melotts are code only; they fetch weights from huggingface.co, which is blocked.
+- **piper-tts** (GPL-3.0) ships the runtime but no voices, and Piper ranks below Kokoro anyway.
+- **npm packages:**
+  - kokoro-js is the same Kokoro model; its weights also come from Hugging Face.
+  - piper-tts-web (160 MB) is only the wasm runtime and phonemizer data.
+  - @diffusionstudio/vits-web, @mintplex-labs/piper-tts-web and sherpa-onnx have no weights.
+- **GitHub repo search** found no permissively licensed repo with a better model stored in plain git.
+- **Arena-leading open models** (Chatterbox, F5, Orpheus, Dia, CSM) need Hugging Face weights and GPU-class compute.
 
 ## Rules the engine does not check for you
 

@@ -8,7 +8,7 @@ word for word: the spoken text is derived from the caption by speak_text() (stri
 times like a person reads them). A shot may not carry its own "say" text; --check fails if it does, or if any spoken
 line is not derived from its caption.
 
-Pipeline per line: split into phrases at . ? ! : and ..., synthesize each with Kokoro (speed 0.95 to 1.03, never
+Pipeline per line: split into phrases at . ? ! : and ..., synthesize each with Kokoro (speed about 1.0 to 1.05, never
 above 1.05), widen and shape its pitch contour with Praat PSOLA (expand around the speaker mean, a fall at the end of
 statements, a rise on questions, a stress bump on the *emphasised* word or the dollar amount, slow drift), join with
 real pauses and short fades. Per-speaker stems then get high-pass, presence EQ, de-ess, light compression and a
@@ -28,16 +28,16 @@ import numpy as np, soundfile as sf
 # ---------------------------------------------------------------- speakers
 # voice: a Kokoro voice name or a blend {name: weight}. shift: semitones. target: wanted F0 std (semitones).
 SPEAKERS = {
-    'SAM':     dict(voice={'am_michael': .6, 'am_fenrir': .4}, speed=1.0, shift=0.0, target=3.4, floor=65, ceil=320),
-    'CLOCKY':  dict(voice={'af_heart': 1.0}, speed=1.0, shift=0.0, target=3.6, floor=110, ceil=520),
-    'NOTES':   dict(voice={'af_bella': 1.0}, speed=1.03, shift=1.5, target=3.8, floor=120, ceil=600),
-    'MANAGER': dict(voice={'am_fenrir': .5, 'am_onyx': .5}, speed=.96, shift=-2.5, target=2.8, floor=60, ceil=300),
+    'SAM':     dict(voice={'am_michael': .6, 'am_fenrir': .4}, speed=1.04, shift=0.0, target=3.4, floor=65, ceil=320),
+    'CLOCKY':  dict(voice={'af_heart': 1.0}, speed=1.05, shift=0.0, target=3.6, floor=110, ceil=520),
+    'NOTES':   dict(voice={'af_bella': 1.0}, speed=1.06, shift=1.5, target=3.8, floor=120, ceil=600),
+    'MANAGER': dict(voice={'am_fenrir': .5, 'am_onyx': .5}, speed=1.0, shift=-2.5, target=2.8, floor=60, ceil=300),
     'STUB':    dict(voice={'am_puck': .6, 'am_echo': .4}, speed=1.02, shift=1.0, target=3.0, floor=70, ceil=350),
 }
 SR_TTS, SR, FPS = 24000, 48000, 30
-LEAD, TAIL = 0.15, 0.25          # voice starts 0.15 s after its caption; caption stays 0.25 s after the voice ends
+LEAD, TAIL = 0.08, 0.22          # voice starts 0.08 s after its caption; caption stays 0.22 s after the voice ends
 MAX_SPEED = 1.05
-PAUSE = {'?': .28, '!': .26, '.': .32, ':': .2, '...': .42, '': .0}
+PAUSE = {'?': .2, '!': .18, '.': .22, ':': .14, '...': .3, '': .0}
 
 # ---------------------------------------------------------------- caption -> speech
 ONES = 'zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split()
@@ -63,7 +63,7 @@ def decimal(m):
     return f"{words(a)} and a half" if b == '5' else f"{words(a)} point " + ' '.join(ONES[int(ch)] for ch in b)
 def speak_text(caption):
     """The words a person says when reading this caption aloud."""
-    s = caption.replace('*', '')
+    s = caption.replace('*', '').replace('clocked.space', 'clocked dot space')
     s = re.sub(r'\s*×\s*', ' times ', s); s = re.sub(r'(\d)\s*x\s*(\d)', r'\1 times \2', s)
     s = re.sub(r'\s*=\s*', ' equals ', s)
     s = re.sub(r'(\+\s*)?\$([\d,]+)(\.(\d\d))?(/hr)?', money, s)
@@ -180,7 +180,7 @@ def synth_line(k, spk, caption, seed, shape=True, plain=False):
     parts, rep = [], []
     for pi, (ph, mark) in enumerate(phrases(text)):
         h = (seed * 7919 + pi * 104729) % 1000 / 1000
-        sp = min(MAX_SPEED, cfg['speed'] * (0.95 + 0.08 * h))
+        sp = min(MAX_SPEED, cfg['speed'] * (0.96 + 0.05 * h))
         a, sr = k.create(ph.rstrip('.') if mark == '...' else ph, voice=style_of(k, cfg['voice'], (h - .5) * .16), speed=sp, lang='en-us')
         nz = np.where(np.abs(a) > .008)[0]
         if len(nz): a = a[max(0, nz[0] - 120): nz[-1] + 360]
@@ -241,8 +241,10 @@ def retime(spec, durs):
             need_end = start + last[1] + LEAD + durs.get((i, last[0]), 0) + TAIL
         else:
             need_end = start + LEAD + durs.get((i, None), 0) + TAIL
+        grid = 30.0 / spec['music']['bpm'] if (spec.get('music') or {}).get('bpm') else 0
+        if grid and need_end > end + 1e-3: need_end = math.ceil((need_end - 1e-6) / grid) * grid   # cut on the music's half-beat
         if need_end > end + 1e-3:
-            d = round(need_end - end + .05, 2)
+            d = round(need_end - end, 3)
             for t in shots[i + 1:]: t['start'] = round(t['start'] + d, 2)
             spec['duration'] = round(spec['duration'] + d, 2)
             # stretch the shot's own last camera key so the move doesn't stall early

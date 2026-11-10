@@ -1,40 +1,40 @@
 {
- "id": "first-job-tips",
  "title": "Things nobody tells you at your first serving job",
  "concept": "A fast five-tip list on a cafe chalkboard wall, stamped in one by one, ending on Clocky.",
  "palette": "chalkCafe",
  "setting": "chalkcafe",
- "duration": 22.53,
  "fps": 30,
  "seed": 61,
  "showsPay": true,
  "transition": "splat",
+ "music": {
+  "mood": "bouncy",
+  "bpm": 128
+ },
+ "id": "first-job-tips",
  "shots": [
   {
-   "start": 0.0,
    "scene": "title",
+   "caption": "First serving job?",
+   "speaker": "CLOCKY",
    "params": {
     "setting": "chalkcafe",
     "set": {
      "board": ""
     },
-    "y0": 420,
-    "gap": 130,
+    "y0": 700,
+    "gap": 150,
     "lines": [
      {
-      "text": "Things nobody",
-      "at": 0.05,
-      "size": 110
+      "text": "FIRST",
+      "at": 0.0,
+      "size": 170,
+      "col": "#F4F2EA"
      },
      {
-      "text": "tells you at your",
-      "at": 0.3,
-      "size": 96
-     },
-     {
-      "text": "first serving job",
-      "at": 0.55,
-      "size": 112,
+      "text": "SERVING JOB?",
+      "at": 0.15,
+      "size": 130,
       "swash": "#C8F25A"
      }
     ],
@@ -48,8 +48,7 @@
        "eyes": "wide",
        "mouth": "wavy",
        "emote": "sweat"
-      },
-      "act": "idle"
+      }
      }
     ],
     "fx": [
@@ -57,7 +56,7 @@
       "type": "lines",
       "x": 540,
       "y": 800,
-      "at": 0.05,
+      "at": 0.0,
       "r0": 420,
       "r1": 900,
       "n": 22,
@@ -65,14 +64,65 @@
      }
     ]
    },
+   "out": "cut",
+   "start": 0.0
+  },
+  {
+   "scene": "title",
+   "caption": "5 things nobody tells you.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "chalkcafe",
+    "set": {
+     "board": ""
+    },
+    "y0": 760,
+    "gap": 150,
+    "lines": [
+     {
+      "text": "5 THINGS",
+      "at": 0.0,
+      "size": 170,
+      "col": "#C8F25A"
+     }
+    ],
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.12,
+      0.03
+     ],
+     [
+      1.871,
+      540,
+      960,
+      1.18,
+      0.03
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1780,
+      "size": 78,
+      "pose": {
+       "eyes": "open",
+       "mouth": "o"
+      }
+     }
+    ]
+   },
    "out": {
     "type": "splat",
     "x": 540,
     "y": 900
-   }
+   },
+   "start": 1.41
   },
   {
-   "start": 2.8,
    "scene": "list",
    "caption": "Screenshot your schedule every week.",
    "speaker": "CLOCKY",
@@ -94,8 +144,7 @@
       "size": 56,
       "act": "phone",
       "pose": {
-       "eyes": "open",
-       "mouth": "flat"
+       "eyes": "open"
       }
      }
     ]
@@ -107,12 +156,12 @@
     "colors": [
      "#E05A42"
     ]
-   }
+   },
+   "start": 3.28
   },
   {
-   "start": 5.05,
    "scene": "list",
-   "caption": "Write down every shift: clock-in *and* clock-out.",
+   "caption": "Write down every shift.",
    "speaker": "CLOCKY",
    "params": {
     "n": 2,
@@ -134,8 +183,7 @@
       "size": 56,
       "act": "idle",
       "pose": {
-       "eyes": "open",
-       "mouth": "smile"
+       "eyes": "open"
       }
      }
     ]
@@ -147,10 +195,10 @@
     "colors": [
      "#EBAE3C"
     ]
-   }
+   },
+   "start": 5.39
   },
   {
-   "start": 8.18,
    "scene": "list",
    "caption": "Check the hours on your pay stub.",
    "speaker": "CLOCKY",
@@ -175,8 +223,7 @@
       "size": 56,
       "act": "think",
       "pose": {
-       "eyes": "open",
-       "mouth": "flat"
+       "eyes": "open"
       }
      }
     ]
@@ -188,12 +235,12 @@
     "colors": [
      "#2E4A40"
     ]
-   }
+   },
+   "start": 7.03
   },
   {
-   "start": 10.18,
    "scene": "list",
-   "caption": "Know your payday and your pay period.",
+   "caption": "Know your payday and pay period.",
    "speaker": "CLOCKY",
    "params": {
     "n": 4,
@@ -217,8 +264,7 @@
       "size": 56,
       "act": "idle",
       "pose": {
-       "eyes": "open",
-       "mouth": "flat"
+       "eyes": "open"
       }
      }
     ]
@@ -230,12 +276,12 @@
     "colors": [
      "#C9603F"
     ]
-   }
+   },
+   "start": 8.91
   },
   {
-   "start": 12.61,
    "scene": "list",
-   "caption": "Something looks off? *Ask payroll.*",
+   "caption": "Something off? *Ask payroll.*",
    "speaker": "CLOCKY",
    "params": {
     "n": 5,
@@ -260,8 +306,7 @@
       "size": 56,
       "act": "shrug",
       "pose": {
-       "eyes": "open",
-       "mouth": "flat"
+       "eyes": "open"
       }
      }
     ]
@@ -273,12 +318,12 @@
     "colors": [
      "#88B9A6"
     ]
-   }
+   },
+   "start": 11.02
   },
   {
-   "start": 15.15,
    "scene": "stage",
-   "caption": "Clocked logs your shifts and projects your pay.",
+   "caption": "Clocked logs shifts and projects pay.",
    "speaker": "CLOCKY",
    "params": {
     "setting": "chalkcafe",
@@ -294,14 +339,14 @@
       0.04
      ],
      [
-      0.3,
+      0.25,
       540,
       1100,
       1.1,
       0
      ],
      [
-      2.78,
+      2.349,
       540,
       1080,
       1.14,
@@ -338,22 +383,21 @@
       "type": "spark",
       "x": 760,
       "y": 1150,
-      "at": 0.2,
+      "at": 0.15,
       "r": 220
      }
     ]
    },
    "out": {
     "type": "splat"
-   }
+   },
+   "start": 13.12
   }
  ],
  "endCard": {
-  "start": 17.93,
-  "caption": "Track every shift. Free beta.",
+  "start": 15.47,
+  "caption": "Try it free at clocked.space",
   "speaker": "CLOCKY"
  },
- "math": [
-  "pay stub icon: 32.0 x 15.00 = 480.00"
- ]
+ "duration": 18.07
 }

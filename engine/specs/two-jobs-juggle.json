@@ -1,24 +1,21 @@
 {
- "id": "two-jobs-juggle",
  "title": "Two jobs, one me",
  "concept": "Sam juggles a restaurant apron and a retail apron; Clocky catches both jobs and adds up the week.",
  "palette": "sunnyJuggle",
  "setting": "kitchen",
- "duration": 27.27,
  "fps": 30,
  "seed": 53,
  "showsPay": true,
  "transition": "iris",
- "math": [
-  "12.5 x 15.00 = 187.50",
-  "9 x 16.00 = 144.00",
-  "187.50 + 144.00 = 331.50"
- ],
+ "music": {
+  "mood": "upbeat",
+  "bpm": 116
+ },
+ "id": "two-jobs-juggle",
  "shots": [
   {
-   "start": 0.0,
    "scene": "stage",
-   "caption": "Two jobs. Two schedules. One me.",
+   "caption": "Two jobs. One me.",
    "speaker": "SAM",
    "params": {
     "cam": [
@@ -30,18 +27,11 @@
       -0.05
      ],
      [
-      1.3,
+      2.069,
       540,
       1020,
       1.06,
       0.05
-     ],
-     [
-      3.41,
-      540,
-      1040,
-      1.04,
-      -0.04
      ]
     ],
     "cast": [
@@ -76,12 +66,12 @@
     "type": "iris",
     "x": 540,
     "y": 760
-   }
+   },
+   "start": 0.0
   },
   {
-   "start": 3.41,
    "scene": "montage",
-   "caption": "Which hours were for which job?",
+   "caption": "Which hours were which?",
    "speaker": "SAM",
    "params": {
     "setting": "wash",
@@ -156,10 +146,10 @@
     "type": "zoom",
     "x": 540,
     "y": 960
-   }
+   },
+   "start": 2.07
   },
   {
-   "start": 6.01,
    "scene": "stage",
    "caption": "Track both jobs in one place.",
    "speaker": "CLOCKY",
@@ -173,7 +163,7 @@
       0.04
      ],
      [
-      2.4,
+      2.07,
       560,
       1060,
       1.02,
@@ -195,7 +185,7 @@
         }
        ],
        [
-        0.9,
+        0.6,
         {
          "eyes": "happy",
          "mouth": "smile"
@@ -211,7 +201,7 @@
       "enter": {
        "type": "drop",
        "at": 0.0,
-       "dur": 0.4
+       "dur": 0.35
       },
       "act": "cheer"
      }
@@ -221,12 +211,12 @@
     "type": "iris",
     "x": 770,
     "y": 1300
-   }
+   },
+   "start": 3.62
   },
   {
-   "start": 8.41,
    "scene": "card",
-   "caption": "Restaurant: 12.5 hours at $15 is *$187.50.*",
+   "caption": "Restaurant: *$187.50.*",
    "speaker": "CLOCKY",
    "params": {
     "setting": "kitchen",
@@ -240,14 +230,14 @@
       -0.04
      ],
      [
-      0.5,
+      0.4,
       540,
       960,
       1.0,
-      0.0
+      0
      ],
      [
-      5.68,
+      2.844,
       540,
       960,
       1.03,
@@ -266,18 +256,18 @@
       {
        "l": "Hours",
        "r": "12.5",
-       "at": 0.2
+       "at": 0.1
       },
       {
        "l": "Rate",
        "r": "$15.00/hr",
-       "at": 0.4
+       "at": 0.22
       }
      ],
      "total": {
       "l": "12.5 × $15",
       "r": "$187.50",
-      "at": 0.75,
+      "at": 0.4,
       "count": true
      }
     },
@@ -291,12 +281,12 @@
    },
    "out": {
     "type": "zoom"
-   }
+   },
+   "start": 5.69
   },
   {
-   "start": 14.09,
    "scene": "card",
-   "caption": "Retail: 9 hours at $16 is *$144.*",
+   "caption": "Retail: *$144.*",
    "speaker": "CLOCKY",
    "params": {
     "setting": "shop",
@@ -310,14 +300,14 @@
       0.04
      ],
      [
-      0.5,
+      0.4,
       540,
       960,
       1.0,
-      0.0
+      0
      ],
      [
-      5.25,
+      2.849,
       540,
       960,
       1.03,
@@ -336,18 +326,18 @@
       {
        "l": "Hours",
        "r": "9",
-       "at": 0.2
+       "at": 0.1
       },
       {
        "l": "Rate",
        "r": "$16.00/hr",
-       "at": 0.4
+       "at": 0.22
       }
      ],
      "total": {
       "l": "9 × $16",
       "r": "$144.00",
-      "at": 0.75,
+      "at": 0.4,
       "count": true
      }
     },
@@ -366,12 +356,12 @@
     "type": "iris",
     "x": 540,
     "y": 1100
-   }
+   },
+   "start": 8.53
   },
   {
-   "start": 19.34,
    "scene": "card",
-   "caption": "Together: *$331.50* this week.",
+   "caption": "Together: *$331.50.*",
    "speaker": "CLOCKY",
    "params": {
     "setting": "studio",
@@ -391,28 +381,13 @@
       0
      ],
      [
-      1.2,
+      2.844,
       540,
-      960,
-      1.0,
-      0
-     ],
-     [
-      1.5,
-      540,
-      1040,
-      1.1,
-      0.03
-     ],
-     [
-      3.33,
-      540,
-      1040,
-      1.12,
-      0.03
+      1000,
+      1.06,
+      0.02
      ]
     ],
-    "camEase": "out",
     "card": {
      "x": 540,
      "y": 930,
@@ -424,18 +399,18 @@
       {
        "l": "Restaurant",
        "r": "$187.50",
-       "at": 0.1
+       "at": 0.05
       },
       {
        "l": "Retail",
        "r": "+ $144.00",
-       "at": 0.3
+       "at": 0.15
       }
      ],
      "total": {
       "l": "Together",
       "r": "$331.50",
-      "at": 0.6,
+      "at": 0.3,
       "count": true
      }
     },
@@ -454,19 +429,58 @@
       "type": "spark",
       "x": 760,
       "y": 1150,
-      "at": 1.5,
+      "at": 0.9,
       "r": 160
+     }
+    ]
+   },
+   "out": "cut",
+   "start": 11.38
+  },
+  {
+   "scene": "stage",
+   "caption": "Okay, that's actually nice.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      420,
+      900,
+      1.45,
+      0.02
+     ],
+     [
+      1.814,
+      420,
+      900,
+      1.52,
+      0.02
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 420,
+      "y": 1620,
+      "size": 80,
+      "act": "cheer",
+      "pose": {
+       "apron2": "#5FB3A0"
+      }
      }
     ]
    },
    "out": {
     "type": "zoom"
-   }
+   },
+   "start": 14.22
   }
  ],
  "endCard": {
-  "start": 22.67,
+  "start": 16.03,
   "caption": "Clocked tracks more than one job.",
   "speaker": "CLOCKY"
- }
+ },
+ "duration": 18.63
 }

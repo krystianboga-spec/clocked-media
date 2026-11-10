@@ -1,21 +1,19 @@
 {
- "id": "stay-two-more",
  "title": "Can you stay 2 more hours?",
  "concept": "Closing time at a night diner: a looming manager asks for 2 more hours; Clocky prices them at time and a half.",
  "palette": "nightDiner",
  "setting": "diner",
- "duration": 25.09,
  "fps": 30,
  "seed": 23,
  "showsPay": true,
  "transition": "whip",
- "math": [
-  "16.50 x 1.5 = 24.75",
-  "2 x 24.75 = 49.50"
- ],
+ "music": {
+  "mood": "nightdiner",
+  "bpm": 88
+ },
+ "id": "stay-two-more",
  "shots": [
   {
-   "start": 0.0,
    "scene": "stage",
    "caption": "Hey... can you stay 2 more hours?",
    "speaker": "MANAGER",
@@ -23,16 +21,16 @@
     "cam": [
      [
       0,
-      620,
-      1120,
-      1.0,
-      0.05
+      640,
+      1100,
+      1.06,
+      0.06
      ],
      [
-      2.86,
-      640,
+      2.727,
+      650,
       1080,
-      1.08,
+      1.12,
       0.07
      ]
     ],
@@ -43,23 +41,9 @@
       "y": 1580,
       "size": 86,
       "act": "wipe",
-      "beats": [
-       [
-        0,
-        {
-         "eyes": "tired"
-        }
-       ],
-       [
-        1.0,
-        {
-         "eyes": "dead",
-         "act": "idle",
-         "lookX": 0.9,
-         "emote": "sweat"
-        }
-       ]
-      ]
+      "pose": {
+       "eyes": "tired"
+      }
      },
      {
       "who": "manager",
@@ -75,7 +59,7 @@
        "type": "slide",
        "from": "right",
        "at": 0,
-       "dur": 0.5,
+       "dur": 0.35,
        "dist": 600
       }
      }
@@ -84,12 +68,12 @@
    "out": {
     "type": "whip",
     "dir": -1
-   }
+   },
+   "start": 0.0
   },
   {
-   "start": 2.86,
    "scene": "stage",
-   "caption": "I'm already at *40 hours* this week.",
+   "caption": "I'm already at *40 hours.*",
    "speaker": "SAM",
    "params": {
     "cam": [
@@ -101,16 +85,16 @@
       -0.04
      ],
      [
-      2.37,
+      2.043,
       350,
       850,
-      1.68,
+      1.7,
       -0.05
      ]
     ],
     "shake": [
      [
-      0.3,
+      0.25,
       6
      ]
     ],
@@ -120,36 +104,24 @@
       "x": 330,
       "y": 1580,
       "size": 86,
-      "beats": [
-       [
-        0,
-        {
-         "eyes": "dead",
-         "mouth": "flat"
-        }
-       ],
-       [
-        0.35,
-        {
-         "eyes": "squint",
-         "brows": "angry",
-         "mouth": "wavy",
-         "emote": "anger"
-        }
-       ]
-      ]
+      "pose": {
+       "eyes": "squint",
+       "brows": "angry",
+       "mouth": "wavy",
+       "emote": "anger"
+      }
      }
     ]
    },
    "out": {
     "type": "whip",
     "dir": 1
-   }
+   },
+   "start": 2.73
   },
   {
-   "start": 5.23,
    "scene": "stage",
-   "caption": "Most hourly jobs pay *1.5×* after 40 hours a week.",
+   "caption": "Most hourly jobs pay *1.5×*",
    "speaker": "CLOCKY",
    "params": {
     "cam": [
@@ -161,7 +133,7 @@
       -0.03
      ],
      [
-      4.52,
+      2.73,
       600,
       1060,
       1.1,
@@ -179,17 +151,12 @@
       "x": 290,
       "y": 1580,
       "size": 86,
-      "beats": [
-       [
-        0,
-        {
-         "eyes": "open",
-         "brows": "up",
-         "lookX": 0.8,
-         "lookY": -0.4
-        }
-       ]
-      ]
+      "pose": {
+       "eyes": "open",
+       "brows": "up",
+       "lookX": 0.8,
+       "lookY": -0.4
+      }
      },
      {
       "who": "clocky",
@@ -198,8 +165,8 @@
       "size": 140,
       "enter": {
        "type": "drop",
-       "at": 0.05,
-       "dur": 0.45,
+       "at": 0.0,
+       "dur": 0.35,
        "dist": 1300
       },
       "beats": [
@@ -211,13 +178,12 @@
         }
        ],
        [
-        0.7,
+        0.5,
         {
          "act": "point",
          "flip": true,
          "eyes": "open",
-         "mouth": "smile",
-         "emote": "!"
+         "mouth": "smile"
         }
        ]
       ]
@@ -230,31 +196,64 @@
       "x": 800,
       "y": 1180,
       "size": 100,
-      "at": 0.5,
+      "at": 0.38,
       "col": "#C8F25A",
       "rot": 0.1
      }
     ]
    },
-   "out": {
-    "type": "tear"
-   }
+   "out": "cut",
+   "start": 4.77
   },
   {
-   "start": 9.75,
-   "scene": "card",
-   "captions": [
-    {
-     "at": 0,
-     "text": "At $16.50 an hour, overtime pays *$24.75* an hour.",
-     "speaker": "CLOCKY"
+   "scene": "stage",
+   "caption": "after 40 hours a week.",
+   "speaker": "CLOCKY",
+   "params": {
+    "cam": [
+     [
+      0,
+      740,
+      1180,
+      1.8,
+      0.04
+     ],
+     [
+      1.705,
+      740,
+      1170,
+      1.9,
+      0.03
+     ]
+    ],
+    "set": {
+     "plate": {
+      "clock": false
+     }
     },
-    {
-     "at": 4.8,
-     "text": "So 2 more hours pays *$49.50* extra.",
-     "speaker": "CLOCKY"
-    }
-   ],
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 760,
+      "y": 1580,
+      "size": 140,
+      "act": "hop",
+      "pose": {
+       "eyes": "star",
+       "mouth": "grin"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "tear"
+   },
+   "start": 7.5
+  },
+  {
+   "scene": "card",
+   "caption": "Overtime: *$24.75* an hour.",
+   "speaker": "CLOCKY",
    "params": {
     "setting": "diner",
     "dim": 0.55,
@@ -268,28 +267,13 @@
       0.03
      ],
      [
-      3.5,
+      3.063,
       540,
       960,
-      1.0,
-      0.03
-     ],
-     [
-      5.0,
-      540,
-      1040,
-      1.1,
-      -0.02
-     ],
-     [
-      9.14,
-      540,
-      1040,
-      1.12,
-      -0.02
+      1.04,
+      0.02
      ]
     ],
-    "camEase": "out",
     "card": {
      "x": 540,
      "y": 980,
@@ -301,31 +285,93 @@
       {
        "l": "Your rate",
        "r": "$16.50/hr",
-       "at": 0.2
+       "at": 0.1
       },
       {
        "l": "× 1.5 after 40 hrs",
        "r": "$24.75/hr",
-       "at": 0.7,
-       "hl": true
+       "at": 0.4,
+       "hl": true,
+       "count": true
       },
       {
        "l": "2 hrs × $24.75",
        "r": "$49.50",
-       "at": 4.8,
-       "count": true
+       "at": 9
       }
      ],
      "total": {
       "l": "Extra pay",
       "r": "+$49.50",
-      "at": 5.3
+      "at": 9
      }
+    }
+   },
+   "out": "cut",
+   "start": 9.21
+  },
+  {
+   "scene": "card",
+   "caption": "2 more hours: *+$49.50.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "diner",
+    "dim": 0.55,
+    "dimCol": "#151233",
+    "cam": [
+     [
+      0,
+      540,
+      1060,
+      1.12,
+      -0.02
+     ],
+     [
+      2.73,
+      540,
+      1060,
+      1.15,
+      -0.02
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 980,
+     "w": 860,
+     "title": "OVERTIME MATH",
+     "band": "#EE6B86",
+     "rot": 0.02,
+     "rows": [
+      {
+       "l": "Your rate",
+       "r": "$16.50/hr",
+       "at": -1
+      },
+      {
+       "l": "× 1.5 after 40 hrs",
+       "r": "$24.75/hr",
+       "at": -1,
+       "hl": true,
+       "count": true
+      },
+      {
+       "l": "2 hrs × $24.75",
+       "r": "$49.50",
+       "at": 0.05
+      }
+     ],
+     "total": {
+      "l": "Extra pay",
+      "r": "+$49.50",
+      "at": 0.3,
+      "count": true
+     },
+     "enterAt": -5
     },
     "fx": [
      {
       "type": "coins",
-      "at": 5.4,
+      "at": 0.4,
       "n": 12,
       "floor": 1700,
       "y0": -80
@@ -335,12 +381,12 @@
    "out": {
     "type": "whip",
     "dir": -1
-   }
+   },
+   "start": 12.27
   },
   {
-   "start": 17.69,
    "scene": "dialogue",
-   "caption": "Good to know what 2 hours are worth.",
+   "caption": "Good to know what they're worth.",
    "speaker": "SAM",
    "params": {
     "base": [
@@ -354,23 +400,10 @@
      "x": 320,
      "y": 1580,
      "size": 86,
-     "beats": [
-      [
-       0,
-       {
-        "eyes": "open",
-        "mouth": "smile",
-        "brows": "flat"
-       }
-      ],
-      [
-       1.2,
-       {
-        "act": "shrug",
-        "mouth": "smile"
-       }
-      ]
-     ]
+     "act": "shrug",
+     "pose": {
+      "mouth": "smile"
+     }
     },
     "right": {
      "who": "manager",
@@ -392,19 +425,21 @@
       "act": "bounce",
       "enter": {
        "type": "pop",
-       "at": 0.4
+       "at": 0.2
       }
      }
     ]
    },
    "out": {
     "type": "tear"
-   }
+   },
+   "start": 15.0
   }
  ],
  "endCard": {
-  "start": 20.29,
-  "caption": "Clocked adds overtime to your projected pay.",
+  "start": 16.7,
+  "caption": "Projected pay, overtime included.",
   "speaker": "CLOCKY"
- }
+ },
+ "duration": 19.29
 }

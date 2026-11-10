@@ -6,6 +6,7 @@
 //   node engine/render.cjs engine/specs/ot-puzzle.json --stills=2.0,7.5 --out=dir        full-size JPEG stills
 //   node engine/render.cjs engine/specs/ot-puzzle.json --video --out=out.mp4             silent MP4
 //   node engine/render.cjs engine/specs/ot-puzzle.json --video --voice --out=out.mp4     voiced MP4 (run voice.py first)
+//   add --sound to use the music + sfx + voice mix from sound.py (engine/cache/audio/<id>.wav)
 // Options: --workers=N (pages rendering segments in parallel, default 2), --fresh (ignore the segment cache)
 'use strict';
 const { chromium } = require('playwright');
@@ -120,9 +121,10 @@ const PLATE_VER = (() => { const h = crypto.createHash('sha1'); for (const f of 
       const list = path.join(CACHE, `${spec.id}-concat.txt`);
       fs.writeFileSync(list, segs.map(s => `file '${s.file}'`).join('\n'));
       const tmpOut = out.replace(/\.mp4$/, '') + '.tmp.mp4';
-      if (mouth) {
-        await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-i', voiceBase + '.wav', '-map', '0:v', '-map', '1:a',
-          '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-af', `apad=whole_dur=${spec.duration}`, '-t', String(spec.duration), '-movflags', '+faststart', tmpOut]);
+      const audioFile = args.sound ? path.join(CACHE, 'audio', spec.id + '.wav') : mouth ? voiceBase + '.wav' : null;
+      if (audioFile) {
+        await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-i', audioFile, '-map', '0:v', '-map', '1:a',
+          '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-ac', '2', '-af', `apad=whole_dur=${spec.duration}`, '-t', String(spec.duration), '-movflags', '+faststart', tmpOut]);
       } else {
         // silent master: a silent stereo AAC track keeps uploaders that expect audio happy
         await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-map', '0:v', '-map', '1:a',

@@ -346,7 +346,7 @@ def build_call(post, manifest, live=False):
     if plat == "tiktok":
         td = {"title": p["title"], "privacyOption": "PUBLIC_TO_EVERYONE", "disableComment": False,
               "disableDuet": False, "disableStitch": False, "commercialContentThirdParty": False,
-              "commercialContentOwnBrand": False}
+              "commercialContentOwnBrand": True}
         if a["type"] == "video":
             info["autoPublish"] = voiced      # silent video: push notification so Krystian adds a commercial-library sound
             td["isAigc"] = ai

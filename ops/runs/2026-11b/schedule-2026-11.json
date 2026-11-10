@@ -109,7 +109,7 @@
             "disableDuet": false,
             "disableStitch": false,
             "commercialContentThirdParty": false,
-            "commercialContentOwnBrand": false,
+            "commercialContentOwnBrand": true,
             "isAigc": true
           }
         }
@@ -249,7 +249,7 @@
             "disableDuet": false,
             "disableStitch": false,
             "commercialContentThirdParty": false,
-            "commercialContentOwnBrand": false,
+            "commercialContentOwnBrand": true,
             "isAigc": true
           }
         }
@@ -299,7 +299,7 @@
             "disableDuet": false,
             "disableStitch": false,
             "commercialContentThirdParty": false,
-            "commercialContentOwnBrand": false,
+            "commercialContentOwnBrand": true,
             "isAigc": true
           }
         }
@@ -439,7 +439,7 @@
             "disableDuet": false,
             "disableStitch": false,
             "commercialContentThirdParty": false,
-            "commercialContentOwnBrand": false,
+            "commercialContentOwnBrand": true,
             "isAigc": true
           }
         }

@@ -4,7 +4,7 @@
  "concept": "Sam juggles a restaurant apron and a retail apron; Clocky catches both jobs and adds up the week.",
  "palette": "sunnyJuggle",
  "setting": "kitchen",
- "duration": 21.2,
+ "duration": 27.27,
  "fps": 30,
  "seed": 53,
  "showsPay": true,
@@ -20,7 +20,6 @@
    "scene": "stage",
    "caption": "Two jobs. Two schedules. One me.",
    "speaker": "SAM",
-   "say": "Two jobs. Two schedules. One me.",
    "params": {
     "cam": [
      [
@@ -38,7 +37,7 @@
       0.05
      ],
      [
-      2.6,
+      3.41,
       540,
       1040,
       1.04,
@@ -80,11 +79,10 @@
    }
   },
   {
-   "start": 2.6,
+   "start": 3.41,
    "scene": "montage",
    "caption": "Which hours were for which job?",
    "speaker": "SAM",
-   "say": "Wait. Which hours were for which job?",
    "params": {
     "setting": "wash",
     "set": {
@@ -161,11 +159,10 @@
    }
   },
   {
-   "start": 5.2,
+   "start": 6.01,
    "scene": "stage",
    "caption": "Track both jobs in one place.",
    "speaker": "CLOCKY",
-   "say": "Track both jobs in one place.",
    "params": {
     "cam": [
      [
@@ -227,11 +224,10 @@
    }
   },
   {
-   "start": 7.6,
+   "start": 8.41,
    "scene": "card",
-   "caption": "Restaurant: 12.5 h × $15 = *$187.50*",
+   "caption": "Restaurant: 12.5 hours at $15 is *$187.50.*",
    "speaker": "CLOCKY",
-   "say": "Restaurant: twelve and a half at fifteen. One eighty-seven fifty.",
    "params": {
     "setting": "kitchen",
     "dim": 0.45,
@@ -251,7 +247,7 @@
       0.0
      ],
      [
-      3.8,
+      5.68,
       540,
       960,
       1.03,
@@ -298,11 +294,10 @@
    }
   },
   {
-   "start": 11.4,
+   "start": 14.09,
    "scene": "card",
-   "caption": "Retail: 9 h × $16 = *$144.00*",
+   "caption": "Retail: 9 hours at $16 is *$144.*",
    "speaker": "CLOCKY",
-   "say": "Retail: nine at sixteen. One forty-four.",
    "params": {
     "setting": "shop",
     "dim": 0.45,
@@ -322,7 +317,7 @@
       0.0
      ],
      [
-      2.6,
+      5.25,
       540,
       960,
       1.03,
@@ -374,11 +369,10 @@
    }
   },
   {
-   "start": 14.0,
+   "start": 19.34,
    "scene": "card",
    "caption": "Together: *$331.50* this week.",
    "speaker": "CLOCKY",
-   "say": "Together, three thirty-one fifty this week.",
    "params": {
     "setting": "studio",
     "set": {
@@ -411,7 +405,7 @@
       0.03
      ],
      [
-      2.6,
+      3.33,
       540,
       1040,
       1.12,
@@ -471,9 +465,8 @@
   }
  ],
  "endCard": {
-  "start": 16.6,
+  "start": 22.67,
   "caption": "Clocked tracks more than one job.",
-  "speaker": "CLOCKY",
-  "say": "Clocked tracks more than one job. Try it free at clocked dot space."
+  "speaker": "CLOCKY"
  }
 }

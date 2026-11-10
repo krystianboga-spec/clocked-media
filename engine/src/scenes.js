@@ -381,16 +381,17 @@ const SCENES = {
     const [cx, cy, z, r] = camAt(lt, { cam: [[0, 540, 960, 1.1, .03], [.6, 540, 960, 1.0, 0], [dur, 540, 960, 1.02, 0]], camEase: 'out', drift: .2 }, dur);
     camOn(cx, cy, z, r);
     setting('studio', t, { plate: { a: '#23252E', b: '#2E3140', c: LIME, cy: 760 } });
-    const ck = seg(lt, .1, .55);
-    clocky(540, 1010 + (1 - over(ck, 1.6)) * 900, 200, { t, eyes: lt > .6 ? (p.eyes || 'happy') : 'wide', mouth: 'grin', aR: lt > .7 ? .95 + osc(lt, 2) * .25 : -.4, aL: -.6, talk: talk('CLOCKY', t), glow: .6, sq: hit(lt, .55, 9) * .25 });
+    const ck = seg(lt, .1, .55), X = 510;   // centre of the safe zone (90 px left, 150 px right)
+    clocky(X, 935 + (1 - over(ck, 1.6)) * 900, 128, { t, eyes: lt > .6 ? (p.eyes || 'happy') : 'wide', mouth: 'grin', aR: lt > .7 ? .95 + osc(lt, 2) * .25 : -.4, aL: -.6, talk: talk('CLOCKY', t), glow: .6, sq: hit(lt, .55, 9) * .25 });
     camOff();
+    // all end-card text sits between y 950 and 1395: clear of the platform UI below y 1520 and the right 15%
     const wk = seg(lt, .35, .7);
-    label('CLOCKED', 540, 1130, 200, '#F7F4EA', { font: 'anton', pop: wk, track: 3, shadow: '#000000' });
+    label('CLOCKED', X, 1045, 170, '#F7F4EA', { font: 'anton', pop: wk, track: 3, shadow: '#000000' });
     const pk = seg(lt, .6, .9);
-    if (pk > 0) { pushT(); tr(540, 1290); scl(over(pk, 2)); const tw = textW('Free beta · Out now', 50, 'hand') + 80; shape(boxP(-tw / 2, -46, tw, 92, 46, .8), { flat: C.lime, lw: 1.3, tex: .3 }); label('Free beta · Out now', 0, 2, 50, '#1F1D26', {}); popT(); }
-    label('clocked.space', 540, 1392, 74, C.lime, { pop: seg(lt, .8, 1.1), shadow: '#000000' });
-    label('Try it free in your browser.', 540, 1456, 40, '#F1EEE6', { font: 'ui', weight: 600, alpha: seg(lt, .95, 1.25) });
-    if (SPEC.showsPay) label('Example figures, before taxes.', 540, 1506, 32, '#BDB8C8', { font: 'ui', weight: 500, alpha: seg(lt, 1.0, 1.3) });
+    if (pk > 0) { pushT(); tr(X, 1178); scl(over(pk, 2)); const tw = textW('Free beta · Out now', 46, 'hand') + 76; shape(boxP(-tw / 2, -42, tw, 84, 42, .8), { flat: C.lime, lw: 1.3, tex: .3 }); label('Free beta · Out now', 0, 2, 46, '#1F1D26', {}); popT(); }
+    label('clocked.space', X, 1268, 68, C.lime, { pop: seg(lt, .8, 1.1), shadow: '#000000' });
+    label('Try it free in your browser.', X, 1328, 38, '#F1EEE6', { font: 'ui', weight: 600, alpha: seg(lt, .95, 1.25) });
+    if (SPEC.showsPay) label('Example figures, before taxes.', X, 1376, 30, '#BDB8C8', { font: 'ui', weight: 500, alpha: seg(lt, 1.0, 1.3) });
   },
 };
 function lerpArr(a, b, k) { return a.map((v, i) => lerp(v, b[i], k)); }

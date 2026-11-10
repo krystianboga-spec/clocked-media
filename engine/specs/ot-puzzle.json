@@ -4,7 +4,7 @@
  "concept": "A break-room detective story: Clocky works out the overtime and finds the check $33.00 short.",
  "palette": "breakRoom",
  "setting": "breakroom",
- "duration": 24.0,
+ "duration": 32.72,
  "fps": 30,
  "seed": 11,
  "showsPay": true,
@@ -22,7 +22,6 @@
    "scene": "stage",
    "caption": "Is this paycheck right?",
    "speaker": "SAM",
-   "say": "Is this paycheck right?",
    "params": {
     "cam": [
      [
@@ -118,9 +117,8 @@
   {
    "start": 2.6,
    "scene": "card",
-   "caption": "44 hours at $16.50... and it says *$726.00?*",
+   "caption": "44 hours at $16.50... and it's *$726?*",
    "speaker": "SAM",
-   "say": "Forty-four hours. Seven twenty-six?",
    "params": {
     "setting": "breakroom",
     "cam": [
@@ -146,7 +144,7 @@
       -0.02
      ],
      [
-      2.8,
+      4.99,
       560,
       1150,
       1.25,
@@ -197,11 +195,10 @@
    }
   },
   {
-   "start": 5.4,
+   "start": 7.59,
    "scene": "dialogue",
-   "caption": "Hold on. Most hourly jobs pay *1.5×* past 40 hours a week.",
+   "caption": "Most hourly jobs pay *1.5×* after 40 hours a week.",
    "speaker": "CLOCKY",
-   "say": "Hold on. Past forty, most jobs pay time and a half.",
    "params": {
     "base": [
      540,
@@ -279,20 +276,18 @@
    }
   },
   {
-   "start": 8.4,
+   "start": 12.11,
    "scene": "card",
    "captions": [
     {
      "at": 0,
-     "text": "First 40 hours: *$660.00*",
-     "speaker": "CLOCKY",
-     "say": "Forty hours: six sixty."
+     "text": "First 40 hours: *$660.*",
+     "speaker": "CLOCKY"
     },
     {
-     "at": 1.8,
-     "text": "Past 40: $16.50 × 1.5 = $24.75. So 4 hrs = *$99.00*",
-     "speaker": "CLOCKY",
-     "say": "Four overtime hours: ninety-nine."
+     "at": 3.26,
+     "text": "Plus 4 overtime hours: *$99.*",
+     "speaker": "CLOCKY"
     }
    ],
    "params": {
@@ -319,14 +314,14 @@
       0
      ],
      [
-      2.0,
+      3.46,
       540,
       1060,
       1.12,
       0
      ],
      [
-      5.2,
+      8.08,
       540,
       1060,
       1.15,
@@ -353,14 +348,14 @@
       {
        "l": "OT rate: $16.50 × 1.5",
        "r": "$24.75/hr",
-       "at": 1.8,
+       "at": 3.26,
        "hl": true,
        "size": 52
       },
       {
        "l": "4 hrs × $24.75",
        "r": "$99.00",
-       "at": 2.6,
+       "at": 4.06,
        "count": true
       }
      ]
@@ -379,20 +374,18 @@
    }
   },
   {
-   "start": 13.6,
+   "start": 18.73,
    "scene": "card",
    "captions": [
     {
      "at": 0,
-     "text": "Should be *$759.00.* The check says $726.00.",
-     "speaker": "CLOCKY",
-     "say": "Should be seven fifty-nine. The check says seven twenty-six."
+     "text": "Should be *$759,* not $726.",
+     "speaker": "CLOCKY"
     },
     {
-     "at": 3.1,
-     "text": "Looks *$33.00 short.* Worth asking payroll.",
-     "speaker": "CLOCKY",
-     "say": "Thirty-three short. Ask payroll."
+     "at": 4.82,
+     "text": "That's *$33 short.* Ask payroll.",
+     "speaker": "CLOCKY"
     }
    ],
    "params": {
@@ -413,14 +406,14 @@
       0
      ],
      [
-      3.25,
+      4.97,
       540,
       1080,
       1.1,
       -0.03
      ],
      [
-      5.0,
+      9.63,
       540,
       1080,
       1.12,
@@ -430,7 +423,7 @@
     "camEase": "out",
     "shake": [
      [
-      3.15,
+      4.87,
       14
      ]
     ],
@@ -470,7 +463,7 @@
     },
     "stamp": {
      "text": "$33.00 SHORT",
-     "at": 3.1,
+     "at": 4.82,
      "x": 540,
      "y": 1480,
      "size": 92,
@@ -481,11 +474,10 @@
    }
   },
   {
-   "start": 18.6,
+   "start": 26.64,
    "scene": "stage",
    "caption": "Okay. Time to talk to payroll.",
    "speaker": "SAM",
-   "say": "Okay. Time to talk to payroll.",
    "params": {
     "cam": [
      [
@@ -503,7 +495,7 @@
       0
      ],
      [
-      2.0,
+      2.68,
       480,
       920,
       1.33,
@@ -596,9 +588,8 @@
   }
  ],
  "endCard": {
-  "start": 20.6,
+  "start": 29.32,
   "caption": "Clocked shows projected pay, overtime included.",
-  "speaker": "CLOCKY",
-  "say": "Overtime included. Try it free at clocked dot space."
+  "speaker": "CLOCKY"
  }
 }

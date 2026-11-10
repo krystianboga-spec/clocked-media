@@ -4,7 +4,7 @@
  "concept": "A rainy bus-stop countdown, Tuesday to Thursday, that ends on a payday reminder notification. Pay period card lists shifts already worked before the countdown starts (Sat, Sun, Mon), so 'earned' is true on Thursday.",
  "palette": "rainyBus",
  "setting": "busstop",
- "duration": 21.1,
+ "duration": 25.76,
  "fps": 30,
  "seed": 41,
  "showsPay": true,
@@ -19,7 +19,6 @@
    "scene": "stage",
    "caption": "When's payday again?",
    "speaker": "SAM",
-   "say": "When's payday again?",
    "params": {
     "cam": [
      [
@@ -65,7 +64,6 @@
    "scene": "countdown",
    "caption": "Tuesday. *3 days* to payday.",
    "speaker": "CLOCKY",
-   "say": "Tuesday. Three days to payday.",
    "params": {
     "n": 3,
     "from": 3,
@@ -100,11 +98,10 @@
    }
   },
   {
-   "start": 4.0,
+   "start": 4.79,
    "scene": "countdown",
    "caption": "Wednesday. *2 days.*",
    "speaker": "CLOCKY",
-   "say": "Wednesday. Two days.",
    "params": {
     "n": 2,
     "from": 3,
@@ -142,11 +139,10 @@
    }
   },
   {
-   "start": 5.6,
+   "start": 6.87,
    "scene": "countdown",
    "caption": "Thursday. *1 day.*",
    "speaker": "CLOCKY",
-   "say": "Thursday. One day.",
    "params": {
     "n": 1,
     "from": 2,
@@ -188,11 +184,10 @@
    }
   },
   {
-   "start": 7.2,
+   "start": 8.88,
    "scene": "notify",
    "caption": "Then a payday reminder, right on your phone.",
    "speaker": "CLOCKY",
-   "say": "Then a payday reminder, right on your phone.",
    "params": {
     "set": {
      "rainA": 0.3
@@ -257,11 +252,10 @@
    }
   },
   {
-   "start": 10.6,
+   "start": 12.28,
    "scene": "card",
-   "caption": "Example: 16.5 hrs × $15 = *$247.50*",
+   "caption": "Example: 16.5 hours at $15 an hour is *$247.50.*",
    "speaker": "CLOCKY",
-   "say": "Sixteen and a half hours at fifteen: two forty-seven fifty.",
    "params": {
     "setting": "busstop",
     "set": {
@@ -277,7 +271,7 @@
       0
      ],
      [
-      3.9,
+      6.69,
       540,
       960,
       1.0,
@@ -332,11 +326,10 @@
    }
   },
   {
-   "start": 14.5,
+   "start": 18.97,
    "scene": "stage",
    "caption": "Now I know what's coming Friday.",
    "speaker": "SAM",
-   "say": "Now I know what's coming Friday.",
    "params": {
     "cam": [
      [
@@ -347,7 +340,7 @@
       0
      ],
      [
-      2.0,
+      2.19,
       520,
       1080,
       1.0,
@@ -399,9 +392,8 @@
   }
  ],
  "endCard": {
-  "start": 16.5,
+  "start": 21.16,
   "caption": "Payday reminders on your phone.",
-  "speaker": "CLOCKY",
-  "say": "Payday reminders, right on your phone. Try Clocked free at clocked dot space."
+  "speaker": "CLOCKY"
  }
 }

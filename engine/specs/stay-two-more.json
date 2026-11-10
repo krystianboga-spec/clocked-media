@@ -4,7 +4,7 @@
  "concept": "Closing time at a night diner: a looming manager asks for 2 more hours; Clocky prices them at time and a half.",
  "palette": "nightDiner",
  "setting": "diner",
- "duration": 21.9,
+ "duration": 25.09,
  "fps": 30,
  "seed": 23,
  "showsPay": true,
@@ -19,7 +19,6 @@
    "scene": "stage",
    "caption": "Hey... can you stay 2 more hours?",
    "speaker": "MANAGER",
-   "say": "Hey. Can you stay two more hours?",
    "params": {
     "cam": [
      [
@@ -30,7 +29,7 @@
       0.05
      ],
      [
-      2.4,
+      2.86,
       640,
       1080,
       1.08,
@@ -88,11 +87,10 @@
    }
   },
   {
-   "start": 2.4,
+   "start": 2.86,
    "scene": "stage",
    "caption": "I'm already at *40 hours* this week.",
    "speaker": "SAM",
-   "say": "I'm already at forty hours this week.",
    "params": {
     "cam": [
      [
@@ -103,7 +101,7 @@
       -0.04
      ],
      [
-      2.2,
+      2.37,
       350,
       850,
       1.68,
@@ -149,11 +147,10 @@
    }
   },
   {
-   "start": 4.6,
+   "start": 5.23,
    "scene": "stage",
    "caption": "Most hourly jobs pay *1.5×* after 40 hours a week.",
    "speaker": "CLOCKY",
-   "say": "Most hourly jobs pay time and a half after forty a week.",
    "params": {
     "cam": [
      [
@@ -164,7 +161,7 @@
       -0.03
      ],
      [
-      3.8,
+      4.52,
       600,
       1060,
       1.1,
@@ -244,20 +241,18 @@
    }
   },
   {
-   "start": 8.4,
+   "start": 9.75,
    "scene": "card",
    "captions": [
     {
      "at": 0,
-     "text": "At $16.50/hr, overtime pays *$24.75/hr*",
-     "speaker": "CLOCKY",
-     "say": "At sixteen fifty, overtime's twenty-four seventy-five."
+     "text": "At $16.50 an hour, overtime pays *$24.75* an hour.",
+     "speaker": "CLOCKY"
     },
     {
-     "at": 3.6,
-     "text": "2 more hours = *+$49.50*",
-     "speaker": "CLOCKY",
-     "say": "Two more hours: forty-nine fifty extra."
+     "at": 4.8,
+     "text": "So 2 more hours pays *$49.50* extra.",
+     "speaker": "CLOCKY"
     }
    ],
    "params": {
@@ -280,14 +275,14 @@
       0.03
      ],
      [
-      3.8,
+      5.0,
       540,
       1040,
       1.1,
       -0.02
      ],
      [
-      6.1,
+      9.14,
       540,
       1040,
       1.12,
@@ -317,20 +312,20 @@
       {
        "l": "2 hrs × $24.75",
        "r": "$49.50",
-       "at": 3.6,
+       "at": 4.8,
        "count": true
       }
      ],
      "total": {
       "l": "Extra pay",
       "r": "+$49.50",
-      "at": 4.1
+      "at": 5.3
      }
     },
     "fx": [
      {
       "type": "coins",
-      "at": 4.2,
+      "at": 5.4,
       "n": 12,
       "floor": 1700,
       "y0": -80
@@ -343,11 +338,10 @@
    }
   },
   {
-   "start": 14.5,
+   "start": 17.69,
    "scene": "dialogue",
    "caption": "Good to know what 2 hours are worth.",
    "speaker": "SAM",
-   "say": "Good to know what two hours are worth.",
    "params": {
     "base": [
      560,
@@ -409,9 +403,8 @@
   }
  ],
  "endCard": {
-  "start": 17.1,
+  "start": 20.29,
   "caption": "Clocked adds overtime to your projected pay.",
-  "speaker": "CLOCKY",
-  "say": "Clocked adds overtime to your projected pay. Try it free at clocked dot space."
+  "speaker": "CLOCKY"
  }
 }

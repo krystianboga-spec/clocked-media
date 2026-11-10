@@ -4,7 +4,7 @@
  "concept": "1 AM in bed: Sam's notes-app hour log is cheerful chaos; a before/after split shows the clean logged week.",
  "palette": "midnight",
  "setting": "bedroom",
- "duration": 22.6,
+ "duration": 25.81,
  "fps": 30,
  "seed": 31,
  "showsPay": true,
@@ -19,7 +19,6 @@
    "scene": "stage",
    "caption": "How many hours did I even work this week?",
    "speaker": "SAM",
-   "say": "How many hours did I even work this week?",
    "params": {
     "cam": [
      [
@@ -30,7 +29,7 @@
       0.02
      ],
      [
-      2.4,
+      2.69,
       480,
       1100,
       1.2,
@@ -69,11 +68,10 @@
    }
   },
   {
-   "start": 2.4,
+   "start": 2.69,
    "scene": "stage",
-   "caption": "You wrote: *tues 4-9?? maybe 9:30!*",
+   "caption": "You wrote: *Tuesday, 4 to 9?? Maybe 9:30!*",
    "speaker": "NOTES",
-   "say": "Tues, four to nine? Maybe nine thirty!",
    "params": {
     "cam": [
      [
@@ -84,7 +82,7 @@
       0.03
      ],
      [
-      2.6,
+      3.68,
       540,
       1080,
       1.06,
@@ -148,11 +146,10 @@
    }
   },
   {
-   "start": 5.0,
+   "start": 6.37,
    "scene": "dialogue",
    "caption": "Hours are kind of a vibe!",
    "speaker": "NOTES",
-   "say": "Hours are kind of a vibe!",
    "params": {
     "base": [
      540,
@@ -197,20 +194,18 @@
    }
   },
   {
-   "start": 7.0,
+   "start": 8.37,
    "scene": "split",
    "captions": [
     {
      "at": 0,
      "text": "Before: guesses in a notes app.",
-     "speaker": "CLOCKY",
-     "say": "Before: guesses in a notes app."
+     "speaker": "CLOCKY"
     },
     {
-     "at": 1.75,
+     "at": 2.4,
      "text": "After: every shift *logged.*",
-     "speaker": "CLOCKY",
-     "say": "After: every shift, logged."
+     "speaker": "CLOCKY"
     }
    ],
    "params": {
@@ -295,7 +290,7 @@
           "6 h"
          ]
         ],
-        "rowsAt": 1.95,
+        "rowsAt": 2.6,
         "rowsDur": 0.9
        }
       }
@@ -309,7 +304,7 @@
        "act": "cheer",
        "enter": {
         "type": "pop",
-        "at": 2.0
+        "at": 2.65
        }
       }
      ]
@@ -317,11 +312,10 @@
    }
   },
   {
-   "start": 11.2,
+   "start": 13.05,
    "scene": "card",
-   "caption": "16.5 hours × $15 = *$247.50* before payday.",
+   "caption": "16.5 hours at $15 an hour is *$247.50.*",
    "speaker": "CLOCKY",
-   "say": "Sixteen and a half hours at fifteen. About two forty-seven fifty.",
    "params": {
     "setting": "wash",
     "set": {
@@ -353,7 +347,7 @@
       0.02
      ],
      [
-      4.4,
+      5.76,
       540,
       1110,
       1.09,
@@ -415,11 +409,10 @@
    }
   },
   {
-   "start": 15.6,
+   "start": 18.81,
    "scene": "dialogue",
    "caption": "...I'll just hold the grocery list.",
    "speaker": "NOTES",
-   "say": "I'll just hold the grocery list.",
    "params": {
     "base": [
      540,
@@ -464,9 +457,8 @@
   }
  ],
  "endCard": {
-  "start": 18.0,
+  "start": 21.21,
   "caption": "Log every shift. See your pay before payday.",
-  "speaker": "CLOCKY",
-  "say": "See your pay before payday. Try it free at clocked dot space."
+  "speaker": "CLOCKY"
  }
 }

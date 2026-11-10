@@ -19,6 +19,7 @@ const args = Object.fromEntries(argv.filter(a => a.startsWith('--')).map(a => { 
 if (!specPath) { console.error('usage: node render.cjs <spec.json> [--sheet=auto|t,t,..] [--stills=t,..] [--video] [--voice] [--out=..]'); process.exit(1); }
 const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
 const FPS = spec.fps || 30;
+const CRF = String(args.crf || 18), PRESET = String(args.preset || 'medium');   // e.g. --crf=25 --preset=veryfast for smaller files
 const CACHE = path.join(ENGINE, 'cache');
 const voiceBase = path.join(CACHE, 'voice', spec.id);
 const mouth = args.voice ? JSON.parse(fs.readFileSync(voiceBase + '.json', 'utf8')) : null;
@@ -92,7 +93,7 @@ const PLATE_VER = (() => { const h = crypto.createHash('sha1'); for (const f of 
         const speaks = shotJSON.some(s => s && s.speaker);
         let mk = 'none';
         if (speaks) mk = mouth ? sha(Object.fromEntries(Object.entries(mouth.mouth).map(([k, v]) => [k, v.slice(f0, f1)]))) : 'procedural';
-        const key = sha(eh, globals, shotJSON, f0, f1, mk);
+        const key = sha(eh, globals, shotJSON, f0, f1, mk, CRF, PRESET);
         return { i, f0, f1, file: path.join(CACHE, 'seg', `${spec.id}-${String(i).padStart(2, '0')}-${key}.mp4`) };
       });
       const todo = args.fresh ? segs : segs.filter(s => !fs.existsSync(s.file));
@@ -103,7 +104,7 @@ const PLATE_VER = (() => { const h = crypto.createHash('sha1'); for (const f of 
         while (next < todo.length) {
           const s = todo[next++], tmp = s.file.replace(/\.mp4$/, `.part${w}.mp4`);
           const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
-            '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', String(FPS), '-g', '60', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
+            '-c:v', 'libx264', '-preset', PRESET, '-crf', CRF, '-pix_fmt', 'yuv420p', '-r', String(FPS), '-g', '60', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
           const closed = new Promise((ok, bad) => ff.on('close', c => c ? bad(new Error('ffmpeg ' + c)) : ok()));
           const t0 = Date.now();
           for (let f = s.f0; f < s.f1; f++) {
@@ -121,7 +122,7 @@ const PLATE_VER = (() => { const h = crypto.createHash('sha1'); for (const f of 
       const tmpOut = out.replace(/\.mp4$/, '') + '.tmp.mp4';
       if (mouth) {
         await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-i', voiceBase + '.wav', '-map', '0:v', '-map', '1:a',
-          '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-af', `apad=whole_dur=${spec.duration}`, '-t', String(spec.duration), '-movflags', '+faststart', tmpOut]);
+          '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-af', `apad=whole_dur=${spec.duration}`, '-t', String(spec.duration), '-movflags', '+faststart', tmpOut]);
       } else {
         // silent master: a silent stereo AAC track keeps uploaders that expect audio happy
         await run('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-map', '0:v', '-map', '1:a',

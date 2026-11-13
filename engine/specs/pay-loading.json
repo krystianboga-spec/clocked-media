@@ -1,0 +1,531 @@
+{
+ "title": "Pay loading",
+ "concept": "45 hours this week: a painted loading bar fills while Clocky projects the pay, and the total slams in on the beat drop.",
+ "palette": "goldenHour",
+ "setting": "apartment",
+ "fps": 30,
+ "seed": 71,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "loading",
+  "bpm": 100,
+  "dropShot": 5
+ },
+ "math": [
+  "40 x 15.00 = 600.00",
+  "15.00 x 1.5 = 22.50",
+  "5 x 22.50 = 112.50",
+  "600.00 + 112.50 = 712.50"
+ ],
+ "id": "pay-loading",
+ "shots": [
+  {
+   "scene": "stage",
+   "caption": "45 hours. Pay loading.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1080,
+      1.0,
+      0
+     ],
+     [
+      2.4,
+      540,
+      1080,
+      1.02,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1700,
+      "size": 92,
+      "pose": {
+       "eyes": "tired",
+       "lookY": -0.6
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "loading",
+      "x": 540,
+      "y": 760,
+      "keys": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0.34
+       ]
+      ]
+     }
+    ]
+   },
+   "out": "cut",
+   "start": 0.0
+  },
+  {
+   "scene": "stage",
+   "caption": "Is it right?",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      980,
+      1.35,
+      0
+     ],
+     [
+      1.2,
+      540,
+      980,
+      1.38,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1700,
+      "size": 92,
+      "pose": {
+       "eyes": "squint",
+       "brows": "worried",
+       "headTilt": 0.14,
+       "emote": "?"
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "loading",
+      "x": 540,
+      "y": 760,
+      "keys": [
+       [
+        0,
+        0.34
+       ],
+       [
+        0.6,
+        0.67
+       ]
+      ]
+     }
+    ]
+   },
+   "out": "cut",
+   "start": 2.4
+  },
+  {
+   "scene": "stage",
+   "caption": "Clocked projects it for you.",
+   "speaker": "CLOCKY",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1080,
+      1.0,
+      0
+     ],
+     [
+      1.8,
+      540,
+      1080,
+      1.03,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 330,
+      "y": 1700,
+      "size": 92,
+      "pose": {
+       "eyes": "wide",
+       "mouth": "o"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 780,
+      "y": 1700,
+      "size": 140,
+      "enter": {
+       "type": "pop",
+       "at": 0.05
+      },
+      "act": "point",
+      "pose": {
+       "flip": true
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "loading",
+      "x": 540,
+      "y": 760,
+      "keys": [
+       [
+        0,
+        0.67
+       ],
+       [
+        0.5,
+        0.67
+       ]
+      ]
+     }
+    ]
+   },
+   "out": {
+    "type": "zoom",
+    "x": 780,
+    "y": 1300
+   },
+   "start": 3.6
+  },
+  {
+   "scene": "card",
+   "caption": "40 hours: *$600.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "apartment",
+    "dim": 0.45,
+    "dimCol": "#3A2230",
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      2.7,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 860,
+     "title": "FIRST 40 HOURS",
+     "band": "#3E8A8C",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Rate",
+       "r": "$15.00/hr",
+       "at": 0.1
+      }
+     ],
+     "total": {
+      "l": "40 h × $15.00",
+      "r": "$600.00",
+      "at": 0.35,
+      "count": true,
+      "countDur": 0.6
+     }
+    }
+   },
+   "out": "cut",
+   "start": 5.4
+  },
+  {
+   "scene": "card",
+   "caption": "Overtime: *$112.50.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "apartment",
+    "dim": 0.45,
+    "dimCol": "#3A2230",
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.04,
+      0
+     ],
+     [
+      2.7,
+      540,
+      960,
+      1.08,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 860,
+     "title": "OVERTIME",
+     "band": "#E8574A",
+     "rot": 0.02,
+     "rows": [
+      {
+       "l": "$15.00 × 1.5",
+       "r": "$22.50/hr",
+       "at": 0.1,
+       "hl": true
+      }
+     ],
+     "total": {
+      "l": "5 h × $22.50",
+      "r": "$112.50",
+      "at": 0.35,
+      "count": true,
+      "countDur": 0.6
+     }
+    },
+    "stamp": {
+     "text": "1.5×",
+     "at": 0.15,
+     "x": 860,
+     "y": 640,
+     "size": 90,
+     "col": "#E8574A",
+     "rot": 0.12
+    }
+   },
+   "out": "cut",
+   "start": 8.1
+  },
+  {
+   "scene": "card",
+   "caption": "*$712.50.* Before taxes.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "apartment",
+    "dim": 0.35,
+    "dimCol": "#3A2230",
+    "cam": [
+     [
+      0,
+      540,
+      1000,
+      1.25,
+      0.05
+     ],
+     [
+      0.12,
+      540,
+      980,
+      1.0,
+      0
+     ],
+     [
+      3.0,
+      540,
+      980,
+      1.03,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "shake": [
+     [
+      0.02,
+      22
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 980,
+     "w": 880,
+     "title": "PROJECTED PAY",
+     "band": "#2A1E24",
+     "titleCol": "#FFD27A",
+     "enterAt": -0.45,
+     "rows": [
+      {
+       "l": "40 regular hours",
+       "r": "$600.00",
+       "at": -1
+      },
+      {
+       "l": "5 overtime hours",
+       "r": "+ $112.50",
+       "at": -1
+      }
+     ],
+     "total": {
+      "l": "Projected",
+      "r": "$712.50",
+      "at": 0.0,
+      "size": 92
+     }
+    },
+    "cast": [
+     {
+      "who": "sam",
+      "x": 860,
+      "y": 1830,
+      "size": 50,
+      "act": "hop",
+      "layer": "front",
+      "pose": {
+       "eyes": "happy",
+       "mouth": "grin"
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "flash",
+      "at": 0.0,
+      "life": 0.35
+     },
+     {
+      "type": "spark",
+      "x": 760,
+      "y": 1210,
+      "at": 0.05,
+      "r": 200
+     }
+    ]
+   },
+   "out": "cut",
+   "start": 10.8
+  },
+  {
+   "scene": "stage",
+   "caption": "Loading done.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1080,
+      1.0,
+      0
+     ],
+     [
+      1.2,
+      540,
+      1080,
+      1.02,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1700,
+      "size": 92,
+      "act": "cheer"
+     }
+    ],
+    "fx": [
+     {
+      "type": "loading",
+      "x": 540,
+      "y": 760,
+      "keys": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "done": "PAY LOADED"
+     }
+    ]
+   },
+   "out": {
+    "type": "zoom",
+    "x": 540,
+    "y": 1000
+   },
+   "start": 13.8
+  },
+  {
+   "scene": "notify",
+   "caption": "And it reminds you on payday.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "apartment",
+    "time": "8:15",
+    "date": "Thursday",
+    "phone": {
+     "x": 540,
+     "y": 1060,
+     "h": 900,
+     "rot": 0.03
+    },
+    "notif": {
+     "at": 0.2,
+     "app": "CLOCKED",
+     "when": "now",
+     "h": 0.27,
+     "lines": [
+      "Payday is tomorrow.",
+      "Projected pay: $712.50",
+      "Example, before taxes."
+     ]
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1000,
+      1.0,
+      0
+     ],
+     [
+      0.6,
+      540,
+      1000,
+      1.0,
+      0
+     ],
+     [
+      1.8,
+      540,
+      990,
+      1.35,
+      0
+     ]
+    ]
+   },
+   "out": "cut",
+   "start": 15.0
+  }
+ ],
+ "endCard": {
+  "start": 16.8,
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY"
+ },
+ "duration": 19.2
+}

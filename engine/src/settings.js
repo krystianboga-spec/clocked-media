@@ -213,6 +213,62 @@ const SETTINGS = {
       glow(540, 200, 700, 300, PAL.glow, 45);
     },
   },
+  // home kitchenette at golden hour: big sunset window, fridge, hanging plant, counter
+  apartment: {
+    plate(o) {
+      wallWash(PAL.wall, PAL.wall2, 41, SETRECT[1], FLOOR_Y + 20);
+      // window with a sunset city
+      shape(boxP(120, 300, 620, 760, 16), { flat: '#F9A66E', lw: 1.6 });
+      shape(boxP(130, 310, 600, 380, 0), { flat: '#F7C27A', water: '#F58A5B', waterA: 120, line: false });
+      shape(ellP(430, 640, 120, 120, 22), { flat: '#FFE7A6', line: false }); plateGlow(430, 640, 320, '#FFE7A6', 70, 4);
+      for (let i = 0; i < 7; i++) { const bx = 130 + i * 88, bh = 120 + hash(i * 4) * 230; shape(boxP(bx, 1060 - bh, 80, bh, 0), { flat: mixC('#C8584E', '#7A3A4E', hash(i)), flatA: 235, line: false }); }
+      stroke_([[430, 300], [430, 1060]], 1.6); stroke_([[120, 680], [740, 680]], 1.4);
+      plateGlow(430, 800, 520, PAL.glow, 70, 7);
+      // fridge with magnets
+      shape(boxP(800, 420, 320, 1080, 26), { flat: '#F7F1E6', water: '#E0D6C6', waterA: 70, lw: 1.5 });
+      stroke_([[800, 820], [1120, 820]], 1.2); shape(boxP(830, 560, 26, 160, 10), { flat: '#C9C2B6', lw: .8 }); shape(boxP(830, 880, 26, 200, 10), { flat: '#C9C2B6', lw: .8 });
+      for (const [mx, my, mc] of [[930, 520, PAL.accent], [1010, 600, PAL.cool], [960, 940, '#FFD27A']]) shape(ellP(mx, my, 24, 24, 12), { flat: mc, lw: .7 });
+      shape(boxP(900, 640, 150, 190, 4), { flat: '#FFFDF4', lw: .8 });
+      // hanging plant
+      stroke_([[80, -200], [80, 260]], .8); shape(ellP(80, 300, 70, 50, 14), { flat: '#C96F4A', lw: 1.2 });
+      for (let i = 0; i < 6; i++) shape(blobP(40 + i * 18, 330 + (i % 3) * 60, 22, 60, i + 70, .3, 10), { flat: i % 2 ? '#5E9C6A' : '#7BB37C', lw: .7, curve: .6 });
+      // counter
+      shape(boxP(SETRECT[0], 1250, SETRECT[2], 260, 10), { flat: '#3E8A8C', water: '#2F6F72', waterA: 80, lw: 1.5 });
+      shape(boxP(SETRECT[0], 1230, SETRECT[2], 34, 8), { flat: '#F2E3CF', lw: 1.2 });
+      shape(boxP(140, 1120, 150, 115, 24), { flat: '#E8574A', lw: 1.2 }); shape(boxP(520, 1110, 120, 125, 30), { flat: '#F7F1E6', lw: 1.2 });
+      floorPlane(PAL.floor, PAL.floor2, FLOOR_Y, 43, 5);
+    },
+    live(t, o) {
+      glow(430, 640, 420, 420, '#FFE7A6', 50 + osc(t, .2) * 8);
+      for (let i = 0; i < 9; i++) { const k = fract(t * .05 + hash(i)); disc(300 + hash(i * 3) * 400 + Math.sin(t + i) * 20, 1100 - k * 600, 3 + hash(i) * 3, '#FFF3C8', { extra: { flatA: 150 * Math.sin(k * Math.PI) } }); }
+    },
+  },
+  // laundromat at night: stacked washers with tumbling clothes, fluorescent light, magenta neon
+  laundromat: {
+    plate(o) {
+      wallWash(PAL.wall, PAL.wall2, 53, SETRECT[1], FLOOR_Y + 20);
+      shape(boxP(60, 110, 960, 40, 18), { flat: '#E8FCFE', lw: 1 }); plateGlow(540, 220, 640, PAL.glow, 90, 9);
+      for (let r = 0; r < 2; r++) for (let i = 0; i < 4; i++) {
+        const x = -120 + i * 330, y = 520 + r * 470;
+        shape(boxP(x, y, 310, 450, 20), { flat: '#E6EEF0', water: '#C4D2D6', waterA: 60, lw: 1.4 });
+        shape(boxP(x + 20, y + 20, 270, 50, 8), { flat: '#C4D2D6', lw: .8 });
+        shape(ellP(x + 155, y + 270, 118, 118, 26), { flat: '#9AA9AE', lw: 1.3 });
+        shape(ellP(x + 155, y + 270, 92, 92, 24), { flat: '#2E5F6B', water: PAL.cool, waterA: 70, line: false });
+      }
+      shape(boxP(SETRECT[0], 1440, SETRECT[2], 60, 10), { flat: '#D8E2E4', lw: 1.3 });
+      floorPlane(PAL.floor, PAL.floor2, FLOOR_Y, 59, 6);
+    },
+    live(t, o) {
+      for (let r = 0; r < 2; r++) for (let i = 0; i < 4; i++) {
+        const cx = -120 + i * 330 + 155, cy = 520 + r * 470 + 270, a = t * (2.2 + i * .3) + i;
+        for (let k = 0; k < 3; k++) { const aa = a + k * 2.1; disc(cx + Math.cos(aa) * 42, cy + Math.sin(aa) * 42 + 10, 26 - k * 4, [PAL.accent, '#FFD27A', '#FFFFFF'][k], { extra: { flatA: 200 } }); }
+        glow(cx - 30, cy - 30, 40, 30, '#FFFFFF', 60);
+      }
+      const fl = hash(Math.floor(t * 7)) > .93 ? .5 : 1;
+      label(o.neon ?? 'OPEN 24H', 540, 380, 96, mixC(PAL.accent, '#ffffff', .35), { alpha: fl, stroke: rgba(PAL.accent, .6), strokeW: .25, font: 'anton', track: 4 });
+      glow(540, 380, 380, 140, PAL.accent, 60 * fl);
+    },
+  },
   // abstract painted studio: sunburst rays and blooms (end cards, title cards, number cards)
   studio: {
     plate(o) {

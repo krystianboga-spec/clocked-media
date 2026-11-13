@@ -1,0 +1,366 @@
+{
+ "title": "Payday is tomorrow",
+ "concept": "A late-night laundromat loop: the payday reminder slams in, Clocky adds up two jobs on the beat, and the end card flows back into the first frame.",
+ "palette": "laundroNeon",
+ "setting": "laundromat",
+ "fps": 30,
+ "seed": 83,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "loopperc",
+  "bpm": 104,
+  "dropShot": 5,
+  "gain": -2
+ },
+ "math": [
+  "25 x 16.50 = 412.50",
+  "12 x 15.00 = 180.00",
+  "412.50 + 180.00 = 592.50"
+ ],
+ "id": "payday-tomorrow-loop",
+ "shots": [
+  {
+   "scene": "notify",
+   "caption": "Payday is tomorrow.",
+   "speaker": "CLOCKY",
+   "params": {
+    "over": "endcard",
+    "dim": 0.75,
+    "dimCol": "#0B141A",
+    "dimAt": 0.0,
+    "time": "11:48",
+    "date": "Thursday",
+    "phone": {
+     "x": 540,
+     "y": 1060,
+     "h": 900,
+     "rot": -0.03,
+     "enterAt": 0.0,
+     "enterDur": 0.2
+    },
+    "notif": {
+     "app": "CLOCKED",
+     "when": "now",
+     "h": 0.27,
+     "lines": [
+      "Payday is tomorrow.",
+      "Projected pay: $592.50",
+      "Example, before taxes."
+     ],
+     "at": 0.22
+    },
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      1.442,
+      540,
+      990,
+      1.12,
+      0
+     ]
+    ]
+   },
+   "out": "cut",
+   "start": 0.0
+  },
+  {
+   "scene": "stage",
+   "caption": "25 hours at $16.50.",
+   "speaker": "CLOCKY",
+   "params": {
+    "cam": [
+     [
+      0,
+      560,
+      1260,
+      1.95,
+      -0.06
+     ],
+     [
+      2.598,
+      560,
+      1250,
+      2.05,
+      -0.04
+     ]
+    ],
+    "drift": 0.4,
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 560,
+      "y": 1560,
+      "size": 150,
+      "pose": {
+       "eyes": "wide",
+       "mouth": "O"
+      },
+      "act": "float"
+     }
+    ]
+   },
+   "out": "cut",
+   "start": 1.44
+  },
+  {
+   "scene": "card",
+   "caption": "*$412.50,* projected.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "laundromat",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      2.306,
+      540,
+      960,
+      1.05,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "JOB 1",
+     "band": "#F04FA0",
+     "rot": -0.03,
+     "rows": [
+      {
+       "l": "Hours",
+       "r": "25",
+       "at": 0.05
+      }
+     ],
+     "total": {
+      "l": "25 h × $16.50",
+      "r": "$412.50",
+      "at": 0.2,
+      "count": true,
+      "countDur": 0.55
+     }
+    }
+   },
+   "out": "cut",
+   "start": 4.04
+  },
+  {
+   "scene": "stage",
+   "caption": "Two jobs. One phone.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      470,
+      1000,
+      1.45,
+      0.03
+     ],
+     [
+      2.015,
+      470,
+      990,
+      1.52,
+      0.03
+     ]
+    ],
+    "drift": 0.3,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 460,
+      "y": 1640,
+      "size": 90,
+      "act": "phone",
+      "screen": "clocked",
+      "screenData": {
+       "title": "This pay period",
+       "big": "2 jobs",
+       "rows": [
+        [
+         "Job 1",
+         "25 h"
+        ],
+        [
+         "Job 2",
+         "12 h"
+        ]
+       ]
+      },
+      "pose": {
+       "phoneGlow": 0.6
+      }
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0.15,
+     "tap",
+     0
+    ],
+    [
+     0.9,
+     "tap",
+     -3
+    ]
+   ],
+   "out": "cut",
+   "start": 6.35
+  },
+  {
+   "scene": "card",
+   "caption": "Job 2: *$180.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "laundromat",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.05,
+      -0.02
+     ],
+     [
+      2.592,
+      540,
+      960,
+      1.08,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "JOB 2",
+     "band": "#2BB6C4",
+     "rot": 0.03,
+     "rows": [
+      {
+       "l": "Hours",
+       "r": "12",
+       "at": 0.05
+      }
+     ],
+     "total": {
+      "l": "12 h × $15.00",
+      "r": "$180.00",
+      "at": 0.2,
+      "count": true,
+      "countDur": 0.55
+     }
+    }
+   },
+   "out": "cut",
+   "start": 8.37
+  },
+  {
+   "scene": "card",
+   "caption": "*$592.50.* Before taxes.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "laundromat",
+    "dim": 0.45,
+    "cam": [
+     [
+      0,
+      540,
+      1000,
+      1.25,
+      -0.05
+     ],
+     [
+      0.12,
+      540,
+      980,
+      1.0,
+      0
+     ],
+     [
+      3.175,
+      540,
+      980,
+      1.03,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "shake": [
+     [
+      0.02,
+      22
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 980,
+     "w": 880,
+     "title": "PROJECTED PAY",
+     "band": "#0F1A22",
+     "titleCol": "#7FE7F0",
+     "enterAt": -0.45,
+     "rows": [
+      {
+       "l": "Job 1",
+       "r": "$412.50",
+       "at": -1
+      },
+      {
+       "l": "Job 2",
+       "r": "+ $180.00",
+       "at": -1
+      }
+     ],
+     "total": {
+      "l": "Both jobs",
+      "r": "$592.50",
+      "at": 0.0,
+      "size": 92
+     }
+    },
+    "fx": [
+     {
+      "type": "flash",
+      "at": 0.0,
+      "life": 0.35,
+      "col": "#E8FEFF"
+     },
+     {
+      "type": "spark",
+      "x": 760,
+      "y": 1210,
+      "at": 0.05,
+      "r": 200,
+      "col": "#7FE7F0"
+     }
+    ]
+   },
+   "out": "cut",
+   "start": 10.96
+  }
+ ],
+ "endCard": {
+  "start": 14.14,
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY"
+ },
+ "duration": 16.54
+}

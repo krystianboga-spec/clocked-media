@@ -3,13 +3,15 @@
 
     <python> engine/sound.py <spec.json> [--voice]          (python with numpy, scipy, soundfile, pyloudnorm)
 
-Music: spec "music": { "mood": detective | nightdiner | lofi | upbeat | bouncy | chaoscalm, "bpm": 96,
-                       "calmShot": 5 (chaoscalm only: the shot where it turns calm), "gain": 0 (dB trim) }
+Music: spec "music": { "mood": detective | nightdiner | lofi | upbeat | bouncy | chaoscalm | loading | loopperc,
+                       "bpm": 96, "calmShot": 5 (chaoscalm only: the shot where it turns calm), "gain": 0 (dB trim),
+                       "dropShot": 6, "dropAt": 0 (one beat drop: a filtered pre-mix opens up, riser + sub boom + crash
+                       land at that shot's start; moods with a 'pre' part list switch arrangement there) }
 SFX:   automatic from the spec (a whoosh family sound on every transition by type, coins, stamps, comic sfx words,
        sparks, count-up ticks and a register "ka-ching" on totals, page flips on countdowns, a phone buzz + ding on
        notifications, pops and thuds on character entrances, a riser into the end card), plus manual events:
-       spec "sfx": [{ "t": 3.2, "kind": "ding", "gain": 0 }]. Kinds: whoosh whip tear flip splat bloom drip coin coins
-       thud stamp ding buzz tick kaching riser pop boing sparkle thump.
+       spec "sfx": [{ "t": 3.2, "kind": "ding", "gain": 0 }] (absolute) or a shot's "sfx": [[0.15, "tap", 0]] (shot time). Kinds: whoosh whip tear flip splat bloom drip coin coins
+       thud stamp ding buzz tick kaching riser pop boing sparkle thump tap drop.
 Mix:   voice (engine/cache/voice/<id>.wav, from voice.py, when --voice) at dialog level, music around -21 LUFS ducked
        ~12 dB under the voice, SFX on top; the whole mix is normalised to -14 LUFS with true peak at or below -2.6 dB before AAC (so the encoded file stays under -1 dB).
 Writes engine/cache/audio/<id>.wav (48 kHz mono). render.cjs --sound puts it on the video.
@@ -112,12 +114,27 @@ MOODS = {
     'lofi':       dict(chords=['Cmaj7', 'Am7', 'Fmaj7', 'G7'], oct=3, swing=.58, parts='epiano boombap bass vinyl rain', key=60),
     'upbeat':     dict(chords=['C', 'G', 'Am', 'F'], oct=3, swing=.5, parts='four pluckarp bass8 claps', key=60),
     'bouncy':     dict(chords=['F', 'C', 'Dm', 'Bb'], oct=3, swing=.5, parts='marimba bouncykick snap shaker bass', key=65),
+    'loading':    dict(chords=['Fmaj7', 'Dm7', 'Bbmaj7', 'C'], oct=3, swing=.5, parts='epiano bass softkick snap shaker', pre='pad pulse', key=65),
+    'loopperc':   dict(chords=['Am7', 'Fmaj7', 'C', 'G'], oct=3, swing=.52, parts='kickdry snap hatdry', pre='kickdry hatdry', key=57),
     'chaoscalm':  dict(chords=['Cmaj9', 'Fmaj7', 'Am7', 'Gsus2'], oct=3, swing=.5, parts='chaos calm', key=60),
 }
+def drop_time(spec):
+    m = spec.get('music') or {}; ds = m.get('dropShot')
+    if ds is None or ds >= len(spec['shots']): return None
+    return spec['shots'][ds]['start'] + m.get('dropAt', 0)
 def music(spec, dur):
     m = spec.get('music') or {}; mood = MOODS.get(m.get('mood', 'lofi'), MOODS['lofi']); bpm = m.get('bpm', 100)
+    td = drop_time(spec)
+    if td is None or 'pre' not in mood: return bed(spec, dur, mood['parts'].split(), mood, bpm, m)
+    pre = bed(spec, dur, mood['pre'].split(), mood, bpm, m); post = bed(spec, dur, mood['parts'].split(), mood, bpm, m)
+    bar = 240 / bpm; i0 = int(max(0, td - bar) * SR); i1 = int(td * SR)
+    filt = lowpass(pre, 700); mixk = np.zeros(len(pre), np.float32); mixk[i0:i1] = np.linspace(0, 1, max(1, i1 - i0)) ** 2; mixk[i1:] = 1
+    pre = filt * (1 - mixk) + pre * mixk                      # the filter opens over the bar before the drop
+    x = np.zeros(len(pre), np.float32); x[i1:] = 1; x[i1:i1 + 1440] = np.linspace(0, 1, len(x[i1:i1 + 1440]))
+    return pre * (1 - x) * 10 ** (-3 / 20) + post * x
+def bed(spec, dur, parts, mood, bpm, m):
     beat = 60 / bpm; bar = beat * 4; n = int((dur + 1) * SR); out = np.zeros(n, np.float32)
-    parts = mood['parts'].split(); sw = mood['swing']
+    sw = mood['swing']
     calm_at = None
     if m.get('mood') == 'chaoscalm':
         cs = m.get('calmShot'); calm_at = spec['shots'][cs]['start'] if cs is not None and cs < len(spec['shots']) else dur * .5
@@ -189,11 +206,18 @@ def music(spec, dur):
                 tt = t0 + k * beat
                 if tt >= calm_at: place(out, pluck(midi(notes[k % len(notes)] + 24), .9, .6), tt, -17)
             if t0 >= calm_at - .01: place(out, bass(midi(root - 12), bar * .95, False), t0, -11)
+        if 'pad' in parts: place(out, pad([midi(x + 12) for x in notes], bar + .4, 1400), t0, -7)
+        if 'pulse' in parts:
+            for k in range(4): place(out, kick(.4, 70, 40), t0 + k * beat, -15)
+        if 'kickdry' in parts:
+            for tt in ((0, 1.5 * beat, 2 * beat) if b % 2 else (0, 2 * beat, 2.75 * beat)): place(out, kick(.22, 140, 55), t0 + tt, -10)
+        if 'hatdry' in parts:
+            for k in range(8): place(out, hat(.04), eighth(b, k), -22 if k % 2 else -18)
         if 'vinyl' in parts:
             r = np.random.default_rng(100 + b); cr = np.zeros(int(bar * SR), np.float32)
             for _ in range(int(bar * 9)): j = r.integers(0, len(cr) - 40); cr[j:j + 40] += r.uniform(.2, 1) * np.exp(-np.arange(40) / 6)
             place(out, highpass(cr, 1200), t0, -30)
-    if 'rain' in mood['parts']:
+    if 'rain' in parts:
         place(out, lowpass(highpass(noise(dur + 1, 9), 800), 7000) * .6, 0, -26)
     # tail: gentle fade on the last 0.6 s
     out = out[:int(dur * SR)]; f = int(.6 * SR); out[-f:] *= np.linspace(1, 0, f) ** 1.5
@@ -264,10 +288,18 @@ def sfx(kind, seed=0):
         for i in range(6):
             d = .4; t = t_(d); f = r.choice([2637, 3136, 3520, 3951, 4699]); place(out, np.sin(2 * np.pi * f * t) * np.exp(-t * 10), i * .06, -i)
         return norm(out, .55)
+    if kind == 'tap':
+        out = np.zeros(int(.5 * SR), np.float32)
+        for i in range(7): d = .03; t = t_(d); place(out, bandpass(noise(d, seed + i), 1500, 6000) * np.exp(-t * 160) + np.sin(2 * np.pi * (900 + 120 * (i % 3)) * t) * np.exp(-t * 120) * .5, i * .062 + r.uniform(0, .01))
+        return norm(out, .6)
+    if kind == 'drop':
+        d = 1.6; t = t_(d); f = 32 + 60 * np.exp(-t * 9); boom = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 2.2)
+        crash = highpass(noise(d, seed), 3500) * np.exp(-t * 2.8) * .35
+        return norm(boom + crash, 1.0)
     raise ValueError('unknown sfx kind ' + kind)
 # default level of each kind (dB, relative to a -0.0 dBFS peak before the final mix)
 LEVEL = {'whoosh': -16, 'brush': -16, 'bloom': -18, 'whip': -15, 'tear': -15, 'flip': -14, 'splat': -12, 'drip': -14, 'coin': -16, 'coins': -14,
-         'thud': -9, 'stamp': -9, 'thump': -13, 'ding': -11, 'buzz': -16, 'tick': -22, 'kaching': -12, 'riser': -17, 'pop': -17, 'boing': -13, 'sparkle': -18}
+         'thud': -9, 'stamp': -9, 'thump': -13, 'ding': -11, 'buzz': -16, 'tick': -22, 'kaching': -12, 'riser': -17, 'pop': -17, 'boing': -13, 'sparkle': -18, 'tap': -14, 'drop': -6}
 TRANS_SFX = {'brush': 'brush', 'bloom': 'bloom', 'drip': 'drip', 'splat': 'splat', 'whip': 'whip', 'tear': 'tear', 'flip': 'flip', 'iris': 'whoosh', 'zoom': 'whoosh'}
 
 def events(spec):
@@ -294,9 +326,16 @@ def events(spec):
             elif f['type'] == 'lines': ev.append((at, 'whip', -3))
             elif f['type'] == 'sfx': ev.append((at, 'boing' if 'BOING' in f['text'].upper() else 'sparkle' if 'TA' in f['text'].upper() else 'pop', 0))
             elif f['type'] == 'label': ev.append((at, 'pop', 0))
+            elif f['type'] == 'loading':
+                ks = f.get('keys') or [[f.get('at', 0), 0], [f.get('at', 0) + 1.5, 1]]; segs = f.get('segs', 3); last = 0
+                for q in range(0, int(ks[-1][0] * 30) + 2):
+                    tt = q / 30; v = np.interp(tt, [k[0] for k in ks], [k[1] for k in ks]); c = int(v * segs + 1e-6)
+                    if c > last: ev.append((st + tt, 'tick', 10)); last = c
+        for e in s.get('sfx') or []: ev.append((st + e[0], e[1], e[2] if len(e) > 2 else 0))   # shot-relative [t, kind, gain]
         sc = s.get('scene')
         if sc == 'card':
             cd = p.get('card') or {}
+            if cd.get('enterAt', 0) >= 0: ev.append((st + cd.get('enterAt', 0) + .38, 'thud', -6))
             for rw in cd.get('rows', []):
                 if 0 <= rw.get('at', 0) < 8:
                     if rw.get('count'):
@@ -318,6 +357,8 @@ def events(spec):
         if sc == 'title': ev += [(st + L.get('at', 0), 'pop', 0) for L in p.get('lines', [])]
         if sc == 'split' and 0 <= p.get('afterAt', 99) < 8: ev.append((st + p['afterAt'], 'whoosh', -2))
         if sc == 'endcard': ev += [(st - 1.15, 'riser', 0), (st + .4, 'sparkle', 0), (st + .62, 'pop', 0)]
+    td = drop_time(spec)
+    if td is not None: ev += [(td - 1.25, 'riser', 2), (td, 'drop', 0)]
     for e in spec.get('sfx') or []: ev.append((e['t'], e['kind'], e.get('gain', 0)))
     return sorted((t, k, g) for t, k, g in ev if t > -0.5)
 

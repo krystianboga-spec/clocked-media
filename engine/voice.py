@@ -75,7 +75,7 @@ def speak_text(caption):
     s = re.sub(r'\d+', lambda m: words(m.group(0)), s)
     s = re.sub(r'\?+', '?', s); s = re.sub(r'!+', '!', s)
     s = re.sub(r'\s+', ' ', s).strip()
-    s = re.sub(r'(^|[.?!:]\s+)([a-z])', lambda m: m.group(1) + m.group(2).upper(), s)   # sentence starts
+    s = re.sub(r'(^|[.?!]\s+)([a-z])', lambda m: m.group(1) + m.group(2).upper(), s)   # sentence starts
     return s
 def emphasis(caption):
     return [speak_text(x).lower() for x in re.findall(r'\*([^*]+)\*', caption)]

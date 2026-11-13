@@ -121,6 +121,19 @@ function drawFx(list, lt, t) {
     else if (f.type === 'coins') for (let i = 0; i < (f.n || 14); i++) { const d = i * .06, a = age - d; if (a < 0) continue; const x = (f.x0 ?? 100) + hash(i * 3) * ((f.x1 ?? 980) - (f.x0 ?? 100)), y = (f.y0 ?? -100) + a * a * 1800 + a * 300; if (y < (f.floor ?? 1600)) coin(x, y, f.size || 46, { spin: a * 12 + i }); else coin(x, f.floor ?? 1600, f.size || 46, { spin: 0 }); }
     else if (f.type === 'lines') { const k = clamp(1 - age / (f.life || .6)); if (k > 0) speedLines(f.x, f.y, f.r0 || 260, f.r1 || 700, f.n || 18, f.col || INK(), k, f.seed || 1); }
     else if (f.type === 'spark') { const k = seg(age, 0, .5); if (k < 1) for (let i = 0; i < 8; i++) { const a = i / 8 * TAU, r = (f.r || 120) * (.4 + eOut(k)); shape(starP(f.x + Math.cos(a) * r, f.y + Math.sin(a) * r, (f.s || 22) * (1 - k), .4, 4), { flat: f.col || '#FFE27A', lw: .5, tex: 0 }); } }
+    else if (f.type === 'loading') {   // painted loading bar: f.keys [[t, progress 0..1]...] (shot time), f.x, f.y, f.w, f.text
+      const k = keys(lt, f.keys || [[f.at || 0, 0], [(f.at || 0) + 1.5, 1]], x => clamp(x)), w = f.w || 700, x0 = (f.x ?? 540) - w / 2, y = f.y ?? 760, segs = f.segs || 3;
+      pushT(); tr(x0, y); rot(f.rot || -.02);
+      shape(boxP(-14, -48, w + 28, 96, 40, 1.2), { flat: PAL.card, lw: 1.6, tex: .3 });
+      const fill = Math.floor(k * segs + 1e-6) / segs;
+      if (fill > 0) shape(boxP(0, -32, w * fill, 64, 30, 1), { flat: f.col || C.lime, lw: 1, tex: .4, wet: .8 });
+      for (let i = 1; i < segs; i++) stroke_([[w * i / segs, -36], [w * i / segs, 36]], .6, PAL.cardInk, 'fine', 0);
+      popT();
+      const sp = (f.x ?? 540), sy = y - 120;
+      if (k < 1) for (let i = 0; i < 8; i++) { const a = i / 8 * TAU + lt * 7; disc(sp + Math.cos(a) * 46, sy + Math.sin(a) * 46, 9 + i * 1.2, mixC(PAL.card, PAL.cardInk, i / 10), { extra: { flatA: 80 + i * 22 } }); }
+      label(k < 1 ? (f.text || 'PAY LOADING') : (f.done || 'LOADED'), f.x ?? 540, y + 100, 64, PAL.card, { font: 'anton', track: 4, stroke: PAL.ink, strokeW: .2 });
+    }
+    else if (f.type === 'flash') { const k = 1 - clamp(age / (f.life || .35)); if (k > 0) { applyMat(CTX); CTX.fillStyle = rgba(f.col || '#FFF8E6', .85 * k * k); CTX.fillRect(-500, -500, W + 1000, H + 1000); } }
     else if (f.type === 'label') label(f.text, f.x, f.y, f.size || 70, f.col || PAL.card, { pop: age * 4, rot: f.rot, stroke: f.stroke ?? INK(), strokeW: .16, font: f.font, alpha: f.until ? 1 - seg(lt, f.until, f.until + .2) : 1 });
   }
 }
@@ -313,9 +326,12 @@ const SCENES = {
     const { t, lt, dur, p } = ctx;
     const [cx, cy, z, r] = camAt(lt, { cam: [[0, 540, 1000, 1.0, 0], [dur, 540, 990, 1.08, 0]], ...p }, dur);
     camOn(cx, cy, z, r);
-    setting(p.setting || 'busstop', t, p.set || {});
+    if (p.over === 'endcard') { camOff(); SCENES.endcard({ ...ctx, lt: 9, p: {} }); camOn(cx, cy, z, r); }
+    else setting(p.setting || 'busstop', t, p.set || {});
+    if (p.dim) { applyMat(CTX); CTX.fillStyle = rgba(p.dimCol || PAL.ink, p.dim * seg(lt, p.dimAt ?? 0, (p.dimAt ?? 0) + .25)); CTX.fillRect(-400, -400, W + 800, H + 800); }
     drawCast(p.cast, lt, dur, t, 'back');
-    const ph = p.phone || {}, nAt = p.notif?.at ?? .5, buzz = lt > nAt - .05 && lt < nAt + .5 ? Math.sin(lt * 90) * 7 * (1 - seg(lt, nAt, nAt + .5)) : 0;
+    const ph0 = p.phone || {}, ent = ph0.enterAt != null ? 1 - eOut(seg(lt, ph0.enterAt, ph0.enterAt + (ph0.enterDur || .22))) : 0;
+    const ph = { ...ph0, y: (ph0.y ?? 1010) + ent * 1500 }, nAt = p.notif?.at ?? .5, buzz = lt > nAt - .05 && lt < nAt + .5 ? Math.sin(lt * 90) * 7 * (1 - seg(lt, nAt, nAt + .5)) : 0;
     const px = (ph.x ?? 540) + buzz, py = ph.y ?? 1010, hh = ph.h ?? 900;
     glow(px, py, hh * .9, hh * .8, C.lime, 70 * seg(lt, nAt, nAt + .3));
     // the hand holding it

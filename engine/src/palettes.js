@@ -14,6 +14,10 @@ const PALETTES = {
   sunnyJuggle: { ink: '#2B2131', paper: '#FBF0E1', sky: '#8CCBE6', wall: '#F7B98E', wall2: '#F29A72', floor: '#C97B5C', floor2: '#B0674C', warm: '#FAD976', cool: '#7FC6B0', accent: '#EE6C5D', card: '#FFF8EC', cardInk: '#2B2131', capBg: '#FFF8EC', capInk: '#2B2131', glow: '#FFF0BE' },
   // 6 · first job: chalkboard green, terracotta, cream and mustard
   chalkCafe: { ink: '#231A17', paper: '#F6EAD3', sky: '#2E4A40', wall: '#C9603F', wall2: '#A84B31', floor: '#7B4A35', floor2: '#5F3828', warm: '#EBAE3C', cool: '#88B9A6', accent: '#E05A42', card: '#FDF3DF', cardInk: '#231A17', capBg: '#FDF3DF', capInk: '#231A17', glow: '#FFE3A8' },
+  // 7 · golden hour at home: peach walls, coral sunset, teal shadows, butter light
+  goldenHour: { ink: '#2A1E24', paper: '#FBEFE2', sky: '#F58A5B', wall: '#F6C7A2', wall2: '#EBA780', floor: '#B9775A', floor2: '#9C5E45', warm: '#FFD27A', cool: '#3E8A8C', accent: '#E8574A', card: '#FFF7EC', cardInk: '#2A1E24', capBg: '#FFF7EC', capInk: '#2A1E24', glow: '#FFE2A3' },
+  // 8 · laundromat at night: deep teal, fluorescent cyan, magenta neon, ice white
+  laundroNeon: { ink: '#0F1A22', paper: '#E9F1F2', sky: '#0E2530', wall: '#17414C', wall2: '#123540', floor: '#1C4A55', floor2: '#143843', warm: '#FFE9A8', cool: '#7FE7F0', accent: '#F04FA0', card: '#F4FBFC', cardInk: '#0F1A22', capBg: '#F4FBFC', capInk: '#0F1A22', glow: '#B9F6FA' },
   // neutral studio palette for the end card when a video doesn't set one
   studio: { ink: '#1F1D26', paper: '#F3ECDF', sky: '#24262F', wall: '#2F3240', wall2: '#262834', floor: '#3A3D4C', floor2: '#2E3140', warm: '#F5C25E', cool: '#8FC9D9', accent: '#EF7A63', card: '#FBF6EC', cardInk: '#1F1D26', capBg: '#FBF6EC', capInk: '#1F1D26', glow: '#E9FFC2' },
 };

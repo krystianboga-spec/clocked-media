@@ -30,7 +30,7 @@ Read in full: ops/rules.md, ops/concepts.md, ops/used-concepts.json, engine/READ
 
 ## Step 1. Check what Metricool already holds
 
-Call `getScheduledPosts` for the target month (blogId 7724856). Count posts per network already there (published, scheduled, and drafts). If this is a mid-month run, set `--start-day` to at least tomorrow and `--used-tiktok` / `--used-instagram` to those counts. If drafts from an earlier failed run exist for this month, tell Krystian and ask whether to reuse or ignore them; do not delete anything.
+Call `getScheduledPosts` for the target month (blogId 7724856). Count posts per network already there (published, scheduled, and drafts). If this is a mid-month run, set `--start-day` to at least tomorrow and `--used-tiktok` / `--used-instagram` to those counts. If `ops/runs/YYYY-MM/preloaded.json` exists, those posts were added early: count them, start the schedule at least 2 days after the last preloaded date (`--start-day`), and do not reuse their assets or concepts. If drafts from an earlier failed run exist for this month, tell Krystian and ask whether to reuse or ignore them; do not delete anything.
 
 ## Step 1b. Trend research: the best AI-made short videos this month
 

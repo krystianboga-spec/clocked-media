@@ -1,0 +1,13 @@
+{
+ "_comment": "Posts added to Metricool before the monthly run (trend videos built 2026-11-10 from ops/research/2026-11.md). The December run must count these: --used-tiktok 2 --used-instagram 2 --start-day 5, and must not reuse these assets.",
+ "posts": [
+  {"n":1,"platform":"instagram","asset":"pay-loading","date":"2026-12-01T10:00:00","media":"media/2026-12/painted/pay-loading-voiced.mp4",
+   "caption":"Pay loading...\n\nExample week: 45 hours at $15\nFirst 40 hrs: $600.00\n5 overtime hrs x $22.50 (1.5x): $112.50\nProjected: $712.50 before taxes\n\nClocked projects your pay as you log shifts, overtime included, and reminds you before payday. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#paycheck #overtime #hourlyworker #payday #serverlife"},
+  {"n":2,"platform":"tiktok","asset":"pay-loading","date":"2026-12-02T10:00:00","media":"media/2026-12/painted/pay-loading-voiced.mp4","title":"Pay loading...",
+   "caption":"45 hours this week. Pay loading... Example: first 40 hours at $15 = $600.00, plus 5 overtime hours at 1.5x ($22.50) = $112.50, so $712.50 projected before taxes. Clocked projects your pay as you log shifts and reminds you before payday. Free beta, out now. Try it free at clocked.space and follow for updates. #paycheck #overtime #hourlyworker #payday #serverlife"},
+  {"n":3,"platform":"tiktok","asset":"payday-tomorrow-loop","date":"2026-12-03T10:00:00","media":"media/2026-12/painted/payday-tomorrow-loop-voiced.mp4","title":"Payday is tomorrow",
+   "caption":"Payday is tomorrow. Two jobs, one number. Example: 25 hrs x $16.50 = $412.50 plus 12 hrs x $15 = $180.00, so $592.50 projected before taxes. Clocked tracks more than one job and sends a payday reminder to your phone. Free beta, out now. Try it free at clocked.space and follow for updates. #payday #twojobs #paycheck #hourlyworker #sidehustle"},
+  {"n":4,"platform":"instagram","asset":"payday-tomorrow-loop","date":"2026-12-03T10:00:00","media":"media/2026-12/painted/payday-tomorrow-loop-voiced.mp4",
+   "caption":"Payday is tomorrow.\n\nExample week, two jobs:\nJob 1: 25 hrs x $16.50 = $412.50\nJob 2: 12 hrs x $15 = $180.00\nProjected: $592.50 before taxes\n\nClocked tracks every job in one place and reminds you on your phone before payday. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#payday #twojobs #paycheck #hourlyworker #sidehustle"}
+ ]
+}

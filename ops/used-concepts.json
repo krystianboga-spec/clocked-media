@@ -2,21 +2,294 @@
   "_comment": "Append only. One entry per finished asset. Never reuse an id or a hook. Update this file in the same commit as the new month's media. 'themes' help vary settings, palettes and formats.",
   "version": 1,
   "used": [
-    {"id": "paycheck", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-paycheck.mp4"], "hook": "POV: you know your paycheck before payday", "feature": "projected pay", "style": "flat motion graphics, dark #0E0F12 with lime accent", "math": "16.5 hrs x $15 = $247.50 before taxes"},
-    {"id": "two-jobs", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-two-jobs.mp4"], "hook": "Working two jobs?", "feature": "more than one job", "style": "flat motion graphics, dark with lime accent"},
-    {"id": "payday", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-payday.mp4"], "hook": "When do I get paid again?", "feature": "payday reminders", "style": "flat motion graphics, dark with lime accent"},
-    {"id": "a0-beta", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-a0-beta.mp4"], "hook": "Clocked is out. Free beta.", "feature": "beta announcement", "style": "flat motion graphics, dark with lime accent", "math": "$247.50 example week before taxes"},
-    {"id": "skit-paycheck", "type": "video", "month": "2026-11", "files": ["media/2026-11/clocked-skit.mp4"], "hook": "paycheck skit", "feature": "projected pay", "style": "3D skit"},
-    {"id": "stills-paycheck-feed", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-PaycheckFeed.png"], "hook": "paycheck feed still (4:5)", "feature": "projected pay", "style": "dark card still"},
-    {"id": "stills-payday-feed", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-PaydayFeed.png"], "hook": "payday feed still (4:5)", "feature": "payday reminders", "style": "dark card still"},
-    {"id": "stills-two-jobs-9x16", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-TwoJobs.png"], "hook": "two jobs still (9:16)", "feature": "more than one job", "style": "dark card still"},
-    {"id": "stills-paycheck-9x16", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-Main.png"], "hook": "paycheck still (9:16)", "feature": "projected pay", "style": "dark card still", "note": "confirm the file name when first reading this log"},
-    {"id": "stills-payday-9x16", "type": "photo", "month": "2026-11", "files": ["media/2026-11/clocked-Payday.png"], "hook": "payday still (9:16)", "feature": "payday reminders", "style": "dark card still"},
-    {"id": "ot-puzzle", "type": "video", "month": "2026-11", "files": [], "hook": "overtime puzzle", "feature": "overtime 1.5x after 40", "style": "painted video engine", "note": "painted video made in the first engine batch; add files when committed"},
-    {"id": "stay-two-more", "type": "video", "month": "2026-11", "files": [], "hook": "Manager: can you stay 2 more hours?", "feature": "overtime 1.5x after 40", "style": "painted video engine"},
-    {"id": "notes-chaos", "type": "video", "month": "2026-11", "files": [], "hook": "Tracking hours in your notes app?", "feature": "projected pay", "style": "painted video engine"},
-    {"id": "payday-countdown", "type": "video", "month": "2026-11", "files": [], "hook": "payday countdown", "feature": "payday reminders", "style": "painted video engine"},
-    {"id": "two-jobs-juggle", "type": "video", "month": "2026-11", "files": [], "hook": "juggling two jobs", "feature": "more than one job", "style": "painted video engine"},
-    {"id": "first-job-tips", "type": "video", "month": "2026-11", "files": [], "hook": "first job tips", "feature": "none (education)", "style": "painted video engine"}
+    {
+      "id": "paycheck",
+      "type": "video",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-paycheck.mp4"
+      ],
+      "hook": "POV: you know your paycheck before payday",
+      "feature": "projected pay",
+      "style": "flat motion graphics, dark #0E0F12 with lime accent",
+      "math": "16.5 hrs x $15 = $247.50 before taxes"
+    },
+    {
+      "id": "two-jobs",
+      "type": "video",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-two-jobs.mp4"
+      ],
+      "hook": "Working two jobs?",
+      "feature": "more than one job",
+      "style": "flat motion graphics, dark with lime accent"
+    },
+    {
+      "id": "payday",
+      "type": "video",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-payday.mp4"
+      ],
+      "hook": "When do I get paid again?",
+      "feature": "payday reminders",
+      "style": "flat motion graphics, dark with lime accent"
+    },
+    {
+      "id": "a0-beta",
+      "type": "video",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-a0-beta.mp4"
+      ],
+      "hook": "Clocked is out. Free beta.",
+      "feature": "beta announcement",
+      "style": "flat motion graphics, dark with lime accent",
+      "math": "$247.50 example week before taxes"
+    },
+    {
+      "id": "skit-paycheck",
+      "type": "video",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-skit.mp4"
+      ],
+      "hook": "paycheck skit",
+      "feature": "projected pay",
+      "style": "3D skit"
+    },
+    {
+      "id": "stills-paycheck-feed",
+      "type": "photo",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-PaycheckFeed.png"
+      ],
+      "hook": "paycheck feed still (4:5)",
+      "feature": "projected pay",
+      "style": "dark card still"
+    },
+    {
+      "id": "stills-payday-feed",
+      "type": "photo",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-PaydayFeed.png"
+      ],
+      "hook": "payday feed still (4:5)",
+      "feature": "payday reminders",
+      "style": "dark card still"
+    },
+    {
+      "id": "stills-two-jobs-9x16",
+      "type": "photo",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-TwoJobs.png"
+      ],
+      "hook": "two jobs still (9:16)",
+      "feature": "more than one job",
+      "style": "dark card still"
+    },
+    {
+      "id": "stills-paycheck-9x16",
+      "type": "photo",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-Main.png"
+      ],
+      "hook": "paycheck still (9:16)",
+      "feature": "projected pay",
+      "style": "dark card still",
+      "note": "confirm the file name when first reading this log"
+    },
+    {
+      "id": "stills-payday-9x16",
+      "type": "photo",
+      "month": "2026-11",
+      "files": [
+        "media/2026-11/clocked-Payday.png"
+      ],
+      "hook": "payday still (9:16)",
+      "feature": "payday reminders",
+      "style": "dark card still"
+    },
+    {
+      "id": "ot-puzzle",
+      "type": "video",
+      "month": "2026-11",
+      "files": [],
+      "hook": "overtime puzzle",
+      "feature": "overtime 1.5x after 40",
+      "style": "painted video engine",
+      "note": "painted video made in the first engine batch; add files when committed"
+    },
+    {
+      "id": "stay-two-more",
+      "type": "video",
+      "month": "2026-11",
+      "files": [],
+      "hook": "Manager: can you stay 2 more hours?",
+      "feature": "overtime 1.5x after 40",
+      "style": "painted video engine"
+    },
+    {
+      "id": "notes-chaos",
+      "type": "video",
+      "month": "2026-11",
+      "files": [],
+      "hook": "Tracking hours in your notes app?",
+      "feature": "projected pay",
+      "style": "painted video engine"
+    },
+    {
+      "id": "payday-countdown",
+      "type": "video",
+      "month": "2026-11",
+      "files": [],
+      "hook": "payday countdown",
+      "feature": "payday reminders",
+      "style": "painted video engine"
+    },
+    {
+      "id": "two-jobs-juggle",
+      "type": "video",
+      "month": "2026-11",
+      "files": [],
+      "hook": "juggling two jobs",
+      "feature": "more than one job",
+      "style": "painted video engine"
+    },
+    {
+      "id": "first-job-tips",
+      "type": "video",
+      "month": "2026-11",
+      "files": [],
+      "hook": "first job tips",
+      "feature": "none (education)",
+      "style": "painted video engine"
+    },
+    {
+      "id": "pay-loading",
+      "type": "video",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/painted/pay-loading-voiced.mp4"
+      ],
+      "hook": "45 hours. Pay loading.",
+      "feature": "overtime 1.5x after 40, payday reminder",
+      "style": "painted engine, goldenHour apartment, loading-then-reveal",
+      "math": "40 x $15 = $600.00 + 5 x $22.50 = $112.50 = $712.50 before taxes",
+      "note": "preloaded 2026-11-16 (ops/runs/2026-12/preloaded.json)"
+    },
+    {
+      "id": "payday-tomorrow-loop",
+      "type": "video",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/painted/payday-tomorrow-loop-voiced.mp4"
+      ],
+      "hook": "Payday is tomorrow.",
+      "feature": "payday reminders, more than one job",
+      "style": "painted engine, laundroNeon laundromat, notification loop",
+      "math": "25 x $16.50 = $412.50 + 12 x $15 = $180.00 = $592.50 before taxes",
+      "note": "preloaded 2026-11-16"
+    },
+    {
+      "id": "t-2026-12-day-better",
+      "type": "video",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/painted/t-2026-12-day-better-voiced.mp4"
+      ],
+      "hook": "Oh boy. One more shift.",
+      "feature": "overtime 1.5x after 40",
+      "style": "painted engine, studio palette, shop setting, deadpan-then-reveal on a drop",
+      "math": "40 x $16 = $640.00 + 4 x $24.00 = $96.00 = $736.00 before taxes"
+    },
+    {
+      "id": "t-2026-12-same-answer",
+      "type": "video",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/painted/t-2026-12-same-answer-voiced.mp4"
+      ],
+      "hook": "How many hours did you work this week?",
+      "feature": "projected pay",
+      "style": "painted engine, midnight palette, studio setting, same-answer escalation",
+      "math": "32 x $16.50 = $528.00 before taxes"
+    },
+    {
+      "id": "t-2026-12-getting-louder",
+      "type": "video",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/painted/t-2026-12-getting-louder-voiced.mp4"
+      ],
+      "hook": "December schedule just dropped.",
+      "feature": "more than one job",
+      "style": "painted engine, laundroNeon palette, bedroom, chaos-to-calm escalation",
+      "math": "18 x $15 = $270.00 + 20 x $14 = $280.00 = $550.00 before taxes"
+    },
+    {
+      "id": "t-2026-12-camera-shy",
+      "type": "video",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/painted/t-2026-12-camera-shy-voiced.mp4"
+      ],
+      "hook": "Clocky, when is payday?",
+      "feature": "payday reminders, projected pay",
+      "style": "painted engine, goldenHour palette, sunny bus stop, refuse-then-give-in mascot beat",
+      "math": "26 x $18 = $468.00 before taxes"
+    },
+    {
+      "id": "dec-christmas-eve-close",
+      "type": "photo",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/dec-christmas-eve-close/"
+      ],
+      "hook": "Closing early on Christmas Eve? Log it anyway.",
+      "feature": "projected pay",
+      "style": "dark ticket-stub cards, Anton headline with lime highlighter",
+      "math": "5 x $14 = $70.00; 24 x $14 = $336.00 before taxes"
+    },
+    {
+      "id": "first-job-tips-2",
+      "type": "photo",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/first-job-tips-2/"
+      ],
+      "hook": "Seasonal job? Do these 5 things in week one.",
+      "feature": "none (education)",
+      "style": "dark ticket-stub cards, numbered lime badges"
+    },
+    {
+      "id": "ot-rate-chart",
+      "type": "photo",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/ot-rate-chart/"
+      ],
+      "hook": "Your overtime rate, in one chart.",
+      "feature": "overtime 1.5x after 40",
+      "style": "dark ticket-stub cards, mono rate chart",
+      "math": "40 x $18 = $720.00 + 3 x $27.00 = $81.00 = $801.00 before taxes"
+    },
+    {
+      "id": "which-job-pays",
+      "type": "photo",
+      "month": "2026-12",
+      "files": [
+        "media/2026-12/which-job-pays/"
+      ],
+      "hook": "Which job pays more this week?",
+      "feature": "more than one job",
+      "style": "dark ticket-stub cards, two-ticket compare",
+      "math": "12 x $16 = $192.00; 18 x $12 = $216.00; $408.00 before taxes"
+    }
   ]
 }

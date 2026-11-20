@@ -1,0 +1,557 @@
+{
+ "id": "t-2026-12-getting-louder",
+ "title": "December schedule just dropped",
+ "concept": "Shifts land on two jobs while the music gets louder; then calm, both jobs in one list.",
+ "palette": "laundroNeon",
+ "setting": "bedroom",
+ "fps": 30,
+ "seed": 141,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "chaoscalm",
+  "bpm": 128,
+  "calmShot": 4
+ },
+ "math": [
+  "store 3 x 6 = 18 h",
+  "18 x 15.00 = 270.00",
+  "cafe 4 x 5 = 20 h",
+  "20 x 14.00 = 280.00",
+  "270.00 + 280.00 = 550.00"
+ ],
+ "duration": 24.25,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "December schedule just dropped.",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "clockText": " "
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1080,
+      1.1,
+      0
+     ],
+     [
+      2.2,
+      540,
+      1070,
+      1.16,
+      0
+     ]
+    ],
+    "drift": 0.3,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1680,
+      "size": 90,
+      "act": "phone",
+      "pose": {
+       "eyes": "tired",
+       "phoneGlow": 1
+      },
+      "screen": "lock",
+      "screenData": {
+       "time": "11:02",
+       "date": "Sunday"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 2.2,
+   "scene": "montage",
+   "caption": "Store: three shifts.",
+   "speaker": "SAM",
+   "params": {
+    "setting": "bedroom",
+    "panels": [
+     {
+      "at": 0.0,
+      "rect": [
+       90,
+       330,
+       900,
+       560
+      ],
+      "rot": -0.02,
+      "setting": "shop",
+      "cam": [
+       540,
+       1000,
+       0.8
+      ],
+      "cast": [
+       {
+        "who": "sam",
+        "x": 540,
+        "y": 1700,
+        "size": 90,
+        "pose": {
+         "eyes": "open",
+         "emote": "!"
+        }
+       }
+      ],
+      "label": "STORE  6 + 6 + 6",
+      "labelCol": "#C8F25A"
+     }
+    ],
+    "set": {
+     "clockText": " "
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 4.0,
+   "scene": "montage",
+   "caption": "Cafe: three more.",
+   "speaker": "SAM",
+   "params": {
+    "setting": "bedroom",
+    "panels": [
+     {
+      "at": -1,
+      "rect": [
+       90,
+       330,
+       900,
+       560
+      ],
+      "rot": -0.02,
+      "setting": "shop",
+      "cam": [
+       540,
+       1000,
+       0.8
+      ],
+      "cast": [
+       {
+        "who": "sam",
+        "x": 540,
+        "y": 1700,
+        "size": 90,
+        "pose": {
+         "eyes": "open"
+        }
+       }
+      ],
+      "label": "STORE  6 + 6 + 6",
+      "labelCol": "#C8F25A"
+     },
+     {
+      "at": 0.0,
+      "rect": [
+       90,
+       930,
+       900,
+       560
+      ],
+      "rot": 0.02,
+      "setting": "diner",
+      "cam": [
+       540,
+       1000,
+       0.8
+      ],
+      "cast": [
+       {
+        "who": "sam",
+        "x": 540,
+        "y": 1700,
+        "size": 90,
+        "pose": {
+         "eyes": "wide",
+         "emote": "sweat"
+        }
+       }
+      ],
+      "label": "CAFE  5 + 5 + 5",
+      "labelCol": "#F04FA0"
+     }
+    ],
+    "set": {
+     "clockText": " "
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 5.75,
+   "scene": "stage",
+   "caption": "*Plus* a Sunday cover?",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "clockText": " "
+    },
+    "cam": [
+     [
+      0,
+      540,
+      900,
+      1.8,
+      0.05
+     ],
+     [
+      1.8,
+      540,
+      880,
+      2.1,
+      0.08
+     ]
+    ],
+    "shake": [
+     [
+      0.1,
+      16
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1680,
+      "size": 90,
+      "act": "phone",
+      "pose": {
+       "eyes": "dead",
+       "mouth": "wavy",
+       "emote": "!?",
+       "phoneGlow": 1
+      },
+      "screen": "lock",
+      "screenData": {
+       "time": "11:02",
+       "date": "Sunday"
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "lines",
+      "x": 540,
+      "y": 900,
+      "at": 0.0,
+      "life": 0.9
+     },
+     {
+      "type": "stamp",
+      "text": "+5 CAFE",
+      "x": 520,
+      "y": 700,
+      "size": 72,
+      "at": 0.4,
+      "col": "#F04FA0",
+      "rot": 0.12
+     }
+    ]
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 7.55,
+   "scene": "stage",
+   "caption": "Breathe. Two jobs, one list.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "clockText": " "
+    },
+    "cam": [
+     [
+      0,
+      560,
+      1080,
+      1.05,
+      0
+     ],
+     [
+      2.4,
+      560,
+      1070,
+      1.08,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1680,
+      "size": 86,
+      "pose": {
+       "eyes": "closed",
+       "mouth": "sigh"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1640,
+      "size": 130,
+      "act": "float",
+      "enter": {
+       "type": "rise",
+       "at": 0.0,
+       "dur": 0.4
+      },
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile",
+       "glow": 1
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 9.95,
+   "scene": "card",
+   "caption": "Store: 18 hours. *$270.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "bedroom",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      3.55,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "STORE",
+     "band": "#2E4A40",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "3 shifts × 6 h",
+       "r": "18 h",
+       "at": 0.1
+      }
+     ],
+     "total": {
+      "l": "18 h × $15.00",
+      "r": "$270.00",
+      "at": 0.4,
+      "count": true
+     }
+    },
+    "set": {
+     "clockText": " "
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 13.5,
+   "scene": "card",
+   "caption": "Cafe: 20 hours. *$280.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "bedroom",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      -0.02
+     ],
+     [
+      3.25,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "CAFE",
+     "band": "#F04FA0",
+     "rot": 0.02,
+     "rows": [
+      {
+       "l": "4 shifts × 5 h",
+       "r": "20 h",
+       "at": 0.1
+      }
+     ],
+     "total": {
+      "l": "20 h × $14.00",
+      "r": "$280.00",
+      "at": 0.4,
+      "count": true
+     }
+    },
+    "set": {
+     "clockText": " "
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 16.75,
+   "scene": "card",
+   "caption": "Together: *$550,* projected.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "bedroom",
+    "dim": 0.45,
+    "cam": [
+     [
+      0,
+      540,
+      1000,
+      1.2,
+      -0.04
+     ],
+     [
+      0.12,
+      540,
+      980,
+      1.0,
+      0
+     ],
+     [
+      3.25,
+      540,
+      980,
+      1.03,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "card": {
+     "x": 540,
+     "y": 980,
+     "w": 880,
+     "title": "PROJECTED PAY",
+     "band": "#0E0F12",
+     "titleCol": "#C8F25A",
+     "enterAt": -0.45,
+     "rows": [
+      {
+       "l": "Store",
+       "r": "$270.00",
+       "at": -1
+      },
+      {
+       "l": "Cafe",
+       "r": "+ $280.00",
+       "at": -1
+      }
+     ],
+     "total": {
+      "l": "Both jobs",
+      "r": "$550.00",
+      "at": 0.0,
+      "size": 92
+     }
+    },
+    "fx": [
+     {
+      "type": "spark",
+      "x": 760,
+      "y": 1210,
+      "at": 0.05,
+      "r": 200,
+      "col": "#C8F25A"
+     }
+    ],
+    "set": {
+     "clockText": " "
+    }
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 20.0,
+   "scene": "stage",
+   "caption": "Okay. Now I can see it.",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "clockText": " "
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1080,
+      1.1,
+      0
+     ],
+     [
+      2.25,
+      540,
+      1070,
+      1.13,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 420,
+      "y": 1680,
+      "size": 90,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 790,
+      "y": 1640,
+      "size": 110,
+      "act": "bounce"
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "start": 22.25,
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY"
+ }
+}

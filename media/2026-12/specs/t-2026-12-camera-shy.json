@@ -1,0 +1,444 @@
+{
+ "id": "t-2026-12-camera-shy",
+ "title": "Clocky, when is payday?",
+ "concept": "Clocky refuses, then gives in and shows the day-before payday reminder and projected pay.",
+ "palette": "goldenHour",
+ "setting": "busstop",
+ "fps": 30,
+ "seed": 151,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "bouncy",
+  "bpm": 120
+ },
+ "math": [
+  "26 x 18.00 = 468.00"
+ ],
+ "duration": 19.75,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "Clocky, when is payday?",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "cam": [
+     [
+      0,
+      560,
+      1100,
+      1.05,
+      0
+     ],
+     [
+      2.0,
+      560,
+      1090,
+      1.1,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 320,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "open",
+       "lookX": 0.8
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 780,
+      "y": 1640,
+      "size": 120,
+      "pose": {
+       "flip": true,
+       "eyes": "closed",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 2.0,
+   "scene": "stage",
+   "caption": "Hmph.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "cam": [
+     [
+      0,
+      780,
+      1240,
+      1.8,
+      0.04
+     ],
+     [
+      1.4,
+      780,
+      1230,
+      1.9,
+      0.05
+     ]
+    ],
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 780,
+      "y": 1640,
+      "size": 120,
+      "pose": {
+       "flip": true,
+       "eyes": "closed",
+       "mouth": "frown",
+       "emote": "anger",
+       "rot": -0.15
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "whip",
+    "dir": -1
+   }
+  },
+  {
+   "start": 3.4,
+   "scene": "stage",
+   "caption": "Please?",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "cam": [
+     [
+      0,
+      330,
+      1150,
+      1.7,
+      -0.03
+     ],
+     [
+      1.4,
+      330,
+      1140,
+      1.8,
+      -0.04
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 320,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "wide",
+       "brows": "worried",
+       "mouth": "o",
+       "lookX": 0.8
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "whip",
+    "dir": 1
+   }
+  },
+  {
+   "start": 4.8,
+   "scene": "stage",
+   "caption": "Fine! *Friday.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "cam": [
+     [
+      0,
+      560,
+      1100,
+      1.05,
+      0
+     ],
+     [
+      2.0,
+      560,
+      1080,
+      1.12,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 320,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "grin"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 780,
+      "y": 1640,
+      "size": 120,
+      "act": "cheer",
+      "beats": [
+       [
+        0,
+        {
+         "flip": false,
+         "eyes": "star",
+         "mouth": "grin",
+         "emote": "music"
+        }
+       ]
+      ]
+     }
+    ],
+    "fx": [
+     {
+      "type": "spark",
+      "x": 780,
+      "y": 1300,
+      "at": 0.1,
+      "r": 160,
+      "col": "#C8F25A"
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 6.8,
+   "scene": "notify",
+   "caption": "I'll even ping you the day before.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "time": "9:15",
+    "date": "Thursday",
+    "phone": {
+     "x": 540,
+     "y": 1060,
+     "h": 900,
+     "rot": -0.03
+    },
+    "notif": {
+     "app": "CLOCKED",
+     "when": "now",
+     "h": 0.27,
+     "lines": [
+      "Payday is tomorrow.",
+      "Projected pay: $468.00",
+      "Example, before taxes."
+     ],
+     "at": 0.3
+    },
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      2.6,
+      540,
+      990,
+      1.1,
+      0
+     ]
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 9.4,
+   "scene": "card",
+   "caption": "26 hours at $18: *$468.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "busstop",
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "dim": 0.5,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      4.35,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "PROJECTED PAY",
+     "band": "#E58B5A",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Hours",
+       "r": "26",
+       "at": 0.1
+      },
+      {
+       "l": "Rate",
+       "r": "$18.00",
+       "at": 0.3
+      }
+     ],
+     "total": {
+      "l": "26 h × $18.00",
+      "r": "$468.00",
+      "at": 0.6,
+      "count": true
+     }
+    }
+   },
+   "out": {
+    "type": "iris",
+    "x": 780,
+    "y": 1300
+   }
+  },
+  {
+   "start": 13.75,
+   "scene": "stage",
+   "caption": "You're the best.",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "cam": [
+     [
+      0,
+      560,
+      1100,
+      1.05,
+      0
+     ],
+     [
+      1.8,
+      560,
+      1090,
+      1.1,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 320,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile",
+       "emote": "heart"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 780,
+      "y": 1640,
+      "size": 120,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 15.55,
+   "scene": "stage",
+   "caption": "Hmph.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "sun": 1,
+     "rainA": 0
+    },
+    "cam": [
+     [
+      0,
+      780,
+      1240,
+      1.8,
+      0.04
+     ],
+     [
+      1.4,
+      780,
+      1230,
+      1.9,
+      0.05
+     ]
+    ],
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 780,
+      "y": 1640,
+      "size": 120,
+      "pose": {
+       "flip": true,
+       "eyes": "wink",
+       "mouth": "smile",
+       "emote": "heart"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "start": 16.95,
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY"
+ }
+}

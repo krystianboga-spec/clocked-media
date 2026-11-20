@@ -1,0 +1,463 @@
+{
+ "id": "t-2026-12-same-answer",
+ "title": "How many hours this week?",
+ "concept": "Same answer three times, each reaction bigger; Clocky answers with logged hours and projected pay.",
+ "palette": "midnight",
+ "setting": "studio",
+ "fps": 30,
+ "seed": 131,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "detective",
+  "bpm": 96
+ },
+ "math": [
+  "32 x 16.50 = 528.00"
+ ],
+ "duration": 20.14,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "dialogue",
+   "caption": "How many hours did you work this week?",
+   "speaker": "MANAGER",
+   "params": {
+    "base": [
+     560,
+     1090,
+     1.06
+    ],
+    "left": {
+     "who": "sam",
+     "x": 320,
+     "y": 1600,
+     "size": 86,
+     "pose": {
+      "eyes": "open"
+     }
+    },
+    "right": {
+     "who": "manager",
+     "x": 820,
+     "y": 1640,
+     "size": 100,
+     "pose": {
+      "clip": true,
+      "lean": -0.04
+     }
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 2.4,
+   "scene": "stage",
+   "caption": "Um.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      360,
+      1080,
+      1.4,
+      0
+     ],
+     [
+      1.4,
+      360,
+      1070,
+      1.45,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 330,
+      "y": 1600,
+      "size": 86,
+      "pose": {
+       "eyes": "side",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 3.8,
+   "scene": "stage",
+   "caption": "Roughly?",
+   "speaker": "MANAGER",
+   "params": {
+    "cam": [
+     [
+      0,
+      800,
+      1100,
+      1.3,
+      0
+     ],
+     [
+      1.4,
+      800,
+      1090,
+      1.35,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "manager",
+      "x": 820,
+      "y": 1640,
+      "size": 100,
+      "pose": {
+       "clip": true,
+       "point": true
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 5.2,
+   "scene": "stage",
+   "caption": "*Um.*",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      360,
+      950,
+      1.9,
+      0.04
+     ],
+     [
+      1.4,
+      360,
+      940,
+      2.0,
+      0.05
+     ]
+    ],
+    "shake": [
+     [
+      0.1,
+      8
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 330,
+      "y": 1600,
+      "size": 86,
+      "pose": {
+       "eyes": "wide",
+       "mouth": "wavy",
+       "emote": "sweat"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "whip",
+    "dir": 1
+   }
+  },
+  {
+   "start": 6.6,
+   "scene": "stage",
+   "caption": "And what does that pay?",
+   "speaker": "MANAGER",
+   "params": {
+    "cam": [
+     [
+      0,
+      800,
+      1000,
+      1.6,
+      -0.04
+     ],
+     [
+      1.8,
+      800,
+      990,
+      1.7,
+      -0.05
+     ]
+    ],
+    "cast": [
+     {
+      "who": "manager",
+      "x": 820,
+      "y": 1640,
+      "size": 100,
+      "pose": {
+       "clip": true,
+       "lean": -0.1
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "whip",
+    "dir": -1
+   }
+  },
+  {
+   "start": 8.4,
+   "scene": "stage",
+   "caption": "*UM.*",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      360,
+      860,
+      2.6,
+      -0.06
+     ],
+     [
+      1.4,
+      360,
+      850,
+      2.8,
+      -0.08
+     ]
+    ],
+    "shake": [
+     [
+      0.05,
+      24
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 330,
+      "y": 1600,
+      "size": 86,
+      "pose": {
+       "eyes": "dead",
+       "mouth": "o",
+       "emote": "!?"
+      }
+     }
+    ],
+    "fx": [
+     {
+      "type": "lines",
+      "x": 360,
+      "y": 900,
+      "at": 0.0,
+      "life": 0.8
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 540,
+    "y": 900
+   }
+  },
+  {
+   "start": 9.8,
+   "scene": "stage",
+   "caption": "32 hours at $16.50. You logged them.",
+   "speaker": "CLOCKY",
+   "params": {
+    "cam": [
+     [
+      0,
+      560,
+      1080,
+      1.05,
+      0
+     ],
+     [
+      3.325,
+      560,
+      1070,
+      1.08,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 290,
+      "y": 1600,
+      "size": 86,
+      "pose": {
+       "eyes": "open",
+       "brows": "up",
+       "lookX": 0.8
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1600,
+      "size": 140,
+      "enter": {
+       "type": "drop",
+       "at": 0.0,
+       "dur": 0.35,
+       "dist": 1300
+      },
+      "beats": [
+       [
+        0,
+        {
+         "eyes": "wide",
+         "mouth": "O"
+        }
+       ],
+       [
+        0.5,
+        {
+         "act": "point",
+         "flip": true,
+         "eyes": "open",
+         "mouth": "smile"
+        }
+       ]
+      ]
+     }
+    ],
+    "fx": [
+     {
+      "type": "sfx",
+      "text": "BOING",
+      "x": 800,
+      "y": 1180,
+      "size": 100,
+      "at": 0.38,
+      "col": "#C8F25A",
+      "rot": 0.1
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 13.12,
+   "scene": "card",
+   "caption": "That's *$528,* projected.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "studio",
+    "dim": 0.5,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      2.808,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "THIS WEEK",
+     "band": "#2B2F5C",
+     "titleCol": "#C8F25A",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Hours",
+       "r": "32",
+       "at": 0.1
+      },
+      {
+       "l": "Rate",
+       "r": "$16.50",
+       "at": 0.3
+      }
+     ],
+     "total": {
+      "l": "32 h × $16.50",
+      "r": "$528.00",
+      "at": 0.6,
+      "count": true
+     }
+    }
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 15.94,
+   "scene": "dialogue",
+   "caption": "That's what I meant.",
+   "speaker": "SAM",
+   "params": {
+    "base": [
+     560,
+     1090,
+     1.06
+    ],
+    "left": {
+     "who": "sam",
+     "x": 320,
+     "y": 1600,
+     "size": 86,
+     "act": "shrug",
+     "pose": {
+      "mouth": "grin"
+     }
+    },
+    "right": {
+     "who": "manager",
+     "x": 820,
+     "y": 1640,
+     "size": 100,
+     "pose": {
+      "clip": true
+     }
+    },
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 560,
+      "y": 1700,
+      "size": 80,
+      "layer": "front",
+      "act": "bounce",
+      "enter": {
+       "type": "pop",
+       "at": 0.2
+      },
+      "pose": {
+       "eyes": "wink"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "start": 17.94,
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY"
+ }
+}

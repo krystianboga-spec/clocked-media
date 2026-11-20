@@ -1,0 +1,526 @@
+{
+ "id": "t-2026-12-day-better",
+ "title": "Oh boy, one more shift",
+ "concept": "Deadpan Sam, one more shift; on the drop the camera pans to a packed holiday week; Clocky does the overtime math.",
+ "palette": "studio",
+ "setting": "shop",
+ "fps": 30,
+ "seed": 121,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "upbeat",
+  "bpm": 110,
+  "dropShot": 2
+ },
+ "math": [
+  "40 x 16.00 = 640.00",
+  "16.00 x 1.5 = 24.00",
+  "4 x 24.00 = 96.00",
+  "640.00 + 96.00 = 736.00"
+ ],
+ "duration": 27.23,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "Oh boy. One more shift.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1120,
+      1.25,
+      0
+     ],
+     [
+      2.2,
+      540,
+      1110,
+      1.3,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1700,
+      "size": 92,
+      "pose": {
+       "eyes": "tired",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 2.2,
+   "scene": "stage",
+   "caption": "How could this week get any better?",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1000,
+      1.6,
+      0
+     ],
+     [
+      2.4,
+      540,
+      990,
+      1.68,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1700,
+      "size": 92,
+      "pose": {
+       "eyes": "dead",
+       "mouth": "flat"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 4.6,
+   "scene": "stage",
+   "caption": "*44 hours.* The week before the holiday.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1100,
+      1.6,
+      0
+     ],
+     [
+      0.5,
+      540,
+      900,
+      1.0,
+      0
+     ],
+     [
+      2.836,
+      540,
+      900,
+      1.03,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "drift": 0,
+    "shake": [
+     [
+      0.5,
+      14
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1700,
+      "size": 80,
+      "pose": {
+       "eyes": "dead",
+       "mouth": "flat"
+      }
+     }
+    ],
+    "props": [
+     {
+      "kind": "calendar",
+      "x": 510,
+      "y": 700,
+      "size": 800,
+      "at": 0.3,
+      "days": [
+       "S",
+       "M",
+       "T",
+       "W",
+       "T",
+       "F",
+       "S"
+      ],
+      "dates": [
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19
+      ],
+      "hi": -1
+     }
+    ],
+    "fx": [
+     {
+      "type": "stamp",
+      "text": "8h",
+      "x": 281,
+      "y": 850,
+      "size": 54,
+      "at": 0.55,
+      "col": "#D9483B",
+      "rot": 0.08
+     },
+     {
+      "type": "stamp",
+      "text": "9h",
+      "x": 396,
+      "y": 905,
+      "size": 54,
+      "at": 0.75,
+      "col": "#D9483B",
+      "rot": -0.08
+     },
+     {
+      "type": "stamp",
+      "text": "9h",
+      "x": 510,
+      "y": 850,
+      "size": 54,
+      "at": 0.95,
+      "col": "#D9483B",
+      "rot": 0.08
+     },
+     {
+      "type": "stamp",
+      "text": "9h",
+      "x": 624,
+      "y": 905,
+      "size": 54,
+      "at": 1.15,
+      "col": "#D9483B",
+      "rot": -0.08
+     },
+     {
+      "type": "stamp",
+      "text": "9h",
+      "x": 739,
+      "y": 850,
+      "size": 54,
+      "at": 1.35,
+      "col": "#D9483B",
+      "rot": 0.08
+     },
+     {
+      "type": "label",
+      "text": "44 HOURS",
+      "x": 510,
+      "y": 540,
+      "size": 110,
+      "at": 1.6,
+      "col": "#C8F25A"
+     }
+    ]
+   },
+   "out": {
+    "type": "brush",
+    "colors": [
+     "#C8F25A",
+     "#E58B5A",
+     "#5E8C93"
+    ]
+   }
+  },
+  {
+   "start": 7.64,
+   "scene": "card",
+   "caption": "40 hours at $16: *$640.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "shop",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      3.815,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "REGULAR",
+     "band": "#2E4A40",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Hours",
+       "r": "40",
+       "at": 0.1
+      },
+      {
+       "l": "Rate",
+       "r": "$16.00",
+       "at": 0.3
+      }
+     ],
+     "total": {
+      "l": "40 h × $16.00",
+      "r": "$640.00",
+      "at": 0.6,
+      "count": true
+     }
+    },
+    "host": {
+     "who": "clocky",
+     "x": 860,
+     "y": 1640,
+     "size": 110,
+     "act": "point",
+     "enter": {
+      "type": "pop",
+      "at": 0
+     }
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 11.46,
+   "scene": "card",
+   "params": {
+    "setting": "shop",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0
+     ],
+     [
+      9.146,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "OVERTIME",
+     "band": "#D9483B",
+     "rot": 0.02,
+     "rows": [
+      {
+       "l": "Hours over 40",
+       "r": "4",
+       "at": 0.1
+      },
+      {
+       "l": "$16.00 × 1.5",
+       "r": "$24.00",
+       "at": 0.4
+      }
+     ],
+     "total": {
+      "l": "4 h × $24.00",
+      "r": "$96.00",
+      "at": 0.8,
+      "count": true
+     }
+    },
+    "stamp": {
+     "text": "1.5×",
+     "at": 1.2,
+     "x": 820,
+     "y": 720,
+     "col": "#D9483B",
+     "size": 90
+    }
+   },
+   "out": "cut",
+   "captions": [
+    {
+     "at": 0,
+     "text": "Most hourly jobs pay *1.5×* after 40 hours in a workweek.",
+     "speaker": "CLOCKY"
+    },
+    {
+     "at": 4.78,
+     "text": "Some states add more. Ask payroll.",
+     "speaker": "CLOCKY"
+    }
+   ]
+  },
+  {
+   "start": 18.82,
+   "scene": "card",
+   "caption": "*$736* projected. Before taxes.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "shop",
+    "dim": 0.45,
+    "cam": [
+     [
+      0,
+      540,
+      1000,
+      1.25,
+      -0.05
+     ],
+     [
+      0.12,
+      540,
+      980,
+      1.0,
+      0
+     ],
+     [
+      3.806,
+      540,
+      980,
+      1.03,
+      0
+     ]
+    ],
+    "camEase": "out",
+    "shake": [
+     [
+      0.02,
+      20
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 980,
+     "w": 880,
+     "title": "PROJECTED PAY",
+     "band": "#0E0F12",
+     "titleCol": "#C8F25A",
+     "enterAt": -0.45,
+     "rows": [
+      {
+       "l": "Regular",
+       "r": "$640.00",
+       "at": -1
+      },
+      {
+       "l": "Overtime",
+       "r": "+ $96.00",
+       "at": -1
+      }
+     ],
+     "total": {
+      "l": "44 hours",
+      "r": "$736.00",
+      "at": 0.0,
+      "size": 92
+     }
+    },
+    "fx": [
+     {
+      "type": "flash",
+      "at": 0.0,
+      "life": 0.35
+     },
+     {
+      "type": "spark",
+      "x": 760,
+      "y": 1210,
+      "at": 0.05,
+      "r": 200,
+      "col": "#C8F25A"
+     }
+    ]
+   },
+   "out": {
+    "type": "zoom",
+    "x": 540,
+    "y": 1000
+   }
+  },
+  {
+   "start": 22.64,
+   "scene": "stage",
+   "caption": "Okay. It got a little better.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1120,
+      1.25,
+      0
+     ],
+     [
+      2.4,
+      540,
+      1110,
+      1.3,
+      0
+     ]
+    ],
+    "drift": 0,
+    "cast": [
+     {
+      "who": "sam",
+      "x": 420,
+      "y": 1700,
+      "size": 92,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile",
+       "emote": "spark"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 800,
+      "y": 1660,
+      "size": 110,
+      "act": "bounce",
+      "enter": {
+       "type": "pop",
+       "at": 0.1
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "start": 25.03,
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY"
+ }
+}

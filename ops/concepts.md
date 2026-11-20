@@ -362,3 +362,33 @@ Rate and hours in the math are examples only. A pay figure goes on screen only w
 - Feature shown: projected pay
 - Example math: 1 x $15 = $15.00 before taxes
 - Format: 10 s
+
+## Trend concepts, December 2026 (from ops/research/2026-12.md)
+
+## t-2026-12-day-better (video, Dec)
+- Hook: Oh boy. One more shift.
+- Beats: Deadpan Sam in a holiday shop, flat delivery; on the drop the camera pans to a packed week calendar; Clocky does the overtime math; Sam: it got a little better.
+- Feature shown: overtime 1.5x after 40
+- Example math: 40 x $16 = $640.00; 4 x $24.00 = $96.00; $736.00 before taxes
+- Format: deadpan-then-reveal on a beat drop, 18 to 20 s, voiced
+
+## t-2026-12-same-answer (video, any)
+- Hook: How many hours did you work this week?
+- Beats: The same answer ("Um") three times, each reaction bigger; Clocky answers with the logged hours and the projected pay.
+- Feature shown: projected pay
+- Example math: 32 x $16.50 = $528.00 before taxes
+- Format: same-answer escalation, 18 to 20 s, voiced
+
+## t-2026-12-getting-louder (video, Dec)
+- Hook: December schedule just dropped.
+- Beats: Shifts land on two jobs one by one while the music gets louder; then calm: Clocky puts both jobs in one list with a projected total. No combined overtime claim.
+- Feature shown: more than one job
+- Example math: Store 18 x $15 = $270.00; Cafe 20 x $14 = $280.00; total $550.00 before taxes
+- Format: chaos-to-calm escalation, 18 to 20 s, voiced
+
+## t-2026-12-camera-shy (video, any, payday slot)
+- Hook: Clocky, when is payday?
+- Beats: Clocky turns away ("Hmph."), Sam asks nicely, Clocky gives in, shows the day-before payday reminder and the projected amount.
+- Feature shown: payday reminders, projected pay
+- Example math: 26 x $18 = $468.00 before taxes
+- Format: refuse-then-give-in mascot beat, 16 to 20 s, voiced

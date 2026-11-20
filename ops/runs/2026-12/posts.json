@@ -1,0 +1,149 @@
+{
+ "_comment": "Created 2026-11-20 with createScheduledPost (draft false). Verified with getScheduledPosts: 20 December posts (10 TikTok, 10 Instagram incl. 4 preloaded).",
+ "posts": [
+  {
+   "n": 1,
+   "platform": "instagram",
+   "asset": "first-job-tips-2",
+   "date": "2026-12-07T10:00",
+   "id": 435989278,
+   "uuid": "8586193449874573157",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=8586193449874573157"
+  },
+  {
+   "n": 2,
+   "platform": "tiktok",
+   "asset": "t-2026-12-day-better",
+   "date": "2026-12-07T18:00",
+   "id": 435989302,
+   "uuid": "-9100719772833068524",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-9100719772833068524"
+  },
+  {
+   "n": 3,
+   "platform": "instagram",
+   "asset": "dec-christmas-eve-close",
+   "date": "2026-12-09T10:00",
+   "id": 435989324,
+   "uuid": "7201994276955833701",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=7201994276955833701"
+  },
+  {
+   "n": 4,
+   "platform": "tiktok",
+   "asset": "t-2026-12-camera-shy",
+   "date": "2026-12-10T10:00",
+   "id": 435989340,
+   "uuid": "-5136266193163629531",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-5136266193163629531"
+  },
+  {
+   "n": 5,
+   "platform": "instagram",
+   "asset": "t-2026-12-same-answer",
+   "date": "2026-12-11T10:00",
+   "id": 435989358,
+   "uuid": "1956691709061578760",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=1956691709061578760"
+  },
+  {
+   "n": 6,
+   "platform": "tiktok",
+   "asset": "t-2026-12-getting-louder",
+   "date": "2026-12-14T18:00",
+   "id": 435989417,
+   "uuid": "820105346570077548",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=820105346570077548"
+  },
+  {
+   "n": 7,
+   "platform": "instagram",
+   "asset": "t-2026-12-getting-louder",
+   "date": "2026-12-16T10:00",
+   "id": 435989842,
+   "uuid": "-8211269123369383331",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-8211269123369383331"
+  },
+  {
+   "n": 8,
+   "platform": "tiktok",
+   "asset": "first-job-tips-2",
+   "date": "2026-12-17T10:00",
+   "id": 435989875,
+   "uuid": "-8039112633626180673",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-8039112633626180673"
+  },
+  {
+   "n": 9,
+   "platform": "instagram",
+   "asset": "t-2026-12-camera-shy",
+   "date": "2026-12-18T10:00",
+   "id": 435990715,
+   "uuid": "-9119935525492273362",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-9119935525492273362"
+  },
+  {
+   "n": 10,
+   "platform": "tiktok",
+   "asset": "dec-christmas-eve-close",
+   "date": "2026-12-19T10:00",
+   "id": 435990870,
+   "uuid": "-8100091227967961698",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-8100091227967961698"
+  },
+  {
+   "n": 11,
+   "platform": "instagram",
+   "asset": "t-2026-12-day-better",
+   "date": "2026-12-23T10:00",
+   "id": 435990886,
+   "uuid": "3483777758094380755",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=3483777758094380755"
+  },
+  {
+   "n": 12,
+   "platform": "tiktok",
+   "asset": "ot-rate-chart",
+   "date": "2026-12-24T10:00",
+   "id": 435991017,
+   "uuid": "8938002896264908452",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=8938002896264908452"
+  },
+  {
+   "n": 13,
+   "platform": "instagram",
+   "asset": "ot-rate-chart",
+   "date": "2026-12-25T10:00",
+   "id": 435991116,
+   "uuid": "2235577397699759279",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=2235577397699759279"
+  },
+  {
+   "n": 14,
+   "platform": "tiktok",
+   "asset": "t-2026-12-same-answer",
+   "date": "2026-12-26T10:00",
+   "id": 435991237,
+   "uuid": "-1762908902797652156",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-1762908902797652156"
+  },
+  {
+   "n": 15,
+   "platform": "instagram",
+   "asset": "which-job-pays",
+   "date": "2026-12-30T10:00",
+   "id": 435991293,
+   "uuid": "-7095761204200913285",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=-7095761204200913285"
+  },
+  {
+   "n": 16,
+   "platform": "tiktok",
+   "asset": "which-job-pays",
+   "date": "2026-12-31T10:00",
+   "id": 435991350,
+   "uuid": "1530108027924335712",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7724856&openWithPostUuid=1530108027924335712"
+  }
+ ]
+}

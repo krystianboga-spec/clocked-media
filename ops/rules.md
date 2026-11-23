@@ -27,7 +27,7 @@ Email schedule import is NOT live. It may appear only as "we're building this ne
 - TikTok: `Try it free at clocked.space and follow for updates.`
 - Instagram: `Try it free at clocked.space (link in bio). Follow for updates.`
 - Teaser only: `Try it free at clocked.space, and follow to watch the email part get built.`
-- Every video and photo set ends on the standard end card: clock icon + CLOCKED wordmark, pill "Free beta · Out now", `clocked.space`, "Try it free in your browser."
+- Videos only, no photo sets or carousels (Krystian, 2026-11-22). Every video ends on the standard end card: clock icon + CLOCKED wordmark, pill "Free beta · Out now", `clocked.space`, "Try it free in your browser."
 
 ## Caption style
 
@@ -36,7 +36,7 @@ Email schedule import is NOT live. It may appear only as "we're building this ne
 - TikTok: ONE line, no line breaks, max 5 hashtags, `tiktokData.title` required (max 90 characters, plain, no hashtags).
 - Instagram: line breaks allowed, max 5 hashtags, include `(link in bio)`. Alt text on slides where possible.
 - Hashtags go at the end. Pick 3 to 5 from the sets below. Do not use #overtime on a post that hides the overtime answer.
-- The video and the photo sets are posted once on TikTok and once on Instagram with different captions (rewrite, do not paste).
+- Each video is posted once on TikTok and once on Instagram with different captions (rewrite, do not paste).
 - No em dashes or en dashes anywhere. Use commas, periods, colons, parentheses.
 
 ## Hashtag sets
@@ -62,7 +62,7 @@ Email schedule import is NOT live. It may appear only as "we're building this ne
 
 - AI voice or AI-generated visuals that look real: set `tiktokData.isAigc: true` (video) and `instagramData.isAiGenerated: true`. Manifest: `voiced: true` implies `ai_voice: true` unless you set `ai_voice: false`.
 - Painted or illustrated motion graphics with no AI voice: label not required, but set it when unsure.
-- Silent videos: TikTok `autoPublish: false` (Metricool pings Krystian's phone to add a commercial-library sound). Voiced videos and all Instagram posts: `autoPublish: true`. TikTok photo sets: `autoAddMusic: true`, autoPublish true.
+- Silent videos: TikTok `autoPublish: false` (Metricool pings Krystian's phone to add a commercial-library sound). Voiced videos and all Instagram posts: `autoPublish: true`.
 - Music: only Commercial Music Library on TikTok business accounts, Meta Sound Collection on Instagram. No unlicensed music, ever.
 
 ## Banned phrases (schedule.py rejects these)
@@ -77,6 +77,6 @@ Still fixed: payday-themed assets go on Thursday or Friday; evenings (5 PM on) s
 
 Background (October 2026 research, for context only): shift workers tend to be on their phones pre-shift and after closing, and many hourly employers pay biweekly or weekly, which is why payday content stays on Thursday and Friday.
 
-## Look (for engine and photo sets)
+## Look (for the engine)
 
 Dark #0E0F12 background, cards #1A1C21 with 2 px #2A2D34 border, text #F4F4F0, muted #A3A7B0, body #D6D8DC, accent #C8F25A. Anton for headlines (uppercase), Inter for body, JetBrains Mono for every dollar figure. Text inside x 90 to 930, y 180 to 1520 on 1080x1920; 80 px padding on 1080x1350. Vary the setting, palette and format month to month inside this brand (see used-concepts.json "style").

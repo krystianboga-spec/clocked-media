@@ -1,0 +1,364 @@
+{
+ "id": "pay-stub-words",
+ "title": "Pay stub words, explained",
+ "concept": "Five pay stub words in plain English, one per shot.",
+ "palette": "sunnyJuggle",
+ "setting": "wash",
+ "fps": 30,
+ "seed": 171,
+ "showsPay": false,
+ "transition": "cut",
+ "music": {
+  "mood": "bouncy",
+  "bpm": 124
+ },
+ "math": [],
+ "duration": 25.23,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "title",
+   "caption": "Pay stub words, explained.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "a": "#F3C95B",
+      "b": "#88B9A6",
+      "c": "#E58B5A",
+      "seed": 7
+     }
+    },
+    "y0": 700,
+    "gap": 150,
+    "lines": [
+     {
+      "text": "PAY STUB",
+      "at": 0.0,
+      "size": 170,
+      "col": "#2B2F3A"
+     },
+     {
+      "text": "WORDS",
+      "at": 0.15,
+      "size": 150,
+      "swash": "#C8F25A"
+     }
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1780,
+      "size": 78,
+      "pose": {
+       "eyes": "squint",
+       "emote": "?"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 540,
+    "y": 900
+   }
+  },
+  {
+   "start": 2.0,
+   "scene": "list",
+   "caption": "Hours: the time you worked.",
+   "speaker": "CLOCKY",
+   "params": {
+    "n": 1,
+    "total": 5,
+    "icon": "clockcard",
+    "done": [],
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "a": "#F3C95B",
+      "b": "#88B9A6",
+      "c": "#E58B5A",
+      "seed": 7
+     }
+    },
+    "accent": "#C8F25A",
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 900,
+      "y": 1720,
+      "size": 80,
+      "act": "point",
+      "pose": {
+       "flip": true
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#E05A42"
+    ]
+   }
+  },
+  {
+   "start": 4.0,
+   "scene": "list",
+   "caption": "Rate: your pay per hour.",
+   "speaker": "CLOCKY",
+   "params": {
+    "n": 2,
+    "total": 5,
+    "icon": "coins",
+    "done": [
+     "Hours"
+    ],
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "a": "#F3C95B",
+      "b": "#88B9A6",
+      "c": "#E58B5A",
+      "seed": 7
+     }
+    },
+    "accent": "#C8F25A",
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 900,
+      "y": 1720,
+      "size": 80,
+      "act": "point",
+      "pose": {
+       "flip": true
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#EBAE3C"
+    ]
+   }
+  },
+  {
+   "start": 6.0,
+   "scene": "list",
+   "params": {
+    "n": 3,
+    "total": 5,
+    "icon": "ask",
+    "done": [
+     "Hours",
+     "Rate"
+    ],
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "a": "#F3C95B",
+      "b": "#88B9A6",
+      "c": "#E58B5A",
+      "seed": 7
+     }
+    },
+    "accent": "#C8F25A",
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 900,
+      "y": 1720,
+      "size": 80,
+      "act": "point",
+      "pose": {
+       "flip": true
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#2E4A40"
+    ]
+   },
+   "captions": [
+    {
+     "at": 0,
+     "text": "Overtime: most hourly jobs pay *1.5×* after 40 hours in a workweek.",
+     "speaker": "CLOCKY"
+    },
+    {
+     "at": 5.64,
+     "text": "Some states add more. Ask payroll.",
+     "speaker": "CLOCKY"
+    }
+   ]
+  },
+  {
+   "start": 14.27,
+   "scene": "list",
+   "caption": "Gross pay: hours times rate, *before taxes.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "n": 4,
+    "total": 5,
+    "icon": "coins",
+    "done": [
+     "Hours",
+     "Rate",
+     "Overtime"
+    ],
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "a": "#F3C95B",
+      "b": "#88B9A6",
+      "c": "#E58B5A",
+      "seed": 7
+     }
+    },
+    "accent": "#C8F25A",
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 900,
+      "y": 1720,
+      "size": 80,
+      "act": "point",
+      "pose": {
+       "flip": true
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#C9603F"
+    ]
+   }
+  },
+  {
+   "start": 17.41,
+   "scene": "list",
+   "caption": "Pay period: the days this check covers.",
+   "speaker": "CLOCKY",
+   "params": {
+    "n": 5,
+    "total": 5,
+    "icon": "calendar",
+    "done": [
+     "Hours",
+     "Rate",
+     "Overtime",
+     "Gross"
+    ],
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "a": "#F3C95B",
+      "b": "#88B9A6",
+      "c": "#E58B5A",
+      "seed": 7
+     }
+    },
+    "accent": "#C8F25A",
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 900,
+      "y": 1720,
+      "size": 80,
+      "act": "point",
+      "pose": {
+       "flip": true
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "splat",
+    "x": 250,
+    "y": 720,
+    "colors": [
+     "#88B9A6"
+    ]
+   }
+  },
+  {
+   "start": 20.07,
+   "scene": "stage",
+   "caption": "Clocked projects your gross pay before payday.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "wash",
+    "set": {
+     "plate": {
+      "a": "#F3C95B",
+      "b": "#88B9A6",
+      "c": "#E58B5A",
+      "seed": 7
+     }
+    },
+    "cam": [
+     [
+      0,
+      560,
+      1080,
+      1.05,
+      0
+     ],
+     [
+      2.663,
+      560,
+      1070,
+      1.08,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1620,
+      "size": 130,
+      "act": "bounce",
+      "pose": {
+       "eyes": "happy"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY",
+  "start": 22.73
+ }
+}

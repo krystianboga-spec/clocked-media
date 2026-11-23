@@ -1,0 +1,381 @@
+{
+ "id": "ot-rate-chart",
+ "title": "What's my overtime rate?",
+ "concept": "Rate times 1.5, four examples, then a 43 hour week.",
+ "palette": "chalkCafe",
+ "setting": "chalkcafe",
+ "fps": 30,
+ "seed": 181,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "lofi",
+  "bpm": 84
+ },
+ "math": [
+  "12 x 1.5 = 18.00",
+  "15 x 1.5 = 22.50",
+  "18 x 1.5 = 27.00",
+  "20 x 1.5 = 30.00",
+  "40 x 18.00 = 720.00",
+  "3 x 27.00 = 81.00",
+  "720.00 + 81.00 = 801.00"
+ ],
+ "duration": 27.59,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "What's my overtime rate?",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "board": "x 1.5"
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1100,
+      1.1,
+      0
+     ],
+     [
+      2.0,
+      540,
+      1090,
+      1.16,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1660,
+      "size": 88,
+      "pose": {
+       "eyes": "squint",
+       "emote": "?"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 2.0,
+   "scene": "stage",
+   "caption": "Your rate times *1.5.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "board": "x 1.5"
+    },
+    "cam": [
+     [
+      0,
+      600,
+      1060,
+      1.04,
+      0
+     ],
+     [
+      2.0,
+      600,
+      1060,
+      1.1,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "open",
+       "lookX": 0.8
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1620,
+      "size": 130,
+      "enter": {
+       "type": "pop",
+       "at": 0
+      },
+      "act": "point",
+      "pose": {
+       "flip": true
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "tear"
+   }
+  },
+  {
+   "start": 4.0,
+   "scene": "card",
+   "caption": "$15 becomes *$22.50.* $18 becomes *$27.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "chalkcafe",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      4.786,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "RATE × 1.5",
+     "band": "#2E4A40",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "$12.00 an hour",
+       "r": "$18.00",
+       "at": 0.1
+      },
+      {
+       "l": "$15.00 an hour",
+       "r": "$22.50",
+       "at": 0.4
+      },
+      {
+       "l": "$18.00 an hour",
+       "r": "$27.00",
+       "at": 0.7
+      },
+      {
+       "l": "$20.00 an hour",
+       "r": "$30.00",
+       "at": 1.0
+      }
+     ]
+    },
+    "set": {
+     "board": "x 1.5"
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 9.29,
+   "scene": "card",
+   "caption": "43 hours at $18: *$801,* projected.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "chalkcafe",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      4.139,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "43 HOURS AT $18",
+     "band": "#C9603F",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "40 h × $18.00",
+       "r": "$720.00",
+       "at": 0.1
+      },
+      {
+       "l": "3 h × $27.00",
+       "r": "+ $81.00",
+       "at": 0.5
+      }
+     ],
+     "total": {
+      "l": "Projected",
+      "r": "$801.00",
+      "at": 0.9,
+      "count": true
+     }
+    },
+    "set": {
+     "board": "x 1.5"
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 13.93,
+   "scene": "stage",
+   "caption": "Most hourly jobs pay *1.5×* after 40 hours in a workweek.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "board": "x 1.5"
+    },
+    "cam": [
+     [
+      0,
+      600,
+      1060,
+      1.04,
+      0
+     ],
+     [
+      4.999,
+      600,
+      1060,
+      1.08,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "open"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1620,
+      "size": 130,
+      "act": "talk"
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 18.93,
+   "scene": "stage",
+   "caption": "Some states add more. Ask payroll.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "board": "x 1.5"
+    },
+    "cam": [
+     [
+      0,
+      700,
+      1200,
+      1.5,
+      0.03
+     ],
+     [
+      2.856,
+      700,
+      1190,
+      1.55,
+      0.03
+     ]
+    ],
+    "cast": [
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1620,
+      "size": 130,
+      "act": "point",
+      "pose": {
+       "flip": true,
+       "eyes": "wink"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "tear"
+   }
+  },
+  {
+   "start": 21.79,
+   "scene": "stage",
+   "caption": "Clocked counts it in your projected pay.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "board": "x 1.5"
+    },
+    "cam": [
+     [
+      0,
+      560,
+      1080,
+      1.05,
+      0
+     ],
+     [
+      2.4,
+      560,
+      1070,
+      1.08,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile",
+       "emote": "spark"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1620,
+      "size": 130,
+      "act": "bounce"
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY",
+  "start": 24.19
+ }
+}

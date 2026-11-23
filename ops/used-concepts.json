@@ -246,50 +246,54 @@
     },
     {
       "id": "dec-christmas-eve-close",
-      "type": "photo",
+      "type": "video",
       "month": "2026-12",
       "files": [
-        "media/2026-12/dec-christmas-eve-close/"
+        "media/2026-12/painted/dec-christmas-eve-close-voiced.mp4"
       ],
-      "hook": "Closing early on Christmas Eve? Log it anyway.",
+      "hook": "Christmas Eve. We close at 5.",
       "feature": "projected pay",
-      "style": "dark ticket-stub cards, Anton headline with lime highlighter",
-      "math": "5 x $14 = $70.00; 24 x $14 = $336.00 before taxes"
+      "style": "painted engine, breakRoom palette, diner, voiced",
+      "math": "5 x $14 = $70.00; 24 x $14 = $336.00 before taxes",
+      "note": "made as a video after photo sets were dropped (2026-11-22)"
     },
     {
-      "id": "first-job-tips-2",
-      "type": "photo",
+      "id": "pay-stub-words",
+      "type": "video",
       "month": "2026-12",
       "files": [
-        "media/2026-12/first-job-tips-2/"
+        "media/2026-12/painted/pay-stub-words-voiced.mp4"
       ],
-      "hook": "Seasonal job? Do these 5 things in week one.",
+      "hook": "Pay stub words, explained.",
       "feature": "none (education)",
-      "style": "dark ticket-stub cards, numbered lime badges"
+      "style": "painted engine, sunnyJuggle palette, wash setting, list format, voiced",
+      "note": "replaced the first-job-tips-2 photo set (never posted); first-job-tips-2 stays unused"
     },
     {
       "id": "ot-rate-chart",
-      "type": "photo",
+      "type": "video",
       "month": "2026-12",
       "files": [
-        "media/2026-12/ot-rate-chart/"
+        "media/2026-12/painted/ot-rate-chart-voiced.mp4"
       ],
-      "hook": "Your overtime rate, in one chart.",
+      "hook": "What's my overtime rate?",
       "feature": "overtime 1.5x after 40",
-      "style": "dark ticket-stub cards, mono rate chart",
-      "math": "40 x $18 = $720.00 + 3 x $27.00 = $81.00 = $801.00 before taxes"
+      "style": "painted engine, chalkCafe palette, chalkcafe board, voiced",
+      "math": "40 x $18 = $720.00 + 3 x $27.00 = $81.00 = $801.00 before taxes",
+      "note": "made as a video after photo sets were dropped (2026-11-22)"
     },
     {
       "id": "which-job-pays",
-      "type": "photo",
+      "type": "video",
       "month": "2026-12",
       "files": [
-        "media/2026-12/which-job-pays/"
+        "media/2026-12/painted/which-job-pays-voiced.mp4"
       ],
-      "hook": "Which job pays more this week?",
+      "hook": "Job A pays $16. Job B pays $12.",
       "feature": "more than one job",
-      "style": "dark ticket-stub cards, two-ticket compare",
-      "math": "12 x $16 = $192.00; 18 x $12 = $216.00; $408.00 before taxes"
+      "style": "painted engine, sunnyJuggle palette, apartment, voiced",
+      "math": "12 x $16 = $192.00; 18 x $12 = $216.00; $408.00 before taxes",
+      "note": "made as a video after photo sets were dropped (2026-11-22)"
     }
   ]
 }

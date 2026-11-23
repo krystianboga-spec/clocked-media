@@ -14,3 +14,7 @@ Fixes: lock-screen phone and "+5 CAFE" stamp inside the safe zone; chart note ad
 Round 2: all 8 assets PASS, schedule PASS.
 
 Minor notes left open: count-up animations pass through in-between numbers for under a second (engine behavior, final values add up); day-better posts on IG Dec 23, after the Dec 13 to 19 week it shows; confirm the real payday notification shows the projected amount (camera-shy shows it, as the approved preloaded video does).
+
+## Photo sets replaced by videos (2026-11-22)
+
+Krystian dropped photo posts. Four videos replace the four photo sets in the same slots: dec-christmas-eve-close, pay-stub-words (replaces first-job-tips-2), ot-rate-chart, which-job-pays. Reviewed by a separate subagent: round 1 three PASS, pay-stub-words FAIL (overtime line lacked "some states add more" and "ask payroll" on screen and in the TikTok caption). Fixed and re-voiced; round 2 PASS for all four. Minor notes: count-up totals pass through in-between values for under a second; pay-stub-words recap chips sit slightly past the safe zone edge (engine list template).

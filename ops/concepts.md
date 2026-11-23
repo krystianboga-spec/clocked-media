@@ -4,6 +4,8 @@ Every concept below is a starting point. Before using one: check ops/used-concep
 
 51 concepts: 30 video, 21 photo. Seasonal ones list their month; "any" works year round. Month picks: Jan jan-new-habit, jan-slow-hours; Feb feb-tax-season; Mar mar-spring-break; Apr apr-easter-brunch; May may-grad-first-job; Jun jun-summer-job; Jul jul-fourth-weekend; Aug aug-back-to-school, class-and-work; Sep sep-labor-day; Oct oct-seasonal-hire; Nov black-friday-ot, nov-thanksgiving-shift; Dec holiday-week-44, dec-christmas-eve-close, dec-nye-double.
 
+VIDEOS ONLY since 2026-11-22: concepts marked (photo) below are made as videos now (list, card or countdown format). Never make a photo set.
+
 Rate and hours in the math are examples only. A pay figure goes on screen only with the words "example" and "before taxes".
 
 ## 01. friday-guess (video, any)

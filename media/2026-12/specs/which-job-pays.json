@@ -1,0 +1,405 @@
+{
+ "id": "which-job-pays",
+ "title": "Which job pays more this week?",
+ "concept": "Higher rate vs more hours; Job B wins; both jobs projected together.",
+ "palette": "sunnyJuggle",
+ "setting": "apartment",
+ "fps": 30,
+ "seed": 191,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "upbeat",
+  "bpm": 112
+ },
+ "math": [
+  "12 x 16.00 = 192.00",
+  "18 x 12.00 = 216.00",
+  "192.00 + 216.00 = 408.00"
+ ],
+ "duration": 25.69,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "Job A pays $16. Job B pays $12.",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      1100,
+      1.1,
+      0
+     ],
+     [
+      4.018,
+      540,
+      1090,
+      1.16,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1680,
+      "size": 88,
+      "act": "juggle",
+      "juggle": [
+       {
+        "kind": "apron",
+        "col": "#E05A42",
+        "tag": "A"
+       },
+       {
+        "kind": "apron",
+        "col": "#4F6EA8",
+        "tag": "B"
+       }
+      ]
+     }
+    ],
+    "fx": [
+     {
+      "type": "label",
+      "text": "EXAMPLE RATES",
+      "x": 540,
+      "y": 1560,
+      "size": 64,
+      "at": 0.2,
+      "col": "#C8F25A",
+      "layer": "front"
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 4.02,
+   "scene": "stage",
+   "caption": "Which one pays more this week?",
+   "speaker": "SAM",
+   "params": {
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.6,
+      0.03
+     ],
+     [
+      2.2,
+      540,
+      950,
+      1.7,
+      0.04
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1680,
+      "size": 88,
+      "pose": {
+       "eyes": "squint",
+       "emote": "?"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "iris",
+    "x": 540,
+    "y": 900
+   }
+  },
+  {
+   "start": 6.22,
+   "scene": "card",
+   "caption": "Job A: 12 hours. *$192.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "apartment",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      4.059,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "JOB A",
+     "band": "#E05A42",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Hours",
+       "r": "12",
+       "at": 0.1
+      },
+      {
+       "l": "Rate",
+       "r": "$16.00",
+       "at": 0.3
+      }
+     ],
+     "total": {
+      "l": "12 h × $16.00",
+      "r": "$192.00",
+      "at": 0.6,
+      "count": true
+     }
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 10.18,
+   "scene": "card",
+   "caption": "Job B: 18 hours. *$216.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "apartment",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      3.849,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "JOB B",
+     "band": "#4F6EA8",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Hours",
+       "r": "18",
+       "at": 0.1
+      },
+      {
+       "l": "Rate",
+       "r": "$12.00",
+       "at": 0.3
+      }
+     ],
+     "total": {
+      "l": "18 h × $12.00",
+      "r": "$216.00",
+      "at": 0.6,
+      "count": true
+     }
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 13.93,
+   "scene": "stage",
+   "caption": "Job B wins. More hours beat the higher rate.",
+   "speaker": "CLOCKY",
+   "params": {
+    "cam": [
+     [
+      0,
+      600,
+      1060,
+      1.04,
+      0
+     ],
+     [
+      3.213,
+      600,
+      1060,
+      1.1,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1680,
+      "size": 86,
+      "pose": {
+       "eyes": "wide",
+       "mouth": "o",
+       "emote": "!"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1640,
+      "size": 130,
+      "enter": {
+       "type": "drop",
+       "at": 0,
+       "dur": 0.35,
+       "dist": 1300
+      },
+      "act": "cheer"
+     }
+    ],
+    "fx": [
+     {
+      "type": "stamp",
+      "text": "JOB B",
+      "x": 540,
+      "y": 780,
+      "size": 110,
+      "at": 0.5,
+      "col": "#4F6EA8",
+      "rot": -0.08
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 17.14,
+   "scene": "card",
+   "caption": "Together: *$408,* projected.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "apartment",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      3.049,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 880,
+     "title": "BOTH JOBS",
+     "band": "#0E0F12",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Job A",
+       "r": "$192.00",
+       "at": -1
+      },
+      {
+       "l": "Job B",
+       "r": "+ $216.00",
+       "at": -1
+      }
+     ],
+     "total": {
+      "l": "Projected",
+      "r": "$408.00",
+      "at": 0.0,
+      "size": 92
+     },
+     "titleCol": "#C8F25A",
+     "enterAt": -0.45
+    },
+    "fx": [
+     {
+      "type": "spark",
+      "x": 760,
+      "y": 1210,
+      "at": 0.05,
+      "r": 200,
+      "col": "#C8F25A"
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 20.09,
+   "scene": "stage",
+   "caption": "Clocked tracks both jobs in one place.",
+   "speaker": "CLOCKY",
+   "params": {
+    "cam": [
+     [
+      0,
+      560,
+      1080,
+      1.05,
+      0
+     ],
+     [
+      2.4,
+      560,
+      1070,
+      1.08,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1680,
+      "size": 86,
+      "pose": {
+       "eyes": "happy",
+       "mouth": "smile"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1640,
+      "size": 120,
+      "act": "bounce"
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY",
+  "start": 22.49
+ }
+}

@@ -2,7 +2,7 @@
  "month": "2026-12",
  "brand_id": 7724856,
  "timezone": "America/Chicago",
- "_comment": "December 2026 run (2026-11-20). 4 preloaded posts (ops/runs/2026-12/preloaded.json) are not in this manifest. All four videos are Kokoro-voiced, AI-labeled.",
+ "_comment": "December 2026 run. 2026-11-22: Krystian asked to drop photo posts entirely; the 4 photo sets were replaced by 4 voiced videos in the same slots. All 8 assets are Kokoro-voiced, AI-labeled.",
  "assets": [
   {
    "id": "t-2026-12-day-better",
@@ -26,37 +26,23 @@
   },
   {
    "id": "ot-rate-chart",
-   "type": "photo",
+   "type": "video",
    "payday": false,
-   "voiced": false,
+   "voiced": true,
    "tiktok": {
     "media": [
-     "media/2026-12/ot-rate-chart/tt-1.png",
-     "media/2026-12/ot-rate-chart/tt-2.png",
-     "media/2026-12/ot-rate-chart/tt-3.png",
-     "media/2026-12/ot-rate-chart/tt-4.png",
-     "media/2026-12/ot-rate-chart/tt-5.png"
+     "media/2026-12/painted/ot-rate-chart-voiced.mp4"
     ],
-    "title": "Your overtime rate, in one chart",
+    "title": "What's my overtime rate?",
     "caption": "What is my overtime rate? Base rate x 1.5: $12 to $18.00, $15 to $22.50, $18 to $27.00, $20 to $30.00. Example: 43 hrs at $18 = $720.00 for 40 hrs + 3 hrs x $27.00 = $81.00, so $801.00 projected before taxes. Most hourly jobs pay 1.5x after 40 hours in a workweek (federal rule), some states add more, ask payroll. Clocked counts it in your projected pay, free beta. Try it free at clocked.space and follow for updates. #overtime #paycheck #hourlyworker #retailworker #payday"
    },
    "instagram": {
     "media": [
-     "media/2026-12/ot-rate-chart/ig-1.png",
-     "media/2026-12/ot-rate-chart/ig-2.png",
-     "media/2026-12/ot-rate-chart/ig-3.png",
-     "media/2026-12/ot-rate-chart/ig-4.png",
-     "media/2026-12/ot-rate-chart/ig-5.png"
+     "media/2026-12/painted/ot-rate-chart-voiced.mp4"
     ],
-    "caption": "Your overtime rate, in one chart.\n\n$12/hr to $18.00/hr\n$15/hr to $22.50/hr\n$18/hr to $27.00/hr\n$20/hr to $30.00/hr\n\nExample: 43 hours at $18\n40 hrs x $18 = $720.00\n3 hrs x $27.00 = $81.00\nProjected: $801.00 before taxes\n\nMost hourly jobs pay 1.5x after 40 hours in a workweek (federal rule), some states add more. Not sure? Ask payroll.\n\nClocked counts overtime in your projected pay. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#overtime #paycheck #hourlyworker #retailworker #payday",
-    "alt": [
-     "Your overtime rate, in one chart.",
-     "Chart: $12 to $18, $15 to $22.50, $18 to $27, $20 to $30 per hour.",
-     "Example: 43 hours at $18 = $801.00 projected, before taxes.",
-     "The rule: most hourly jobs pay 1.5x after 40 hours in a workweek.",
-     "Clocked end card: free beta, out now, clocked.space."
-    ]
-   }
+    "caption": "Your overtime rate, in one chart.\n\n$12/hr to $18.00/hr\n$15/hr to $22.50/hr\n$18/hr to $27.00/hr\n$20/hr to $30.00/hr\n\nExample: 43 hours at $18\n40 hrs x $18 = $720.00\n3 hrs x $27.00 = $81.00\nProjected: $801.00 before taxes\n\nMost hourly jobs pay 1.5x after 40 hours in a workweek (federal rule), some states add more. Not sure? Ask payroll.\n\nClocked counts overtime in your projected pay. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#overtime #paycheck #hourlyworker #retailworker #payday"
+   },
+   "ai_voice": true
   },
   {
    "id": "t-2026-12-getting-louder",
@@ -99,100 +85,64 @@
    }
   },
   {
-   "id": "first-job-tips-2",
-   "type": "photo",
+   "id": "pay-stub-words",
+   "type": "video",
    "payday": false,
-   "voiced": false,
+   "voiced": true,
    "tiktok": {
     "media": [
-     "media/2026-12/first-job-tips-2/tt-1.png",
-     "media/2026-12/first-job-tips-2/tt-2.png",
-     "media/2026-12/first-job-tips-2/tt-3.png",
-     "media/2026-12/first-job-tips-2/tt-4.png",
-     "media/2026-12/first-job-tips-2/tt-5.png"
+     "media/2026-12/painted/pay-stub-words-voiced.mp4"
     ],
-    "title": "Seasonal job? 5 things to do in week one",
-    "caption": "Seasonal job? Do these 5 things in week one: get the schedule in writing, keep your own hours list, learn your payday, know when overtime starts, keep your pay stubs. Clocked is a free shift and pay tracker that keeps your hours list, now in free beta. Try it free at clocked.space and follow for updates. #firstjob #hourlyworker #retailworker #serverlife #holidayseason"
+    "title": "Pay stub words, explained",
+    "caption": "What do the words on my pay stub mean? Hours: the time you worked. Rate: your pay per hour. Overtime: most hourly jobs pay 1.5x after 40 hours in a workweek (federal rule), some states add more, ask payroll. Gross pay: hours times rate, before taxes. Pay period: the days the check covers. Clocked is a free shift and pay tracker that projects your gross pay before payday, now in free beta. Try it free at clocked.space and follow for updates. #firstjob #paycheck #hourlyworker #retailworker #serverlife"
    },
    "instagram": {
     "media": [
-     "media/2026-12/first-job-tips-2/ig-1.png",
-     "media/2026-12/first-job-tips-2/ig-2.png",
-     "media/2026-12/first-job-tips-2/ig-3.png",
-     "media/2026-12/first-job-tips-2/ig-4.png",
-     "media/2026-12/first-job-tips-2/ig-5.png"
+     "media/2026-12/painted/pay-stub-words-voiced.mp4"
     ],
-    "caption": "Seasonal job? Do these 5 things in week one.\n\n1. Get the schedule in writing\n2. Keep your own hours list\n3. Learn your payday\n4. Know when overtime starts (most hourly jobs pay 1.5x after 40 hours in a workweek, some states add more)\n5. Keep your pay stubs, and ask payroll if something looks off\n\nClocked is a free shift and pay tracker that keeps your hours list. Now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#firstjob #hourlyworker #retailworker #serverlife #holidayseason",
-    "alt": [
-     "Seasonal job? Do these 5 things in week one.",
-     "Tips 1 and 2: get the schedule in writing, keep your own hours list.",
-     "Tips 3 and 4: learn your payday, know when overtime starts.",
-     "Tip 5: keep your pay stubs.",
-     "Clocked end card: free beta, out now, clocked.space."
-    ]
-   }
+    "caption": "Pay stub words, explained.\n\nHours: the time you worked\nRate: your pay per hour\nOvertime: most hourly jobs pay 1.5x after 40 hours in a workweek (federal rule), some states add more\nGross pay: hours times rate, before taxes\nPay period: the days this check covers\n\nSomething look off? Ask payroll.\n\nClocked is a free shift and pay tracker that projects your gross pay before payday. Now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#firstjob #paycheck #hourlyworker #retailworker #serverlife"
+   },
+   "ai_voice": true
   },
   {
    "id": "dec-christmas-eve-close",
-   "type": "photo",
+   "type": "video",
    "payday": false,
-   "voiced": false,
+   "voiced": true,
    "tiktok": {
     "media": [
-     "media/2026-12/dec-christmas-eve-close/tt-1.png",
-     "media/2026-12/dec-christmas-eve-close/tt-2.png",
-     "media/2026-12/dec-christmas-eve-close/tt-3.png",
-     "media/2026-12/dec-christmas-eve-close/tt-4.png"
+     "media/2026-12/painted/dec-christmas-eve-close-voiced.mp4"
     ],
     "title": "Closing early on Christmas Eve? Log it anyway.",
     "caption": "Closing early on Christmas Eve? Short shifts still count. Example: 5 hrs x $14 = $70.00, and the whole week, 24 hrs x $14 = $336.00 projected before taxes. Holiday pay rules vary by job, so ask payroll. Clocked is a free shift and pay tracker, now in free beta. Try it free at clocked.space and follow for updates. #holidayseason #hourlyworker #retailworker #paycheck #serverlife"
    },
    "instagram": {
     "media": [
-     "media/2026-12/dec-christmas-eve-close/ig-1.png",
-     "media/2026-12/dec-christmas-eve-close/ig-2.png",
-     "media/2026-12/dec-christmas-eve-close/ig-3.png",
-     "media/2026-12/dec-christmas-eve-close/ig-4.png"
+     "media/2026-12/painted/dec-christmas-eve-close-voiced.mp4"
     ],
-    "caption": "Closing early on Christmas Eve? Log it anyway.\n\nExample: Thu Dec 24, 12 PM to 5 PM\n5 hrs x $14 = $70.00\nWhole week: 24 hrs x $14 = $336.00 projected, before taxes\n\nHoliday pay rules vary by job. Ask payroll.\n\nClocked is a free shift and pay tracker, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#holidayseason #hourlyworker #retailworker #paycheck #serverlife",
-    "alt": [
-     "Closing early on Christmas Eve? Log it anyway.",
-     "Example shift: 5 hours at $14.00 = $70.00, before taxes.",
-     "Example week: 24 hours at $14.00 = $336.00 projected, before taxes.",
-     "Clocked end card: free beta, out now, clocked.space."
-    ]
-   }
+    "caption": "Closing early on Christmas Eve? Log it anyway.\n\nExample: Thu Dec 24, 12 PM to 5 PM\n5 hrs x $14 = $70.00\nWhole week: 24 hrs x $14 = $336.00 projected, before taxes\n\nHoliday pay rules vary by job. Ask payroll.\n\nClocked is a free shift and pay tracker, now in free beta.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#holidayseason #hourlyworker #retailworker #paycheck #serverlife"
+   },
+   "ai_voice": true
   },
   {
    "id": "which-job-pays",
-   "type": "photo",
+   "type": "video",
    "payday": false,
-   "voiced": false,
+   "voiced": true,
    "tiktok": {
     "media": [
-     "media/2026-12/which-job-pays/tt-1.png",
-     "media/2026-12/which-job-pays/tt-2.png",
-     "media/2026-12/which-job-pays/tt-3.png",
-     "media/2026-12/which-job-pays/tt-4.png"
+     "media/2026-12/painted/which-job-pays-voiced.mp4"
     ],
     "title": "Which job pays more this week?",
     "caption": "Which job pays more this week? Job A: 12 hrs x $16 = $192.00. Job B: 18 hrs x $12 = $216.00. More hours beat the higher rate. Together $408.00 projected before taxes (example). Clocked tracks more than one job, now in free beta. Try it free at clocked.space and follow for updates. #twojobs #hourlyworker #paycheck #sidehustle #serverlife"
    },
    "instagram": {
     "media": [
-     "media/2026-12/which-job-pays/ig-1.png",
-     "media/2026-12/which-job-pays/ig-2.png",
-     "media/2026-12/which-job-pays/ig-3.png",
-     "media/2026-12/which-job-pays/ig-4.png"
+     "media/2026-12/painted/which-job-pays-voiced.mp4"
     ],
-    "caption": "Which job pays more this week?\n\nJob A: 12 hrs x $16 = $192.00\nJob B: 18 hrs x $12 = $216.00\n\nJob B wins: more hours beat the higher rate.\nTogether: $408.00 projected (example, before taxes)\n\nClocked tracks more than one job in one place. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#twojobs #hourlyworker #paycheck #sidehustle #serverlife",
-    "alt": [
-     "Which job pays more this week? Job A $16 an hour, Job B $12 an hour.",
-     "Job A: 12 hours x $16 = $192.00. Job B: 18 hours x $12 = $216.00.",
-     "Job B wins. Together $408.00 projected, example, before taxes.",
-     "Clocked end card: free beta, out now, clocked.space."
-    ]
-   }
+    "caption": "Which job pays more this week?\n\nJob A: 12 hrs x $16 = $192.00\nJob B: 18 hrs x $12 = $216.00\n\nJob B wins: more hours beat the higher rate.\nTogether: $408.00 projected (example, before taxes)\n\nClocked tracks more than one job in one place. Free beta, out now.\n\nTry it free at clocked.space (link in bio). Follow for updates.\n\n#twojobs #hourlyworker #paycheck #sidehustle #serverlife"
+   },
+   "ai_voice": true
   },
   {
    "id": "t-2026-12-same-answer",

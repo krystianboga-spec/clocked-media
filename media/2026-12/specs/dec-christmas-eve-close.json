@@ -1,0 +1,410 @@
+{
+ "id": "dec-christmas-eve-close",
+ "title": "Closing early on Christmas Eve",
+ "concept": "Short Christmas Eve close, still logged; the week adds up.",
+ "palette": "breakRoom",
+ "setting": "diner",
+ "fps": 30,
+ "seed": 161,
+ "showsPay": true,
+ "transition": "cut",
+ "music": {
+  "mood": "nightdiner",
+  "bpm": 88
+ },
+ "math": [
+  "5 x 14.00 = 70.00",
+  "6 + 6 + 7 + 5 = 24",
+  "24 x 14.00 = 336.00"
+ ],
+ "duration": 24.41,
+ "shots": [
+  {
+   "start": 0.0,
+   "scene": "stage",
+   "caption": "Christmas Eve. We close at 5.",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "plate": {
+      "clock": false
+     }
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1100,
+      1.1,
+      0
+     ],
+     [
+      2.727,
+      540,
+      1090,
+      1.16,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1660,
+      "size": 88,
+      "act": "wipe",
+      "pose": {
+       "eyes": "tired"
+      }
+     }
+    ]
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 2.73,
+   "scene": "stage",
+   "caption": "Only 5 hours. Worth logging?",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "plate": {
+      "clock": false
+     }
+    },
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.6,
+      0.03
+     ],
+     [
+      2.725,
+      540,
+      950,
+      1.7,
+      0.04
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 540,
+      "y": 1660,
+      "size": 88,
+      "pose": {
+       "eyes": "side",
+       "mouth": "flat",
+       "emote": "?"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 5.46,
+   "scene": "stage",
+   "caption": "Every shift counts.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "plate": {
+      "clock": false
+     }
+    },
+    "cam": [
+     [
+      0,
+      600,
+      1060,
+      1.04,
+      0
+     ],
+     [
+      2.0,
+      600,
+      1060,
+      1.1,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "open",
+       "brows": "up",
+       "lookX": 0.8
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1620,
+      "size": 130,
+      "enter": {
+       "type": "drop",
+       "at": 0,
+       "dur": 0.35,
+       "dist": 1300
+      },
+      "beats": [
+       [
+        0,
+        {
+         "eyes": "wide",
+         "mouth": "O"
+        }
+       ],
+       [
+        0.5,
+        {
+         "act": "point",
+         "flip": true,
+         "eyes": "open",
+         "mouth": "smile"
+        }
+       ]
+      ]
+     }
+    ]
+   },
+   "out": {
+    "type": "bloom"
+   }
+  },
+  {
+   "start": 7.46,
+   "scene": "card",
+   "caption": "5 hours at $14: *$70.*",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "diner",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      3.108,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "THU DEC 24",
+     "band": "#2E4A40",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "12 PM to 5 PM",
+       "r": "5 h",
+       "at": 0.1
+      },
+      {
+       "l": "Rate",
+       "r": "$14.00",
+       "at": 0.3
+      }
+     ],
+     "total": {
+      "l": "5 h × $14.00",
+      "r": "$70.00",
+      "at": 0.6,
+      "count": true
+     }
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 10.57,
+   "scene": "card",
+   "caption": "The week: 24 hours. *$336,* projected.",
+   "speaker": "CLOCKY",
+   "params": {
+    "setting": "diner",
+    "dim": 0.55,
+    "cam": [
+     [
+      0,
+      540,
+      960,
+      1.0,
+      0.02
+     ],
+     [
+      4.571,
+      540,
+      960,
+      1.04,
+      0
+     ]
+    ],
+    "card": {
+     "x": 540,
+     "y": 1000,
+     "w": 840,
+     "title": "YOUR WEEK",
+     "band": "#D9483B",
+     "rot": -0.02,
+     "rows": [
+      {
+       "l": "Sun Dec 20",
+       "r": "6 h",
+       "at": 0.05
+      },
+      {
+       "l": "Mon Dec 21",
+       "r": "6 h",
+       "at": 0.2
+      },
+      {
+       "l": "Tue Dec 22",
+       "r": "7 h",
+       "at": 0.35
+      },
+      {
+       "l": "Thu Dec 24",
+       "r": "5 h",
+       "at": 0.5
+      }
+     ],
+     "total": {
+      "l": "24 h × $14.00",
+      "r": "$336.00",
+      "at": 0.8,
+      "count": true
+     }
+    }
+   },
+   "out": "cut"
+  },
+  {
+   "start": 15.34,
+   "scene": "stage",
+   "caption": "Holiday pay rules vary. Ask payroll.",
+   "speaker": "CLOCKY",
+   "params": {
+    "set": {
+     "plate": {
+      "clock": false
+     }
+    },
+    "cam": [
+     [
+      0,
+      600,
+      1060,
+      1.04,
+      0
+     ],
+     [
+      3.079,
+      600,
+      1060,
+      1.08,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 300,
+      "y": 1660,
+      "size": 86,
+      "pose": {
+       "eyes": "open",
+       "mouth": "smile"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 770,
+      "y": 1620,
+      "size": 130,
+      "act": "talk",
+      "pose": {
+       "eyes": "open",
+       "mouth": "smile"
+      }
+     }
+    ]
+   },
+   "out": "cut"
+  },
+  {
+   "start": 18.41,
+   "scene": "stage",
+   "caption": "Logged. Now, home.",
+   "speaker": "SAM",
+   "params": {
+    "set": {
+     "plate": {
+      "clock": false
+     }
+    },
+    "cam": [
+     [
+      0,
+      540,
+      1100,
+      1.1,
+      0
+     ],
+     [
+      2.0,
+      540,
+      1090,
+      1.14,
+      0
+     ]
+    ],
+    "cast": [
+     {
+      "who": "sam",
+      "x": 430,
+      "y": 1660,
+      "size": 88,
+      "act": "wave",
+      "pose": {
+       "eyes": "happy",
+       "mouth": "grin",
+       "emote": "spark"
+      }
+     },
+     {
+      "who": "clocky",
+      "x": 800,
+      "y": 1640,
+      "size": 110,
+      "act": "bounce"
+     }
+    ]
+   },
+   "out": "cut"
+  }
+ ],
+ "endCard": {
+  "caption": "Clocked. Free in beta.",
+  "speaker": "CLOCKY",
+  "start": 20.41
+ }
+}

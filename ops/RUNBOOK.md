@@ -2,7 +2,7 @@
 
 You are a fresh Claude session. You have this repo and the Metricool connector, nothing else. Follow every step in order. Do not skip the independent review: in auto mode it is the only check before posts go public.
 
-Goal each month: 20 posts on Metricool's free plan, 10 on TikTok and 10 on Instagram (the plan caps at 20 per calendar month, counted once per network). That is 6 NEW videos and 4 NEW photo sets. Each video is posted once on TikTok and once on Instagram; each photo set likewise, with platform-specific captions. At most one post per platform per day.
+Goal each month: 20 posts on Metricool's free plan, 10 on TikTok and 10 on Instagram (the plan caps at 20 per calendar month, counted once per network). That is 10 NEW videos (minus any already preloaded for the month). VIDEOS ONLY: Krystian dropped photo sets and carousels for good on 2026-11-22 (they got no attention), so never make or schedule a photo post. Each video is posted once on TikTok and once on Instagram, with platform-specific captions. At most one post per platform per day.
 
 Facts you need: Metricool brand id 7724856, timezone America/Chicago, accounts TikTok and Instagram (clockedai). YouTube is not connected. Repo (public): https://github.com/krystianboga-spec/clocked-media. Media URL pattern: `https://raw.githubusercontent.com/krystianboga-spec/clocked-media/main/<path>`.
 
@@ -45,7 +45,7 @@ What "our own version" may borrow: format, structure, pacing, camera moves, tran
 
 ## Step 2. Pick concepts
 
-From ops/concepts.md pick **6 video** and **4 photo** concepts whose ids are NOT in ops/used-concepts.json. Rules for the pick:
+From ops/concepts.md pick **10 video** concepts (fewer if some were preloaded) whose ids are NOT in ops/used-concepts.json. Concepts marked (photo) in the bank are fine as long as you make them as videos (for example a list, card or countdown video). Rules for the pick:
 
 - Include the month's seasonal hooks (concepts.md lists them by month) for 1 or 2 slots, and at least 1 payday-themed asset (Thu/Fri slot), at most 3.
 - Cover at least 3 different features (projected pay, overtime, payday reminder, more than one job) and at least one no-money humor or education piece.
@@ -55,15 +55,15 @@ From ops/concepts.md pick **6 video** and **4 photo** concepts whose ids are NOT
 
 ## Step 3. Write the specs
 
-Write `media/YYYY-MM/specs/<id>.json` (video) or `<id>.md` (photo set) for each of the 10 assets. Follow the spec format in engine/README.md for videos. Each spec states: id, hook, on-screen text frame by frame, example math with the sum shown, feature shown, voiced yes/no, the end card, and the TikTok title and the two captions (TikTok single line, Instagram with line breaks). Voice: run `bash engine/setup-voice.sh` once (the Kokoro model is in the repo; about 15 s), then voice every video with engine/voice.py --retime: the characters say their captions word for word. Voiced videos post on their own (no phone ping). If setup or voice.py errors, make that video silent. Silent is fine.
+Write `media/YYYY-MM/specs/<id>.json` for each of the 10 videos. Follow the spec format in engine/README.md for videos. Each spec states: id, hook, on-screen text frame by frame, example math with the sum shown, feature shown, voiced yes/no, the end card, and the TikTok title and the two captions (TikTok single line, Instagram with line breaks). Voice: run `bash engine/setup-voice.sh` once (the Kokoro model is in the repo; about 15 s), then voice every video with engine/voice.py --retime: the characters say their captions word for word. Voiced videos post on their own (no phone ping). If setup or voice.py errors, make that video silent. Silent is fine.
 
 ## Step 4. Render videos
 
 Use the engine commands in engine/README.md (do not guess them). Render each video once as a clean master (no watermark, no other app's logo); the same file goes to both platforms unless the engine produces separate TikTok and Instagram safe-zone versions. Check each output: duration 3 s to 60 s, vertical 1080x1920, plays, text readable, inside the safe zone, final frame is the end card. Extract 4 frames (`ffmpeg`) and look at them. A video that fails twice is dropped (see Failures).
 
-## Step 5. Make the photo sets
+## Step 5. (Removed) No photo sets
 
-For each of the 4 photo concepts, produce two image sets from the same content: TikTok photo mode 1080x1920 PNG/JPG (3 to 6 slides) and Instagram carousel 1080x1350 (3 to 6 slides, the end card on the last slide). Use the engine's still/slide tooling if engine/README.md has it; otherwise render HTML slides with a headless browser or Pillow using the fonts and colors in ops/rules.md. Same look as the videos. Name files `media/YYYY-MM/<id>/tt-1.png ...` and `ig-1.png ...`. View every slide.
+Photo sets and carousels are no longer made (Krystian, 2026-11-22). Every slot is a video. Rendering 10 videos takes about 40 to 60 minutes on this machine; start renders in the background while you write the next spec.
 
 ## Step 6. Independent review (separate subagent, mandatory)
 
@@ -73,7 +73,7 @@ Spawn a SEPARATE subagent that did not make the assets. Give it: ops/rules.md, t
 - Math: recompute every figure in Python or by hand; sums add up; "example" and "before taxes" are on screen and in captions; overtime uses 1.5x after 40 hours.
 - Captions: TikTok one line, at most 5 hashtags, title present and at most 90 characters; Instagram at most 5 hashtags and "(link in bio)"; CTA wording per rules.md; the two platform captions differ; no em or en dashes; no banned phrases.
 - Visuals: safe zone, readable, end card, no faces, no logos of other apps, no QR code, no watermark.
-- Slots: no payday asset outside Thu/Fri, nothing in a blocked evening, same asset never both platforms same day, the mix is 6 video + 4 photo per platform.
+- Slots: no payday asset outside Thu/Fri, nothing in a blocked evening, same asset never both platforms same day, every post is a video (no photo sets).
 
 Fix every failure and re-run the review until it returns PASS. Drop any asset that cannot be fixed.
 
@@ -109,8 +109,7 @@ Before creating anything, call `getScheduledPosts` for the month again and make 
 
 - TikTok silent video: `autoPublish: false` (Metricool pings Krystian's phone to add a commercial-library sound).
 - TikTok voiced video: `autoPublish: true`, `tiktokData.isAigc: true` for AI voices.
-- TikTok photo set: `autoPublish: true`, `tiktokData.autoAddMusic: true`, several images in `media`.
-- Instagram: `autoPublish: true`; video is `type: REEL`, photo set is `type: POST` (carousel); `instagramData.isAiGenerated` true for AI voices.
+- Instagram: `autoPublish: true`; every post is `type: REEL`; `instagramData.isAiGenerated` true for AI voices.
 - `tiktokData.title` set on every TikTok post.
 
 Save the returned ids and uuids to `ops/runs/YYYY-MM/posts.json` (post number, platform, asset, id, uuid, plannerUrl). Then call `getScheduledPosts` for the month and confirm 10 + 10 scheduled posts at the right dates and times, with media attached. If a call errors, see Failures. Do not retry a rejected post with altered claims.
@@ -141,7 +140,7 @@ Only when Step 10 loaded drafts (hard rule 2 exceptions): after his explicit yes
 - [ ] tests pass, rules and used log read
 - [ ] Metricool month checked, used counts known
 - [ ] trend research saved to ops/research/YYYY-MM.md, 3 to 5 new t- concepts added, 2+ used
-- [ ] 6 video + 4 photo concepts, none used before, math verified
+- [ ] 10 video concepts (no photo sets), none used before, math verified
 - [ ] rendered, viewed, reviewed by a separate subagent: PASS
 - [ ] committed and pushed, URLs return 200
 - [ ] best-times.json refreshed from Metricool
